@@ -1,0 +1,19 @@
+CXX=cl
+LINK=link
+CXXFLAGS=/D IB_USE_STD_STRING /D _CRT_SECURE_NO_DEPRECATE /EHsc /wd4355 /wd4800
+ROOT_DIR=..
+BASE_SRC_DIR=$(ROOT_DIR)/PosixSocketClient
+INCLUDES=/I $(ROOT_DIR)/Shared/ /I $(ROOT_DIR)/PosixSocketClient/
+OUTPUT=PosixSocketClientTest.exe
+
+all:
+	$(CXX) /c $(BASE_SRC_DIR)/EClientSocketBase.cpp $(INCLUDES) $(CXXFLAGS)
+	$(CXX) /c $(BASE_SRC_DIR)/EPosixClientSocket.cpp $(INCLUDES) $(CXXFLAGS)
+	$(CXX) /c PosixTestClient.cpp $(INCLUDES) $(CXXFLAGS)
+	$(CXX) /c Main.cpp $(INCLUDES) $(CXXFLAGS)
+	$(LINK) EClientSocketBase.obj EPosixClientSocket.obj PosixTestClient.obj Main.obj /OUT:$(OUTPUT)
+
+clean:
+	del EClientSocketBase.obj EPosixClientSocket.obj PosixTestClient.obj Main.obj $(OUTPUT)
+
+
