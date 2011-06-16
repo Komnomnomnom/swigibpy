@@ -4,10 +4,10 @@
 setup.py file for building Interactive Brokers SWIG wrapper
 
 To build execute the following commands from the root of the 
-interactive brokers API directory (SWIG 2.0 + required):
+interactive brokers API directory:
 
- (optional) swig -c++ -python -o swig_wrap.cpp -outdir .. ../swigify_ib.i
- python ../ib_build.py build_ext --build-lib ..
+ - (optional, swig 2.0+ required) swig -c++ -python -o swig_wrap.cpp -outdir .. ../swigify_ib.i
+ - python ../ib_build.py build_ext --build-lib ..
  
  @author: Kieran O'Mahony
 """
