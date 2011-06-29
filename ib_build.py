@@ -3,16 +3,14 @@
 """
 setup.py file for building and installing Interactive Brokers SWIG wrapper
 
-To build and install the ib module:
+To build and install the Interactive Brokers (IB) module:
     $ sudo python ib_build.py install
 
 Optional:
 swig 2.0+ is required for this step.
-To build the swig libraries, in the IB API directory, run
+To regenerate the SWIG wrappers, in the IB API directory run
     $ swig -c++ -python -o swig_wrap.cpp -outdir .. ../swigify_ib.i
  
- 
- @author: Kieran O'Mahony
 """
 
 from distutils.core import setup, Extension
