@@ -1,0 +1,11 @@
+
+Interactive Brokers (IB) Python API, auto generated from IB C++ API using SWIG.
+
+To build and install as a Python extension (recommended):
+    $ sudo python ib_build.py install
+    
+Alternatively to just build the extension library in the current dir try:
+    $ python ib_build.py build_ext --build-lib .
+ 	
+To regenerate the SWIG wrappers (optional, SWIG 2.0+ required), in the IB API directory run:
+   	$ swig -c++ -python -o swig_wrap.cpp -outdir .. ../swigify_ib.i
