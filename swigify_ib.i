@@ -1,7 +1,6 @@
 /*
 	SWIG interface file for Interactive Brokers API v9.64.
 	
-	author: Kieran O'Mahony
 */
 
 %module(directors="1",docstring="Python wrapper for Interactive Brokers TWS C++ API") swigibpy
