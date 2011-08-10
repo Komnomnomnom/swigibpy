@@ -4,7 +4,10 @@
 	author: Kieran O'Mahony
 */
 
-%module(directors="1") ib
+%module(directors="1",docstring="Python wrapper for Interactive Brokers TWS C++ API") swigibpy
+
+/* Turn on auto-generated docstrings */
+%feature("autodoc", "1");
 
 /*Inclusions for generated cpp file*/
 %{
@@ -31,21 +34,33 @@ typedef std::string IBString;
     }
 }
 
-/* exception handling 
-TODO add more catches, not everything should result in a fatal runtime error
-*/
+// Exception handling 
 %include exception.i     
 %exception {
+	/*
+		most errors should be propagated through to EWrapper->error,
+    	others should be added here as and when needed / encountered.
+    */
     try {
         $action
-    } catch(std::exception& e) {
-        SWIG_exception(SWIG_RuntimeError,e.what());
+    } catch(Swig::DirectorPureVirtualException &e) {
+    	/* Call to pure virtual method, raise not implemented error */
+    	PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
     } catch(Swig::DirectorException &e) {
-        SWIG_exception(SWIG_RuntimeError,e.getMessage());
+		/* Fail if there is a problem in the director proxy transport */
+	    SWIG_fail;
+    } catch(std::exception& e) {
+    	/* Convert standard error to standard error */
+        PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+    
     } catch(...) {
-        SWIG_exception(SWIG_RuntimeError,"Unknown exception...");
+    	/* Final catch all, results in runtime error */ 
+        PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
 } 
+
+/* Rename EWrapper so we can replace it with a 'nicer' Python object (see below) */
+%rename(_EWrapper) EWrapper;
 
 /* Grab the header files to be wrapped */
 %include "Shared/EClient.h"
@@ -56,3 +71,59 @@ TODO add more catches, not everything should result in a fatal runtime error
 
 %include "Shared/Contract.h"
 %include "Shared/CommonDefs.h"
+
+%pythoncode %{
+class TWSError(Exception):
+    '''Exception raised during communication with Interactive Brokers TWS 
+    application
+    
+    '''
+    
+    def __init__(self, code, msg):
+        self.code = code
+        self.msg = msg
+        
+    def __str__(self):
+        return "%s: %s" % (self.code, repr(self.msg))
+
+
+class TWSSystemError(TWSError):
+    '''System related exception raised during communication with Interactive 
+    Brokers TWS application.
+    
+    '''
+    pass
+    
+class TWSClientError(TWSError):
+    '''Exception raised on client (python) side by Interactive Brokers API'''
+    pass
+    
+class EWrapper(_EWrapper):
+    '''Basic swigibpy implementation which provides more transparent error 
+    messages. Error methods are implemented to convert exceptions appropriately. 
+    
+    '''
+    
+    def __init__(self): 
+        _EWrapper.__init__(self)
+
+    def winError(self, str, lastError):
+        '''Error in TWS API library'''
+        
+        raise TWSClientError(lastError, str)
+
+    def error(self, id, errorCode, errorString):
+        '''Error during communication with TWS'''
+        
+        if errorCode == 165:
+            print "TWS Message %s: %s" % (errorCode, errorString)
+        elif errorCode >= 100 and errorCode < 1100:
+            raise TWSError(errorCode, errorString)
+        elif  errorCode >= 1100 and errorCode < 2100:
+            raise TWSSystemError(errorCode, errorString)
+        elif errorCode >= 2100 and errorCode < 2110:
+            import sys
+            sys.stderr.write("TWS Warning %s: %s\n" % (errorCode, errorString))
+        else:
+            raise RuntimeError(errorCode, errorString)
+%}
