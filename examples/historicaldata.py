@@ -121,6 +121,7 @@ try:
 except:
     # Stop the poll thread if an exception occurs
     poll.stop_polling = True
+    raise
     
     
 
