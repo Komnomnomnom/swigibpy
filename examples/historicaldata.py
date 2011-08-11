@@ -57,8 +57,8 @@ class HistoricalDataExample(EWrapper):
         '''Always called by TWS but not relevant for our example'''
         pass
 
-    def historicalData(self, reqId, date, open, high, \
-                       low, close, volume, \
+    def historicalData(self, reqId, date, open, high, 
+                       low, close, volume,
                        barCount, WAP, hasGaps):
         
         if date[:8] == 'finished':
