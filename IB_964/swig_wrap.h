@@ -15,11 +15,11 @@
 #include <string>
 
 
-class SwigDirector__EWrapper : public EWrapper, public Swig::Director {
+class SwigDirector_EWrapper : public EWrapper, public Swig::Director {
 
 public:
-    SwigDirector__EWrapper(PyObject *self);
-    virtual ~SwigDirector__EWrapper();
+    SwigDirector_EWrapper(PyObject *self);
+    virtual ~SwigDirector_EWrapper();
     virtual void tickPrice(TickerId tickerId, TickType field, double price, int canAutoExecute);
     virtual void tickSize(TickerId tickerId, TickType field, int size);
     virtual void tickOptionComputation(TickerId tickerId, TickType tickType, double impliedVol, double delta, double optPrice, double pvDividend, double gamma, double vega, double theta, double undPrice);
@@ -80,7 +80,7 @@ private:
         swig::SwigVar_PyObject name = SWIG_Python_str_FromChar(method_name);
         method = PyObject_GetAttr(swig_get_self(), name);
         if (!method) {
-          std::string msg = "Method in class _EWrapper doesn't exist, undefined ";
+          std::string msg = "Method in class EWrapper doesn't exist, undefined ";
           msg += method_name;
           Swig::DirectorMethodException::raise(msg.c_str());
         }

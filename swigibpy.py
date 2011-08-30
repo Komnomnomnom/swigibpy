@@ -11,6 +11,10 @@ Python wrapper for Interactive Brokers TWS C++ API
 
 
 from sys import version_info
+if version_info >= (3,0,0):
+    new_instancemethod = lambda func, inst, cls: _swigibpy.SWIG_PyInstanceMethod_New(func)
+else:
+    from new import instancemethod as new_instancemethod
 if version_info >= (2,6,0):
     def swig_import_helper():
         from os.path import dirname
@@ -32,7 +36,6 @@ if version_info >= (2,6,0):
 else:
     import _swigibpy
 del version_info
-from _swigibpy import *
 try:
     _swig_property = property
 except NameError:
@@ -89,18 +92,696 @@ except:
     weakref_proxy = lambda x: x
 
 
+class EClient(object):
+    """Proxy of C++ EClient class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _swigibpy.delete_EClient
+    def eConnect(self, *args):
+        """
+        eConnect(self, char host, unsigned int port, int clientId = 0) -> bool
+        eConnect(self, char host, unsigned int port) -> bool
+        """
+        return _swigibpy.EClient_eConnect(self, *args)
+
+    def eDisconnect(self):
+        """eDisconnect(self)"""
+        return _swigibpy.EClient_eDisconnect(self)
+
+    def serverVersion(self):
+        """serverVersion(self) -> int"""
+        return _swigibpy.EClient_serverVersion(self)
+
+    def TwsConnectionTime(self):
+        """TwsConnectionTime(self) -> IBString"""
+        return _swigibpy.EClient_TwsConnectionTime(self)
+
+    def reqMktData(self, *args):
+        """
+        reqMktData(self, TickerId id, Contract contract, IBString genericTicks, 
+            bool snapshot)
+        """
+        return _swigibpy.EClient_reqMktData(self, *args)
+
+    def cancelMktData(self, *args):
+        """cancelMktData(self, TickerId id)"""
+        return _swigibpy.EClient_cancelMktData(self, *args)
+
+    def placeOrder(self, *args):
+        """placeOrder(self, OrderId id, Contract contract, Order order)"""
+        return _swigibpy.EClient_placeOrder(self, *args)
+
+    def cancelOrder(self, *args):
+        """cancelOrder(self, OrderId id)"""
+        return _swigibpy.EClient_cancelOrder(self, *args)
+
+    def reqOpenOrders(self):
+        """reqOpenOrders(self)"""
+        return _swigibpy.EClient_reqOpenOrders(self)
+
+    def reqAccountUpdates(self, *args):
+        """reqAccountUpdates(self, bool subscribe, IBString acctCode)"""
+        return _swigibpy.EClient_reqAccountUpdates(self, *args)
+
+    def reqExecutions(self, *args):
+        """reqExecutions(self, int reqId, ExecutionFilter filter)"""
+        return _swigibpy.EClient_reqExecutions(self, *args)
+
+    def reqIds(self, *args):
+        """reqIds(self, int numIds)"""
+        return _swigibpy.EClient_reqIds(self, *args)
+
+    def checkMessages(self):
+        """checkMessages(self) -> bool"""
+        return _swigibpy.EClient_checkMessages(self)
+
+    def reqContractDetails(self, *args):
+        """reqContractDetails(self, int reqId, Contract contract)"""
+        return _swigibpy.EClient_reqContractDetails(self, *args)
+
+    def reqMktDepth(self, *args):
+        """reqMktDepth(self, TickerId id, Contract contract, int numRows)"""
+        return _swigibpy.EClient_reqMktDepth(self, *args)
+
+    def cancelMktDepth(self, *args):
+        """cancelMktDepth(self, TickerId id)"""
+        return _swigibpy.EClient_cancelMktDepth(self, *args)
+
+    def reqNewsBulletins(self, *args):
+        """reqNewsBulletins(self, bool allMsgs)"""
+        return _swigibpy.EClient_reqNewsBulletins(self, *args)
+
+    def cancelNewsBulletins(self):
+        """cancelNewsBulletins(self)"""
+        return _swigibpy.EClient_cancelNewsBulletins(self)
+
+    def setServerLogLevel(self, *args):
+        """setServerLogLevel(self, int level)"""
+        return _swigibpy.EClient_setServerLogLevel(self, *args)
+
+    def reqAutoOpenOrders(self, *args):
+        """reqAutoOpenOrders(self, bool bAutoBind)"""
+        return _swigibpy.EClient_reqAutoOpenOrders(self, *args)
+
+    def reqAllOpenOrders(self):
+        """reqAllOpenOrders(self)"""
+        return _swigibpy.EClient_reqAllOpenOrders(self)
+
+    def reqManagedAccts(self):
+        """reqManagedAccts(self)"""
+        return _swigibpy.EClient_reqManagedAccts(self)
+
+    def requestFA(self, *args):
+        """requestFA(self, faDataType pFaDataType)"""
+        return _swigibpy.EClient_requestFA(self, *args)
+
+    def replaceFA(self, *args):
+        """replaceFA(self, faDataType pFaDataType, IBString cxml)"""
+        return _swigibpy.EClient_replaceFA(self, *args)
+
+    def reqHistoricalData(self, *args):
+        """
+        reqHistoricalData(self, TickerId id, Contract contract, IBString endDateTime, 
+            IBString durationStr, IBString barSizeSetting, 
+            IBString whatToShow, int useRTH, int formatDate)
+        """
+        return _swigibpy.EClient_reqHistoricalData(self, *args)
+
+    def exerciseOptions(self, *args):
+        """
+        exerciseOptions(self, TickerId id, Contract contract, int exerciseAction, 
+            int exerciseQuantity, IBString account, int override)
+        """
+        return _swigibpy.EClient_exerciseOptions(self, *args)
+
+    def cancelHistoricalData(self, *args):
+        """cancelHistoricalData(self, TickerId tickerId)"""
+        return _swigibpy.EClient_cancelHistoricalData(self, *args)
+
+    def reqRealTimeBars(self, *args):
+        """
+        reqRealTimeBars(self, TickerId id, Contract contract, int barSize, IBString whatToShow, 
+            bool useRTH)
+        """
+        return _swigibpy.EClient_reqRealTimeBars(self, *args)
+
+    def cancelRealTimeBars(self, *args):
+        """cancelRealTimeBars(self, TickerId tickerId)"""
+        return _swigibpy.EClient_cancelRealTimeBars(self, *args)
+
+    def cancelScannerSubscription(self, *args):
+        """cancelScannerSubscription(self, int tickerId)"""
+        return _swigibpy.EClient_cancelScannerSubscription(self, *args)
+
+    def reqScannerParameters(self):
+        """reqScannerParameters(self)"""
+        return _swigibpy.EClient_reqScannerParameters(self)
+
+    def reqScannerSubscription(self, *args):
+        """reqScannerSubscription(self, int tickerId, ScannerSubscription subscription)"""
+        return _swigibpy.EClient_reqScannerSubscription(self, *args)
+
+    def reqCurrentTime(self):
+        """reqCurrentTime(self)"""
+        return _swigibpy.EClient_reqCurrentTime(self)
+
+    def reqFundamentalData(self, *args):
+        """reqFundamentalData(self, TickerId reqId, Contract arg1, IBString reportType)"""
+        return _swigibpy.EClient_reqFundamentalData(self, *args)
+
+    def cancelFundamentalData(self, *args):
+        """cancelFundamentalData(self, TickerId reqId)"""
+        return _swigibpy.EClient_cancelFundamentalData(self, *args)
+
+    def calculateImpliedVolatility(self, *args):
+        """
+        calculateImpliedVolatility(self, TickerId reqId, Contract contract, double optionPrice, 
+            double underPrice)
+        """
+        return _swigibpy.EClient_calculateImpliedVolatility(self, *args)
+
+    def calculateOptionPrice(self, *args):
+        """
+        calculateOptionPrice(self, TickerId reqId, Contract contract, double volatility, 
+            double underPrice)
+        """
+        return _swigibpy.EClient_calculateOptionPrice(self, *args)
+
+    def cancelCalculateImpliedVolatility(self, *args):
+        """cancelCalculateImpliedVolatility(self, TickerId reqId)"""
+        return _swigibpy.EClient_cancelCalculateImpliedVolatility(self, *args)
+
+    def cancelCalculateOptionPrice(self, *args):
+        """cancelCalculateOptionPrice(self, TickerId reqId)"""
+        return _swigibpy.EClient_cancelCalculateOptionPrice(self, *args)
+
+EClient.eConnect = new_instancemethod(_swigibpy.EClient_eConnect,None,EClient)
+EClient.eDisconnect = new_instancemethod(_swigibpy.EClient_eDisconnect,None,EClient)
+EClient.serverVersion = new_instancemethod(_swigibpy.EClient_serverVersion,None,EClient)
+EClient.TwsConnectionTime = new_instancemethod(_swigibpy.EClient_TwsConnectionTime,None,EClient)
+EClient.reqMktData = new_instancemethod(_swigibpy.EClient_reqMktData,None,EClient)
+EClient.cancelMktData = new_instancemethod(_swigibpy.EClient_cancelMktData,None,EClient)
+EClient.placeOrder = new_instancemethod(_swigibpy.EClient_placeOrder,None,EClient)
+EClient.cancelOrder = new_instancemethod(_swigibpy.EClient_cancelOrder,None,EClient)
+EClient.reqOpenOrders = new_instancemethod(_swigibpy.EClient_reqOpenOrders,None,EClient)
+EClient.reqAccountUpdates = new_instancemethod(_swigibpy.EClient_reqAccountUpdates,None,EClient)
+EClient.reqExecutions = new_instancemethod(_swigibpy.EClient_reqExecutions,None,EClient)
+EClient.reqIds = new_instancemethod(_swigibpy.EClient_reqIds,None,EClient)
+EClient.checkMessages = new_instancemethod(_swigibpy.EClient_checkMessages,None,EClient)
+EClient.reqContractDetails = new_instancemethod(_swigibpy.EClient_reqContractDetails,None,EClient)
+EClient.reqMktDepth = new_instancemethod(_swigibpy.EClient_reqMktDepth,None,EClient)
+EClient.cancelMktDepth = new_instancemethod(_swigibpy.EClient_cancelMktDepth,None,EClient)
+EClient.reqNewsBulletins = new_instancemethod(_swigibpy.EClient_reqNewsBulletins,None,EClient)
+EClient.cancelNewsBulletins = new_instancemethod(_swigibpy.EClient_cancelNewsBulletins,None,EClient)
+EClient.setServerLogLevel = new_instancemethod(_swigibpy.EClient_setServerLogLevel,None,EClient)
+EClient.reqAutoOpenOrders = new_instancemethod(_swigibpy.EClient_reqAutoOpenOrders,None,EClient)
+EClient.reqAllOpenOrders = new_instancemethod(_swigibpy.EClient_reqAllOpenOrders,None,EClient)
+EClient.reqManagedAccts = new_instancemethod(_swigibpy.EClient_reqManagedAccts,None,EClient)
+EClient.requestFA = new_instancemethod(_swigibpy.EClient_requestFA,None,EClient)
+EClient.replaceFA = new_instancemethod(_swigibpy.EClient_replaceFA,None,EClient)
+EClient.reqHistoricalData = new_instancemethod(_swigibpy.EClient_reqHistoricalData,None,EClient)
+EClient.exerciseOptions = new_instancemethod(_swigibpy.EClient_exerciseOptions,None,EClient)
+EClient.cancelHistoricalData = new_instancemethod(_swigibpy.EClient_cancelHistoricalData,None,EClient)
+EClient.reqRealTimeBars = new_instancemethod(_swigibpy.EClient_reqRealTimeBars,None,EClient)
+EClient.cancelRealTimeBars = new_instancemethod(_swigibpy.EClient_cancelRealTimeBars,None,EClient)
+EClient.cancelScannerSubscription = new_instancemethod(_swigibpy.EClient_cancelScannerSubscription,None,EClient)
+EClient.reqScannerParameters = new_instancemethod(_swigibpy.EClient_reqScannerParameters,None,EClient)
+EClient.reqScannerSubscription = new_instancemethod(_swigibpy.EClient_reqScannerSubscription,None,EClient)
+EClient.reqCurrentTime = new_instancemethod(_swigibpy.EClient_reqCurrentTime,None,EClient)
+EClient.reqFundamentalData = new_instancemethod(_swigibpy.EClient_reqFundamentalData,None,EClient)
+EClient.cancelFundamentalData = new_instancemethod(_swigibpy.EClient_cancelFundamentalData,None,EClient)
+EClient.calculateImpliedVolatility = new_instancemethod(_swigibpy.EClient_calculateImpliedVolatility,None,EClient)
+EClient.calculateOptionPrice = new_instancemethod(_swigibpy.EClient_calculateOptionPrice,None,EClient)
+EClient.cancelCalculateImpliedVolatility = new_instancemethod(_swigibpy.EClient_cancelCalculateImpliedVolatility,None,EClient)
+EClient.cancelCalculateOptionPrice = new_instancemethod(_swigibpy.EClient_cancelCalculateOptionPrice,None,EClient)
+EClient_swigregister = _swigibpy.EClient_swigregister
+EClient_swigregister(EClient)
+
+class EClientSocketBase(EClient):
+    """Proxy of C++ EClientSocketBase class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _swigibpy.delete_EClientSocketBase
+    def eConnect(self, *args):
+        """
+        eConnect(self, char host, unsigned int port, int clientId = 0) -> bool
+        eConnect(self, char host, unsigned int port) -> bool
+        """
+        return _swigibpy.EClientSocketBase_eConnect(self, *args)
+
+    def eDisconnect(self):
+        """eDisconnect(self)"""
+        return _swigibpy.EClientSocketBase_eDisconnect(self)
+
+    def isConnected(self):
+        """isConnected(self) -> bool"""
+        return _swigibpy.EClientSocketBase_isConnected(self)
+
+    def isInBufferEmpty(self):
+        """isInBufferEmpty(self) -> bool"""
+        return _swigibpy.EClientSocketBase_isInBufferEmpty(self)
+
+    def isOutBufferEmpty(self):
+        """isOutBufferEmpty(self) -> bool"""
+        return _swigibpy.EClientSocketBase_isOutBufferEmpty(self)
+
+    def serverVersion(self):
+        """serverVersion(self) -> int"""
+        return _swigibpy.EClientSocketBase_serverVersion(self)
+
+    def TwsConnectionTime(self):
+        """TwsConnectionTime(self) -> IBString"""
+        return _swigibpy.EClientSocketBase_TwsConnectionTime(self)
+
+    def reqMktData(self, *args):
+        """
+        reqMktData(self, TickerId id, Contract contract, IBString genericTicks, 
+            bool snapshot)
+        """
+        return _swigibpy.EClientSocketBase_reqMktData(self, *args)
+
+    def cancelMktData(self, *args):
+        """cancelMktData(self, TickerId id)"""
+        return _swigibpy.EClientSocketBase_cancelMktData(self, *args)
+
+    def placeOrder(self, *args):
+        """placeOrder(self, OrderId id, Contract contract, Order order)"""
+        return _swigibpy.EClientSocketBase_placeOrder(self, *args)
+
+    def cancelOrder(self, *args):
+        """cancelOrder(self, OrderId id)"""
+        return _swigibpy.EClientSocketBase_cancelOrder(self, *args)
+
+    def reqOpenOrders(self):
+        """reqOpenOrders(self)"""
+        return _swigibpy.EClientSocketBase_reqOpenOrders(self)
+
+    def reqAccountUpdates(self, *args):
+        """reqAccountUpdates(self, bool subscribe, IBString acctCode)"""
+        return _swigibpy.EClientSocketBase_reqAccountUpdates(self, *args)
+
+    def reqExecutions(self, *args):
+        """reqExecutions(self, int reqId, ExecutionFilter filter)"""
+        return _swigibpy.EClientSocketBase_reqExecutions(self, *args)
+
+    def reqIds(self, *args):
+        """reqIds(self, int numIds)"""
+        return _swigibpy.EClientSocketBase_reqIds(self, *args)
+
+    def checkMessages(self):
+        """checkMessages(self) -> bool"""
+        return _swigibpy.EClientSocketBase_checkMessages(self)
+
+    def reqContractDetails(self, *args):
+        """reqContractDetails(self, int reqId, Contract contract)"""
+        return _swigibpy.EClientSocketBase_reqContractDetails(self, *args)
+
+    def reqMktDepth(self, *args):
+        """reqMktDepth(self, TickerId tickerId, Contract contract, int numRows)"""
+        return _swigibpy.EClientSocketBase_reqMktDepth(self, *args)
+
+    def cancelMktDepth(self, *args):
+        """cancelMktDepth(self, TickerId tickerId)"""
+        return _swigibpy.EClientSocketBase_cancelMktDepth(self, *args)
+
+    def reqNewsBulletins(self, *args):
+        """reqNewsBulletins(self, bool allMsgs)"""
+        return _swigibpy.EClientSocketBase_reqNewsBulletins(self, *args)
+
+    def cancelNewsBulletins(self):
+        """cancelNewsBulletins(self)"""
+        return _swigibpy.EClientSocketBase_cancelNewsBulletins(self)
+
+    def setServerLogLevel(self, *args):
+        """setServerLogLevel(self, int level)"""
+        return _swigibpy.EClientSocketBase_setServerLogLevel(self, *args)
+
+    def reqAutoOpenOrders(self, *args):
+        """reqAutoOpenOrders(self, bool bAutoBind)"""
+        return _swigibpy.EClientSocketBase_reqAutoOpenOrders(self, *args)
+
+    def reqAllOpenOrders(self):
+        """reqAllOpenOrders(self)"""
+        return _swigibpy.EClientSocketBase_reqAllOpenOrders(self)
+
+    def reqManagedAccts(self):
+        """reqManagedAccts(self)"""
+        return _swigibpy.EClientSocketBase_reqManagedAccts(self)
+
+    def requestFA(self, *args):
+        """requestFA(self, faDataType pFaDataType)"""
+        return _swigibpy.EClientSocketBase_requestFA(self, *args)
+
+    def replaceFA(self, *args):
+        """replaceFA(self, faDataType pFaDataType, IBString cxml)"""
+        return _swigibpy.EClientSocketBase_replaceFA(self, *args)
+
+    def reqHistoricalData(self, *args):
+        """
+        reqHistoricalData(self, TickerId id, Contract contract, IBString endDateTime, 
+            IBString durationStr, IBString barSizeSetting, 
+            IBString whatToShow, int useRTH, int formatDate)
+        """
+        return _swigibpy.EClientSocketBase_reqHistoricalData(self, *args)
+
+    def exerciseOptions(self, *args):
+        """
+        exerciseOptions(self, TickerId tickerId, Contract contract, int exerciseAction, 
+            int exerciseQuantity, IBString account, 
+            int override)
+        """
+        return _swigibpy.EClientSocketBase_exerciseOptions(self, *args)
+
+    def cancelHistoricalData(self, *args):
+        """cancelHistoricalData(self, TickerId tickerId)"""
+        return _swigibpy.EClientSocketBase_cancelHistoricalData(self, *args)
+
+    def reqRealTimeBars(self, *args):
+        """
+        reqRealTimeBars(self, TickerId id, Contract contract, int barSize, IBString whatToShow, 
+            bool useRTH)
+        """
+        return _swigibpy.EClientSocketBase_reqRealTimeBars(self, *args)
+
+    def cancelRealTimeBars(self, *args):
+        """cancelRealTimeBars(self, TickerId tickerId)"""
+        return _swigibpy.EClientSocketBase_cancelRealTimeBars(self, *args)
+
+    def cancelScannerSubscription(self, *args):
+        """cancelScannerSubscription(self, int tickerId)"""
+        return _swigibpy.EClientSocketBase_cancelScannerSubscription(self, *args)
+
+    def reqScannerParameters(self):
+        """reqScannerParameters(self)"""
+        return _swigibpy.EClientSocketBase_reqScannerParameters(self)
+
+    def reqScannerSubscription(self, *args):
+        """reqScannerSubscription(self, int tickerId, ScannerSubscription subscription)"""
+        return _swigibpy.EClientSocketBase_reqScannerSubscription(self, *args)
+
+    def reqCurrentTime(self):
+        """reqCurrentTime(self)"""
+        return _swigibpy.EClientSocketBase_reqCurrentTime(self)
+
+    def reqFundamentalData(self, *args):
+        """reqFundamentalData(self, TickerId reqId, Contract arg1, IBString reportType)"""
+        return _swigibpy.EClientSocketBase_reqFundamentalData(self, *args)
+
+    def cancelFundamentalData(self, *args):
+        """cancelFundamentalData(self, TickerId reqId)"""
+        return _swigibpy.EClientSocketBase_cancelFundamentalData(self, *args)
+
+    def calculateImpliedVolatility(self, *args):
+        """
+        calculateImpliedVolatility(self, TickerId reqId, Contract contract, double optionPrice, 
+            double underPrice)
+        """
+        return _swigibpy.EClientSocketBase_calculateImpliedVolatility(self, *args)
+
+    def calculateOptionPrice(self, *args):
+        """
+        calculateOptionPrice(self, TickerId reqId, Contract contract, double volatility, 
+            double underPrice)
+        """
+        return _swigibpy.EClientSocketBase_calculateOptionPrice(self, *args)
+
+    def cancelCalculateImpliedVolatility(self, *args):
+        """cancelCalculateImpliedVolatility(self, TickerId reqId)"""
+        return _swigibpy.EClientSocketBase_cancelCalculateImpliedVolatility(self, *args)
+
+    def cancelCalculateOptionPrice(self, *args):
+        """cancelCalculateOptionPrice(self, TickerId reqId)"""
+        return _swigibpy.EClientSocketBase_cancelCalculateOptionPrice(self, *args)
+
+EClientSocketBase.eConnect = new_instancemethod(_swigibpy.EClientSocketBase_eConnect,None,EClientSocketBase)
+EClientSocketBase.eDisconnect = new_instancemethod(_swigibpy.EClientSocketBase_eDisconnect,None,EClientSocketBase)
+EClientSocketBase.isConnected = new_instancemethod(_swigibpy.EClientSocketBase_isConnected,None,EClientSocketBase)
+EClientSocketBase.isInBufferEmpty = new_instancemethod(_swigibpy.EClientSocketBase_isInBufferEmpty,None,EClientSocketBase)
+EClientSocketBase.isOutBufferEmpty = new_instancemethod(_swigibpy.EClientSocketBase_isOutBufferEmpty,None,EClientSocketBase)
+EClientSocketBase.serverVersion = new_instancemethod(_swigibpy.EClientSocketBase_serverVersion,None,EClientSocketBase)
+EClientSocketBase.TwsConnectionTime = new_instancemethod(_swigibpy.EClientSocketBase_TwsConnectionTime,None,EClientSocketBase)
+EClientSocketBase.reqMktData = new_instancemethod(_swigibpy.EClientSocketBase_reqMktData,None,EClientSocketBase)
+EClientSocketBase.cancelMktData = new_instancemethod(_swigibpy.EClientSocketBase_cancelMktData,None,EClientSocketBase)
+EClientSocketBase.placeOrder = new_instancemethod(_swigibpy.EClientSocketBase_placeOrder,None,EClientSocketBase)
+EClientSocketBase.cancelOrder = new_instancemethod(_swigibpy.EClientSocketBase_cancelOrder,None,EClientSocketBase)
+EClientSocketBase.reqOpenOrders = new_instancemethod(_swigibpy.EClientSocketBase_reqOpenOrders,None,EClientSocketBase)
+EClientSocketBase.reqAccountUpdates = new_instancemethod(_swigibpy.EClientSocketBase_reqAccountUpdates,None,EClientSocketBase)
+EClientSocketBase.reqExecutions = new_instancemethod(_swigibpy.EClientSocketBase_reqExecutions,None,EClientSocketBase)
+EClientSocketBase.reqIds = new_instancemethod(_swigibpy.EClientSocketBase_reqIds,None,EClientSocketBase)
+EClientSocketBase.checkMessages = new_instancemethod(_swigibpy.EClientSocketBase_checkMessages,None,EClientSocketBase)
+EClientSocketBase.reqContractDetails = new_instancemethod(_swigibpy.EClientSocketBase_reqContractDetails,None,EClientSocketBase)
+EClientSocketBase.reqMktDepth = new_instancemethod(_swigibpy.EClientSocketBase_reqMktDepth,None,EClientSocketBase)
+EClientSocketBase.cancelMktDepth = new_instancemethod(_swigibpy.EClientSocketBase_cancelMktDepth,None,EClientSocketBase)
+EClientSocketBase.reqNewsBulletins = new_instancemethod(_swigibpy.EClientSocketBase_reqNewsBulletins,None,EClientSocketBase)
+EClientSocketBase.cancelNewsBulletins = new_instancemethod(_swigibpy.EClientSocketBase_cancelNewsBulletins,None,EClientSocketBase)
+EClientSocketBase.setServerLogLevel = new_instancemethod(_swigibpy.EClientSocketBase_setServerLogLevel,None,EClientSocketBase)
+EClientSocketBase.reqAutoOpenOrders = new_instancemethod(_swigibpy.EClientSocketBase_reqAutoOpenOrders,None,EClientSocketBase)
+EClientSocketBase.reqAllOpenOrders = new_instancemethod(_swigibpy.EClientSocketBase_reqAllOpenOrders,None,EClientSocketBase)
+EClientSocketBase.reqManagedAccts = new_instancemethod(_swigibpy.EClientSocketBase_reqManagedAccts,None,EClientSocketBase)
+EClientSocketBase.requestFA = new_instancemethod(_swigibpy.EClientSocketBase_requestFA,None,EClientSocketBase)
+EClientSocketBase.replaceFA = new_instancemethod(_swigibpy.EClientSocketBase_replaceFA,None,EClientSocketBase)
+EClientSocketBase.reqHistoricalData = new_instancemethod(_swigibpy.EClientSocketBase_reqHistoricalData,None,EClientSocketBase)
+EClientSocketBase.exerciseOptions = new_instancemethod(_swigibpy.EClientSocketBase_exerciseOptions,None,EClientSocketBase)
+EClientSocketBase.cancelHistoricalData = new_instancemethod(_swigibpy.EClientSocketBase_cancelHistoricalData,None,EClientSocketBase)
+EClientSocketBase.reqRealTimeBars = new_instancemethod(_swigibpy.EClientSocketBase_reqRealTimeBars,None,EClientSocketBase)
+EClientSocketBase.cancelRealTimeBars = new_instancemethod(_swigibpy.EClientSocketBase_cancelRealTimeBars,None,EClientSocketBase)
+EClientSocketBase.cancelScannerSubscription = new_instancemethod(_swigibpy.EClientSocketBase_cancelScannerSubscription,None,EClientSocketBase)
+EClientSocketBase.reqScannerParameters = new_instancemethod(_swigibpy.EClientSocketBase_reqScannerParameters,None,EClientSocketBase)
+EClientSocketBase.reqScannerSubscription = new_instancemethod(_swigibpy.EClientSocketBase_reqScannerSubscription,None,EClientSocketBase)
+EClientSocketBase.reqCurrentTime = new_instancemethod(_swigibpy.EClientSocketBase_reqCurrentTime,None,EClientSocketBase)
+EClientSocketBase.reqFundamentalData = new_instancemethod(_swigibpy.EClientSocketBase_reqFundamentalData,None,EClientSocketBase)
+EClientSocketBase.cancelFundamentalData = new_instancemethod(_swigibpy.EClientSocketBase_cancelFundamentalData,None,EClientSocketBase)
+EClientSocketBase.calculateImpliedVolatility = new_instancemethod(_swigibpy.EClientSocketBase_calculateImpliedVolatility,None,EClientSocketBase)
+EClientSocketBase.calculateOptionPrice = new_instancemethod(_swigibpy.EClientSocketBase_calculateOptionPrice,None,EClientSocketBase)
+EClientSocketBase.cancelCalculateImpliedVolatility = new_instancemethod(_swigibpy.EClientSocketBase_cancelCalculateImpliedVolatility,None,EClientSocketBase)
+EClientSocketBase.cancelCalculateOptionPrice = new_instancemethod(_swigibpy.EClientSocketBase_cancelCalculateOptionPrice,None,EClientSocketBase)
+EClientSocketBase_swigregister = _swigibpy.EClientSocketBase_swigregister
+EClientSocketBase_swigregister(EClientSocketBase)
+
+SAME_POS = _swigibpy.SAME_POS
+OPEN_POS = _swigibpy.OPEN_POS
+CLOSE_POS = _swigibpy.CLOSE_POS
+UNKNOWN_POS = _swigibpy.UNKNOWN_POS
+class ComboLeg(object):
+    """Proxy of C++ ComboLeg class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> ComboLeg"""
+        _swigibpy.ComboLeg_swiginit(self,_swigibpy.new_ComboLeg())
+    conId = _swig_property(_swigibpy.ComboLeg_conId_get, _swigibpy.ComboLeg_conId_set)
+    ratio = _swig_property(_swigibpy.ComboLeg_ratio_get, _swigibpy.ComboLeg_ratio_set)
+    action = _swig_property(_swigibpy.ComboLeg_action_get, _swigibpy.ComboLeg_action_set)
+    exchange = _swig_property(_swigibpy.ComboLeg_exchange_get, _swigibpy.ComboLeg_exchange_set)
+    openClose = _swig_property(_swigibpy.ComboLeg_openClose_get, _swigibpy.ComboLeg_openClose_set)
+    shortSaleSlot = _swig_property(_swigibpy.ComboLeg_shortSaleSlot_get, _swigibpy.ComboLeg_shortSaleSlot_set)
+    designatedLocation = _swig_property(_swigibpy.ComboLeg_designatedLocation_get, _swigibpy.ComboLeg_designatedLocation_set)
+    def __eq__(self, *args):
+        """__eq__(self, ComboLeg other) -> bool"""
+        return _swigibpy.ComboLeg___eq__(self, *args)
+
+    __swig_destroy__ = _swigibpy.delete_ComboLeg
+ComboLeg.__eq__ = new_instancemethod(_swigibpy.ComboLeg___eq__,None,ComboLeg)
+ComboLeg_swigregister = _swigibpy.ComboLeg_swigregister
+ComboLeg_swigregister(ComboLeg)
+
+class UnderComp(object):
+    """Proxy of C++ UnderComp class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> UnderComp"""
+        _swigibpy.UnderComp_swiginit(self,_swigibpy.new_UnderComp())
+    conId = _swig_property(_swigibpy.UnderComp_conId_get, _swigibpy.UnderComp_conId_set)
+    delta = _swig_property(_swigibpy.UnderComp_delta_get, _swigibpy.UnderComp_delta_set)
+    price = _swig_property(_swigibpy.UnderComp_price_get, _swigibpy.UnderComp_price_set)
+    __swig_destroy__ = _swigibpy.delete_UnderComp
+UnderComp_swigregister = _swigibpy.UnderComp_swigregister
+UnderComp_swigregister(UnderComp)
+
+class Contract(object):
+    """Proxy of C++ Contract class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> Contract"""
+        _swigibpy.Contract_swiginit(self,_swigibpy.new_Contract())
+    conId = _swig_property(_swigibpy.Contract_conId_get, _swigibpy.Contract_conId_set)
+    symbol = _swig_property(_swigibpy.Contract_symbol_get, _swigibpy.Contract_symbol_set)
+    secType = _swig_property(_swigibpy.Contract_secType_get, _swigibpy.Contract_secType_set)
+    expiry = _swig_property(_swigibpy.Contract_expiry_get, _swigibpy.Contract_expiry_set)
+    strike = _swig_property(_swigibpy.Contract_strike_get, _swigibpy.Contract_strike_set)
+    right = _swig_property(_swigibpy.Contract_right_get, _swigibpy.Contract_right_set)
+    multiplier = _swig_property(_swigibpy.Contract_multiplier_get, _swigibpy.Contract_multiplier_set)
+    exchange = _swig_property(_swigibpy.Contract_exchange_get, _swigibpy.Contract_exchange_set)
+    primaryExchange = _swig_property(_swigibpy.Contract_primaryExchange_get, _swigibpy.Contract_primaryExchange_set)
+    currency = _swig_property(_swigibpy.Contract_currency_get, _swigibpy.Contract_currency_set)
+    localSymbol = _swig_property(_swigibpy.Contract_localSymbol_get, _swigibpy.Contract_localSymbol_set)
+    includeExpired = _swig_property(_swigibpy.Contract_includeExpired_get, _swigibpy.Contract_includeExpired_set)
+    secIdType = _swig_property(_swigibpy.Contract_secIdType_get, _swigibpy.Contract_secIdType_set)
+    secId = _swig_property(_swigibpy.Contract_secId_get, _swigibpy.Contract_secId_set)
+    comboLegsDescrip = _swig_property(_swigibpy.Contract_comboLegsDescrip_get, _swigibpy.Contract_comboLegsDescrip_set)
+    comboLegs = _swig_property(_swigibpy.Contract_comboLegs_get, _swigibpy.Contract_comboLegs_set)
+    underComp = _swig_property(_swigibpy.Contract_underComp_get, _swigibpy.Contract_underComp_set)
+    def CloneComboLegs(*args):
+        """CloneComboLegs(ComboLegList dst, ComboLegList src)"""
+        return _swigibpy.Contract_CloneComboLegs(*args)
+
+    CloneComboLegs = staticmethod(CloneComboLegs)
+    def CleanupComboLegs(*args):
+        """CleanupComboLegs(ComboLegList arg0)"""
+        return _swigibpy.Contract_CleanupComboLegs(*args)
+
+    CleanupComboLegs = staticmethod(CleanupComboLegs)
+    __swig_destroy__ = _swigibpy.delete_Contract
+Contract_swigregister = _swigibpy.Contract_swigregister
+Contract_swigregister(Contract)
+
+def Contract_CloneComboLegs(*args):
+  """Contract_CloneComboLegs(ComboLegList dst, ComboLegList src)"""
+  return _swigibpy.Contract_CloneComboLegs(*args)
+
+def Contract_CleanupComboLegs(*args):
+  """Contract_CleanupComboLegs(ComboLegList arg0)"""
+  return _swigibpy.Contract_CleanupComboLegs(*args)
+
+class ContractDetails(object):
+    """Proxy of C++ ContractDetails class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> ContractDetails"""
+        _swigibpy.ContractDetails_swiginit(self,_swigibpy.new_ContractDetails())
+    summary = _swig_property(_swigibpy.ContractDetails_summary_get, _swigibpy.ContractDetails_summary_set)
+    marketName = _swig_property(_swigibpy.ContractDetails_marketName_get, _swigibpy.ContractDetails_marketName_set)
+    tradingClass = _swig_property(_swigibpy.ContractDetails_tradingClass_get, _swigibpy.ContractDetails_tradingClass_set)
+    minTick = _swig_property(_swigibpy.ContractDetails_minTick_get, _swigibpy.ContractDetails_minTick_set)
+    orderTypes = _swig_property(_swigibpy.ContractDetails_orderTypes_get, _swigibpy.ContractDetails_orderTypes_set)
+    validExchanges = _swig_property(_swigibpy.ContractDetails_validExchanges_get, _swigibpy.ContractDetails_validExchanges_set)
+    priceMagnifier = _swig_property(_swigibpy.ContractDetails_priceMagnifier_get, _swigibpy.ContractDetails_priceMagnifier_set)
+    underConId = _swig_property(_swigibpy.ContractDetails_underConId_get, _swigibpy.ContractDetails_underConId_set)
+    longName = _swig_property(_swigibpy.ContractDetails_longName_get, _swigibpy.ContractDetails_longName_set)
+    contractMonth = _swig_property(_swigibpy.ContractDetails_contractMonth_get, _swigibpy.ContractDetails_contractMonth_set)
+    industry = _swig_property(_swigibpy.ContractDetails_industry_get, _swigibpy.ContractDetails_industry_set)
+    category = _swig_property(_swigibpy.ContractDetails_category_get, _swigibpy.ContractDetails_category_set)
+    subcategory = _swig_property(_swigibpy.ContractDetails_subcategory_get, _swigibpy.ContractDetails_subcategory_set)
+    timeZoneId = _swig_property(_swigibpy.ContractDetails_timeZoneId_get, _swigibpy.ContractDetails_timeZoneId_set)
+    tradingHours = _swig_property(_swigibpy.ContractDetails_tradingHours_get, _swigibpy.ContractDetails_tradingHours_set)
+    liquidHours = _swig_property(_swigibpy.ContractDetails_liquidHours_get, _swigibpy.ContractDetails_liquidHours_set)
+    cusip = _swig_property(_swigibpy.ContractDetails_cusip_get, _swigibpy.ContractDetails_cusip_set)
+    ratings = _swig_property(_swigibpy.ContractDetails_ratings_get, _swigibpy.ContractDetails_ratings_set)
+    descAppend = _swig_property(_swigibpy.ContractDetails_descAppend_get, _swigibpy.ContractDetails_descAppend_set)
+    bondType = _swig_property(_swigibpy.ContractDetails_bondType_get, _swigibpy.ContractDetails_bondType_set)
+    couponType = _swig_property(_swigibpy.ContractDetails_couponType_get, _swigibpy.ContractDetails_couponType_set)
+    callable = _swig_property(_swigibpy.ContractDetails_callable_get, _swigibpy.ContractDetails_callable_set)
+    putable = _swig_property(_swigibpy.ContractDetails_putable_get, _swigibpy.ContractDetails_putable_set)
+    coupon = _swig_property(_swigibpy.ContractDetails_coupon_get, _swigibpy.ContractDetails_coupon_set)
+    convertible = _swig_property(_swigibpy.ContractDetails_convertible_get, _swigibpy.ContractDetails_convertible_set)
+    maturity = _swig_property(_swigibpy.ContractDetails_maturity_get, _swigibpy.ContractDetails_maturity_set)
+    issueDate = _swig_property(_swigibpy.ContractDetails_issueDate_get, _swigibpy.ContractDetails_issueDate_set)
+    nextOptionDate = _swig_property(_swigibpy.ContractDetails_nextOptionDate_get, _swigibpy.ContractDetails_nextOptionDate_set)
+    nextOptionType = _swig_property(_swigibpy.ContractDetails_nextOptionType_get, _swigibpy.ContractDetails_nextOptionType_set)
+    nextOptionPartial = _swig_property(_swigibpy.ContractDetails_nextOptionPartial_get, _swigibpy.ContractDetails_nextOptionPartial_set)
+    notes = _swig_property(_swigibpy.ContractDetails_notes_get, _swigibpy.ContractDetails_notes_set)
+    __swig_destroy__ = _swigibpy.delete_ContractDetails
+ContractDetails_swigregister = _swigibpy.ContractDetails_swigregister
+ContractDetails_swigregister(ContractDetails)
+
+GROUPS = _swigibpy.GROUPS
+PROFILES = _swigibpy.PROFILES
+ALIASES = _swigibpy.ALIASES
+
+def faDataTypeStr(*args):
+  """faDataTypeStr(faDataType pFaDataType) -> char"""
+  return _swigibpy.faDataTypeStr(*args)
+import threading
+import time
+class TWSPoller(threading.Thread):
+    '''Polls TWS every second for any outstanding messages'''
+    
+    def __init__(self, tws):
+        super(TWSPoller, self).__init__()
+        self.daemon = True
+        self._tws = tws
+        self.stop_polling = False
+    
+    def run(self):
+        '''Continually poll TWS until the stop flag is set'''
+        while not self.stop_polling:
+            try:
+                self._tws.checkMessages()
+            except:
+                pass
+            time.sleep(1)
+
+class EPosixClientSocket(EClientSocketBase):
+    """Proxy of C++ EPosixClientSocket class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        """__init__(self, EWrapper ptr) -> EPosixClientSocket"""
+        _swigibpy.EPosixClientSocket_swiginit(self,_swigibpy.new_EPosixClientSocket(*args))
+    __swig_destroy__ = _swigibpy.delete_EPosixClientSocket
+    def eConnect(self, *args):
+        """
+        eConnect(self, char host, unsigned int port, int clientId = 0) -> bool
+        eConnect(self, char host, unsigned int port) -> bool
+        """
+        val = _swigibpy.EPosixClientSocket_eConnect(self, *args)
+        if val:
+            self.poller = TWSPoller(self)
+            self.poller.start()
 
 
+        return val
+
+    def eDisconnect(self):
+        """eDisconnect(self)"""
+        if self.poller:
+            self.poller.stop_polling = True
+            self.poller = None
 
 
+        return _swigibpy.EPosixClientSocket_eDisconnect(self)
 
+    def isSocketOK(self):
+        """isSocketOK(self) -> bool"""
+        return _swigibpy.EPosixClientSocket_isSocketOK(self)
 
+    def fd(self):
+        """fd(self) -> int"""
+        return _swigibpy.EPosixClientSocket_fd(self)
 
+    def onReceive(self):
+        """onReceive(self)"""
+        return _swigibpy.EPosixClientSocket_onReceive(self)
+
+    def onSend(self):
+        """onSend(self)"""
+        return _swigibpy.EPosixClientSocket_onSend(self)
+
+    def onError(self):
+        """onError(self)"""
+        return _swigibpy.EPosixClientSocket_onError(self)
+
+    def handleSocketError(self):
+        """handleSocketError(self) -> bool"""
+        return _swigibpy.EPosixClientSocket_handleSocketError(self)
+
+EPosixClientSocket.isSocketOK = new_instancemethod(_swigibpy.EPosixClientSocket_isSocketOK,None,EPosixClientSocket)
+EPosixClientSocket.fd = new_instancemethod(_swigibpy.EPosixClientSocket_fd,None,EPosixClientSocket)
+EPosixClientSocket.onReceive = new_instancemethod(_swigibpy.EPosixClientSocket_onReceive,None,EPosixClientSocket)
+EPosixClientSocket.onSend = new_instancemethod(_swigibpy.EPosixClientSocket_onSend,None,EPosixClientSocket)
+EPosixClientSocket.onError = new_instancemethod(_swigibpy.EPosixClientSocket_onError,None,EPosixClientSocket)
+EPosixClientSocket.handleSocketError = new_instancemethod(_swigibpy.EPosixClientSocket_handleSocketError,None,EPosixClientSocket)
+EPosixClientSocket_swigregister = _swigibpy.EPosixClientSocket_swigregister
+EPosixClientSocket_swigregister(EPosixClientSocket)
 
 class TWSError(Exception):
     '''Exception raised during communication with Interactive Brokers TWS 
     application
-    
     '''
     
     def __init__(self, code, msg):
@@ -110,31 +791,184 @@ class TWSError(Exception):
     def __str__(self):
         return "%s: %s" % (self.code, repr(self.msg))
 
-
 class TWSSystemError(TWSError):
     '''System related exception raised during communication with Interactive 
     Brokers TWS application.
-    
     '''
     pass
     
 class TWSClientError(TWSError):
     '''Exception raised on client (python) side by Interactive Brokers API'''
     pass
-    
-class EWrapper(_EWrapper):
-    '''Basic swigibpy implementation which provides more transparent error 
-    messages. Error methods are implemented to convert exceptions appropriately. 
-    
-    '''
-    
-    def __init__(self): 
-        _EWrapper.__init__(self)
+
+BID_SIZE = _swigibpy.BID_SIZE
+BID = _swigibpy.BID
+ASK = _swigibpy.ASK
+ASK_SIZE = _swigibpy.ASK_SIZE
+LAST = _swigibpy.LAST
+LAST_SIZE = _swigibpy.LAST_SIZE
+HIGH = _swigibpy.HIGH
+LOW = _swigibpy.LOW
+VOLUME = _swigibpy.VOLUME
+CLOSE = _swigibpy.CLOSE
+BID_OPTION_COMPUTATION = _swigibpy.BID_OPTION_COMPUTATION
+ASK_OPTION_COMPUTATION = _swigibpy.ASK_OPTION_COMPUTATION
+LAST_OPTION_COMPUTATION = _swigibpy.LAST_OPTION_COMPUTATION
+MODEL_OPTION = _swigibpy.MODEL_OPTION
+OPEN = _swigibpy.OPEN
+LOW_13_WEEK = _swigibpy.LOW_13_WEEK
+HIGH_13_WEEK = _swigibpy.HIGH_13_WEEK
+LOW_26_WEEK = _swigibpy.LOW_26_WEEK
+HIGH_26_WEEK = _swigibpy.HIGH_26_WEEK
+LOW_52_WEEK = _swigibpy.LOW_52_WEEK
+HIGH_52_WEEK = _swigibpy.HIGH_52_WEEK
+AVG_VOLUME = _swigibpy.AVG_VOLUME
+OPEN_INTEREST = _swigibpy.OPEN_INTEREST
+OPTION_HISTORICAL_VOL = _swigibpy.OPTION_HISTORICAL_VOL
+OPTION_IMPLIED_VOL = _swigibpy.OPTION_IMPLIED_VOL
+OPTION_BID_EXCH = _swigibpy.OPTION_BID_EXCH
+OPTION_ASK_EXCH = _swigibpy.OPTION_ASK_EXCH
+OPTION_CALL_OPEN_INTEREST = _swigibpy.OPTION_CALL_OPEN_INTEREST
+OPTION_PUT_OPEN_INTEREST = _swigibpy.OPTION_PUT_OPEN_INTEREST
+OPTION_CALL_VOLUME = _swigibpy.OPTION_CALL_VOLUME
+OPTION_PUT_VOLUME = _swigibpy.OPTION_PUT_VOLUME
+INDEX_FUTURE_PREMIUM = _swigibpy.INDEX_FUTURE_PREMIUM
+BID_EXCH = _swigibpy.BID_EXCH
+ASK_EXCH = _swigibpy.ASK_EXCH
+AUCTION_VOLUME = _swigibpy.AUCTION_VOLUME
+AUCTION_PRICE = _swigibpy.AUCTION_PRICE
+AUCTION_IMBALANCE = _swigibpy.AUCTION_IMBALANCE
+MARK_PRICE = _swigibpy.MARK_PRICE
+BID_EFP_COMPUTATION = _swigibpy.BID_EFP_COMPUTATION
+ASK_EFP_COMPUTATION = _swigibpy.ASK_EFP_COMPUTATION
+LAST_EFP_COMPUTATION = _swigibpy.LAST_EFP_COMPUTATION
+OPEN_EFP_COMPUTATION = _swigibpy.OPEN_EFP_COMPUTATION
+HIGH_EFP_COMPUTATION = _swigibpy.HIGH_EFP_COMPUTATION
+LOW_EFP_COMPUTATION = _swigibpy.LOW_EFP_COMPUTATION
+CLOSE_EFP_COMPUTATION = _swigibpy.CLOSE_EFP_COMPUTATION
+LAST_TIMESTAMP = _swigibpy.LAST_TIMESTAMP
+SHORTABLE = _swigibpy.SHORTABLE
+FUNDAMENTAL_RATIOS = _swigibpy.FUNDAMENTAL_RATIOS
+RT_VOLUME = _swigibpy.RT_VOLUME
+HALTED = _swigibpy.HALTED
+BID_YIELD = _swigibpy.BID_YIELD
+ASK_YIELD = _swigibpy.ASK_YIELD
+LAST_YIELD = _swigibpy.LAST_YIELD
+CUST_OPTION_COMPUTATION = _swigibpy.CUST_OPTION_COMPUTATION
+NOT_SET = _swigibpy.NOT_SET
+
+def isPrice(*args):
+  """isPrice(TickType tickType) -> bool"""
+  return _swigibpy.isPrice(*args)
+class EWrapper(object):
+    """Proxy of C++ EWrapper class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    __swig_destroy__ = _swigibpy.delete_EWrapper
+    def tickPrice(self, *args):
+        """tickPrice(self, TickerId tickerId, TickType field, double price, int canAutoExecute)"""
+        return _swigibpy.EWrapper_tickPrice(self, *args)
+
+    def tickSize(self, *args):
+        """tickSize(self, TickerId tickerId, TickType field, int size)"""
+        return _swigibpy.EWrapper_tickSize(self, *args)
+
+    def tickOptionComputation(self, *args):
+        """
+        tickOptionComputation(self, TickerId tickerId, TickType tickType, double impliedVol, 
+            double delta, double optPrice, double pvDividend, 
+            double gamma, double vega, double theta, 
+            double undPrice)
+        """
+        return _swigibpy.EWrapper_tickOptionComputation(self, *args)
+
+    def tickGeneric(self, *args):
+        """tickGeneric(self, TickerId tickerId, TickType tickType, double value)"""
+        return _swigibpy.EWrapper_tickGeneric(self, *args)
+
+    def tickString(self, *args):
+        """tickString(self, TickerId tickerId, TickType tickType, IBString value)"""
+        return _swigibpy.EWrapper_tickString(self, *args)
+
+    def tickEFP(self, *args):
+        """
+        tickEFP(self, TickerId tickerId, TickType tickType, double basisPoints, 
+            IBString formattedBasisPoints, double totalDividends, 
+            int holdDays, IBString futureExpiry, 
+            double dividendImpact, double dividendsToExpiry)
+        """
+        return _swigibpy.EWrapper_tickEFP(self, *args)
+
+    def orderStatus(self, *args):
+        """
+        orderStatus(self, OrderId orderId, IBString status, int filled, int remaining, 
+            double avgFillPrice, int permId, int parentId, 
+            double lastFillPrice, int clientId, 
+            IBString whyHeld)
+        """
+        return _swigibpy.EWrapper_orderStatus(self, *args)
+
+    def openOrder(self, *args):
+        """openOrder(self, OrderId orderId, Contract arg0, Order arg1, OrderState arg2)"""
+        return _swigibpy.EWrapper_openOrder(self, *args)
+
+    def openOrderEnd(self):
+        """openOrderEnd(self)"""
+        return _swigibpy.EWrapper_openOrderEnd(self)
 
     def winError(self, str, lastError):
         '''Error in TWS API library'''
         
         raise TWSClientError(lastError, str)
+
+
+    def connectionClosed(self):
+        """connectionClosed(self)"""
+        return _swigibpy.EWrapper_connectionClosed(self)
+
+    def updateAccountValue(self, *args):
+        """updateAccountValue(self, IBString key, IBString val, IBString currency, IBString accountName)"""
+        return _swigibpy.EWrapper_updateAccountValue(self, *args)
+
+    def updatePortfolio(self, *args):
+        """
+        updatePortfolio(self, Contract contract, int position, double marketPrice, 
+            double marketValue, double averageCost, double unrealizedPNL, 
+            double realizedPNL, IBString accountName)
+        """
+        return _swigibpy.EWrapper_updatePortfolio(self, *args)
+
+    def updateAccountTime(self, *args):
+        """updateAccountTime(self, IBString timeStamp)"""
+        return _swigibpy.EWrapper_updateAccountTime(self, *args)
+
+    def accountDownloadEnd(self, *args):
+        """accountDownloadEnd(self, IBString accountName)"""
+        return _swigibpy.EWrapper_accountDownloadEnd(self, *args)
+
+    def nextValidId(self, *args):
+        """nextValidId(self, OrderId orderId)"""
+        return _swigibpy.EWrapper_nextValidId(self, *args)
+
+    def contractDetails(self, *args):
+        """contractDetails(self, int reqId, ContractDetails contractDetails)"""
+        return _swigibpy.EWrapper_contractDetails(self, *args)
+
+    def bondContractDetails(self, *args):
+        """bondContractDetails(self, int reqId, ContractDetails contractDetails)"""
+        return _swigibpy.EWrapper_bondContractDetails(self, *args)
+
+    def contractDetailsEnd(self, *args):
+        """contractDetailsEnd(self, int reqId)"""
+        return _swigibpy.EWrapper_contractDetailsEnd(self, *args)
+
+    def execDetails(self, *args):
+        """execDetails(self, int reqId, Contract contract, Execution execution)"""
+        return _swigibpy.EWrapper_execDetails(self, *args)
+
+    def execDetailsEnd(self, *args):
+        """execDetailsEnd(self, int reqId)"""
+        return _swigibpy.EWrapper_execDetailsEnd(self, *args)
 
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
@@ -150,6 +984,129 @@ class EWrapper(_EWrapper):
             sys.stderr.write("TWS Warning %s: %s\n" % (errorCode, errorString))
         else:
             raise RuntimeError(errorCode, errorString)
+
+
+    def updateMktDepth(self, *args):
+        """
+        updateMktDepth(self, TickerId id, int position, int operation, int side, 
+            double price, int size)
+        """
+        return _swigibpy.EWrapper_updateMktDepth(self, *args)
+
+    def updateMktDepthL2(self, *args):
+        """
+        updateMktDepthL2(self, TickerId id, int position, IBString marketMaker, int operation, 
+            int side, double price, int size)
+        """
+        return _swigibpy.EWrapper_updateMktDepthL2(self, *args)
+
+    def updateNewsBulletin(self, *args):
+        """updateNewsBulletin(self, int msgId, int msgType, IBString newsMessage, IBString originExch)"""
+        return _swigibpy.EWrapper_updateNewsBulletin(self, *args)
+
+    def managedAccounts(self, *args):
+        """managedAccounts(self, IBString accountsList)"""
+        return _swigibpy.EWrapper_managedAccounts(self, *args)
+
+    def receiveFA(self, *args):
+        """receiveFA(self, faDataType pFaDataType, IBString cxml)"""
+        return _swigibpy.EWrapper_receiveFA(self, *args)
+
+    def historicalData(self, *args):
+        """
+        historicalData(self, TickerId reqId, IBString date, double open, double high, 
+            double low, double close, int volume, int barCount, 
+            double WAP, int hasGaps)
+        """
+        return _swigibpy.EWrapper_historicalData(self, *args)
+
+    def scannerParameters(self, *args):
+        """scannerParameters(self, IBString xml)"""
+        return _swigibpy.EWrapper_scannerParameters(self, *args)
+
+    def scannerData(self, *args):
+        """
+        scannerData(self, int reqId, int rank, ContractDetails contractDetails, 
+            IBString distance, IBString benchmark, IBString projection, 
+            IBString legsStr)
+        """
+        return _swigibpy.EWrapper_scannerData(self, *args)
+
+    def scannerDataEnd(self, *args):
+        """scannerDataEnd(self, int reqId)"""
+        return _swigibpy.EWrapper_scannerDataEnd(self, *args)
+
+    def realtimeBar(self, *args):
+        """
+        realtimeBar(self, TickerId reqId, long time, double open, double high, 
+            double low, double close, long volume, double wap, 
+            int count)
+        """
+        return _swigibpy.EWrapper_realtimeBar(self, *args)
+
+    def currentTime(self, *args):
+        """currentTime(self, long time)"""
+        return _swigibpy.EWrapper_currentTime(self, *args)
+
+    def fundamentalData(self, *args):
+        """fundamentalData(self, TickerId reqId, IBString data)"""
+        return _swigibpy.EWrapper_fundamentalData(self, *args)
+
+    def deltaNeutralValidation(self, *args):
+        """deltaNeutralValidation(self, int reqId, UnderComp underComp)"""
+        return _swigibpy.EWrapper_deltaNeutralValidation(self, *args)
+
+    def tickSnapshotEnd(self, *args):
+        """tickSnapshotEnd(self, int reqId)"""
+        return _swigibpy.EWrapper_tickSnapshotEnd(self, *args)
+
+    def __init__(self): 
+        """__init__(self) -> EWrapper"""
+        if self.__class__ == EWrapper:
+            _self = None
+        else:
+            _self = self
+        _swigibpy.EWrapper_swiginit(self,_swigibpy.new_EWrapper(_self, ))
+    def __disown__(self):
+        self.this.disown()
+        _swigibpy.disown_EWrapper(self)
+        return weakref_proxy(self)
+EWrapper.tickPrice = new_instancemethod(_swigibpy.EWrapper_tickPrice,None,EWrapper)
+EWrapper.tickSize = new_instancemethod(_swigibpy.EWrapper_tickSize,None,EWrapper)
+EWrapper.tickOptionComputation = new_instancemethod(_swigibpy.EWrapper_tickOptionComputation,None,EWrapper)
+EWrapper.tickGeneric = new_instancemethod(_swigibpy.EWrapper_tickGeneric,None,EWrapper)
+EWrapper.tickString = new_instancemethod(_swigibpy.EWrapper_tickString,None,EWrapper)
+EWrapper.tickEFP = new_instancemethod(_swigibpy.EWrapper_tickEFP,None,EWrapper)
+EWrapper.orderStatus = new_instancemethod(_swigibpy.EWrapper_orderStatus,None,EWrapper)
+EWrapper.openOrder = new_instancemethod(_swigibpy.EWrapper_openOrder,None,EWrapper)
+EWrapper.openOrderEnd = new_instancemethod(_swigibpy.EWrapper_openOrderEnd,None,EWrapper)
+EWrapper.connectionClosed = new_instancemethod(_swigibpy.EWrapper_connectionClosed,None,EWrapper)
+EWrapper.updateAccountValue = new_instancemethod(_swigibpy.EWrapper_updateAccountValue,None,EWrapper)
+EWrapper.updatePortfolio = new_instancemethod(_swigibpy.EWrapper_updatePortfolio,None,EWrapper)
+EWrapper.updateAccountTime = new_instancemethod(_swigibpy.EWrapper_updateAccountTime,None,EWrapper)
+EWrapper.accountDownloadEnd = new_instancemethod(_swigibpy.EWrapper_accountDownloadEnd,None,EWrapper)
+EWrapper.nextValidId = new_instancemethod(_swigibpy.EWrapper_nextValidId,None,EWrapper)
+EWrapper.contractDetails = new_instancemethod(_swigibpy.EWrapper_contractDetails,None,EWrapper)
+EWrapper.bondContractDetails = new_instancemethod(_swigibpy.EWrapper_bondContractDetails,None,EWrapper)
+EWrapper.contractDetailsEnd = new_instancemethod(_swigibpy.EWrapper_contractDetailsEnd,None,EWrapper)
+EWrapper.execDetails = new_instancemethod(_swigibpy.EWrapper_execDetails,None,EWrapper)
+EWrapper.execDetailsEnd = new_instancemethod(_swigibpy.EWrapper_execDetailsEnd,None,EWrapper)
+EWrapper.updateMktDepth = new_instancemethod(_swigibpy.EWrapper_updateMktDepth,None,EWrapper)
+EWrapper.updateMktDepthL2 = new_instancemethod(_swigibpy.EWrapper_updateMktDepthL2,None,EWrapper)
+EWrapper.updateNewsBulletin = new_instancemethod(_swigibpy.EWrapper_updateNewsBulletin,None,EWrapper)
+EWrapper.managedAccounts = new_instancemethod(_swigibpy.EWrapper_managedAccounts,None,EWrapper)
+EWrapper.receiveFA = new_instancemethod(_swigibpy.EWrapper_receiveFA,None,EWrapper)
+EWrapper.historicalData = new_instancemethod(_swigibpy.EWrapper_historicalData,None,EWrapper)
+EWrapper.scannerParameters = new_instancemethod(_swigibpy.EWrapper_scannerParameters,None,EWrapper)
+EWrapper.scannerData = new_instancemethod(_swigibpy.EWrapper_scannerData,None,EWrapper)
+EWrapper.scannerDataEnd = new_instancemethod(_swigibpy.EWrapper_scannerDataEnd,None,EWrapper)
+EWrapper.realtimeBar = new_instancemethod(_swigibpy.EWrapper_realtimeBar,None,EWrapper)
+EWrapper.currentTime = new_instancemethod(_swigibpy.EWrapper_currentTime,None,EWrapper)
+EWrapper.fundamentalData = new_instancemethod(_swigibpy.EWrapper_fundamentalData,None,EWrapper)
+EWrapper.deltaNeutralValidation = new_instancemethod(_swigibpy.EWrapper_deltaNeutralValidation,None,EWrapper)
+EWrapper.tickSnapshotEnd = new_instancemethod(_swigibpy.EWrapper_tickSnapshotEnd,None,EWrapper)
+EWrapper_swigregister = _swigibpy.EWrapper_swigregister
+EWrapper_swigregister(EWrapper)
 
 
 

@@ -18,7 +18,6 @@
 
 #include "Shared/Contract.h"
 #include "Shared/CommonDefs.h"
-
 %}
 
 /* auto convert std::string and typedefs to Python strings */
@@ -58,24 +57,51 @@ typedef std::string IBString;
     }
 } 
 
-/* Rename EWrapper so we can replace it with a 'nicer' Python object (see below) */
-%rename(_EWrapper) EWrapper;
-
 /* Grab the header files to be wrapped */
 %include "Shared/EClient.h"
 %include "Shared/EClientSocketBase.h"
-
-%include "PosixSocketClient/EPosixClientSocket.h"
-%include "Shared/EWrapper.h"
-
 %include "Shared/Contract.h"
 %include "Shared/CommonDefs.h"
 
+/* Customise EPosixClientSocket so that TWS is automatically polled for messages when we are connected to it */
+%pythoncode %{
+import threading
+import time
+class TWSPoller(threading.Thread):
+    '''Polls TWS every second for any outstanding messages'''
+    
+    def __init__(self, tws):
+        super(TWSPoller, self).__init__()
+        self.daemon = True
+        self._tws = tws
+        self.stop_polling = False
+    
+    def run(self):
+        '''Continually poll TWS until the stop flag is set'''
+        while not self.stop_polling:
+            try:
+                self._tws.checkMessages()
+            except:
+                pass
+            time.sleep(1)
+%}
+%pythonappend EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
+    if val:
+        self.poller = TWSPoller(self)
+        self.poller.start()
+%}
+%pythonprepend EPosixClientSocket::eDisconnect() %{
+    if self.poller:
+        self.poller.stop_polling = True
+        self.poller = None
+%}
+%include "PosixSocketClient/EPosixClientSocket.h"
+
+/* Override EWrapper's error methods  with default implementations */
 %pythoncode %{
 class TWSError(Exception):
     '''Exception raised during communication with Interactive Brokers TWS 
     application
-    
     '''
     
     def __init__(self, code, msg):
@@ -85,32 +111,23 @@ class TWSError(Exception):
     def __str__(self):
         return "%s: %s" % (self.code, repr(self.msg))
 
-
 class TWSSystemError(TWSError):
     '''System related exception raised during communication with Interactive 
     Brokers TWS application.
-    
     '''
     pass
     
 class TWSClientError(TWSError):
     '''Exception raised on client (python) side by Interactive Brokers API'''
     pass
-    
-class EWrapper(_EWrapper):
-    '''Basic swigibpy implementation which provides more transparent error 
-    messages. Error methods are implemented to convert exceptions appropriately. 
-    
-    '''
-    
-    def __init__(self): 
-        _EWrapper.__init__(self)
-
+%}
+%feature("shadow") EWrapper::winError(const IBString &, int) %{
     def winError(self, str, lastError):
         '''Error in TWS API library'''
         
         raise TWSClientError(lastError, str)
-
+%}
+%feature("shadow") EWrapper::error(const int, const int, const IBString) %{
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
         
@@ -126,3 +143,4 @@ class EWrapper(_EWrapper):
         else:
             raise RuntimeError(errorCode, errorString)
 %}
+%include "Shared/EWrapper.h"

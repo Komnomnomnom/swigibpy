@@ -26,4 +26,10 @@ For developement you can build the extension in the current dir
 To regenerate the SWIG wrappers (SWIG 2.0+ required), in the IB API 
 directory run:
 
-    $ swig -v -c++ -python -threads -builtin -O -o swig_wrap.cpp -outdir .. ../swigify_ib.i
+    $ swig -v -c++ -python -threads -o swig_wrap.cpp -outdir .. -modern \
+        -fastdispatch -nosafecstrings -noproxydel -fastproxy -fastinit \
+        -fastunpack -fastquery -modernargs -nobuildnone ../swigify_ib.i
+        
+__NOTE__ SWIG options -builtin and -fvirtual are not compatible with swigibpy's\
+interface file.
+
