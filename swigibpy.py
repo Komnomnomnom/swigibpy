@@ -713,7 +713,10 @@ class TWSPoller(threading.Thread):
             try:
                 self._tws.checkMessages()
             except:
-                pass
+                if self.stop_polling:
+                    break
+                else:
+                    raise
             time.sleep(1)
 
 class EPosixClientSocket(EClientSocketBase):
