@@ -7842,6 +7842,53 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_EClient_reqGlobalCancel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_reqGlobalCancel" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  {
+    /*
+    		most errors should be propagated through to EWrapper->error,
+        	others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->reqGlobalCancel();
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to standard error */
+      PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */ 
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *EClient_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!SWIG_Python_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
@@ -10582,6 +10629,53 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_EClientSocketBase_reqGlobalCancel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_reqGlobalCancel" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  {
+    /*
+    		most errors should be propagated through to EWrapper->error,
+        	others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->reqGlobalCancel();
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to standard error */
+      PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */ 
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *EClientSocketBase_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!SWIG_Python_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
@@ -11062,6 +11156,66 @@ SWIGINTERN PyObject *_wrap_ComboLeg_designatedLocation_get(PyObject *SWIGUNUSEDP
     SWIG_PYTHON_THREAD_END_ALLOW;
   }
   resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ComboLeg_exemptCode_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ComboLeg *arg1 = (ComboLeg *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"ComboLeg_exemptCode_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ComboLeg, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComboLeg_exemptCode_set" "', argument " "1"" of type '" "ComboLeg *""'"); 
+  }
+  arg1 = reinterpret_cast< ComboLeg * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ComboLeg_exemptCode_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->exemptCode = arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ComboLeg_exemptCode_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ComboLeg *arg1 = (ComboLeg *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ComboLeg, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComboLeg_exemptCode_get" "', argument " "1"" of type '" "ComboLeg *""'"); 
+  }
+  arg1 = reinterpret_cast< ComboLeg * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (int) ((arg1)->exemptCode);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -18957,6 +19111,7 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"EClient_cancelCalculateImpliedVolatility", _wrap_EClient_cancelCalculateImpliedVolatility, METH_VARARGS, (char *)"EClient_cancelCalculateImpliedVolatility(EClient self, TickerId reqId)"},
 	 { (char *)"EClient_cancelCalculateOptionPrice", _wrap_EClient_cancelCalculateOptionPrice, METH_VARARGS, (char *)"EClient_cancelCalculateOptionPrice(EClient self, TickerId reqId)"},
+	 { (char *)"EClient_reqGlobalCancel", (PyCFunction)_wrap_EClient_reqGlobalCancel, METH_O, (char *)"EClient_reqGlobalCancel(EClient self)"},
 	 { (char *)"EClient_swigregister", EClient_swigregister, METH_VARARGS, NULL},
 	 { (char *)"delete_EClientSocketBase", (PyCFunction)_wrap_delete_EClientSocketBase, METH_O, (char *)"delete_EClientSocketBase(EClientSocketBase self)"},
 	 { (char *)"EClientSocketBase_eConnect", _wrap_EClientSocketBase_eConnect, METH_VARARGS, (char *)"\n"
@@ -19034,6 +19189,7 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"EClientSocketBase_cancelCalculateImpliedVolatility", _wrap_EClientSocketBase_cancelCalculateImpliedVolatility, METH_VARARGS, (char *)"EClientSocketBase_cancelCalculateImpliedVolatility(EClientSocketBase self, TickerId reqId)"},
 	 { (char *)"EClientSocketBase_cancelCalculateOptionPrice", _wrap_EClientSocketBase_cancelCalculateOptionPrice, METH_VARARGS, (char *)"EClientSocketBase_cancelCalculateOptionPrice(EClientSocketBase self, TickerId reqId)"},
+	 { (char *)"EClientSocketBase_reqGlobalCancel", (PyCFunction)_wrap_EClientSocketBase_reqGlobalCancel, METH_O, (char *)"EClientSocketBase_reqGlobalCancel(EClientSocketBase self)"},
 	 { (char *)"EClientSocketBase_swigregister", EClientSocketBase_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_ComboLeg", (PyCFunction)_wrap_new_ComboLeg, METH_NOARGS, (char *)"new_ComboLeg() -> ComboLeg"},
 	 { (char *)"ComboLeg_conId_set", _wrap_ComboLeg_conId_set, METH_VARARGS, (char *)"ComboLeg_conId_set(ComboLeg self, long conId)"},
@@ -19050,6 +19206,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ComboLeg_shortSaleSlot_get", (PyCFunction)_wrap_ComboLeg_shortSaleSlot_get, METH_O, (char *)"ComboLeg_shortSaleSlot_get(ComboLeg self) -> long"},
 	 { (char *)"ComboLeg_designatedLocation_set", _wrap_ComboLeg_designatedLocation_set, METH_VARARGS, (char *)"ComboLeg_designatedLocation_set(ComboLeg self, IBString designatedLocation)"},
 	 { (char *)"ComboLeg_designatedLocation_get", (PyCFunction)_wrap_ComboLeg_designatedLocation_get, METH_O, (char *)"ComboLeg_designatedLocation_get(ComboLeg self) -> IBString"},
+	 { (char *)"ComboLeg_exemptCode_set", _wrap_ComboLeg_exemptCode_set, METH_VARARGS, (char *)"ComboLeg_exemptCode_set(ComboLeg self, int exemptCode)"},
+	 { (char *)"ComboLeg_exemptCode_get", (PyCFunction)_wrap_ComboLeg_exemptCode_get, METH_O, (char *)"ComboLeg_exemptCode_get(ComboLeg self) -> int"},
 	 { (char *)"ComboLeg___eq__", _wrap_ComboLeg___eq__, METH_VARARGS, (char *)"ComboLeg___eq__(ComboLeg self, ComboLeg other) -> bool"},
 	 { (char *)"delete_ComboLeg", (PyCFunction)_wrap_delete_ComboLeg, METH_O, (char *)"delete_ComboLeg(ComboLeg self)"},
 	 { (char *)"ComboLeg_swigregister", ComboLeg_swigregister, METH_VARARGS, NULL},
@@ -20125,6 +20283,10 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "ASK_YIELD",SWIG_From_int(static_cast< int >(ASK_YIELD)));
   SWIG_Python_SetConstant(d, "LAST_YIELD",SWIG_From_int(static_cast< int >(LAST_YIELD)));
   SWIG_Python_SetConstant(d, "CUST_OPTION_COMPUTATION",SWIG_From_int(static_cast< int >(CUST_OPTION_COMPUTATION)));
+  SWIG_Python_SetConstant(d, "TRADE_COUNT",SWIG_From_int(static_cast< int >(TRADE_COUNT)));
+  SWIG_Python_SetConstant(d, "TRADE_RATE",SWIG_From_int(static_cast< int >(TRADE_RATE)));
+  SWIG_Python_SetConstant(d, "VOLUME_RATE",SWIG_From_int(static_cast< int >(VOLUME_RATE)));
+  SWIG_Python_SetConstant(d, "LAST_RTH_TRADE",SWIG_From_int(static_cast< int >(LAST_RTH_TRADE)));
   SWIG_Python_SetConstant(d, "NOT_SET",SWIG_From_int(static_cast< int >(NOT_SET)));
   
   /* Initialize threading */

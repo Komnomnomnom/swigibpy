@@ -68,6 +68,7 @@ struct Order
 		openClose     = "O";
 		origin        = CUSTOMER;
 		shortSaleSlot = 0;
+		exemptCode    = -1;
 
 		// SMART routing only
 		discretionaryAmt = 0;
@@ -154,6 +155,7 @@ struct Order
 	Origin   origin;    // 0=Customer, 1=Firm
 	int      shortSaleSlot; // 1 if you hold the shares, 2 if they will be delivered from elsewhere.  Only for Action="SSHORT
 	IBString designatedLocation; // set when slot=2 only.
+	int      exemptCode;
 
 	// SMART routing only
 	double   discretionaryAmt;

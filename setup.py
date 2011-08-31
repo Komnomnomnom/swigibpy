@@ -2,7 +2,8 @@
 
 from distutils.core import setup, Extension
 
-IB_DIR = 'IB_964'
+IB_DIR = 'IB_965'
+VERSION = '0.2'
 
 ib_module = Extension('_swigibpy',
                       sources=[IB_DIR + 
@@ -16,7 +17,7 @@ ib_module = Extension('_swigibpy',
                       define_macros=[ ('IB_USE_STD_STRING', '1') ]
                       )
 
-setup (version='0.1',
+setup (version=VERSION,
        name='swigibpy',
        author="komnomnomnom",
        description="""SWIG Python wrapper for Interactive Brokers C++ API""",

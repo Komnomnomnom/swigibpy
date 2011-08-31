@@ -276,6 +276,10 @@ class EClient(object):
         """cancelCalculateOptionPrice(self, TickerId reqId)"""
         return _swigibpy.EClient_cancelCalculateOptionPrice(self, *args)
 
+    def reqGlobalCancel(self):
+        """reqGlobalCancel(self)"""
+        return _swigibpy.EClient_reqGlobalCancel(self)
+
 EClient.eConnect = new_instancemethod(_swigibpy.EClient_eConnect,None,EClient)
 EClient.eDisconnect = new_instancemethod(_swigibpy.EClient_eDisconnect,None,EClient)
 EClient.serverVersion = new_instancemethod(_swigibpy.EClient_serverVersion,None,EClient)
@@ -315,6 +319,7 @@ EClient.calculateImpliedVolatility = new_instancemethod(_swigibpy.EClient_calcul
 EClient.calculateOptionPrice = new_instancemethod(_swigibpy.EClient_calculateOptionPrice,None,EClient)
 EClient.cancelCalculateImpliedVolatility = new_instancemethod(_swigibpy.EClient_cancelCalculateImpliedVolatility,None,EClient)
 EClient.cancelCalculateOptionPrice = new_instancemethod(_swigibpy.EClient_cancelCalculateOptionPrice,None,EClient)
+EClient.reqGlobalCancel = new_instancemethod(_swigibpy.EClient_reqGlobalCancel,None,EClient)
 EClient_swigregister = _swigibpy.EClient_swigregister
 EClient_swigregister(EClient)
 
@@ -515,6 +520,10 @@ class EClientSocketBase(EClient):
         """cancelCalculateOptionPrice(self, TickerId reqId)"""
         return _swigibpy.EClientSocketBase_cancelCalculateOptionPrice(self, *args)
 
+    def reqGlobalCancel(self):
+        """reqGlobalCancel(self)"""
+        return _swigibpy.EClientSocketBase_reqGlobalCancel(self)
+
 EClientSocketBase.eConnect = new_instancemethod(_swigibpy.EClientSocketBase_eConnect,None,EClientSocketBase)
 EClientSocketBase.eDisconnect = new_instancemethod(_swigibpy.EClientSocketBase_eDisconnect,None,EClientSocketBase)
 EClientSocketBase.isConnected = new_instancemethod(_swigibpy.EClientSocketBase_isConnected,None,EClientSocketBase)
@@ -557,6 +566,7 @@ EClientSocketBase.calculateImpliedVolatility = new_instancemethod(_swigibpy.ECli
 EClientSocketBase.calculateOptionPrice = new_instancemethod(_swigibpy.EClientSocketBase_calculateOptionPrice,None,EClientSocketBase)
 EClientSocketBase.cancelCalculateImpliedVolatility = new_instancemethod(_swigibpy.EClientSocketBase_cancelCalculateImpliedVolatility,None,EClientSocketBase)
 EClientSocketBase.cancelCalculateOptionPrice = new_instancemethod(_swigibpy.EClientSocketBase_cancelCalculateOptionPrice,None,EClientSocketBase)
+EClientSocketBase.reqGlobalCancel = new_instancemethod(_swigibpy.EClientSocketBase_reqGlobalCancel,None,EClientSocketBase)
 EClientSocketBase_swigregister = _swigibpy.EClientSocketBase_swigregister
 EClientSocketBase_swigregister(EClientSocketBase)
 
@@ -578,6 +588,7 @@ class ComboLeg(object):
     openClose = _swig_property(_swigibpy.ComboLeg_openClose_get, _swigibpy.ComboLeg_openClose_set)
     shortSaleSlot = _swig_property(_swigibpy.ComboLeg_shortSaleSlot_get, _swigibpy.ComboLeg_shortSaleSlot_set)
     designatedLocation = _swig_property(_swigibpy.ComboLeg_designatedLocation_get, _swigibpy.ComboLeg_designatedLocation_set)
+    exemptCode = _swig_property(_swigibpy.ComboLeg_exemptCode_get, _swigibpy.ComboLeg_exemptCode_set)
     def __eq__(self, *args):
         """__eq__(self, ComboLeg other) -> bool"""
         return _swigibpy.ComboLeg___eq__(self, *args)
@@ -858,6 +869,10 @@ BID_YIELD = _swigibpy.BID_YIELD
 ASK_YIELD = _swigibpy.ASK_YIELD
 LAST_YIELD = _swigibpy.LAST_YIELD
 CUST_OPTION_COMPUTATION = _swigibpy.CUST_OPTION_COMPUTATION
+TRADE_COUNT = _swigibpy.TRADE_COUNT
+TRADE_RATE = _swigibpy.TRADE_RATE
+VOLUME_RATE = _swigibpy.VOLUME_RATE
+LAST_RTH_TRADE = _swigibpy.LAST_RTH_TRADE
 NOT_SET = _swigibpy.NOT_SET
 
 def isPrice(*args):

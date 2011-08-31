@@ -2,7 +2,7 @@ Overview
 ========
 
 Interactive Brokers (IB) Python API, auto generated from IB C++ API using SWIG.
-Supports IB API version 9.64
+Supports IB API version 9.65
 
 Install
 =======

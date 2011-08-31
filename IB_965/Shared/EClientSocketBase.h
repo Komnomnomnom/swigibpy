@@ -85,6 +85,7 @@ public:
 	void calculateOptionPrice(TickerId reqId, const Contract &contract, double volatility, double underPrice);
 	void cancelCalculateImpliedVolatility(TickerId reqId);
 	void cancelCalculateOptionPrice(TickerId reqId);
+	void reqGlobalCancel();
 
 private:
 

@@ -12,9 +12,9 @@ unreliable.
 '''
 
 from datetime import datetime
+import time
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
-import time
 
 ###
 

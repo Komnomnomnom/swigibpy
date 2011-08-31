@@ -21,7 +21,8 @@ struct ComboLeg
       conId(0),
 	  ratio(0),
 	  openClose(0),
-	  shortSaleSlot(0)
+	  shortSaleSlot(0),
+	  exemptCode(-1)
    {
    }
 
@@ -35,6 +36,7 @@ struct ComboLeg
    // for stock legs when doing short sale
    long    shortSaleSlot; // 1 = clearing broker, 2 = third party
    IBString designatedLocation;
+   int     exemptCode;
 
    bool operator==( const ComboLeg &other) const
    {
@@ -44,7 +46,8 @@ struct ComboLeg
 		 shortSaleSlot == other.shortSaleSlot &&
 		 (Compare(action, other.action) == 0) &&
 		 (Compare(exchange, other.exchange) == 0) &&
-		 (Compare(designatedLocation, other.designatedLocation) == 0));
+		 (Compare(designatedLocation, other.designatedLocation) == 0) &&
+		 exemptCode == other.exemptCode);
    }
 };
 

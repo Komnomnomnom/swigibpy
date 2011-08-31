@@ -57,6 +57,7 @@ public:
    virtual void calculateOptionPrice( TickerId reqId, const Contract &contract, double volatility, double underPrice) = 0;
    virtual void cancelCalculateImpliedVolatility( TickerId reqId) = 0;
    virtual void cancelCalculateOptionPrice( TickerId reqId) = 0;
+   virtual void reqGlobalCancel() = 0;
 private:
 };
 
