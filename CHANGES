@@ -1,0 +1,5 @@
+0.2 Wed Aug 24 2010
+
+  * Support for TWS API 9.65.
+  * Built in TWS message polling
+  * Rewrote interface file to use shadowing rather than renaming and subclassing

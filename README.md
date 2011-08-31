@@ -1,25 +1,29 @@
 Overview
 ========
 
-Interactive Brokers (IB) Python API, auto generated from IB C++ API using SWIG.
-Supports IB API version 9.65
+[Interactive Brokers] [1] Python API, auto generated from C++ API using 
+[SWIG] [2].
+
+Latest version: 0.2 (TWS API v9.65)
 
 Install
 =======
 
 To build and install as a Python extension (recommended):
 
-    $ sudo python setup.py install
+    $ python setup.py install
     
 Usage
 =====
 
 To use simply import the swigibpy module, see the examples directory for more.
+For API reference refer to the [C++ API documentation] [3]. 
 
 Develop
 =======
     
-For developement you can build the extension in the current dir 
+Contributions are welcome! For developement you can build the extension in the 
+current dir 
 
     $ python setup.py build_ext --build-lib .
  	
@@ -33,3 +37,17 @@ directory run:
 __NOTE:__ SWIG options -builtin and -fvirtual are not compatible with swigibpy's
 interface file.
 
+License
+=======
+
+swigibpy original code is free software under the New BSD license.
+
+Interactive Brokers propriety C++ API is copyright Interactive Brokers LLC. 
+swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
+
+Links
+=====
+
+[1]: http://www.interactivebrokers.co.uk/   "Interactive Brokers"
+[2]: http://www.swig.org/                   "SWIG"
+[3]: http://www.interactivebrokers.com/en/p.php?f=programInterface  "C++ API" 
