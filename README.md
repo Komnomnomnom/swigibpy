@@ -9,7 +9,11 @@ Latest version: 0.2 (TWS API v9.65)
 Install
 =======
 
-To build and install as a Python extension (recommended):
+Use pip (recommended)
+
+    $ pip install swigibpy
+    
+Alternatively download your archive of choice and run 
 
     $ python setup.py install
     
