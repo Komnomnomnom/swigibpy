@@ -45,8 +45,7 @@ swigibpy original code is free software under the New BSD license.
 Interactive Brokers propriety C++ API is copyright Interactive Brokers LLC. 
 swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
 
-Links
-=====
+- - -
 
 [1]: http://www.interactivebrokers.co.uk/   "Interactive Brokers"
 [2]: http://www.swig.org/                   "SWIG"
