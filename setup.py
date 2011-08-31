@@ -24,7 +24,6 @@ setup (version=VERSION,
        author="Kieran O'Mahony",
        author_email="kieranom@gmail.com",
        url = "http://komnomnomnom.github.com/swigibpy/",
-       download_url = "http://github.com/Komnomnomnom/swigibpy/zipball/" + VERSION,
        license = 'New BSD License',
        description="""Third party Python API for Interactive Brokers""",
        keywords = ["interactive brokers", "tws"],
@@ -94,7 +93,7 @@ directory run:
         -fastunpack -fastquery -modernargs -nobuildnone ../swigify_ib.i
 
 **NOTE:** SWIG options -builtin and -fvirtual are not compatible with
-swigibpy’s interface file.
+swigibpy's interface file.
 
 License
 =======
