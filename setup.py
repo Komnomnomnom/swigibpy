@@ -1,6 +1,7 @@
 """Setup file for packaging swigibpy"""
 
 from distutils.core import setup, Extension
+import os
 
 IB_DIR = 'IB_965'
 VERSION = '0.2'
@@ -20,7 +21,10 @@ ib_module = Extension('_swigibpy',
 setup (version=VERSION,
        name='swigibpy',
        author="komnomnomnom",
-       description="""SWIG Python wrapper for Interactive Brokers C++ API""",
+       url = "http://komnomnomnom.github.com/swigibpy/",
+       description="""Third party Python API for Interactive Brokers""",
+       long_description=file(os.path.join(os.path.dirname(__file__), 'README.md')).read(),
+       keywords = ["interactive brokers", "tws"],
        ext_modules=[ib_module],
        py_modules=["swigibpy"],
        )
