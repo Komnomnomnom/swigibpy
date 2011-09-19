@@ -6,7 +6,7 @@ from distutils.core import setup, Extension
 ###
 
 IB_DIR = 'IB_965'
-VERSION = '0.2'
+VERSION = '0.2.1'
 
 ib_module = Extension('_swigibpy',
                       sources=[IB_DIR + 
