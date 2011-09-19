@@ -16,8 +16,12 @@
 #include "PosixSocketClient/EPosixClientSocket.h"
 #include "Shared/EWrapper.h"
 
-#include "Shared/Contract.h"
 #include "Shared/CommonDefs.h"
+#include "Shared/Contract.h"
+#include "Shared/Execution.h"
+#include "Shared/Order.h"
+#include "Shared/OrderState.h"
+#include "Shared/ScannerSubscription.h"
 %}
 
 /* auto convert std::string and typedefs to Python strings */
@@ -58,10 +62,15 @@ typedef std::string IBString;
 } 
 
 /* Grab the header files to be wrapped */
+%include "Shared/CommonDefs.h"
+%include "Shared/Contract.h"
 %include "Shared/EClient.h"
 %include "Shared/EClientSocketBase.h"
-%include "Shared/Contract.h"
-%include "Shared/CommonDefs.h"
+%include "Shared/Execution.h"
+%include "Shared/Order.h"
+%include "Shared/OrderState.h"
+%include "Shared/ScannerSubscription.h"
+
 
 /* Customise EPosixClientSocket so that TWS is automatically polled for messages when we are connected to it */
 %pythoncode %{

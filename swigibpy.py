@@ -92,6 +92,143 @@ except:
     weakref_proxy = lambda x: x
 
 
+GROUPS = _swigibpy.GROUPS
+PROFILES = _swigibpy.PROFILES
+ALIASES = _swigibpy.ALIASES
+
+def faDataTypeStr(*args):
+  """faDataTypeStr(faDataType pFaDataType) -> char"""
+  return _swigibpy.faDataTypeStr(*args)
+SAME_POS = _swigibpy.SAME_POS
+OPEN_POS = _swigibpy.OPEN_POS
+CLOSE_POS = _swigibpy.CLOSE_POS
+UNKNOWN_POS = _swigibpy.UNKNOWN_POS
+class ComboLeg(object):
+    """Proxy of C++ ComboLeg class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> ComboLeg"""
+        _swigibpy.ComboLeg_swiginit(self,_swigibpy.new_ComboLeg())
+    conId = _swig_property(_swigibpy.ComboLeg_conId_get, _swigibpy.ComboLeg_conId_set)
+    ratio = _swig_property(_swigibpy.ComboLeg_ratio_get, _swigibpy.ComboLeg_ratio_set)
+    action = _swig_property(_swigibpy.ComboLeg_action_get, _swigibpy.ComboLeg_action_set)
+    exchange = _swig_property(_swigibpy.ComboLeg_exchange_get, _swigibpy.ComboLeg_exchange_set)
+    openClose = _swig_property(_swigibpy.ComboLeg_openClose_get, _swigibpy.ComboLeg_openClose_set)
+    shortSaleSlot = _swig_property(_swigibpy.ComboLeg_shortSaleSlot_get, _swigibpy.ComboLeg_shortSaleSlot_set)
+    designatedLocation = _swig_property(_swigibpy.ComboLeg_designatedLocation_get, _swigibpy.ComboLeg_designatedLocation_set)
+    exemptCode = _swig_property(_swigibpy.ComboLeg_exemptCode_get, _swigibpy.ComboLeg_exemptCode_set)
+    def __eq__(self, *args):
+        """__eq__(self, ComboLeg other) -> bool"""
+        return _swigibpy.ComboLeg___eq__(self, *args)
+
+    __swig_destroy__ = _swigibpy.delete_ComboLeg
+ComboLeg.__eq__ = new_instancemethod(_swigibpy.ComboLeg___eq__,None,ComboLeg)
+ComboLeg_swigregister = _swigibpy.ComboLeg_swigregister
+ComboLeg_swigregister(ComboLeg)
+
+class UnderComp(object):
+    """Proxy of C++ UnderComp class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> UnderComp"""
+        _swigibpy.UnderComp_swiginit(self,_swigibpy.new_UnderComp())
+    conId = _swig_property(_swigibpy.UnderComp_conId_get, _swigibpy.UnderComp_conId_set)
+    delta = _swig_property(_swigibpy.UnderComp_delta_get, _swigibpy.UnderComp_delta_set)
+    price = _swig_property(_swigibpy.UnderComp_price_get, _swigibpy.UnderComp_price_set)
+    __swig_destroy__ = _swigibpy.delete_UnderComp
+UnderComp_swigregister = _swigibpy.UnderComp_swigregister
+UnderComp_swigregister(UnderComp)
+
+class Contract(object):
+    """Proxy of C++ Contract class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> Contract"""
+        _swigibpy.Contract_swiginit(self,_swigibpy.new_Contract())
+    conId = _swig_property(_swigibpy.Contract_conId_get, _swigibpy.Contract_conId_set)
+    symbol = _swig_property(_swigibpy.Contract_symbol_get, _swigibpy.Contract_symbol_set)
+    secType = _swig_property(_swigibpy.Contract_secType_get, _swigibpy.Contract_secType_set)
+    expiry = _swig_property(_swigibpy.Contract_expiry_get, _swigibpy.Contract_expiry_set)
+    strike = _swig_property(_swigibpy.Contract_strike_get, _swigibpy.Contract_strike_set)
+    right = _swig_property(_swigibpy.Contract_right_get, _swigibpy.Contract_right_set)
+    multiplier = _swig_property(_swigibpy.Contract_multiplier_get, _swigibpy.Contract_multiplier_set)
+    exchange = _swig_property(_swigibpy.Contract_exchange_get, _swigibpy.Contract_exchange_set)
+    primaryExchange = _swig_property(_swigibpy.Contract_primaryExchange_get, _swigibpy.Contract_primaryExchange_set)
+    currency = _swig_property(_swigibpy.Contract_currency_get, _swigibpy.Contract_currency_set)
+    localSymbol = _swig_property(_swigibpy.Contract_localSymbol_get, _swigibpy.Contract_localSymbol_set)
+    includeExpired = _swig_property(_swigibpy.Contract_includeExpired_get, _swigibpy.Contract_includeExpired_set)
+    secIdType = _swig_property(_swigibpy.Contract_secIdType_get, _swigibpy.Contract_secIdType_set)
+    secId = _swig_property(_swigibpy.Contract_secId_get, _swigibpy.Contract_secId_set)
+    comboLegsDescrip = _swig_property(_swigibpy.Contract_comboLegsDescrip_get, _swigibpy.Contract_comboLegsDescrip_set)
+    comboLegs = _swig_property(_swigibpy.Contract_comboLegs_get, _swigibpy.Contract_comboLegs_set)
+    underComp = _swig_property(_swigibpy.Contract_underComp_get, _swigibpy.Contract_underComp_set)
+    def CloneComboLegs(*args):
+        """CloneComboLegs(ComboLegList dst, ComboLegList src)"""
+        return _swigibpy.Contract_CloneComboLegs(*args)
+
+    CloneComboLegs = staticmethod(CloneComboLegs)
+    def CleanupComboLegs(*args):
+        """CleanupComboLegs(ComboLegList arg0)"""
+        return _swigibpy.Contract_CleanupComboLegs(*args)
+
+    CleanupComboLegs = staticmethod(CleanupComboLegs)
+    __swig_destroy__ = _swigibpy.delete_Contract
+Contract_swigregister = _swigibpy.Contract_swigregister
+Contract_swigregister(Contract)
+
+def Contract_CloneComboLegs(*args):
+  """Contract_CloneComboLegs(ComboLegList dst, ComboLegList src)"""
+  return _swigibpy.Contract_CloneComboLegs(*args)
+
+def Contract_CleanupComboLegs(*args):
+  """Contract_CleanupComboLegs(ComboLegList arg0)"""
+  return _swigibpy.Contract_CleanupComboLegs(*args)
+
+class ContractDetails(object):
+    """Proxy of C++ ContractDetails class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> ContractDetails"""
+        _swigibpy.ContractDetails_swiginit(self,_swigibpy.new_ContractDetails())
+    summary = _swig_property(_swigibpy.ContractDetails_summary_get, _swigibpy.ContractDetails_summary_set)
+    marketName = _swig_property(_swigibpy.ContractDetails_marketName_get, _swigibpy.ContractDetails_marketName_set)
+    tradingClass = _swig_property(_swigibpy.ContractDetails_tradingClass_get, _swigibpy.ContractDetails_tradingClass_set)
+    minTick = _swig_property(_swigibpy.ContractDetails_minTick_get, _swigibpy.ContractDetails_minTick_set)
+    orderTypes = _swig_property(_swigibpy.ContractDetails_orderTypes_get, _swigibpy.ContractDetails_orderTypes_set)
+    validExchanges = _swig_property(_swigibpy.ContractDetails_validExchanges_get, _swigibpy.ContractDetails_validExchanges_set)
+    priceMagnifier = _swig_property(_swigibpy.ContractDetails_priceMagnifier_get, _swigibpy.ContractDetails_priceMagnifier_set)
+    underConId = _swig_property(_swigibpy.ContractDetails_underConId_get, _swigibpy.ContractDetails_underConId_set)
+    longName = _swig_property(_swigibpy.ContractDetails_longName_get, _swigibpy.ContractDetails_longName_set)
+    contractMonth = _swig_property(_swigibpy.ContractDetails_contractMonth_get, _swigibpy.ContractDetails_contractMonth_set)
+    industry = _swig_property(_swigibpy.ContractDetails_industry_get, _swigibpy.ContractDetails_industry_set)
+    category = _swig_property(_swigibpy.ContractDetails_category_get, _swigibpy.ContractDetails_category_set)
+    subcategory = _swig_property(_swigibpy.ContractDetails_subcategory_get, _swigibpy.ContractDetails_subcategory_set)
+    timeZoneId = _swig_property(_swigibpy.ContractDetails_timeZoneId_get, _swigibpy.ContractDetails_timeZoneId_set)
+    tradingHours = _swig_property(_swigibpy.ContractDetails_tradingHours_get, _swigibpy.ContractDetails_tradingHours_set)
+    liquidHours = _swig_property(_swigibpy.ContractDetails_liquidHours_get, _swigibpy.ContractDetails_liquidHours_set)
+    cusip = _swig_property(_swigibpy.ContractDetails_cusip_get, _swigibpy.ContractDetails_cusip_set)
+    ratings = _swig_property(_swigibpy.ContractDetails_ratings_get, _swigibpy.ContractDetails_ratings_set)
+    descAppend = _swig_property(_swigibpy.ContractDetails_descAppend_get, _swigibpy.ContractDetails_descAppend_set)
+    bondType = _swig_property(_swigibpy.ContractDetails_bondType_get, _swigibpy.ContractDetails_bondType_set)
+    couponType = _swig_property(_swigibpy.ContractDetails_couponType_get, _swigibpy.ContractDetails_couponType_set)
+    callable = _swig_property(_swigibpy.ContractDetails_callable_get, _swigibpy.ContractDetails_callable_set)
+    putable = _swig_property(_swigibpy.ContractDetails_putable_get, _swigibpy.ContractDetails_putable_set)
+    coupon = _swig_property(_swigibpy.ContractDetails_coupon_get, _swigibpy.ContractDetails_coupon_set)
+    convertible = _swig_property(_swigibpy.ContractDetails_convertible_get, _swigibpy.ContractDetails_convertible_set)
+    maturity = _swig_property(_swigibpy.ContractDetails_maturity_get, _swigibpy.ContractDetails_maturity_set)
+    issueDate = _swig_property(_swigibpy.ContractDetails_issueDate_get, _swigibpy.ContractDetails_issueDate_set)
+    nextOptionDate = _swig_property(_swigibpy.ContractDetails_nextOptionDate_get, _swigibpy.ContractDetails_nextOptionDate_set)
+    nextOptionType = _swig_property(_swigibpy.ContractDetails_nextOptionType_get, _swigibpy.ContractDetails_nextOptionType_set)
+    nextOptionPartial = _swig_property(_swigibpy.ContractDetails_nextOptionPartial_get, _swigibpy.ContractDetails_nextOptionPartial_set)
+    notes = _swig_property(_swigibpy.ContractDetails_notes_get, _swigibpy.ContractDetails_notes_set)
+    __swig_destroy__ = _swigibpy.delete_ContractDetails
+ContractDetails_swigregister = _swigibpy.ContractDetails_swigregister
+ContractDetails_swigregister(ContractDetails)
+
 class EClient(object):
     """Proxy of C++ EClient class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
@@ -570,143 +707,201 @@ EClientSocketBase.reqGlobalCancel = new_instancemethod(_swigibpy.EClientSocketBa
 EClientSocketBase_swigregister = _swigibpy.EClientSocketBase_swigregister
 EClientSocketBase_swigregister(EClientSocketBase)
 
-SAME_POS = _swigibpy.SAME_POS
-OPEN_POS = _swigibpy.OPEN_POS
-CLOSE_POS = _swigibpy.CLOSE_POS
-UNKNOWN_POS = _swigibpy.UNKNOWN_POS
-class ComboLeg(object):
-    """Proxy of C++ ComboLeg class"""
+class Execution(object):
+    """Proxy of C++ Execution class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def __init__(self): 
-        """__init__(self) -> ComboLeg"""
-        _swigibpy.ComboLeg_swiginit(self,_swigibpy.new_ComboLeg())
-    conId = _swig_property(_swigibpy.ComboLeg_conId_get, _swigibpy.ComboLeg_conId_set)
-    ratio = _swig_property(_swigibpy.ComboLeg_ratio_get, _swigibpy.ComboLeg_ratio_set)
-    action = _swig_property(_swigibpy.ComboLeg_action_get, _swigibpy.ComboLeg_action_set)
-    exchange = _swig_property(_swigibpy.ComboLeg_exchange_get, _swigibpy.ComboLeg_exchange_set)
-    openClose = _swig_property(_swigibpy.ComboLeg_openClose_get, _swigibpy.ComboLeg_openClose_set)
-    shortSaleSlot = _swig_property(_swigibpy.ComboLeg_shortSaleSlot_get, _swigibpy.ComboLeg_shortSaleSlot_set)
-    designatedLocation = _swig_property(_swigibpy.ComboLeg_designatedLocation_get, _swigibpy.ComboLeg_designatedLocation_set)
-    exemptCode = _swig_property(_swigibpy.ComboLeg_exemptCode_get, _swigibpy.ComboLeg_exemptCode_set)
-    def __eq__(self, *args):
-        """__eq__(self, ComboLeg other) -> bool"""
-        return _swigibpy.ComboLeg___eq__(self, *args)
+        """__init__(self) -> Execution"""
+        _swigibpy.Execution_swiginit(self,_swigibpy.new_Execution())
+    execId = _swig_property(_swigibpy.Execution_execId_get, _swigibpy.Execution_execId_set)
+    time = _swig_property(_swigibpy.Execution_time_get, _swigibpy.Execution_time_set)
+    acctNumber = _swig_property(_swigibpy.Execution_acctNumber_get, _swigibpy.Execution_acctNumber_set)
+    exchange = _swig_property(_swigibpy.Execution_exchange_get, _swigibpy.Execution_exchange_set)
+    side = _swig_property(_swigibpy.Execution_side_get, _swigibpy.Execution_side_set)
+    shares = _swig_property(_swigibpy.Execution_shares_get, _swigibpy.Execution_shares_set)
+    price = _swig_property(_swigibpy.Execution_price_get, _swigibpy.Execution_price_set)
+    permId = _swig_property(_swigibpy.Execution_permId_get, _swigibpy.Execution_permId_set)
+    clientId = _swig_property(_swigibpy.Execution_clientId_get, _swigibpy.Execution_clientId_set)
+    orderId = _swig_property(_swigibpy.Execution_orderId_get, _swigibpy.Execution_orderId_set)
+    liquidation = _swig_property(_swigibpy.Execution_liquidation_get, _swigibpy.Execution_liquidation_set)
+    cumQty = _swig_property(_swigibpy.Execution_cumQty_get, _swigibpy.Execution_cumQty_set)
+    avgPrice = _swig_property(_swigibpy.Execution_avgPrice_get, _swigibpy.Execution_avgPrice_set)
+    __swig_destroy__ = _swigibpy.delete_Execution
+Execution_swigregister = _swigibpy.Execution_swigregister
+Execution_swigregister(Execution)
 
-    __swig_destroy__ = _swigibpy.delete_ComboLeg
-ComboLeg.__eq__ = new_instancemethod(_swigibpy.ComboLeg___eq__,None,ComboLeg)
-ComboLeg_swigregister = _swigibpy.ComboLeg_swigregister
-ComboLeg_swigregister(ComboLeg)
-
-class UnderComp(object):
-    """Proxy of C++ UnderComp class"""
+class ExecutionFilter(object):
+    """Proxy of C++ ExecutionFilter class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def __init__(self): 
-        """__init__(self) -> UnderComp"""
-        _swigibpy.UnderComp_swiginit(self,_swigibpy.new_UnderComp())
-    conId = _swig_property(_swigibpy.UnderComp_conId_get, _swigibpy.UnderComp_conId_set)
-    delta = _swig_property(_swigibpy.UnderComp_delta_get, _swigibpy.UnderComp_delta_set)
-    price = _swig_property(_swigibpy.UnderComp_price_get, _swigibpy.UnderComp_price_set)
-    __swig_destroy__ = _swigibpy.delete_UnderComp
-UnderComp_swigregister = _swigibpy.UnderComp_swigregister
-UnderComp_swigregister(UnderComp)
+        """__init__(self) -> ExecutionFilter"""
+        _swigibpy.ExecutionFilter_swiginit(self,_swigibpy.new_ExecutionFilter())
+    m_clientId = _swig_property(_swigibpy.ExecutionFilter_m_clientId_get, _swigibpy.ExecutionFilter_m_clientId_set)
+    m_acctCode = _swig_property(_swigibpy.ExecutionFilter_m_acctCode_get, _swigibpy.ExecutionFilter_m_acctCode_set)
+    m_time = _swig_property(_swigibpy.ExecutionFilter_m_time_get, _swigibpy.ExecutionFilter_m_time_set)
+    m_symbol = _swig_property(_swigibpy.ExecutionFilter_m_symbol_get, _swigibpy.ExecutionFilter_m_symbol_set)
+    m_secType = _swig_property(_swigibpy.ExecutionFilter_m_secType_get, _swigibpy.ExecutionFilter_m_secType_set)
+    m_exchange = _swig_property(_swigibpy.ExecutionFilter_m_exchange_get, _swigibpy.ExecutionFilter_m_exchange_set)
+    m_side = _swig_property(_swigibpy.ExecutionFilter_m_side_get, _swigibpy.ExecutionFilter_m_side_set)
+    __swig_destroy__ = _swigibpy.delete_ExecutionFilter
+ExecutionFilter_swigregister = _swigibpy.ExecutionFilter_swigregister
+ExecutionFilter_swigregister(ExecutionFilter)
 
-class Contract(object):
-    """Proxy of C++ Contract class"""
+CUSTOMER = _swigibpy.CUSTOMER
+FIRM = _swigibpy.FIRM
+UNKNOWN = _swigibpy.UNKNOWN
+AUCTION_UNSET = _swigibpy.AUCTION_UNSET
+AUCTION_MATCH = _swigibpy.AUCTION_MATCH
+AUCTION_IMPROVEMENT = _swigibpy.AUCTION_IMPROVEMENT
+AUCTION_TRANSPARENT = _swigibpy.AUCTION_TRANSPARENT
+class TagValue(object):
+    """Proxy of C++ TagValue class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        """
+        __init__(self) -> TagValue
+        __init__(self, IBString p_tag, IBString p_value) -> TagValue
+        """
+        _swigibpy.TagValue_swiginit(self,_swigibpy.new_TagValue(*args))
+    tag = _swig_property(_swigibpy.TagValue_tag_get, _swigibpy.TagValue_tag_set)
+    value = _swig_property(_swigibpy.TagValue_value_get, _swigibpy.TagValue_value_set)
+    __swig_destroy__ = _swigibpy.delete_TagValue
+TagValue_swigregister = _swigibpy.TagValue_swigregister
+TagValue_swigregister(TagValue)
+
+class Order(object):
+    """Proxy of C++ Order class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def __init__(self): 
-        """__init__(self) -> Contract"""
-        _swigibpy.Contract_swiginit(self,_swigibpy.new_Contract())
-    conId = _swig_property(_swigibpy.Contract_conId_get, _swigibpy.Contract_conId_set)
-    symbol = _swig_property(_swigibpy.Contract_symbol_get, _swigibpy.Contract_symbol_set)
-    secType = _swig_property(_swigibpy.Contract_secType_get, _swigibpy.Contract_secType_set)
-    expiry = _swig_property(_swigibpy.Contract_expiry_get, _swigibpy.Contract_expiry_set)
-    strike = _swig_property(_swigibpy.Contract_strike_get, _swigibpy.Contract_strike_set)
-    right = _swig_property(_swigibpy.Contract_right_get, _swigibpy.Contract_right_set)
-    multiplier = _swig_property(_swigibpy.Contract_multiplier_get, _swigibpy.Contract_multiplier_set)
-    exchange = _swig_property(_swigibpy.Contract_exchange_get, _swigibpy.Contract_exchange_set)
-    primaryExchange = _swig_property(_swigibpy.Contract_primaryExchange_get, _swigibpy.Contract_primaryExchange_set)
-    currency = _swig_property(_swigibpy.Contract_currency_get, _swigibpy.Contract_currency_set)
-    localSymbol = _swig_property(_swigibpy.Contract_localSymbol_get, _swigibpy.Contract_localSymbol_set)
-    includeExpired = _swig_property(_swigibpy.Contract_includeExpired_get, _swigibpy.Contract_includeExpired_set)
-    secIdType = _swig_property(_swigibpy.Contract_secIdType_get, _swigibpy.Contract_secIdType_set)
-    secId = _swig_property(_swigibpy.Contract_secId_get, _swigibpy.Contract_secId_set)
-    comboLegsDescrip = _swig_property(_swigibpy.Contract_comboLegsDescrip_get, _swigibpy.Contract_comboLegsDescrip_set)
-    comboLegs = _swig_property(_swigibpy.Contract_comboLegs_get, _swigibpy.Contract_comboLegs_set)
-    underComp = _swig_property(_swigibpy.Contract_underComp_get, _swigibpy.Contract_underComp_set)
-    def CloneComboLegs(*args):
-        """CloneComboLegs(ComboLegList dst, ComboLegList src)"""
-        return _swigibpy.Contract_CloneComboLegs(*args)
+        """__init__(self) -> Order"""
+        _swigibpy.Order_swiginit(self,_swigibpy.new_Order())
+    orderId = _swig_property(_swigibpy.Order_orderId_get, _swigibpy.Order_orderId_set)
+    clientId = _swig_property(_swigibpy.Order_clientId_get, _swigibpy.Order_clientId_set)
+    permId = _swig_property(_swigibpy.Order_permId_get, _swigibpy.Order_permId_set)
+    action = _swig_property(_swigibpy.Order_action_get, _swigibpy.Order_action_set)
+    totalQuantity = _swig_property(_swigibpy.Order_totalQuantity_get, _swigibpy.Order_totalQuantity_set)
+    orderType = _swig_property(_swigibpy.Order_orderType_get, _swigibpy.Order_orderType_set)
+    lmtPrice = _swig_property(_swigibpy.Order_lmtPrice_get, _swigibpy.Order_lmtPrice_set)
+    auxPrice = _swig_property(_swigibpy.Order_auxPrice_get, _swigibpy.Order_auxPrice_set)
+    tif = _swig_property(_swigibpy.Order_tif_get, _swigibpy.Order_tif_set)
+    ocaGroup = _swig_property(_swigibpy.Order_ocaGroup_get, _swigibpy.Order_ocaGroup_set)
+    ocaType = _swig_property(_swigibpy.Order_ocaType_get, _swigibpy.Order_ocaType_set)
+    orderRef = _swig_property(_swigibpy.Order_orderRef_get, _swigibpy.Order_orderRef_set)
+    transmit = _swig_property(_swigibpy.Order_transmit_get, _swigibpy.Order_transmit_set)
+    parentId = _swig_property(_swigibpy.Order_parentId_get, _swigibpy.Order_parentId_set)
+    blockOrder = _swig_property(_swigibpy.Order_blockOrder_get, _swigibpy.Order_blockOrder_set)
+    sweepToFill = _swig_property(_swigibpy.Order_sweepToFill_get, _swigibpy.Order_sweepToFill_set)
+    displaySize = _swig_property(_swigibpy.Order_displaySize_get, _swigibpy.Order_displaySize_set)
+    triggerMethod = _swig_property(_swigibpy.Order_triggerMethod_get, _swigibpy.Order_triggerMethod_set)
+    outsideRth = _swig_property(_swigibpy.Order_outsideRth_get, _swigibpy.Order_outsideRth_set)
+    hidden = _swig_property(_swigibpy.Order_hidden_get, _swigibpy.Order_hidden_set)
+    goodAfterTime = _swig_property(_swigibpy.Order_goodAfterTime_get, _swigibpy.Order_goodAfterTime_set)
+    goodTillDate = _swig_property(_swigibpy.Order_goodTillDate_get, _swigibpy.Order_goodTillDate_set)
+    rule80A = _swig_property(_swigibpy.Order_rule80A_get, _swigibpy.Order_rule80A_set)
+    allOrNone = _swig_property(_swigibpy.Order_allOrNone_get, _swigibpy.Order_allOrNone_set)
+    minQty = _swig_property(_swigibpy.Order_minQty_get, _swigibpy.Order_minQty_set)
+    percentOffset = _swig_property(_swigibpy.Order_percentOffset_get, _swigibpy.Order_percentOffset_set)
+    overridePercentageConstraints = _swig_property(_swigibpy.Order_overridePercentageConstraints_get, _swigibpy.Order_overridePercentageConstraints_set)
+    trailStopPrice = _swig_property(_swigibpy.Order_trailStopPrice_get, _swigibpy.Order_trailStopPrice_set)
+    faGroup = _swig_property(_swigibpy.Order_faGroup_get, _swigibpy.Order_faGroup_set)
+    faProfile = _swig_property(_swigibpy.Order_faProfile_get, _swigibpy.Order_faProfile_set)
+    faMethod = _swig_property(_swigibpy.Order_faMethod_get, _swigibpy.Order_faMethod_set)
+    faPercentage = _swig_property(_swigibpy.Order_faPercentage_get, _swigibpy.Order_faPercentage_set)
+    openClose = _swig_property(_swigibpy.Order_openClose_get, _swigibpy.Order_openClose_set)
+    origin = _swig_property(_swigibpy.Order_origin_get, _swigibpy.Order_origin_set)
+    shortSaleSlot = _swig_property(_swigibpy.Order_shortSaleSlot_get, _swigibpy.Order_shortSaleSlot_set)
+    designatedLocation = _swig_property(_swigibpy.Order_designatedLocation_get, _swigibpy.Order_designatedLocation_set)
+    exemptCode = _swig_property(_swigibpy.Order_exemptCode_get, _swigibpy.Order_exemptCode_set)
+    discretionaryAmt = _swig_property(_swigibpy.Order_discretionaryAmt_get, _swigibpy.Order_discretionaryAmt_set)
+    eTradeOnly = _swig_property(_swigibpy.Order_eTradeOnly_get, _swigibpy.Order_eTradeOnly_set)
+    firmQuoteOnly = _swig_property(_swigibpy.Order_firmQuoteOnly_get, _swigibpy.Order_firmQuoteOnly_set)
+    nbboPriceCap = _swig_property(_swigibpy.Order_nbboPriceCap_get, _swigibpy.Order_nbboPriceCap_set)
+    auctionStrategy = _swig_property(_swigibpy.Order_auctionStrategy_get, _swigibpy.Order_auctionStrategy_set)
+    startingPrice = _swig_property(_swigibpy.Order_startingPrice_get, _swigibpy.Order_startingPrice_set)
+    stockRefPrice = _swig_property(_swigibpy.Order_stockRefPrice_get, _swigibpy.Order_stockRefPrice_set)
+    delta = _swig_property(_swigibpy.Order_delta_get, _swigibpy.Order_delta_set)
+    stockRangeLower = _swig_property(_swigibpy.Order_stockRangeLower_get, _swigibpy.Order_stockRangeLower_set)
+    stockRangeUpper = _swig_property(_swigibpy.Order_stockRangeUpper_get, _swigibpy.Order_stockRangeUpper_set)
+    volatility = _swig_property(_swigibpy.Order_volatility_get, _swigibpy.Order_volatility_set)
+    volatilityType = _swig_property(_swigibpy.Order_volatilityType_get, _swigibpy.Order_volatilityType_set)
+    deltaNeutralOrderType = _swig_property(_swigibpy.Order_deltaNeutralOrderType_get, _swigibpy.Order_deltaNeutralOrderType_set)
+    deltaNeutralAuxPrice = _swig_property(_swigibpy.Order_deltaNeutralAuxPrice_get, _swigibpy.Order_deltaNeutralAuxPrice_set)
+    continuousUpdate = _swig_property(_swigibpy.Order_continuousUpdate_get, _swigibpy.Order_continuousUpdate_set)
+    referencePriceType = _swig_property(_swigibpy.Order_referencePriceType_get, _swigibpy.Order_referencePriceType_set)
+    basisPoints = _swig_property(_swigibpy.Order_basisPoints_get, _swigibpy.Order_basisPoints_set)
+    basisPointsType = _swig_property(_swigibpy.Order_basisPointsType_get, _swigibpy.Order_basisPointsType_set)
+    scaleInitLevelSize = _swig_property(_swigibpy.Order_scaleInitLevelSize_get, _swigibpy.Order_scaleInitLevelSize_set)
+    scaleSubsLevelSize = _swig_property(_swigibpy.Order_scaleSubsLevelSize_get, _swigibpy.Order_scaleSubsLevelSize_set)
+    scalePriceIncrement = _swig_property(_swigibpy.Order_scalePriceIncrement_get, _swigibpy.Order_scalePriceIncrement_set)
+    account = _swig_property(_swigibpy.Order_account_get, _swigibpy.Order_account_set)
+    settlingFirm = _swig_property(_swigibpy.Order_settlingFirm_get, _swigibpy.Order_settlingFirm_set)
+    clearingAccount = _swig_property(_swigibpy.Order_clearingAccount_get, _swigibpy.Order_clearingAccount_set)
+    clearingIntent = _swig_property(_swigibpy.Order_clearingIntent_get, _swigibpy.Order_clearingIntent_set)
+    algoStrategy = _swig_property(_swigibpy.Order_algoStrategy_get, _swigibpy.Order_algoStrategy_set)
+    algoParams = _swig_property(_swigibpy.Order_algoParams_get, _swigibpy.Order_algoParams_set)
+    whatIf = _swig_property(_swigibpy.Order_whatIf_get, _swigibpy.Order_whatIf_set)
+    notHeld = _swig_property(_swigibpy.Order_notHeld_get, _swigibpy.Order_notHeld_set)
+    __swig_destroy__ = _swigibpy.delete_Order
+Order_swigregister = _swigibpy.Order_swigregister
+Order_swigregister(Order)
 
-    CloneComboLegs = staticmethod(CloneComboLegs)
-    def CleanupComboLegs(*args):
-        """CleanupComboLegs(ComboLegList arg0)"""
-        return _swigibpy.Contract_CleanupComboLegs(*args)
-
-    CleanupComboLegs = staticmethod(CleanupComboLegs)
-    __swig_destroy__ = _swigibpy.delete_Contract
-Contract_swigregister = _swigibpy.Contract_swigregister
-Contract_swigregister(Contract)
-
-def Contract_CloneComboLegs(*args):
-  """Contract_CloneComboLegs(ComboLegList dst, ComboLegList src)"""
-  return _swigibpy.Contract_CloneComboLegs(*args)
-
-def Contract_CleanupComboLegs(*args):
-  """Contract_CleanupComboLegs(ComboLegList arg0)"""
-  return _swigibpy.Contract_CleanupComboLegs(*args)
-
-class ContractDetails(object):
-    """Proxy of C++ ContractDetails class"""
+class OrderState(object):
+    """Proxy of C++ OrderState class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def __init__(self): 
-        """__init__(self) -> ContractDetails"""
-        _swigibpy.ContractDetails_swiginit(self,_swigibpy.new_ContractDetails())
-    summary = _swig_property(_swigibpy.ContractDetails_summary_get, _swigibpy.ContractDetails_summary_set)
-    marketName = _swig_property(_swigibpy.ContractDetails_marketName_get, _swigibpy.ContractDetails_marketName_set)
-    tradingClass = _swig_property(_swigibpy.ContractDetails_tradingClass_get, _swigibpy.ContractDetails_tradingClass_set)
-    minTick = _swig_property(_swigibpy.ContractDetails_minTick_get, _swigibpy.ContractDetails_minTick_set)
-    orderTypes = _swig_property(_swigibpy.ContractDetails_orderTypes_get, _swigibpy.ContractDetails_orderTypes_set)
-    validExchanges = _swig_property(_swigibpy.ContractDetails_validExchanges_get, _swigibpy.ContractDetails_validExchanges_set)
-    priceMagnifier = _swig_property(_swigibpy.ContractDetails_priceMagnifier_get, _swigibpy.ContractDetails_priceMagnifier_set)
-    underConId = _swig_property(_swigibpy.ContractDetails_underConId_get, _swigibpy.ContractDetails_underConId_set)
-    longName = _swig_property(_swigibpy.ContractDetails_longName_get, _swigibpy.ContractDetails_longName_set)
-    contractMonth = _swig_property(_swigibpy.ContractDetails_contractMonth_get, _swigibpy.ContractDetails_contractMonth_set)
-    industry = _swig_property(_swigibpy.ContractDetails_industry_get, _swigibpy.ContractDetails_industry_set)
-    category = _swig_property(_swigibpy.ContractDetails_category_get, _swigibpy.ContractDetails_category_set)
-    subcategory = _swig_property(_swigibpy.ContractDetails_subcategory_get, _swigibpy.ContractDetails_subcategory_set)
-    timeZoneId = _swig_property(_swigibpy.ContractDetails_timeZoneId_get, _swigibpy.ContractDetails_timeZoneId_set)
-    tradingHours = _swig_property(_swigibpy.ContractDetails_tradingHours_get, _swigibpy.ContractDetails_tradingHours_set)
-    liquidHours = _swig_property(_swigibpy.ContractDetails_liquidHours_get, _swigibpy.ContractDetails_liquidHours_set)
-    cusip = _swig_property(_swigibpy.ContractDetails_cusip_get, _swigibpy.ContractDetails_cusip_set)
-    ratings = _swig_property(_swigibpy.ContractDetails_ratings_get, _swigibpy.ContractDetails_ratings_set)
-    descAppend = _swig_property(_swigibpy.ContractDetails_descAppend_get, _swigibpy.ContractDetails_descAppend_set)
-    bondType = _swig_property(_swigibpy.ContractDetails_bondType_get, _swigibpy.ContractDetails_bondType_set)
-    couponType = _swig_property(_swigibpy.ContractDetails_couponType_get, _swigibpy.ContractDetails_couponType_set)
-    callable = _swig_property(_swigibpy.ContractDetails_callable_get, _swigibpy.ContractDetails_callable_set)
-    putable = _swig_property(_swigibpy.ContractDetails_putable_get, _swigibpy.ContractDetails_putable_set)
-    coupon = _swig_property(_swigibpy.ContractDetails_coupon_get, _swigibpy.ContractDetails_coupon_set)
-    convertible = _swig_property(_swigibpy.ContractDetails_convertible_get, _swigibpy.ContractDetails_convertible_set)
-    maturity = _swig_property(_swigibpy.ContractDetails_maturity_get, _swigibpy.ContractDetails_maturity_set)
-    issueDate = _swig_property(_swigibpy.ContractDetails_issueDate_get, _swigibpy.ContractDetails_issueDate_set)
-    nextOptionDate = _swig_property(_swigibpy.ContractDetails_nextOptionDate_get, _swigibpy.ContractDetails_nextOptionDate_set)
-    nextOptionType = _swig_property(_swigibpy.ContractDetails_nextOptionType_get, _swigibpy.ContractDetails_nextOptionType_set)
-    nextOptionPartial = _swig_property(_swigibpy.ContractDetails_nextOptionPartial_get, _swigibpy.ContractDetails_nextOptionPartial_set)
-    notes = _swig_property(_swigibpy.ContractDetails_notes_get, _swigibpy.ContractDetails_notes_set)
-    __swig_destroy__ = _swigibpy.delete_ContractDetails
-ContractDetails_swigregister = _swigibpy.ContractDetails_swigregister
-ContractDetails_swigregister(ContractDetails)
+        """__init__(self) -> OrderState"""
+        _swigibpy.OrderState_swiginit(self,_swigibpy.new_OrderState())
+    status = _swig_property(_swigibpy.OrderState_status_get, _swigibpy.OrderState_status_set)
+    initMargin = _swig_property(_swigibpy.OrderState_initMargin_get, _swigibpy.OrderState_initMargin_set)
+    maintMargin = _swig_property(_swigibpy.OrderState_maintMargin_get, _swigibpy.OrderState_maintMargin_set)
+    equityWithLoan = _swig_property(_swigibpy.OrderState_equityWithLoan_get, _swigibpy.OrderState_equityWithLoan_set)
+    commission = _swig_property(_swigibpy.OrderState_commission_get, _swigibpy.OrderState_commission_set)
+    minCommission = _swig_property(_swigibpy.OrderState_minCommission_get, _swigibpy.OrderState_minCommission_set)
+    maxCommission = _swig_property(_swigibpy.OrderState_maxCommission_get, _swigibpy.OrderState_maxCommission_set)
+    commissionCurrency = _swig_property(_swigibpy.OrderState_commissionCurrency_get, _swigibpy.OrderState_commissionCurrency_set)
+    warningText = _swig_property(_swigibpy.OrderState_warningText_get, _swigibpy.OrderState_warningText_set)
+    __swig_destroy__ = _swigibpy.delete_OrderState
+OrderState_swigregister = _swigibpy.OrderState_swigregister
+OrderState_swigregister(OrderState)
 
-GROUPS = _swigibpy.GROUPS
-PROFILES = _swigibpy.PROFILES
-ALIASES = _swigibpy.ALIASES
+NO_ROW_NUMBER_SPECIFIED = _swigibpy.NO_ROW_NUMBER_SPECIFIED
+class ScannerSubscription(object):
+    """Proxy of C++ ScannerSubscription class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def __init__(self): 
+        """__init__(self) -> ScannerSubscription"""
+        _swigibpy.ScannerSubscription_swiginit(self,_swigibpy.new_ScannerSubscription())
+    numberOfRows = _swig_property(_swigibpy.ScannerSubscription_numberOfRows_get, _swigibpy.ScannerSubscription_numberOfRows_set)
+    instrument = _swig_property(_swigibpy.ScannerSubscription_instrument_get, _swigibpy.ScannerSubscription_instrument_set)
+    locationCode = _swig_property(_swigibpy.ScannerSubscription_locationCode_get, _swigibpy.ScannerSubscription_locationCode_set)
+    scanCode = _swig_property(_swigibpy.ScannerSubscription_scanCode_get, _swigibpy.ScannerSubscription_scanCode_set)
+    abovePrice = _swig_property(_swigibpy.ScannerSubscription_abovePrice_get, _swigibpy.ScannerSubscription_abovePrice_set)
+    belowPrice = _swig_property(_swigibpy.ScannerSubscription_belowPrice_get, _swigibpy.ScannerSubscription_belowPrice_set)
+    aboveVolume = _swig_property(_swigibpy.ScannerSubscription_aboveVolume_get, _swigibpy.ScannerSubscription_aboveVolume_set)
+    marketCapAbove = _swig_property(_swigibpy.ScannerSubscription_marketCapAbove_get, _swigibpy.ScannerSubscription_marketCapAbove_set)
+    marketCapBelow = _swig_property(_swigibpy.ScannerSubscription_marketCapBelow_get, _swigibpy.ScannerSubscription_marketCapBelow_set)
+    moodyRatingAbove = _swig_property(_swigibpy.ScannerSubscription_moodyRatingAbove_get, _swigibpy.ScannerSubscription_moodyRatingAbove_set)
+    moodyRatingBelow = _swig_property(_swigibpy.ScannerSubscription_moodyRatingBelow_get, _swigibpy.ScannerSubscription_moodyRatingBelow_set)
+    spRatingAbove = _swig_property(_swigibpy.ScannerSubscription_spRatingAbove_get, _swigibpy.ScannerSubscription_spRatingAbove_set)
+    spRatingBelow = _swig_property(_swigibpy.ScannerSubscription_spRatingBelow_get, _swigibpy.ScannerSubscription_spRatingBelow_set)
+    maturityDateAbove = _swig_property(_swigibpy.ScannerSubscription_maturityDateAbove_get, _swigibpy.ScannerSubscription_maturityDateAbove_set)
+    maturityDateBelow = _swig_property(_swigibpy.ScannerSubscription_maturityDateBelow_get, _swigibpy.ScannerSubscription_maturityDateBelow_set)
+    couponRateAbove = _swig_property(_swigibpy.ScannerSubscription_couponRateAbove_get, _swigibpy.ScannerSubscription_couponRateAbove_set)
+    couponRateBelow = _swig_property(_swigibpy.ScannerSubscription_couponRateBelow_get, _swigibpy.ScannerSubscription_couponRateBelow_set)
+    excludeConvertible = _swig_property(_swigibpy.ScannerSubscription_excludeConvertible_get, _swigibpy.ScannerSubscription_excludeConvertible_set)
+    averageOptionVolumeAbove = _swig_property(_swigibpy.ScannerSubscription_averageOptionVolumeAbove_get, _swigibpy.ScannerSubscription_averageOptionVolumeAbove_set)
+    scannerSettingPairs = _swig_property(_swigibpy.ScannerSubscription_scannerSettingPairs_get, _swigibpy.ScannerSubscription_scannerSettingPairs_set)
+    stockTypeFilter = _swig_property(_swigibpy.ScannerSubscription_stockTypeFilter_get, _swigibpy.ScannerSubscription_stockTypeFilter_set)
+    __swig_destroy__ = _swigibpy.delete_ScannerSubscription
+ScannerSubscription_swigregister = _swigibpy.ScannerSubscription_swigregister
+ScannerSubscription_swigregister(ScannerSubscription)
 
-def faDataTypeStr(*args):
-  """faDataTypeStr(faDataType pFaDataType) -> char"""
-  return _swigibpy.faDataTypeStr(*args)
 import threading
 import time
 class TWSPoller(threading.Thread):
