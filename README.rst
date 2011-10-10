@@ -5,6 +5,27 @@ Overview
 
 Latest version: 0.2.1 (TWS API v9.65)
 
+Windows Prerequisites
+=====================
+
+swigibpy just provides a wrapper around the TWS C++ API so this needs to be 
+compiled for your target platform during installation. While this should 
+'just work' for Linux and OSX Windows users might need to do some extra work.
+
+If you have Visual Studio, it might 'just work'. Please let me know if it 
+does or doesn't!
+
+Otherwise download and install `MinGW`_ and follow the steps to `add MinGW 
+to your path`_. To get pip to use MinGW as the compiler edit or create a 
+file named `distutils.cfg` in `[PYTHON LOCATION]\Lib\distutils` where
+`[PYTHON LOCATION]` is the path to your Python install, e.g. `C:\Python27`.
+Add the following to `distutils.cfg`
+
+	[build]
+	compiler=mingw32
+
+This has been tested using MinGW and Python 2.7 on Windows Vista.	
+
 Install
 =======
 
@@ -53,3 +74,5 @@ swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
 .. _Interactive Brokers: http://www.interactivebrokers.co.uk/ 
 .. _SWIG: http://www.swig.org/
 .. _C++ API documentation: http://www.interactivebrokers.com/en/p.php?f=programInterface
+.. _MinGW: http://www.mingw.org/
+.. _add MinGW to your path: http://www.mingw.org/wiki/Getting_Started#toc5
