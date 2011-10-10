@@ -2,11 +2,16 @@
 
 import os
 from distutils.core import setup, Extension
+from distutils.util import get_platform
 
 ###
 
 IB_DIR = 'IB_965'
-VERSION = '0.2.1'
+VERSION = '0.2.2'
+
+libraries = []
+if(get_platform().startswith('win')):
+    libraries.append('ws2_32')
 
 ib_module = Extension('_swigibpy',
                       sources=[IB_DIR + 
@@ -17,7 +22,8 @@ ib_module = Extension('_swigibpy',
                       include_dirs=[IB_DIR,
                                     IB_DIR + '/PosixSocketClient',
                                     IB_DIR + '/Shared'],
-                      define_macros=[ ('IB_USE_STD_STRING', '1') ]
+                      define_macros=[ ('IB_USE_STD_STRING', '1') ],
+                      libraries=libraries
                       )
 
 setup (version=VERSION,
