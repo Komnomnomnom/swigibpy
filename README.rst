@@ -17,9 +17,9 @@ does or doesn't!
 
 Otherwise download and install `MinGW`_ and follow the steps to `add MinGW 
 to your path`_. To get pip to use MinGW as the compiler edit or create a 
-file named `distutils.cfg` in `[PYTHON LOCATION]\Lib\distutils` where
-`[PYTHON LOCATION]` is the path to your Python install, e.g. `C:\Python27`.
-Add the following to `distutils.cfg`
+file named ``distutils.cfg`` in ``[PYTHON LOCATION]\Lib\distutils`` where
+``[PYTHON LOCATION]`` is the path to your Python install, e.g. ``C:\Python27``.
+Add the following to ``distutils.cfg``::
 
 	[build]
 	compiler=mingw32
