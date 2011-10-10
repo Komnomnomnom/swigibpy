@@ -10,7 +10,7 @@ Windows Prerequisites
 
 swigibpy just provides a wrapper around the TWS C++ API so this needs to be 
 compiled for your target platform during installation. While this should 
-'just work' for Linux and OSX Windows users might need to do some extra work.
+'just work' for Linux and OSX, Windows users might need to do some extra work.
 
 If you have Visual Studio, it might 'just work'. Please let me know if it 
 does or doesn't!
