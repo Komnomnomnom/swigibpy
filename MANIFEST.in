@@ -1,0 +1,11 @@
+include *.py
+include *.i
+include examples/*.py
+include IB_*/*/*.cpp
+include IB_*/*/*.h
+include IB_*/*.cpp
+include IB_*/*.h
+include README.rst
+include CHANGES
+include LICENSE
+include MANIFEST.in
