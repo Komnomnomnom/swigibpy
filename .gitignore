@@ -3,3 +3,5 @@
 /_swigibpy.*
 /build
 .DS_Store
+/MANIFEST
+/dist
