@@ -75,6 +75,7 @@ struct Order
 		eTradeOnly       = true;
 		firmQuoteOnly    = true;
 		nbboPriceCap     = UNSET_DOUBLE;
+		optOutSmartRouting = false;
 
 		// BOX exchange orders only
 		auctionStrategy = AUCTION_UNSET;
@@ -91,6 +92,10 @@ struct Order
 		volatilityType        = UNSET_INTEGER;     // 1=daily, 2=annual
 		deltaNeutralOrderType = "";
 		deltaNeutralAuxPrice  = UNSET_DOUBLE;
+		deltaNeutralConId     = 0;
+		deltaNeutralSettlingFirm = "";
+		deltaNeutralClearingAccount = "";
+		deltaNeutralClearingIntent = "";
 		continuousUpdate      = false;
 		referencePriceType    = UNSET_INTEGER; // 1=Average, 2 = BidOrAsk
 
@@ -162,6 +167,7 @@ struct Order
 	bool     eTradeOnly;
 	bool     firmQuoteOnly;
 	double   nbboPriceCap;
+	bool     optOutSmartRouting;
 
 	// BOX exchange orders only
 	int      auctionStrategy; // AUCTION_MATCH, AUCTION_IMPROVEMENT, AUCTION_TRANSPARENT
@@ -178,6 +184,10 @@ struct Order
 	int      volatilityType;     // 1=daily, 2=annual
 	IBString deltaNeutralOrderType;
 	double   deltaNeutralAuxPrice;
+	long     deltaNeutralConId;
+	IBString deltaNeutralSettlingFirm;
+	IBString deltaNeutralClearingAccount;
+	IBString deltaNeutralClearingIntent;
 	bool     continuousUpdate;
 	int      referencePriceType; // 1=Average, 2 = BidOrAsk
 
@@ -189,6 +199,10 @@ struct Order
 	int      scaleInitLevelSize;
 	int      scaleSubsLevelSize;
 	double   scalePriceIncrement;
+
+	// HEDGE ORDERS
+	IBString hedgeType;  // 'D' - delta, 'B' - beta, 'F' - FX, 'P' - pair
+	IBString hedgeParam; // 'beta=X' value for beta hedge, 'ratio=Y' for pair hedge
 
 	// Clearing info
 	IBString account; // IB account
@@ -203,6 +217,7 @@ struct Order
 	typedef shared_ptr<TagValueList> TagValueListSPtr;
 
 	TagValueListSPtr algoParams;
+	TagValueListSPtr smartComboRoutingParams;
 
 	// What-if
 	bool     whatIf;

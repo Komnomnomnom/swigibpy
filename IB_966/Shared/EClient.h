@@ -58,6 +58,7 @@ public:
    virtual void cancelCalculateImpliedVolatility( TickerId reqId) = 0;
    virtual void cancelCalculateOptionPrice( TickerId reqId) = 0;
    virtual void reqGlobalCancel() = 0;
+   virtual void reqMarketDataType( int marketDataType) = 0;
 private:
 };
 

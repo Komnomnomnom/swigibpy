@@ -85,7 +85,12 @@
 //    ; can receive timeZoneId, tradingHours, liquidHours fields in contractDetails
 // 47 = can receive gamma, vega, theta, undPrice fields in TICK_OPTION_COMPUTATION
 // 48 = can receive exemptCode in openOrder
-const int CLIENT_VERSION    = 48;
+// 49 = can receive hedgeType and hedgeParam in openOrder
+// 50 = can receive optOutSmartRouting field in openOrder
+// 51 = can receive smartComboRoutingParams in openOrder
+// 52 = can receive deltaNeutralConId, deltaNeutralSettlingFirm, deltaNeutralClearingAccount and deltaNeutralClearingIntent in openOrder
+// 53 = can receive orderRef in execution
+const int CLIENT_VERSION    = 53;
 const int SERVER_VERSION    = 38;
 
 // outgoing msg id's
@@ -124,6 +129,7 @@ const int REQ_CALC_OPTION_PRICE         = 55;
 const int CANCEL_CALC_IMPLIED_VOLAT     = 56;
 const int CANCEL_CALC_OPTION_PRICE      = 57;
 const int REQ_GLOBAL_CANCEL             = 58;
+const int REQ_MARKET_DATA_TYPE          = 59;
 
 //const int MIN_SERVER_VER_REAL_TIME_BARS       = 34;
 //const int MIN_SERVER_VER_SCALE_ORDERS         = 35;
@@ -149,6 +155,11 @@ const int MIN_SERVER_VER_CANCEL_CALC_OPTION_PRICE  = 50;
 const int MIN_SERVER_VER_SSHORTX_OLD            = 51;
 const int MIN_SERVER_VER_SSHORTX                = 52;
 const int MIN_SERVER_VER_REQ_GLOBAL_CANCEL      = 53;
+const int MIN_SERVER_VER_HEDGE_ORDERS			= 54;
+const int MIN_SERVER_VER_REQ_MARKET_DATA_TYPE	= 55;
+const int MIN_SERVER_VER_OPT_OUT_SMART_ROUTING  = 56;
+const int MIN_SERVER_VER_SMART_COMBO_ROUTING_PARAMS = 57;
+const int MIN_SERVER_VER_DELTA_NEUTRAL_CONID    = 58;
 
 // incoming msg id's
 const int TICK_PRICE                = 1;
@@ -184,6 +195,7 @@ const int ACCT_DOWNLOAD_END         = 54;
 const int EXECUTION_DATA_END        = 55;
 const int DELTA_NEUTRAL_VALIDATION  = 56;
 const int TICK_SNAPSHOT_END         = 57;
+const int MARKET_DATA_TYPE          = 58;
 
 // TWS New Bulletins constants
 const int NEWS_MSG              = 1;    // standard IB news bulleting message
@@ -1301,9 +1313,37 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		}
 	}
 
+	if( m_serverVersion < MIN_SERVER_VER_HEDGE_ORDERS) {
+		if( !IsEmpty(order.hedgeType)) {
+			m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+     			"  It does not support hedge orders.");
+			return;
+		}
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_OPT_OUT_SMART_ROUTING) {
+		if (order.optOutSmartRouting) {
+			m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+				"  It does not support optOutSmartRouting parameter.");
+			return;
+		}
+	}
+
+	if (m_serverVersion < MIN_SERVER_VER_DELTA_NEUTRAL_CONID) {
+		if (order.deltaNeutralConId > 0 
+				|| !IsEmpty(order.deltaNeutralSettlingFirm)
+				|| !IsEmpty(order.deltaNeutralClearingAccount)
+				|| !IsEmpty(order.deltaNeutralClearingIntent)
+				) {
+			m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+				"  It does not support deltaNeutral parameters: ConId, SettlingFirm, ClearingAccount, ClearingIntent.");
+			return;
+		}
+	}
+
 	std::ostringstream msg;
 
-	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 31;
+	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 35;
 
 	// send place order msg
 	ENCODE_FIELD( PLACE_ORDER);
@@ -1393,6 +1433,19 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		}
 	}
 
+	if( m_serverVersion >= MIN_SERVER_VER_SMART_COMBO_ROUTING_PARAMS && Compare(contract.secType, "BAG") == 0) {
+		const Order::TagValueList* const smartComboRoutingParams = order.smartComboRoutingParams.get();
+		const int smartComboRoutingParamsCount = smartComboRoutingParams ? smartComboRoutingParams->size() : 0;
+		ENCODE_FIELD( smartComboRoutingParamsCount);
+		if( smartComboRoutingParamsCount > 0) {
+			for( int i = 0; i < smartComboRoutingParamsCount; ++i) {
+				const TagValue* tagValue = ((*smartComboRoutingParams)[i]).get();
+				ENCODE_FIELD( tagValue->tag);
+				ENCODE_FIELD( tagValue->value);
+			}
+		}
+	}
+
 	/////////////////////////////////////////////////////////////////////////////
 	// Send the shares allocation.
 	//
@@ -1465,6 +1518,14 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 	//else {
 		ENCODE_FIELD( order.deltaNeutralOrderType); // srv v28 and above
 		ENCODE_FIELD_MAX( order.deltaNeutralAuxPrice); // srv v28 and above
+
+		if (m_serverVersion >= MIN_SERVER_VER_DELTA_NEUTRAL_CONID && !IsEmpty(order.deltaNeutralOrderType)){
+			ENCODE_FIELD( order.deltaNeutralConId);
+			ENCODE_FIELD( order.deltaNeutralSettlingFirm);
+			ENCODE_FIELD( order.deltaNeutralClearingAccount);
+			ENCODE_FIELD( order.deltaNeutralClearingIntent);
+		}
+
 	//}
 	ENCODE_FIELD( order.continuousUpdate);
 	//if( m_serverVersion == 26) {
@@ -1490,6 +1551,18 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 	}
 
 	ENCODE_FIELD_MAX( order.scalePriceIncrement);
+
+	// HEDGE orders
+	if( m_serverVersion >= MIN_SERVER_VER_HEDGE_ORDERS) {
+		ENCODE_FIELD( order.hedgeType);
+		if ( !IsEmpty(order.hedgeType)) {
+			ENCODE_FIELD( order.hedgeParam);
+		}
+	}
+
+	if( m_serverVersion >= MIN_SERVER_VER_OPT_OUT_SMART_ROUTING){
+		ENCODE_FIELD( order.optOutSmartRouting);
+	}
 
 	if( m_serverVersion >= MIN_SERVER_VER_PTA_ORDERS) {
 		ENCODE_FIELD( order.clearingAccount);
@@ -1885,6 +1958,31 @@ void EClientSocketBase::reqGlobalCancel()
 	// send current time req
 	ENCODE_FIELD( REQ_GLOBAL_CANCEL);
 	ENCODE_FIELD( VERSION);
+
+	bufferedSend( msg.str());
+}
+
+void EClientSocketBase::reqMarketDataType( int marketDataType)
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_REQ_MARKET_DATA_TYPE) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  It does not support market data type requests.");
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( REQ_MARKET_DATA_TYPE);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( marketDataType);
 
 	bufferedSend( msg.str());
 }
@@ -2375,6 +2473,14 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( order.volatilityType); // ver 11 field
 				DECODE_FIELD( order.deltaNeutralOrderType); // ver 11 field (had a hack for ver 11)
 				DECODE_FIELD( order.deltaNeutralAuxPrice); // ver 12 field
+
+				if (version >= 27 && !IsEmpty(order.deltaNeutralOrderType)) {
+					DECODE_FIELD( order.deltaNeutralConId);
+					DECODE_FIELD( order.deltaNeutralSettlingFirm);
+					DECODE_FIELD( order.deltaNeutralClearingAccount);
+					DECODE_FIELD( order.deltaNeutralClearingIntent);
+				}
+
 				DECODE_FIELD( order.continuousUpdate); // ver 11 field
 
 				// will never happen
@@ -2391,6 +2497,22 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( order.basisPointsType); // ver 14 field
 				DECODE_FIELD( contract.comboLegsDescrip); // ver 14 field
 
+				if (version >= 26) {
+					int smartComboRoutingParamsCount = 0;
+					DECODE_FIELD( smartComboRoutingParamsCount);
+					if( smartComboRoutingParamsCount > 0) {
+						Order::TagValueListSPtr smartComboRoutingParams( new Order::TagValueList);
+						smartComboRoutingParams->reserve( smartComboRoutingParamsCount);
+						for( int i = 0; i < smartComboRoutingParamsCount; ++i) {
+							TagValueSPtr tagValue( new TagValue());
+							DECODE_FIELD( tagValue->tag);
+							DECODE_FIELD( tagValue->value);
+							smartComboRoutingParams->push_back( tagValue);
+						}
+						order.smartComboRoutingParams = smartComboRoutingParams;
+					}
+				}
+
 				if( version >= 20) {
 					DECODE_FIELD_MAX( order.scaleInitLevelSize);
 					DECODE_FIELD_MAX( order.scaleSubsLevelSize);
@@ -2402,6 +2524,17 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 					DECODE_FIELD_MAX( order.scaleInitLevelSize); // scaleComponectSize
 				}
 				DECODE_FIELD_MAX( order.scalePriceIncrement); // ver 15 field
+
+				if( version >= 24) {
+					DECODE_FIELD( order.hedgeType);
+					if( !IsEmpty(order.hedgeType)) {
+						DECODE_FIELD( order.hedgeParam);
+					}
+				}
+
+				if( version >= 25) {
+					DECODE_FIELD( order.optOutSmartRouting);
+				}
 
 				DECODE_FIELD( order.clearingAccount); // ver 19 field
 				DECODE_FIELD( order.clearingIntent); // ver 19 field
@@ -2687,6 +2820,10 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				if( version >= 6) {
 					DECODE_FIELD( exec.cumQty);
 					DECODE_FIELD( exec.avgPrice);
+				}
+
+				if( version >= 8) {
+					DECODE_FIELD( exec.orderRef);
 				}
 
 				m_pEWrapper->execDetails( reqId, contract, exec);
@@ -3031,6 +3168,20 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( reqId);
 
 				m_pEWrapper->tickSnapshotEnd( reqId);
+				break;
+			}
+
+			case MARKET_DATA_TYPE:
+			{
+				int version;
+				int reqId;
+				int marketDataType;
+
+				DECODE_FIELD( version);
+				DECODE_FIELD( reqId);
+				DECODE_FIELD( marketDataType);
+
+				m_pEWrapper->marketDataType( reqId, marketDataType);
 				break;
 			}
 

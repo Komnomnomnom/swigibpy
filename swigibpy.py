@@ -99,6 +99,8 @@ ALIASES = _swigibpy.ALIASES
 def faDataTypeStr(*args):
   """faDataTypeStr(faDataType pFaDataType) -> char"""
   return _swigibpy.faDataTypeStr(*args)
+REALTIME = _swigibpy.REALTIME
+FROZEN = _swigibpy.FROZEN
 SAME_POS = _swigibpy.SAME_POS
 OPEN_POS = _swigibpy.OPEN_POS
 CLOSE_POS = _swigibpy.CLOSE_POS
@@ -417,6 +419,10 @@ class EClient(object):
         """reqGlobalCancel(self)"""
         return _swigibpy.EClient_reqGlobalCancel(self)
 
+    def reqMarketDataType(self, *args):
+        """reqMarketDataType(self, int marketDataType)"""
+        return _swigibpy.EClient_reqMarketDataType(self, *args)
+
 EClient.eConnect = new_instancemethod(_swigibpy.EClient_eConnect,None,EClient)
 EClient.eDisconnect = new_instancemethod(_swigibpy.EClient_eDisconnect,None,EClient)
 EClient.serverVersion = new_instancemethod(_swigibpy.EClient_serverVersion,None,EClient)
@@ -457,6 +463,7 @@ EClient.calculateOptionPrice = new_instancemethod(_swigibpy.EClient_calculateOpt
 EClient.cancelCalculateImpliedVolatility = new_instancemethod(_swigibpy.EClient_cancelCalculateImpliedVolatility,None,EClient)
 EClient.cancelCalculateOptionPrice = new_instancemethod(_swigibpy.EClient_cancelCalculateOptionPrice,None,EClient)
 EClient.reqGlobalCancel = new_instancemethod(_swigibpy.EClient_reqGlobalCancel,None,EClient)
+EClient.reqMarketDataType = new_instancemethod(_swigibpy.EClient_reqMarketDataType,None,EClient)
 EClient_swigregister = _swigibpy.EClient_swigregister
 EClient_swigregister(EClient)
 
@@ -476,6 +483,10 @@ class EClientSocketBase(EClient):
     def eDisconnect(self):
         """eDisconnect(self)"""
         return _swigibpy.EClientSocketBase_eDisconnect(self)
+
+    def clientId(self):
+        """clientId(self) -> int"""
+        return _swigibpy.EClientSocketBase_clientId(self)
 
     def isConnected(self):
         """isConnected(self) -> bool"""
@@ -661,8 +672,13 @@ class EClientSocketBase(EClient):
         """reqGlobalCancel(self)"""
         return _swigibpy.EClientSocketBase_reqGlobalCancel(self)
 
+    def reqMarketDataType(self, *args):
+        """reqMarketDataType(self, int marketDataType)"""
+        return _swigibpy.EClientSocketBase_reqMarketDataType(self, *args)
+
 EClientSocketBase.eConnect = new_instancemethod(_swigibpy.EClientSocketBase_eConnect,None,EClientSocketBase)
 EClientSocketBase.eDisconnect = new_instancemethod(_swigibpy.EClientSocketBase_eDisconnect,None,EClientSocketBase)
+EClientSocketBase.clientId = new_instancemethod(_swigibpy.EClientSocketBase_clientId,None,EClientSocketBase)
 EClientSocketBase.isConnected = new_instancemethod(_swigibpy.EClientSocketBase_isConnected,None,EClientSocketBase)
 EClientSocketBase.isInBufferEmpty = new_instancemethod(_swigibpy.EClientSocketBase_isInBufferEmpty,None,EClientSocketBase)
 EClientSocketBase.isOutBufferEmpty = new_instancemethod(_swigibpy.EClientSocketBase_isOutBufferEmpty,None,EClientSocketBase)
@@ -704,6 +720,7 @@ EClientSocketBase.calculateOptionPrice = new_instancemethod(_swigibpy.EClientSoc
 EClientSocketBase.cancelCalculateImpliedVolatility = new_instancemethod(_swigibpy.EClientSocketBase_cancelCalculateImpliedVolatility,None,EClientSocketBase)
 EClientSocketBase.cancelCalculateOptionPrice = new_instancemethod(_swigibpy.EClientSocketBase_cancelCalculateOptionPrice,None,EClientSocketBase)
 EClientSocketBase.reqGlobalCancel = new_instancemethod(_swigibpy.EClientSocketBase_reqGlobalCancel,None,EClientSocketBase)
+EClientSocketBase.reqMarketDataType = new_instancemethod(_swigibpy.EClientSocketBase_reqMarketDataType,None,EClientSocketBase)
 EClientSocketBase_swigregister = _swigibpy.EClientSocketBase_swigregister
 EClientSocketBase_swigregister(EClientSocketBase)
 
@@ -727,6 +744,7 @@ class Execution(object):
     liquidation = _swig_property(_swigibpy.Execution_liquidation_get, _swigibpy.Execution_liquidation_set)
     cumQty = _swig_property(_swigibpy.Execution_cumQty_get, _swigibpy.Execution_cumQty_set)
     avgPrice = _swig_property(_swigibpy.Execution_avgPrice_get, _swigibpy.Execution_avgPrice_set)
+    orderRef = _swig_property(_swigibpy.Execution_orderRef_get, _swigibpy.Execution_orderRef_set)
     __swig_destroy__ = _swigibpy.delete_Execution
 Execution_swigregister = _swigibpy.Execution_swigregister
 Execution_swigregister(Execution)
@@ -820,6 +838,7 @@ class Order(object):
     eTradeOnly = _swig_property(_swigibpy.Order_eTradeOnly_get, _swigibpy.Order_eTradeOnly_set)
     firmQuoteOnly = _swig_property(_swigibpy.Order_firmQuoteOnly_get, _swigibpy.Order_firmQuoteOnly_set)
     nbboPriceCap = _swig_property(_swigibpy.Order_nbboPriceCap_get, _swigibpy.Order_nbboPriceCap_set)
+    optOutSmartRouting = _swig_property(_swigibpy.Order_optOutSmartRouting_get, _swigibpy.Order_optOutSmartRouting_set)
     auctionStrategy = _swig_property(_swigibpy.Order_auctionStrategy_get, _swigibpy.Order_auctionStrategy_set)
     startingPrice = _swig_property(_swigibpy.Order_startingPrice_get, _swigibpy.Order_startingPrice_set)
     stockRefPrice = _swig_property(_swigibpy.Order_stockRefPrice_get, _swigibpy.Order_stockRefPrice_set)
@@ -830,6 +849,10 @@ class Order(object):
     volatilityType = _swig_property(_swigibpy.Order_volatilityType_get, _swigibpy.Order_volatilityType_set)
     deltaNeutralOrderType = _swig_property(_swigibpy.Order_deltaNeutralOrderType_get, _swigibpy.Order_deltaNeutralOrderType_set)
     deltaNeutralAuxPrice = _swig_property(_swigibpy.Order_deltaNeutralAuxPrice_get, _swigibpy.Order_deltaNeutralAuxPrice_set)
+    deltaNeutralConId = _swig_property(_swigibpy.Order_deltaNeutralConId_get, _swigibpy.Order_deltaNeutralConId_set)
+    deltaNeutralSettlingFirm = _swig_property(_swigibpy.Order_deltaNeutralSettlingFirm_get, _swigibpy.Order_deltaNeutralSettlingFirm_set)
+    deltaNeutralClearingAccount = _swig_property(_swigibpy.Order_deltaNeutralClearingAccount_get, _swigibpy.Order_deltaNeutralClearingAccount_set)
+    deltaNeutralClearingIntent = _swig_property(_swigibpy.Order_deltaNeutralClearingIntent_get, _swigibpy.Order_deltaNeutralClearingIntent_set)
     continuousUpdate = _swig_property(_swigibpy.Order_continuousUpdate_get, _swigibpy.Order_continuousUpdate_set)
     referencePriceType = _swig_property(_swigibpy.Order_referencePriceType_get, _swigibpy.Order_referencePriceType_set)
     basisPoints = _swig_property(_swigibpy.Order_basisPoints_get, _swigibpy.Order_basisPoints_set)
@@ -837,12 +860,15 @@ class Order(object):
     scaleInitLevelSize = _swig_property(_swigibpy.Order_scaleInitLevelSize_get, _swigibpy.Order_scaleInitLevelSize_set)
     scaleSubsLevelSize = _swig_property(_swigibpy.Order_scaleSubsLevelSize_get, _swigibpy.Order_scaleSubsLevelSize_set)
     scalePriceIncrement = _swig_property(_swigibpy.Order_scalePriceIncrement_get, _swigibpy.Order_scalePriceIncrement_set)
+    hedgeType = _swig_property(_swigibpy.Order_hedgeType_get, _swigibpy.Order_hedgeType_set)
+    hedgeParam = _swig_property(_swigibpy.Order_hedgeParam_get, _swigibpy.Order_hedgeParam_set)
     account = _swig_property(_swigibpy.Order_account_get, _swigibpy.Order_account_set)
     settlingFirm = _swig_property(_swigibpy.Order_settlingFirm_get, _swigibpy.Order_settlingFirm_set)
     clearingAccount = _swig_property(_swigibpy.Order_clearingAccount_get, _swigibpy.Order_clearingAccount_set)
     clearingIntent = _swig_property(_swigibpy.Order_clearingIntent_get, _swigibpy.Order_clearingIntent_set)
     algoStrategy = _swig_property(_swigibpy.Order_algoStrategy_get, _swigibpy.Order_algoStrategy_set)
     algoParams = _swig_property(_swigibpy.Order_algoParams_get, _swigibpy.Order_algoParams_set)
+    smartComboRoutingParams = _swig_property(_swigibpy.Order_smartComboRoutingParams_get, _swigibpy.Order_smartComboRoutingParams_set)
     whatIf = _swig_property(_swigibpy.Order_whatIf_get, _swigibpy.Order_whatIf_set)
     notHeld = _swig_property(_swigibpy.Order_notHeld_get, _swigibpy.Order_notHeld_set)
     __swig_destroy__ = _swigibpy.delete_Order
@@ -1273,6 +1299,10 @@ class EWrapper(object):
         """tickSnapshotEnd(self, int reqId)"""
         return _swigibpy.EWrapper_tickSnapshotEnd(self, *args)
 
+    def marketDataType(self, *args):
+        """marketDataType(self, TickerId reqId, int marketDataType)"""
+        return _swigibpy.EWrapper_marketDataType(self, *args)
+
     def __init__(self): 
         """__init__(self) -> EWrapper"""
         if self.__class__ == EWrapper:
@@ -1318,6 +1348,7 @@ EWrapper.currentTime = new_instancemethod(_swigibpy.EWrapper_currentTime,None,EW
 EWrapper.fundamentalData = new_instancemethod(_swigibpy.EWrapper_fundamentalData,None,EWrapper)
 EWrapper.deltaNeutralValidation = new_instancemethod(_swigibpy.EWrapper_deltaNeutralValidation,None,EWrapper)
 EWrapper.tickSnapshotEnd = new_instancemethod(_swigibpy.EWrapper_tickSnapshotEnd,None,EWrapper)
+EWrapper.marketDataType = new_instancemethod(_swigibpy.EWrapper_marketDataType,None,EWrapper)
 EWrapper_swigregister = _swigibpy.EWrapper_swigregister
 EWrapper_swigregister(EWrapper)
 

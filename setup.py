@@ -7,8 +7,8 @@ from distutils.util import get_platform
 
 ###
 
-IB_DIR = 'IB_965'
-VERSION = '0.2.2'
+IB_DIR = 'IB_966'
+VERSION = '0.2.3'
 
 libraries = []
 if(get_platform().startswith('win')):

@@ -5259,6 +5259,38 @@ void SwigDirector_EWrapper::tickSnapshotEnd(int reqId) {
 }
 
 
+void SwigDirector_EWrapper::marketDataType(TickerId reqId, int marketDataType) {
+  SWIG_PYTHON_THREAD_BEGIN_BLOCK;
+  {
+    swig::SwigVar_PyObject obj0;
+    obj0 = SWIG_From_long(static_cast< long >(reqId));
+    swig::SwigVar_PyObject obj1;
+    obj1 = SWIG_From_int(static_cast< int >(marketDataType));
+    if (!swig_get_self()) {
+      Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call EWrapper.__init__.");
+    }
+#if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
+    const size_t swig_method_index = 36;
+    const char * const swig_method_name = "marketDataType";
+    PyObject* method = swig_get_method(swig_method_index, swig_method_name);
+    swig::SwigVar_PyObject result = PyObject_CallFunctionObjArgs(method ,(PyObject *)obj0,(PyObject *)obj1, NULL);
+#else
+    swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *)"marketDataType");
+    swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0,(PyObject *)obj1, NULL);
+#endif
+    if (!result) {
+      PyObject *error = PyErr_Occurred();
+      {
+        if (error != NULL) {
+          throw Swig::DirectorMethodException();
+        }
+      }
+    }
+  }
+  SWIG_PYTHON_THREAD_END_BLOCK;
+}
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -12297,6 +12329,60 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_EClient_reqMarketDataType(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"EClient_reqMarketDataType",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_reqMarketDataType" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClient_reqMarketDataType" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    /*
+    		most errors should be propagated through to EWrapper->error,
+        	others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->reqMarketDataType(arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to standard error */
+      PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */ 
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *EClient_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!SWIG_Python_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
@@ -12552,6 +12638,54 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eDisconnect(PyObject *SWIGUNUSEDPAR
     }
   }
   resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClientSocketBase_clientId(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_clientId" "', argument " "1"" of type '" "EClientSocketBase const *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  {
+    /*
+    		most errors should be propagated through to EWrapper->error,
+        	others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        result = (int)((EClientSocketBase const *)arg1)->clientId();
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to standard error */
+      PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */ 
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+    }
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -15084,6 +15218,60 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMarketDataType(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"EClientSocketBase_reqMarketDataType",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_reqMarketDataType" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClientSocketBase_reqMarketDataType" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    /*
+    		most errors should be propagated through to EWrapper->error,
+        	others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->reqMarketDataType(arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to standard error */
+      PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */ 
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *EClientSocketBase_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!SWIG_Python_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
@@ -15938,6 +16126,73 @@ SWIGINTERN PyObject *_wrap_Execution_avgPrice_get(PyObject *SWIGUNUSEDPARM(self)
     SWIG_PYTHON_THREAD_END_ALLOW;
   }
   resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Execution_orderRef_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Execution *arg1 = (Execution *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Execution_orderRef_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Execution, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Execution_orderRef_set" "', argument " "1"" of type '" "Execution *""'"); 
+  }
+  arg1 = reinterpret_cast< Execution * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Execution_orderRef_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Execution_orderRef_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->orderRef = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Execution_orderRef_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Execution *arg1 = (Execution *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Execution, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Execution_orderRef_get" "', argument " "1"" of type '" "Execution *""'"); 
+  }
+  arg1 = reinterpret_cast< Execution * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->orderRef);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
   return resultobj;
 fail:
   return NULL;
@@ -19476,6 +19731,66 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Order_optOutSmartRouting_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_optOutSmartRouting_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_optOutSmartRouting_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  ecode2 = SWIG_AsVal_bool(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Order_optOutSmartRouting_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->optOutSmartRouting = arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_optOutSmartRouting_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  bool result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_optOutSmartRouting_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (bool) ((arg1)->optOutSmartRouting);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Order_auctionStrategy_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Order *arg1 = (Order *) 0 ;
@@ -20083,6 +20398,267 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralConId_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  long arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  long val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_deltaNeutralConId_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralConId_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  ecode2 = SWIG_AsVal_long(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Order_deltaNeutralConId_set" "', argument " "2"" of type '" "long""'");
+  } 
+  arg2 = static_cast< long >(val2);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->deltaNeutralConId = arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralConId_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  long result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralConId_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (long) ((arg1)->deltaNeutralConId);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_long(static_cast< long >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralSettlingFirm_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_deltaNeutralSettlingFirm_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralSettlingFirm_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_deltaNeutralSettlingFirm_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_deltaNeutralSettlingFirm_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->deltaNeutralSettlingFirm = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralSettlingFirm_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralSettlingFirm_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->deltaNeutralSettlingFirm);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralClearingAccount_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_deltaNeutralClearingAccount_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralClearingAccount_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_deltaNeutralClearingAccount_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_deltaNeutralClearingAccount_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->deltaNeutralClearingAccount = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralClearingAccount_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralClearingAccount_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->deltaNeutralClearingAccount);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralClearingIntent_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_deltaNeutralClearingIntent_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralClearingIntent_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_deltaNeutralClearingIntent_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_deltaNeutralClearingIntent_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->deltaNeutralClearingIntent = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_deltaNeutralClearingIntent_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_deltaNeutralClearingIntent_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->deltaNeutralClearingIntent);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Order_continuousUpdate_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Order *arg1 = (Order *) 0 ;
@@ -20503,6 +21079,140 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Order_hedgeType_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_hedgeType_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_hedgeType_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_hedgeType_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_hedgeType_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->hedgeType = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_hedgeType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_hedgeType_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->hedgeType);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_hedgeParam_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_hedgeParam_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_hedgeParam_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_hedgeParam_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_hedgeParam_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->hedgeParam = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_hedgeParam_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_hedgeParam_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->hedgeParam);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Order_account_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Order *arg1 = (Order *) 0 ;
@@ -20889,6 +21599,66 @@ SWIGINTERN PyObject *_wrap_Order_algoParams_get(PyObject *SWIGUNUSEDPARM(self), 
   {
     SWIG_PYTHON_THREAD_BEGIN_ALLOW;
     result = (Order::TagValueListSPtr *)& ((arg1)->algoParams);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_shared_ptrT_std__vectorT_shared_ptrT_TagValue_t_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_smartComboRoutingParams_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  Order::TagValueListSPtr *arg2 = (Order::TagValueListSPtr *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_smartComboRoutingParams_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_smartComboRoutingParams_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2,SWIGTYPE_p_shared_ptrT_std__vectorT_shared_ptrT_TagValue_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_smartComboRoutingParams_set" "', argument " "2"" of type '" "Order::TagValueListSPtr *""'"); 
+  }
+  arg2 = reinterpret_cast< Order::TagValueListSPtr * >(argp2);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->smartComboRoutingParams = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_smartComboRoutingParams_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  Order::TagValueListSPtr *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_smartComboRoutingParams_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (Order::TagValueListSPtr *)& ((arg1)->smartComboRoutingParams);
     SWIG_PYTHON_THREAD_END_ALLOW;
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_shared_ptrT_std__vectorT_shared_ptrT_TagValue_t_t_t, 0 |  0 );
@@ -27060,6 +27830,76 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_EWrapper_marketDataType(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EWrapper *arg1 = (EWrapper *) 0 ;
+  TickerId arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  long val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject *swig_obj[3] ;
+  Swig::Director *director = 0;
+  bool upcall = false;
+  
+  if (!SWIG_Python_UnpackTuple(args,"EWrapper_marketDataType",3,3,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_EWrapper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EWrapper_marketDataType" "', argument " "1"" of type '" "EWrapper *""'"); 
+  }
+  arg1 = reinterpret_cast< EWrapper * >(argp1);
+  ecode2 = SWIG_AsVal_long(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EWrapper_marketDataType" "', argument " "2"" of type '" "TickerId""'");
+  } 
+  arg2 = static_cast< TickerId >(val2);
+  ecode3 = SWIG_AsVal_int(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "EWrapper_marketDataType" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  director = SWIG_DIRECTOR_CAST(arg1);
+  upcall = (director && (director->swig_get_self()==swig_obj[0]));
+  try {
+    {
+      /*
+      		most errors should be propagated through to EWrapper->error,
+          	others should be added here as and when needed / encountered.
+          */
+      try {
+        if (upcall) {
+          Swig::DirectorPureVirtualException::raise("EWrapper::marketDataType");
+        } else {
+          (arg1)->marketDataType(arg2,arg3);
+        }
+      } catch(Swig::DirectorPureVirtualException &e) {
+        /* Call to pure virtual method, raise not implemented error */
+        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      } catch(Swig::DirectorException &e) {
+        /* Fail if there is a problem in the director proxy transport */
+        SWIG_fail;
+      } catch(std::exception& e) {
+        /* Convert standard error to standard error */
+        PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+        
+      } catch(...) {
+        /* Final catch all, results in runtime error */ 
+        PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      }
+    }
+  } catch (Swig::DirectorException&) {
+    SWIG_fail;
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_EWrapper(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   PyObject *arg1 = (PyObject *) 0 ;
@@ -27355,6 +28195,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClient_cancelCalculateImpliedVolatility", _wrap_EClient_cancelCalculateImpliedVolatility, METH_VARARGS, (char *)"EClient_cancelCalculateImpliedVolatility(EClient self, TickerId reqId)"},
 	 { (char *)"EClient_cancelCalculateOptionPrice", _wrap_EClient_cancelCalculateOptionPrice, METH_VARARGS, (char *)"EClient_cancelCalculateOptionPrice(EClient self, TickerId reqId)"},
 	 { (char *)"EClient_reqGlobalCancel", (PyCFunction)_wrap_EClient_reqGlobalCancel, METH_O, (char *)"EClient_reqGlobalCancel(EClient self)"},
+	 { (char *)"EClient_reqMarketDataType", _wrap_EClient_reqMarketDataType, METH_VARARGS, (char *)"EClient_reqMarketDataType(EClient self, int marketDataType)"},
 	 { (char *)"EClient_swigregister", EClient_swigregister, METH_VARARGS, NULL},
 	 { (char *)"delete_EClientSocketBase", (PyCFunction)_wrap_delete_EClientSocketBase, METH_O, (char *)"delete_EClientSocketBase(EClientSocketBase self)"},
 	 { (char *)"EClientSocketBase_eConnect", _wrap_EClientSocketBase_eConnect, METH_VARARGS, (char *)"\n"
@@ -27362,6 +28203,7 @@ static PyMethodDef SwigMethods[] = {
 		"EClientSocketBase_eConnect(EClientSocketBase self, char host, unsigned int port) -> bool\n"
 		""},
 	 { (char *)"EClientSocketBase_eDisconnect", (PyCFunction)_wrap_EClientSocketBase_eDisconnect, METH_O, (char *)"EClientSocketBase_eDisconnect(EClientSocketBase self)"},
+	 { (char *)"EClientSocketBase_clientId", (PyCFunction)_wrap_EClientSocketBase_clientId, METH_O, (char *)"EClientSocketBase_clientId(EClientSocketBase self) -> int"},
 	 { (char *)"EClientSocketBase_isConnected", (PyCFunction)_wrap_EClientSocketBase_isConnected, METH_O, (char *)"EClientSocketBase_isConnected(EClientSocketBase self) -> bool"},
 	 { (char *)"EClientSocketBase_isInBufferEmpty", (PyCFunction)_wrap_EClientSocketBase_isInBufferEmpty, METH_O, (char *)"EClientSocketBase_isInBufferEmpty(EClientSocketBase self) -> bool"},
 	 { (char *)"EClientSocketBase_isOutBufferEmpty", (PyCFunction)_wrap_EClientSocketBase_isOutBufferEmpty, METH_O, (char *)"EClientSocketBase_isOutBufferEmpty(EClientSocketBase self) -> bool"},
@@ -27433,6 +28275,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClientSocketBase_cancelCalculateImpliedVolatility", _wrap_EClientSocketBase_cancelCalculateImpliedVolatility, METH_VARARGS, (char *)"EClientSocketBase_cancelCalculateImpliedVolatility(EClientSocketBase self, TickerId reqId)"},
 	 { (char *)"EClientSocketBase_cancelCalculateOptionPrice", _wrap_EClientSocketBase_cancelCalculateOptionPrice, METH_VARARGS, (char *)"EClientSocketBase_cancelCalculateOptionPrice(EClientSocketBase self, TickerId reqId)"},
 	 { (char *)"EClientSocketBase_reqGlobalCancel", (PyCFunction)_wrap_EClientSocketBase_reqGlobalCancel, METH_O, (char *)"EClientSocketBase_reqGlobalCancel(EClientSocketBase self)"},
+	 { (char *)"EClientSocketBase_reqMarketDataType", _wrap_EClientSocketBase_reqMarketDataType, METH_VARARGS, (char *)"EClientSocketBase_reqMarketDataType(EClientSocketBase self, int marketDataType)"},
 	 { (char *)"EClientSocketBase_swigregister", EClientSocketBase_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Execution", (PyCFunction)_wrap_new_Execution, METH_NOARGS, (char *)"new_Execution() -> Execution"},
 	 { (char *)"Execution_execId_set", _wrap_Execution_execId_set, METH_VARARGS, (char *)"Execution_execId_set(Execution self, IBString execId)"},
@@ -27461,6 +28304,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Execution_cumQty_get", (PyCFunction)_wrap_Execution_cumQty_get, METH_O, (char *)"Execution_cumQty_get(Execution self) -> int"},
 	 { (char *)"Execution_avgPrice_set", _wrap_Execution_avgPrice_set, METH_VARARGS, (char *)"Execution_avgPrice_set(Execution self, double avgPrice)"},
 	 { (char *)"Execution_avgPrice_get", (PyCFunction)_wrap_Execution_avgPrice_get, METH_O, (char *)"Execution_avgPrice_get(Execution self) -> double"},
+	 { (char *)"Execution_orderRef_set", _wrap_Execution_orderRef_set, METH_VARARGS, (char *)"Execution_orderRef_set(Execution self, IBString orderRef)"},
+	 { (char *)"Execution_orderRef_get", (PyCFunction)_wrap_Execution_orderRef_get, METH_O, (char *)"Execution_orderRef_get(Execution self) -> IBString"},
 	 { (char *)"delete_Execution", (PyCFunction)_wrap_delete_Execution, METH_O, (char *)"delete_Execution(Execution self)"},
 	 { (char *)"Execution_swigregister", Execution_swigregister, METH_VARARGS, NULL},
 	 { (char *)"Execution_swiginit", Execution_swiginit, METH_VARARGS, NULL},
@@ -27576,6 +28421,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Order_firmQuoteOnly_get", (PyCFunction)_wrap_Order_firmQuoteOnly_get, METH_O, (char *)"Order_firmQuoteOnly_get(Order self) -> bool"},
 	 { (char *)"Order_nbboPriceCap_set", _wrap_Order_nbboPriceCap_set, METH_VARARGS, (char *)"Order_nbboPriceCap_set(Order self, double nbboPriceCap)"},
 	 { (char *)"Order_nbboPriceCap_get", (PyCFunction)_wrap_Order_nbboPriceCap_get, METH_O, (char *)"Order_nbboPriceCap_get(Order self) -> double"},
+	 { (char *)"Order_optOutSmartRouting_set", _wrap_Order_optOutSmartRouting_set, METH_VARARGS, (char *)"Order_optOutSmartRouting_set(Order self, bool optOutSmartRouting)"},
+	 { (char *)"Order_optOutSmartRouting_get", (PyCFunction)_wrap_Order_optOutSmartRouting_get, METH_O, (char *)"Order_optOutSmartRouting_get(Order self) -> bool"},
 	 { (char *)"Order_auctionStrategy_set", _wrap_Order_auctionStrategy_set, METH_VARARGS, (char *)"Order_auctionStrategy_set(Order self, int auctionStrategy)"},
 	 { (char *)"Order_auctionStrategy_get", (PyCFunction)_wrap_Order_auctionStrategy_get, METH_O, (char *)"Order_auctionStrategy_get(Order self) -> int"},
 	 { (char *)"Order_startingPrice_set", _wrap_Order_startingPrice_set, METH_VARARGS, (char *)"Order_startingPrice_set(Order self, double startingPrice)"},
@@ -27596,6 +28443,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Order_deltaNeutralOrderType_get", (PyCFunction)_wrap_Order_deltaNeutralOrderType_get, METH_O, (char *)"Order_deltaNeutralOrderType_get(Order self) -> IBString"},
 	 { (char *)"Order_deltaNeutralAuxPrice_set", _wrap_Order_deltaNeutralAuxPrice_set, METH_VARARGS, (char *)"Order_deltaNeutralAuxPrice_set(Order self, double deltaNeutralAuxPrice)"},
 	 { (char *)"Order_deltaNeutralAuxPrice_get", (PyCFunction)_wrap_Order_deltaNeutralAuxPrice_get, METH_O, (char *)"Order_deltaNeutralAuxPrice_get(Order self) -> double"},
+	 { (char *)"Order_deltaNeutralConId_set", _wrap_Order_deltaNeutralConId_set, METH_VARARGS, (char *)"Order_deltaNeutralConId_set(Order self, long deltaNeutralConId)"},
+	 { (char *)"Order_deltaNeutralConId_get", (PyCFunction)_wrap_Order_deltaNeutralConId_get, METH_O, (char *)"Order_deltaNeutralConId_get(Order self) -> long"},
+	 { (char *)"Order_deltaNeutralSettlingFirm_set", _wrap_Order_deltaNeutralSettlingFirm_set, METH_VARARGS, (char *)"Order_deltaNeutralSettlingFirm_set(Order self, IBString deltaNeutralSettlingFirm)"},
+	 { (char *)"Order_deltaNeutralSettlingFirm_get", (PyCFunction)_wrap_Order_deltaNeutralSettlingFirm_get, METH_O, (char *)"Order_deltaNeutralSettlingFirm_get(Order self) -> IBString"},
+	 { (char *)"Order_deltaNeutralClearingAccount_set", _wrap_Order_deltaNeutralClearingAccount_set, METH_VARARGS, (char *)"Order_deltaNeutralClearingAccount_set(Order self, IBString deltaNeutralClearingAccount)"},
+	 { (char *)"Order_deltaNeutralClearingAccount_get", (PyCFunction)_wrap_Order_deltaNeutralClearingAccount_get, METH_O, (char *)"Order_deltaNeutralClearingAccount_get(Order self) -> IBString"},
+	 { (char *)"Order_deltaNeutralClearingIntent_set", _wrap_Order_deltaNeutralClearingIntent_set, METH_VARARGS, (char *)"Order_deltaNeutralClearingIntent_set(Order self, IBString deltaNeutralClearingIntent)"},
+	 { (char *)"Order_deltaNeutralClearingIntent_get", (PyCFunction)_wrap_Order_deltaNeutralClearingIntent_get, METH_O, (char *)"Order_deltaNeutralClearingIntent_get(Order self) -> IBString"},
 	 { (char *)"Order_continuousUpdate_set", _wrap_Order_continuousUpdate_set, METH_VARARGS, (char *)"Order_continuousUpdate_set(Order self, bool continuousUpdate)"},
 	 { (char *)"Order_continuousUpdate_get", (PyCFunction)_wrap_Order_continuousUpdate_get, METH_O, (char *)"Order_continuousUpdate_get(Order self) -> bool"},
 	 { (char *)"Order_referencePriceType_set", _wrap_Order_referencePriceType_set, METH_VARARGS, (char *)"Order_referencePriceType_set(Order self, int referencePriceType)"},
@@ -27610,6 +28465,10 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Order_scaleSubsLevelSize_get", (PyCFunction)_wrap_Order_scaleSubsLevelSize_get, METH_O, (char *)"Order_scaleSubsLevelSize_get(Order self) -> int"},
 	 { (char *)"Order_scalePriceIncrement_set", _wrap_Order_scalePriceIncrement_set, METH_VARARGS, (char *)"Order_scalePriceIncrement_set(Order self, double scalePriceIncrement)"},
 	 { (char *)"Order_scalePriceIncrement_get", (PyCFunction)_wrap_Order_scalePriceIncrement_get, METH_O, (char *)"Order_scalePriceIncrement_get(Order self) -> double"},
+	 { (char *)"Order_hedgeType_set", _wrap_Order_hedgeType_set, METH_VARARGS, (char *)"Order_hedgeType_set(Order self, IBString hedgeType)"},
+	 { (char *)"Order_hedgeType_get", (PyCFunction)_wrap_Order_hedgeType_get, METH_O, (char *)"Order_hedgeType_get(Order self) -> IBString"},
+	 { (char *)"Order_hedgeParam_set", _wrap_Order_hedgeParam_set, METH_VARARGS, (char *)"Order_hedgeParam_set(Order self, IBString hedgeParam)"},
+	 { (char *)"Order_hedgeParam_get", (PyCFunction)_wrap_Order_hedgeParam_get, METH_O, (char *)"Order_hedgeParam_get(Order self) -> IBString"},
 	 { (char *)"Order_account_set", _wrap_Order_account_set, METH_VARARGS, (char *)"Order_account_set(Order self, IBString account)"},
 	 { (char *)"Order_account_get", (PyCFunction)_wrap_Order_account_get, METH_O, (char *)"Order_account_get(Order self) -> IBString"},
 	 { (char *)"Order_settlingFirm_set", _wrap_Order_settlingFirm_set, METH_VARARGS, (char *)"Order_settlingFirm_set(Order self, IBString settlingFirm)"},
@@ -27622,6 +28481,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Order_algoStrategy_get", (PyCFunction)_wrap_Order_algoStrategy_get, METH_O, (char *)"Order_algoStrategy_get(Order self) -> IBString"},
 	 { (char *)"Order_algoParams_set", _wrap_Order_algoParams_set, METH_VARARGS, (char *)"Order_algoParams_set(Order self, TagValueListSPtr algoParams)"},
 	 { (char *)"Order_algoParams_get", (PyCFunction)_wrap_Order_algoParams_get, METH_O, (char *)"Order_algoParams_get(Order self) -> TagValueListSPtr"},
+	 { (char *)"Order_smartComboRoutingParams_set", _wrap_Order_smartComboRoutingParams_set, METH_VARARGS, (char *)"Order_smartComboRoutingParams_set(Order self, TagValueListSPtr smartComboRoutingParams)"},
+	 { (char *)"Order_smartComboRoutingParams_get", (PyCFunction)_wrap_Order_smartComboRoutingParams_get, METH_O, (char *)"Order_smartComboRoutingParams_get(Order self) -> TagValueListSPtr"},
 	 { (char *)"Order_whatIf_set", _wrap_Order_whatIf_set, METH_VARARGS, (char *)"Order_whatIf_set(Order self, bool whatIf)"},
 	 { (char *)"Order_whatIf_get", (PyCFunction)_wrap_Order_whatIf_get, METH_O, (char *)"Order_whatIf_get(Order self) -> bool"},
 	 { (char *)"Order_notHeld_set", _wrap_Order_notHeld_set, METH_VARARGS, (char *)"Order_notHeld_set(Order self, bool notHeld)"},
@@ -27808,6 +28669,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EWrapper_fundamentalData", _wrap_EWrapper_fundamentalData, METH_VARARGS, (char *)"EWrapper_fundamentalData(EWrapper self, TickerId reqId, IBString data)"},
 	 { (char *)"EWrapper_deltaNeutralValidation", _wrap_EWrapper_deltaNeutralValidation, METH_VARARGS, (char *)"EWrapper_deltaNeutralValidation(EWrapper self, int reqId, UnderComp underComp)"},
 	 { (char *)"EWrapper_tickSnapshotEnd", _wrap_EWrapper_tickSnapshotEnd, METH_VARARGS, (char *)"EWrapper_tickSnapshotEnd(EWrapper self, int reqId)"},
+	 { (char *)"EWrapper_marketDataType", _wrap_EWrapper_marketDataType, METH_VARARGS, (char *)"EWrapper_marketDataType(EWrapper self, TickerId reqId, int marketDataType)"},
 	 { (char *)"new_EWrapper", (PyCFunction)_wrap_new_EWrapper, METH_O, (char *)"new_EWrapper(PyObject self) -> EWrapper"},
 	 { (char *)"disown_EWrapper", (PyCFunction)_wrap_disown_EWrapper, METH_O, NULL},
 	 { (char *)"EWrapper_swigregister", EWrapper_swigregister, METH_VARARGS, NULL},
@@ -28613,6 +29475,8 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "GROUPS",SWIG_From_int(static_cast< int >(GROUPS)));
   SWIG_Python_SetConstant(d, "PROFILES",SWIG_From_int(static_cast< int >(PROFILES)));
   SWIG_Python_SetConstant(d, "ALIASES",SWIG_From_int(static_cast< int >(ALIASES)));
+  SWIG_Python_SetConstant(d, "REALTIME",SWIG_From_int(static_cast< int >(REALTIME)));
+  SWIG_Python_SetConstant(d, "FROZEN",SWIG_From_int(static_cast< int >(FROZEN)));
   SWIG_Python_SetConstant(d, "SAME_POS",SWIG_From_int(static_cast< int >(SAME_POS)));
   SWIG_Python_SetConstant(d, "OPEN_POS",SWIG_From_int(static_cast< int >(OPEN_POS)));
   SWIG_Python_SetConstant(d, "CLOSE_POS",SWIG_From_int(static_cast< int >(CLOSE_POS)));

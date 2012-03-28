@@ -22,4 +22,9 @@ inline const char* faDataTypeStr ( faDataType pFaDataType )
 	return 0 ;
 }
 
+enum MarketDataType { 
+	REALTIME = 1, 
+	FROZEN = 2
+};
+
 #endif /* common_defs_h_INCLUDED */

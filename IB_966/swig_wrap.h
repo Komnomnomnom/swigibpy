@@ -56,6 +56,7 @@ public:
     virtual void fundamentalData(TickerId reqId, IBString const &data);
     virtual void deltaNeutralValidation(int reqId, UnderComp const &underComp);
     virtual void tickSnapshotEnd(int reqId);
+    virtual void marketDataType(TickerId reqId, int marketDataType);
 
 
 /* Internal Director utilities */
@@ -89,7 +90,7 @@ private:
       return method;
     }
 private:
-    mutable swig::SwigVar_PyObject vtable[36];
+    mutable swig::SwigVar_PyObject vtable[37];
 #endif
 
 };

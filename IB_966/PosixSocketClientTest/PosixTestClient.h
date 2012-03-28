@@ -91,6 +91,7 @@ public:
 	void fundamentalData(TickerId reqId, const IBString& data);
 	void deltaNeutralValidation(int reqId, const UnderComp& underComp);
 	void tickSnapshotEnd(int reqId);
+	void marketDataType(TickerId reqId, int marketDataType);
 
 private:
 

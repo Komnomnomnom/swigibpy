@@ -2,3 +2,4 @@
 /.pydevproject
 /_swigibpy.*
 /build
+.DS_Store
