@@ -5,18 +5,33 @@ Overview
 
 Latest version: 0.2.2 (TWS API v9.65)
 
-Windows Prerequisites
-=====================
+Install
+=======
 
-swigibpy just provides a wrapper around the TWS C++ API so this needs to be 
-compiled for your target platform during installation. While this should 
+Use pip (recommended)::
+
+    $ pip install swigibpy
+
+Alternatively download your archive of choice and run::
+
+    $ python setup.py install
+
+Notes for Windows Users
+=======================
+
+swigibpy just provides a wrapper around the TWS C++ API so this needs to be
+compiled for your target platform during installation. While this should
 'just work' for Linux and OSX, Windows users might need to do some extra work.
 
-If you have Visual Studio, it might 'just work'. Please let me know if it 
-does or doesn't!
+Compile with MinGW
+------------------
 
-Otherwise download and install `MinGW`_ and follow the steps to `add MinGW 
-to your path`_. To get pip to use MinGW as the compiler edit or create a 
+Download and install `MinGW`_ and follow the steps to `add MinGW
+to your path`_.  Note there is a `compatibility problem`_ between the latest
+version of MinGW and disutils so it is recommended to install an older version
+until this is resolved.
+
+To get pip to use MinGW as the compiler edit or create a
 file named ``distutils.cfg`` in ``[PYTHON LOCATION]\Lib\distutils`` where
 ``[PYTHON LOCATION]`` is the path to your Python install, e.g. ``C:\Python27``.
 Add the following to ``distutils.cfg``::
@@ -24,40 +39,49 @@ Add the following to ``distutils.cfg``::
 	[build]
 	compiler=mingw32
 
-This has been tested using MinGW and Python 2.7 on Windows Vista.	
+then use the pip command above and with a bit of luck, you're done!
 
-Install
-=======
+Alternatively you can download and build the package directly. To build and
+install use:
 
-Use pip (recommended)::
-
-    $ pip install swigibpy
-    
-Alternatively download your archive of choice and run::
-
+    $ python setup.py build -c mingw32
     $ python setup.py install
-    
+
+This has been tested using MinGW and Python 2.7 on Windows Vista.
+
+Compile with Visual Studio
+--------------------------
+
+Several users have reported success building swigibpy with Visual Studio, with 
+a few caveats:
+
+ - Distutils has issues building with anything later than Visual Studio 2008
+   (version 9).
+ - The MFC library is required by the TWS API.
+ - Visual Studio 11 doesn't like the ``/MD`` compile flag, which distutils adds.
+   For a workaround see `here`_.
+
 Usage
 =====
 
 To use simply import the swigibpy module, see the examples directory for more.
-For API reference refer to the `C++ API documentation`_. 
+For API reference refer to the `C++ API documentation`_.
 
 Develop
 =======
-    
+
 Contributions are welcome! For developement you can build the extension in the
 current dir::
 
     $ python setup.py build_ext --build-lib .
- 
+
 To regenerate the SWIG wrappers (SWIG 2.0+ required), in the IB API directory
 run::
 
-    $ swig -v -c++ -python -threads -o swig_wrap.cpp -outdir .. -modern 
+    $ swig -v -c++ -python -threads -o swig_wrap.cpp -outdir .. -modern
         -fastdispatch -nosafecstrings -noproxydel -fastproxy -fastinit
         -fastunpack -fastquery -modernargs -nobuildnone ../swigify_ib.i
-        
+
 **NOTE:** SWIG options -builtin and -fvirtual are not compatible with swigibpy's
 interface file.
 
@@ -71,8 +95,10 @@ swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
 
 --------------
 
-.. _Interactive Brokers: http://www.interactivebrokers.co.uk/ 
+.. _Interactive Brokers: http://www.interactivebrokers.co.uk/
 .. _SWIG: http://www.swig.org/
 .. _C++ API documentation: http://www.interactivebrokers.com/en/p.php?f=programInterface
 .. _MinGW: http://www.mingw.org/
 .. _add MinGW to your path: http://www.mingw.org/wiki/Getting_Started#toc5
+.. _compatability problem: http://bugs.python.org/issue12641
+.. _here: https://github.com/Komnomnomnom/swigibpy/issues/2
