@@ -1,5 +1,5 @@
 /*
-	SWIG interface file for Interactive Brokers API v9.65.
+	SWIG interface file for Interactive Brokers API.
 	
 */
 
