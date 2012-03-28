@@ -27,7 +27,7 @@ Compile with MinGW
 ------------------
 
 Download and install `MinGW`_ and follow the steps to `add MinGW
-to your path`_.  Note there is a `compatibility problem`_ between the latest
+to your path`_.  Note there is a `compatability problem`_ between the latest
 version of MinGW and disutils so it is recommended to install an older version
 until this is resolved.
 
@@ -42,10 +42,10 @@ Add the following to ``distutils.cfg``::
 then use the pip command above and with a bit of luck, you're done!
 
 Alternatively you can download and build the package directly. To build and
-install use:
+install use::
 
-    $ python setup.py build -c mingw32
-    $ python setup.py install
+	$ python setup.py build -c mingw32
+	$ python setup.py install
 
 This has been tested using MinGW and Python 2.7 on Windows Vista.
 
@@ -55,11 +55,11 @@ Compile with Visual Studio
 Several users have reported success building swigibpy with Visual Studio, with 
 a few caveats:
 
- - Distutils has issues building with anything later than Visual Studio 2008
-   (version 9).
- - The MFC library is required by the TWS API.
- - Visual Studio 11 doesn't like the ``/MD`` compile flag, which distutils adds.
-   For a workaround see `here`_.
+- Distutils has issues building with anything later than Visual Studio 2008
+  (version 9).
+- The MFC library is required by the TWS API.
+- Visual Studio 11 doesn't like the ``/MD`` compile flag, which distutils adds.
+  For a workaround see `here`_.
 
 Usage
 =====
