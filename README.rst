@@ -29,7 +29,7 @@ Compile with MinGW
 Download and install `MinGW`_ and follow the steps to `add MinGW
 to your path`_.  Note there is a `compatability problem`_ between the latest
 version of MinGW and disutils so it is recommended to install an older version
-until this is resolved.
+until this is resolved (mingw-get-inst-20110802.exe has been known to work).
 
 To get pip to use MinGW as the compiler edit or create a
 file named ``distutils.cfg`` in ``[PYTHON LOCATION]\Lib\distutils`` where
@@ -47,7 +47,8 @@ install use::
 	$ python setup.py build -c mingw32
 	$ python setup.py install
 
-This has been tested using MinGW and Python 2.7 on Windows Vista.
+This has been verified to work using MinGW and Python 2.7 on Windows 7, Vista,
+and XP.
 
 Compile with Visual Studio
 --------------------------
