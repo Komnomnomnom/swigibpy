@@ -1210,14 +1210,14 @@ import threading
 import time
 class TWSPoller(threading.Thread):
     '''Polls TWS every second for any outstanding messages'''
-    
+
     def __init__(self, tws, poll_interval=0.5):
         super(TWSPoller, self).__init__()
         self.daemon = True
         self._tws = tws
         self._poll_interval = poll_interval
         self.stop_event = threading.Event()
-    
+
     def run(self):
         '''Continually poll TWS until the stop flag is set'''
         while not self.stop_event.is_set():
@@ -1294,23 +1294,23 @@ EPosixClientSocket_swigregister = _swigibpy.EPosixClientSocket_swigregister
 EPosixClientSocket_swigregister(EPosixClientSocket)
 
 class TWSError(Exception):
-    '''Exception raised during communication with Interactive Brokers TWS 
+    '''Exception raised during communication with Interactive Brokers TWS
     application
     '''
-    
+
     def __init__(self, code, msg):
         self.code = code
         self.msg = msg
-        
+
     def __str__(self):
         return "%s: %s" % (self.code, repr(self.msg))
 
 class TWSSystemError(TWSError):
-    '''System related exception raised during communication with Interactive 
+    '''System related exception raised during communication with Interactive
     Brokers TWS application.
     '''
     pass
-    
+
 class TWSClientError(TWSError):
     '''Exception raised on client (python) side by Interactive Brokers API'''
     pass
@@ -1436,7 +1436,7 @@ class EWrapper(object):
 
     def winError(self, str, lastError):
         '''Error in TWS API library'''
-        
+
         raise TWSClientError(lastError, str)
 
 
@@ -1490,7 +1490,7 @@ class EWrapper(object):
 
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
-        
+
         if errorCode == 165:
             print("TWS Message %s: %s" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:

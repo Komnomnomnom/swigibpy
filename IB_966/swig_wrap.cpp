@@ -9126,10 +9126,10 @@ SWIGINTERN PyObject *_wrap_delete_ComboLegList(PyObject *SWIGUNUSEDPARM(self), P
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -9187,10 +9187,10 @@ SWIGINTERN PyObject *_wrap_faDataTypeStr(PyObject *SWIGUNUSEDPARM(self), PyObjec
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -9225,10 +9225,10 @@ SWIGINTERN PyObject *_wrap_new_ComboLeg(PyObject *SWIGUNUSEDPARM(self), PyObject
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -9788,10 +9788,10 @@ SWIGINTERN PyObject *_wrap_ComboLeg___eq__(PyObject *SWIGUNUSEDPARM(self), PyObj
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -9835,10 +9835,10 @@ SWIGINTERN PyObject *_wrap_delete_ComboLeg(PyObject *SWIGUNUSEDPARM(self), PyObj
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -9884,10 +9884,10 @@ SWIGINTERN PyObject *_wrap_new_UnderComp(PyObject *SWIGUNUSEDPARM(self), PyObjec
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -10111,10 +10111,10 @@ SWIGINTERN PyObject *_wrap_delete_UnderComp(PyObject *SWIGUNUSEDPARM(self), PyOb
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -10160,10 +10160,10 @@ SWIGINTERN PyObject *_wrap_new_Contract(PyObject *SWIGUNUSEDPARM(self), PyObject
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -11330,10 +11330,10 @@ SWIGINTERN PyObject *_wrap_Contract_CloneComboLegs(PyObject *SWIGUNUSEDPARM(self
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -11384,10 +11384,10 @@ SWIGINTERN PyObject *_wrap_Contract_CleanupComboLegs(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -11431,10 +11431,10 @@ SWIGINTERN PyObject *_wrap_delete_Contract(PyObject *SWIGUNUSEDPARM(self), PyObj
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -11480,10 +11480,10 @@ SWIGINTERN PyObject *_wrap_new_ContractDetails(PyObject *SWIGUNUSEDPARM(self), P
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13541,10 +13541,10 @@ SWIGINTERN PyObject *_wrap_delete_ContractDetails(PyObject *SWIGUNUSEDPARM(self)
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13599,10 +13599,10 @@ SWIGINTERN PyObject *_wrap_delete_EClient(PyObject *SWIGUNUSEDPARM(self), PyObje
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13679,10 +13679,10 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect(PyObject *SWIGUNUSEDPARM(self), PyOb
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13728,10 +13728,10 @@ SWIGINTERN PyObject *_wrap_EClient_eDisconnect(PyObject *SWIGUNUSEDPARM(self), P
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13776,10 +13776,10 @@ SWIGINTERN PyObject *_wrap_EClient_serverVersion(PyObject *SWIGUNUSEDPARM(self),
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13824,10 +13824,10 @@ SWIGINTERN PyObject *_wrap_EClient_TwsConnectionTime(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13917,10 +13917,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktData(PyObject *SWIGUNUSEDPARM(self), Py
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -13977,10 +13977,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelMktData(PyObject *SWIGUNUSEDPARM(self),
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14059,10 +14059,10 @@ SWIGINTERN PyObject *_wrap_EClient_placeOrder(PyObject *SWIGUNUSEDPARM(self), Py
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14117,10 +14117,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelOrder(PyObject *SWIGUNUSEDPARM(self), P
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14164,10 +14164,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqOpenOrders(PyObject *SWIGUNUSEDPARM(self),
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14236,10 +14236,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqAccountUpdates(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14308,10 +14308,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqExecutions(PyObject *SWIGUNUSEDPARM(self),
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14366,10 +14366,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqIds(PyObject *SWIGUNUSEDPARM(self), PyObje
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14414,10 +14414,10 @@ SWIGINTERN PyObject *_wrap_EClient_checkMessages(PyObject *SWIGUNUSEDPARM(self),
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14484,10 +14484,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqContractDetails(PyObject *SWIGUNUSEDPARM(s
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14563,10 +14563,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktDepth(PyObject *SWIGUNUSEDPARM(self), P
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14621,10 +14621,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelMktDepth(PyObject *SWIGUNUSEDPARM(self)
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14679,10 +14679,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqNewsBulletins(PyObject *SWIGUNUSEDPARM(sel
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14726,10 +14726,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelNewsBulletins(PyObject *SWIGUNUSEDPARM(
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14784,10 +14784,10 @@ SWIGINTERN PyObject *_wrap_EClient_setServerLogLevel(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14842,10 +14842,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqAutoOpenOrders(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14889,10 +14889,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqAllOpenOrders(PyObject *SWIGUNUSEDPARM(sel
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14936,10 +14936,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqManagedAccts(PyObject *SWIGUNUSEDPARM(self
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -14994,10 +14994,10 @@ SWIGINTERN PyObject *_wrap_EClient_requestFA(PyObject *SWIGUNUSEDPARM(self), PyO
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15066,10 +15066,10 @@ SWIGINTERN PyObject *_wrap_EClient_replaceFA(PyObject *SWIGUNUSEDPARM(self), PyO
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15212,10 +15212,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15331,10 +15331,10 @@ SWIGINTERN PyObject *_wrap_EClient_exerciseOptions(PyObject *SWIGUNUSEDPARM(self
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15391,10 +15391,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelHistoricalData(PyObject *SWIGUNUSEDPARM
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15493,10 +15493,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqRealTimeBars(PyObject *SWIGUNUSEDPARM(self
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15553,10 +15553,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelRealTimeBars(PyObject *SWIGUNUSEDPARM(s
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15611,10 +15611,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelScannerSubscription(PyObject *SWIGUNUSE
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15658,10 +15658,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerParameters(PyObject *SWIGUNUSEDPARM
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15728,10 +15728,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerSubscription(PyObject *SWIGUNUSEDPA
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15775,10 +15775,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqCurrentTime(PyObject *SWIGUNUSEDPARM(self)
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15859,10 +15859,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqFundamentalData(PyObject *SWIGUNUSEDPARM(s
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -15919,10 +15919,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelFundamentalData(PyObject *SWIGUNUSEDPAR
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16007,10 +16007,10 @@ SWIGINTERN PyObject *_wrap_EClient_calculateImpliedVolatility(PyObject *SWIGUNUS
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16095,10 +16095,10 @@ SWIGINTERN PyObject *_wrap_EClient_calculateOptionPrice(PyObject *SWIGUNUSEDPARM
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16153,10 +16153,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelCalculateImpliedVolatility(PyObject *SW
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16211,10 +16211,10 @@ SWIGINTERN PyObject *_wrap_EClient_cancelCalculateOptionPrice(PyObject *SWIGUNUS
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16258,10 +16258,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqGlobalCancel(PyObject *SWIGUNUSEDPARM(self
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16316,10 +16316,10 @@ SWIGINTERN PyObject *_wrap_EClient_reqMarketDataType(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16370,10 +16370,10 @@ SWIGINTERN PyObject *_wrap_delete_EClientSocketBase(PyObject *SWIGUNUSEDPARM(sel
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16450,10 +16450,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect(PyObject *SWIGUNUSEDPARM(s
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16499,10 +16499,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eDisconnect(PyObject *SWIGUNUSEDPAR
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16547,10 +16547,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_clientId(PyObject *SWIGUNUSEDPARM(s
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16595,10 +16595,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isConnected(PyObject *SWIGUNUSEDPAR
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16643,10 +16643,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isInBufferEmpty(PyObject *SWIGUNUSE
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16691,10 +16691,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isOutBufferEmpty(PyObject *SWIGUNUS
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16739,10 +16739,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_serverVersion(PyObject *SWIGUNUSEDP
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16787,10 +16787,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_TwsConnectionTime(PyObject *SWIGUNU
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16880,10 +16880,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktData(PyObject *SWIGUNUSEDPARM
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -16940,10 +16940,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelMktData(PyObject *SWIGUNUSEDP
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17022,10 +17022,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_placeOrder(PyObject *SWIGUNUSEDPARM
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17080,10 +17080,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelOrder(PyObject *SWIGUNUSEDPAR
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17127,10 +17127,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqOpenOrders(PyObject *SWIGUNUSEDP
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17199,10 +17199,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAccountUpdates(PyObject *SWIGUNU
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17271,10 +17271,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqExecutions(PyObject *SWIGUNUSEDP
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17329,10 +17329,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqIds(PyObject *SWIGUNUSEDPARM(sel
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17377,10 +17377,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_checkMessages(PyObject *SWIGUNUSEDP
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17447,10 +17447,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqContractDetails(PyObject *SWIGUN
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17526,10 +17526,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktDepth(PyObject *SWIGUNUSEDPAR
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17584,10 +17584,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelMktDepth(PyObject *SWIGUNUSED
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17642,10 +17642,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqNewsBulletins(PyObject *SWIGUNUS
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17689,10 +17689,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelNewsBulletins(PyObject *SWIGU
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17747,10 +17747,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_setServerLogLevel(PyObject *SWIGUNU
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17805,10 +17805,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAutoOpenOrders(PyObject *SWIGUNU
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17852,10 +17852,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAllOpenOrders(PyObject *SWIGUNUS
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17899,10 +17899,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqManagedAccts(PyObject *SWIGUNUSE
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -17957,10 +17957,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_requestFA(PyObject *SWIGUNUSEDPARM(
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18029,10 +18029,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_replaceFA(PyObject *SWIGUNUSEDPARM(
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18175,10 +18175,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18294,10 +18294,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_exerciseOptions(PyObject *SWIGUNUSE
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18354,10 +18354,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelHistoricalData(PyObject *SWIG
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18456,10 +18456,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqRealTimeBars(PyObject *SWIGUNUSE
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18516,10 +18516,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelRealTimeBars(PyObject *SWIGUN
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18574,10 +18574,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelScannerSubscription(PyObject 
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18621,10 +18621,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerParameters(PyObject *SWIG
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18691,10 +18691,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerSubscription(PyObject *SW
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18738,10 +18738,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqCurrentTime(PyObject *SWIGUNUSED
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18822,10 +18822,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqFundamentalData(PyObject *SWIGUN
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18882,10 +18882,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelFundamentalData(PyObject *SWI
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -18970,10 +18970,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_calculateImpliedVolatility(PyObject
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -19058,10 +19058,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_calculateOptionPrice(PyObject *SWIG
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -19116,10 +19116,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelCalculateImpliedVolatility(Py
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -19174,10 +19174,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelCalculateOptionPrice(PyObject
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -19221,10 +19221,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqGlobalCancel(PyObject *SWIGUNUSE
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -19279,10 +19279,10 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMarketDataType(PyObject *SWIGUNU
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -19324,10 +19324,10 @@ SWIGINTERN PyObject *_wrap_new_Execution(PyObject *SWIGUNUSEDPARM(self), PyObjec
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -20253,10 +20253,10 @@ SWIGINTERN PyObject *_wrap_delete_Execution(PyObject *SWIGUNUSEDPARM(self), PyOb
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -20302,10 +20302,10 @@ SWIGINTERN PyObject *_wrap_new_ExecutionFilter(PyObject *SWIGUNUSEDPARM(self), P
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -20811,10 +20811,10 @@ SWIGINTERN PyObject *_wrap_delete_ExecutionFilter(PyObject *SWIGUNUSEDPARM(self)
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -20860,10 +20860,10 @@ SWIGINTERN PyObject *_wrap_new_TagValue__SWIG_0(PyObject *SWIGUNUSEDPARM(self), 
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -20924,10 +20924,10 @@ SWIGINTERN PyObject *_wrap_new_TagValue__SWIG_1(PyObject *SWIGUNUSEDPARM(self), 
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -21131,10 +21131,10 @@ SWIGINTERN PyObject *_wrap_delete_TagValue(PyObject *SWIGUNUSEDPARM(self), PyObj
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -21180,10 +21180,10 @@ SWIGINTERN PyObject *_wrap_new_Order(PyObject *SWIGUNUSEDPARM(self), PyObject *a
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -25842,10 +25842,10 @@ SWIGINTERN PyObject *_wrap_delete_Order(PyObject *SWIGUNUSEDPARM(self), PyObject
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -25891,10 +25891,10 @@ SWIGINTERN PyObject *_wrap_new_OrderState(PyObject *SWIGUNUSEDPARM(self), PyObje
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -26520,10 +26520,10 @@ SWIGINTERN PyObject *_wrap_delete_OrderState(PyObject *SWIGUNUSEDPARM(self), PyO
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -26569,10 +26569,10 @@ SWIGINTERN PyObject *_wrap_new_ScannerSubscription(PyObject *SWIGUNUSEDPARM(self
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -27953,10 +27953,10 @@ SWIGINTERN PyObject *_wrap_delete_ScannerSubscription(PyObject *SWIGUNUSEDPARM(s
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28014,10 +28014,10 @@ SWIGINTERN PyObject *_wrap_new_EPosixClientSocket(PyObject *SWIGUNUSEDPARM(self)
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28061,10 +28061,10 @@ SWIGINTERN PyObject *_wrap_delete_EPosixClientSocket(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28141,10 +28141,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect(PyObject *SWIGUNUSEDPARM(
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28190,10 +28190,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eDisconnect(PyObject *SWIGUNUSEDPA
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28238,10 +28238,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_isSocketOK(PyObject *SWIGUNUSEDPAR
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28286,10 +28286,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_fd(PyObject *SWIGUNUSEDPARM(self),
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28333,10 +28333,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onReceive(PyObject *SWIGUNUSEDPARM
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28380,10 +28380,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onSend(PyObject *SWIGUNUSEDPARM(se
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28427,10 +28427,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onError(PyObject *SWIGUNUSEDPARM(s
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28475,10 +28475,10 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_handleSocketError(PyObject *SWIGUN
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28536,10 +28536,10 @@ SWIGINTERN PyObject *_wrap_isPrice(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28583,10 +28583,10 @@ SWIGINTERN PyObject *_wrap_delete_EWrapper(PyObject *SWIGUNUSEDPARM(self), PyObj
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }
@@ -28673,10 +28673,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickPrice(PyObject *SWIGUNUSEDPARM(self), Py
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -28757,10 +28757,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickSize(PyObject *SWIGUNUSEDPARM(self), PyO
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -28904,10 +28904,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickOptionComputation(PyObject *SWIGUNUSEDPA
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -28988,10 +28988,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickGeneric(PyObject *SWIGUNUSEDPARM(self), 
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29077,10 +29077,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickString(PyObject *SWIGUNUSEDPARM(self), P
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29227,10 +29227,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickEFP(PyObject *SWIGUNUSEDPARM(self), PyOb
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29388,10 +29388,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_orderStatus(PyObject *SWIGUNUSEDPARM(self), 
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29494,10 +29494,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_openOrder(PyObject *SWIGUNUSEDPARM(self), Py
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29549,10 +29549,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_openOrderEnd(PyObject *SWIGUNUSEDPARM(self),
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29629,10 +29629,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_winError(PyObject *SWIGUNUSEDPARM(self), PyO
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29686,10 +29686,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_connectionClosed(PyObject *SWIGUNUSEDPARM(se
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29799,10 +29799,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateAccountValue(PyObject *SWIGUNUSEDPARM(
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -29944,10 +29944,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_updatePortfolio(PyObject *SWIGUNUSEDPARM(sel
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30017,10 +30017,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateAccountTime(PyObject *SWIGUNUSEDPARM(s
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30090,10 +30090,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_accountDownloadEnd(PyObject *SWIGUNUSEDPARM(
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30158,10 +30158,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_nextValidId(PyObject *SWIGUNUSEDPARM(self), 
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30236,10 +30236,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_contractDetails(PyObject *SWIGUNUSEDPARM(sel
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30314,10 +30314,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_bondContractDetails(PyObject *SWIGUNUSEDPARM
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30380,10 +30380,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_contractDetailsEnd(PyObject *SWIGUNUSEDPARM(
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30470,10 +30470,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_execDetails(PyObject *SWIGUNUSEDPARM(self), 
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30536,10 +30536,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_execDetailsEnd(PyObject *SWIGUNUSEDPARM(self
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30622,10 +30622,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_error(PyObject *SWIGUNUSEDPARM(self), PyObje
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30733,10 +30733,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateMktDepth(PyObject *SWIGUNUSEDPARM(self
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30855,10 +30855,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateMktDepthL2(PyObject *SWIGUNUSEDPARM(se
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -30958,10 +30958,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateNewsBulletin(PyObject *SWIGUNUSEDPARM(
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31033,10 +31033,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_managedAccounts(PyObject *SWIGUNUSEDPARM(sel
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31115,10 +31115,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_receiveFA(PyObject *SWIGUNUSEDPARM(self), Py
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31269,10 +31269,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_historicalData(PyObject *SWIGUNUSEDPARM(self
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31342,10 +31342,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerParameters(PyObject *SWIGUNUSEDPARM(s
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31487,10 +31487,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerData(PyObject *SWIGUNUSEDPARM(self), 
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31561,10 +31561,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerDataEnd(PyObject *SWIGUNUSEDPARM(self
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31699,10 +31699,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_realtimeBar(PyObject *SWIGUNUSEDPARM(self), 
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31765,10 +31765,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_currentTime(PyObject *SWIGUNUSEDPARM(self), 
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31845,10 +31845,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_fundamentalData(PyObject *SWIGUNUSEDPARM(sel
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31925,10 +31925,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_deltaNeutralValidation(PyObject *SWIGUNUSEDP
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -31991,10 +31991,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickSnapshotEnd(PyObject *SWIGUNUSEDPARM(sel
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -32066,10 +32066,10 @@ SWIGINTERN PyObject *_wrap_EWrapper_marketDataType(PyObject *SWIGUNUSEDPARM(self
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         
       } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
       }
     }
@@ -32120,10 +32120,10 @@ SWIGINTERN PyObject *_wrap_new_EWrapper(PyObject *SWIGUNUSEDPARM(self), PyObject
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
-      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
       
     } catch(...) {
-      /* Final catch all, results in runtime error */ 
+      /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
   }

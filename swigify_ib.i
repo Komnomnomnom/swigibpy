@@ -1,6 +1,6 @@
 /*
     SWIG interface file for Interactive Brokers API.
-    
+
 */
 
 %module(directors="1",docstring="Python wrapper for Interactive Brokers TWS C++ API") swigibpy
@@ -21,7 +21,7 @@ struct ComboLeg;
 
 namespace std {
     %template(ComboLegList) std::vector<ComboLeg*>;
-}      
+}
 typedef std::vector<ComboLeg*> Contract::ComboLegList;
 
 /*Inclusions for generated cpp file*/
@@ -49,8 +49,8 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
     }
 }
 
-// Exception handling 
-%include exception.i     
+// Exception handling
+%include exception.i
 %exception {
     /*
         most errors should be propagated through to EWrapper->error,
@@ -66,13 +66,13 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
         SWIG_fail;
     } catch(std::exception& e) {
         /* Convert standard error to Exception */
-        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
-    
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+
     } catch(...) {
-        /* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
-} 
+}
 
 /* Grab the header files to be wrapped */
 %include "Shared/CommonDefs.h"
@@ -91,14 +91,14 @@ import threading
 import time
 class TWSPoller(threading.Thread):
     '''Polls TWS every second for any outstanding messages'''
-    
+
     def __init__(self, tws, poll_interval=0.5):
         super(TWSPoller, self).__init__()
         self.daemon = True
         self._tws = tws
         self._poll_interval = poll_interval
         self.stop_event = threading.Event()
-    
+
     def run(self):
         '''Continually poll TWS until the stop flag is set'''
         while not self.stop_event.is_set():
@@ -129,23 +129,23 @@ class TWSPoller(threading.Thread):
 /* Override EWrapper's error methods  with default implementations */
 %pythoncode %{
 class TWSError(Exception):
-    '''Exception raised during communication with Interactive Brokers TWS 
+    '''Exception raised during communication with Interactive Brokers TWS
     application
     '''
-    
+
     def __init__(self, code, msg):
         self.code = code
         self.msg = msg
-        
+
     def __str__(self):
         return "%s: %s" % (self.code, repr(self.msg))
 
 class TWSSystemError(TWSError):
-    '''System related exception raised during communication with Interactive 
+    '''System related exception raised during communication with Interactive
     Brokers TWS application.
     '''
     pass
-    
+
 class TWSClientError(TWSError):
     '''Exception raised on client (python) side by Interactive Brokers API'''
     pass
@@ -153,13 +153,13 @@ class TWSClientError(TWSError):
 %feature("shadow") EWrapper::winError(const IBString &, int) %{
     def winError(self, str, lastError):
         '''Error in TWS API library'''
-        
+
         raise TWSClientError(lastError, str)
 %}
 %feature("shadow") EWrapper::error(const int, const int, const IBString) %{
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
-        
+
         if errorCode == 165:
             print("TWS Message %s: %s" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:

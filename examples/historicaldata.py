@@ -1,9 +1,9 @@
-'''Simple example of using the SWIG generated TWS wrapper to request historical 
+'''Simple example of using the SWIG generated TWS wrapper to request historical
 data from interactive brokers.
 
 Note:
-* Communication with TWS is asynchronous; requests to TWS are made through the 
-EPosixClientSocket class and TWS responds at some later time via the functions 
+* Communication with TWS is asynchronous; requests to TWS are made through the
+EPosixClientSocket class and TWS responds at some later time via the functions
 in our EWrapper subclass.
 * If you're using a demo account TWS will only respond with a limited time
 period, no matter what is requested. Also the data returned is probably wholly
@@ -19,15 +19,15 @@ from swigibpy import EWrapper, EPosixClientSocket, Contract
 ###
 
 class HistoricalDataExample(EWrapper):
-    '''Callback object passed to TWS, these functions will be called directly 
+    '''Callback object passed to TWS, these functions will be called directly
     by TWS.
-    
+
     '''
-    
+
     def nextValidId(self, orderId):
         '''Always called by TWS but not relevant for our example'''
         pass
-    
+
     def openOrderEnd(self):
         '''Always called by TWS but not relevant for our example'''
         pass
@@ -36,10 +36,10 @@ class HistoricalDataExample(EWrapper):
         '''Called by TWS but not relevant for our example'''
         pass
 
-    def historicalData(self, reqId, date, open, high, 
+    def historicalData(self, reqId, date, open, high,
                        low, close, volume,
                        barCount, WAP, hasGaps):
-        
+
         if date[:8] == 'finished':
             print "History request complete"
         else:
@@ -68,15 +68,15 @@ today = datetime.today()
 
 print "Requesting historical data for %s" % contract.symbol
 
-# Request some historical data. 
+# Request some historical data.
 tws.reqHistoricalData(
-        1,                                          #tickerId, 
-        contract,                                   #contract, 
-        today.strftime("%Y%m%d %H:%M:%S %Z"),       #endDateTime, 
-        "1 W",                                      #durationStr, 
-        "1 day",                                    #barSizeSetting, 
-        "TRADES",                                   #whatToShow, 
-        0,                                          #useRTH, 
+        1,                                          #tickerId,
+        contract,                                   #contract,
+        today.strftime("%Y%m%d %H:%M:%S %Z"),       #endDateTime,
+        "1 W",                                      #durationStr,
+        "1 day",                                    #barSizeSetting,
+        "TRADES",                                   #whatToShow,
+        0,                                          #useRTH,
         1                                           #formatDate
     )
 
@@ -84,8 +84,8 @@ tws.reqHistoricalData(
 print "\n====================================================================="
 print " History requested, waiting for TWS responses"
 print "=====================================================================\n"
-    
-    
+
+
 print "******************* Press ENTER to quit when done *******************\n"
 raw_input()
 
