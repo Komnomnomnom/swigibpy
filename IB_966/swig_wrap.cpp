@@ -9208,8 +9208,8 @@ SWIGINTERN PyObject *_wrap_delete_ComboLegList(PyObject *SWIGUNUSEDPARM(self), P
   arg1 = reinterpret_cast< std::vector< ComboLeg * > * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -9267,8 +9267,8 @@ SWIGINTERN PyObject *_wrap_faDataTypeStr(PyObject *SWIGUNUSEDPARM(self), PyObjec
   arg1 = static_cast< faDataType >(val1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -9305,8 +9305,8 @@ SWIGINTERN PyObject *_wrap_new_ComboLeg(PyObject *SWIGUNUSEDPARM(self), PyObject
   if (!SWIG_Python_UnpackTuple(args,"new_ComboLeg",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -9864,8 +9864,8 @@ SWIGINTERN PyObject *_wrap_ComboLeg___eq__(PyObject *SWIGUNUSEDPARM(self), PyObj
   arg2 = reinterpret_cast< ComboLeg * >(argp2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -9911,8 +9911,8 @@ SWIGINTERN PyObject *_wrap_delete_ComboLeg(PyObject *SWIGUNUSEDPARM(self), PyObj
   arg1 = reinterpret_cast< ComboLeg * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -9960,8 +9960,8 @@ SWIGINTERN PyObject *_wrap_new_UnderComp(PyObject *SWIGUNUSEDPARM(self), PyObjec
   if (!SWIG_Python_UnpackTuple(args,"new_UnderComp",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -10187,8 +10187,8 @@ SWIGINTERN PyObject *_wrap_delete_UnderComp(PyObject *SWIGUNUSEDPARM(self), PyOb
   arg1 = reinterpret_cast< UnderComp * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -10236,8 +10236,8 @@ SWIGINTERN PyObject *_wrap_new_Contract(PyObject *SWIGUNUSEDPARM(self), PyObject
   if (!SWIG_Python_UnpackTuple(args,"new_Contract",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -11402,8 +11402,8 @@ SWIGINTERN PyObject *_wrap_Contract_CloneComboLegs(PyObject *SWIGUNUSEDPARM(self
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -11454,8 +11454,8 @@ SWIGINTERN PyObject *_wrap_Contract_CleanupComboLegs(PyObject *SWIGUNUSEDPARM(se
   arg1 = reinterpret_cast< Contract::ComboLegList * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -11501,8 +11501,8 @@ SWIGINTERN PyObject *_wrap_delete_Contract(PyObject *SWIGUNUSEDPARM(self), PyObj
   arg1 = reinterpret_cast< Contract * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -11550,8 +11550,8 @@ SWIGINTERN PyObject *_wrap_new_ContractDetails(PyObject *SWIGUNUSEDPARM(self), P
   if (!SWIG_Python_UnpackTuple(args,"new_ContractDetails",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -13611,8 +13611,8 @@ SWIGINTERN PyObject *_wrap_delete_ContractDetails(PyObject *SWIGUNUSEDPARM(self)
   arg1 = reinterpret_cast< ContractDetails * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -13669,8 +13669,8 @@ SWIGINTERN PyObject *_wrap_delete_EClient(PyObject *SWIGUNUSEDPARM(self), PyObje
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -13740,8 +13740,8 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect__SWIG_0(PyObject *SWIGUNUSEDPARM(sel
   arg4 = static_cast< int >(val4);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -13805,8 +13805,8 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect__SWIG_1(PyObject *SWIGUNUSEDPARM(sel
   arg3 = static_cast< unsigned int >(val3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -13876,8 +13876,8 @@ SWIGINTERN PyObject *_wrap_EClient_eDisconnect(PyObject *SWIGUNUSEDPARM(self), P
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -13924,8 +13924,8 @@ SWIGINTERN PyObject *_wrap_EClient_serverVersion(PyObject *SWIGUNUSEDPARM(self),
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -13972,8 +13972,8 @@ SWIGINTERN PyObject *_wrap_EClient_TwsConnectionTime(PyObject *SWIGUNUSEDPARM(se
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14058,8 +14058,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktData(PyObject *SWIGUNUSEDPARM(self), Py
   arg5 = static_cast< bool >(val5);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14114,8 +14114,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelMktData(PyObject *SWIGUNUSEDPARM(self),
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14190,8 +14190,8 @@ SWIGINTERN PyObject *_wrap_EClient_placeOrder(PyObject *SWIGUNUSEDPARM(self), Py
   arg4 = reinterpret_cast< Order * >(argp4);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14244,8 +14244,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelOrder(PyObject *SWIGUNUSEDPARM(self), P
   arg2 = static_cast< OrderId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14291,8 +14291,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqOpenOrders(PyObject *SWIGUNUSEDPARM(self),
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14358,8 +14358,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqAccountUpdates(PyObject *SWIGUNUSEDPARM(se
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14425,8 +14425,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqExecutions(PyObject *SWIGUNUSEDPARM(self),
   arg3 = reinterpret_cast< ExecutionFilter * >(argp3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14479,8 +14479,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqIds(PyObject *SWIGUNUSEDPARM(self), PyObje
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14527,8 +14527,8 @@ SWIGINTERN PyObject *_wrap_EClient_checkMessages(PyObject *SWIGUNUSEDPARM(self),
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14592,8 +14592,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqContractDetails(PyObject *SWIGUNUSEDPARM(s
   arg3 = reinterpret_cast< Contract * >(argp3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14665,8 +14665,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktDepth(PyObject *SWIGUNUSEDPARM(self), P
   arg4 = static_cast< int >(val4);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14719,8 +14719,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelMktDepth(PyObject *SWIGUNUSEDPARM(self)
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14773,8 +14773,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqNewsBulletins(PyObject *SWIGUNUSEDPARM(sel
   arg2 = static_cast< bool >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14820,8 +14820,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelNewsBulletins(PyObject *SWIGUNUSEDPARM(
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14874,8 +14874,8 @@ SWIGINTERN PyObject *_wrap_EClient_setServerLogLevel(PyObject *SWIGUNUSEDPARM(se
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14928,8 +14928,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqAutoOpenOrders(PyObject *SWIGUNUSEDPARM(se
   arg2 = static_cast< bool >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -14975,8 +14975,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqAllOpenOrders(PyObject *SWIGUNUSEDPARM(sel
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15022,8 +15022,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqManagedAccts(PyObject *SWIGUNUSEDPARM(self
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15076,8 +15076,8 @@ SWIGINTERN PyObject *_wrap_EClient_requestFA(PyObject *SWIGUNUSEDPARM(self), PyO
   arg2 = static_cast< faDataType >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15143,8 +15143,8 @@ SWIGINTERN PyObject *_wrap_EClient_replaceFA(PyObject *SWIGUNUSEDPARM(self), PyO
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15278,8 +15278,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
   arg9 = static_cast< int >(val9);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15388,8 +15388,8 @@ SWIGINTERN PyObject *_wrap_EClient_exerciseOptions(PyObject *SWIGUNUSEDPARM(self
   arg7 = static_cast< int >(val7);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15444,8 +15444,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelHistoricalData(PyObject *SWIGUNUSEDPARM
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15538,8 +15538,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqRealTimeBars(PyObject *SWIGUNUSEDPARM(self
   arg6 = static_cast< bool >(val6);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15594,8 +15594,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelRealTimeBars(PyObject *SWIGUNUSEDPARM(s
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15648,8 +15648,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelScannerSubscription(PyObject *SWIGUNUSE
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15695,8 +15695,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerParameters(PyObject *SWIGUNUSEDPARM
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15760,8 +15760,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerSubscription(PyObject *SWIGUNUSEDPA
   arg3 = reinterpret_cast< ScannerSubscription * >(argp3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15807,8 +15807,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqCurrentTime(PyObject *SWIGUNUSEDPARM(self)
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15885,8 +15885,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqFundamentalData(PyObject *SWIGUNUSEDPARM(s
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -15941,8 +15941,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelFundamentalData(PyObject *SWIGUNUSEDPAR
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16022,8 +16022,8 @@ SWIGINTERN PyObject *_wrap_EClient_calculateImpliedVolatility(PyObject *SWIGUNUS
   arg5 = static_cast< double >(val5);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16103,8 +16103,8 @@ SWIGINTERN PyObject *_wrap_EClient_calculateOptionPrice(PyObject *SWIGUNUSEDPARM
   arg5 = static_cast< double >(val5);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16157,8 +16157,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelCalculateImpliedVolatility(PyObject *SW
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16211,8 +16211,8 @@ SWIGINTERN PyObject *_wrap_EClient_cancelCalculateOptionPrice(PyObject *SWIGUNUS
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16258,8 +16258,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqGlobalCancel(PyObject *SWIGUNUSEDPARM(self
   arg1 = reinterpret_cast< EClient * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16312,8 +16312,8 @@ SWIGINTERN PyObject *_wrap_EClient_reqMarketDataType(PyObject *SWIGUNUSEDPARM(se
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16366,8 +16366,8 @@ SWIGINTERN PyObject *_wrap_delete_EClientSocketBase(PyObject *SWIGUNUSEDPARM(sel
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16437,8 +16437,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect__SWIG_0(PyObject *SWIGUNUS
   arg4 = static_cast< int >(val4);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16502,8 +16502,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect__SWIG_1(PyObject *SWIGUNUS
   arg3 = static_cast< unsigned int >(val3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16573,8 +16573,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eDisconnect(PyObject *SWIGUNUSEDPAR
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16621,8 +16621,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_clientId(PyObject *SWIGUNUSEDPARM(s
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16669,8 +16669,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isConnected(PyObject *SWIGUNUSEDPAR
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16717,8 +16717,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isInBufferEmpty(PyObject *SWIGUNUSE
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16765,8 +16765,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isOutBufferEmpty(PyObject *SWIGUNUS
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16813,8 +16813,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_serverVersion(PyObject *SWIGUNUSEDP
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16861,8 +16861,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_TwsConnectionTime(PyObject *SWIGUNU
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -16947,8 +16947,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktData(PyObject *SWIGUNUSEDPARM
   arg5 = static_cast< bool >(val5);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17003,8 +17003,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelMktData(PyObject *SWIGUNUSEDP
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17079,8 +17079,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_placeOrder(PyObject *SWIGUNUSEDPARM
   arg4 = reinterpret_cast< Order * >(argp4);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17133,8 +17133,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelOrder(PyObject *SWIGUNUSEDPAR
   arg2 = static_cast< OrderId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17180,8 +17180,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqOpenOrders(PyObject *SWIGUNUSEDP
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17247,8 +17247,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAccountUpdates(PyObject *SWIGUNU
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17314,8 +17314,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqExecutions(PyObject *SWIGUNUSEDP
   arg3 = reinterpret_cast< ExecutionFilter * >(argp3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17368,8 +17368,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqIds(PyObject *SWIGUNUSEDPARM(sel
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17416,8 +17416,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_checkMessages(PyObject *SWIGUNUSEDP
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17481,8 +17481,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqContractDetails(PyObject *SWIGUN
   arg3 = reinterpret_cast< Contract * >(argp3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17554,8 +17554,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktDepth(PyObject *SWIGUNUSEDPAR
   arg4 = static_cast< int >(val4);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17608,8 +17608,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelMktDepth(PyObject *SWIGUNUSED
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17662,8 +17662,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqNewsBulletins(PyObject *SWIGUNUS
   arg2 = static_cast< bool >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17709,8 +17709,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelNewsBulletins(PyObject *SWIGU
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17763,8 +17763,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_setServerLogLevel(PyObject *SWIGUNU
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17817,8 +17817,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAutoOpenOrders(PyObject *SWIGUNU
   arg2 = static_cast< bool >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17864,8 +17864,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAllOpenOrders(PyObject *SWIGUNUS
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17911,8 +17911,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqManagedAccts(PyObject *SWIGUNUSE
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -17965,8 +17965,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_requestFA(PyObject *SWIGUNUSEDPARM(
   arg2 = static_cast< faDataType >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18032,8 +18032,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_replaceFA(PyObject *SWIGUNUSEDPARM(
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18167,8 +18167,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
   arg9 = static_cast< int >(val9);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18277,8 +18277,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_exerciseOptions(PyObject *SWIGUNUSE
   arg7 = static_cast< int >(val7);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18333,8 +18333,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelHistoricalData(PyObject *SWIG
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18427,8 +18427,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqRealTimeBars(PyObject *SWIGUNUSE
   arg6 = static_cast< bool >(val6);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18483,8 +18483,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelRealTimeBars(PyObject *SWIGUN
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18537,8 +18537,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelScannerSubscription(PyObject 
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18584,8 +18584,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerParameters(PyObject *SWIG
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18649,8 +18649,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerSubscription(PyObject *SW
   arg3 = reinterpret_cast< ScannerSubscription * >(argp3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18696,8 +18696,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqCurrentTime(PyObject *SWIGUNUSED
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18774,8 +18774,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqFundamentalData(PyObject *SWIGUN
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18830,8 +18830,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelFundamentalData(PyObject *SWI
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18911,8 +18911,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_calculateImpliedVolatility(PyObject
   arg5 = static_cast< double >(val5);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -18992,8 +18992,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_calculateOptionPrice(PyObject *SWIG
   arg5 = static_cast< double >(val5);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -19046,8 +19046,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelCalculateImpliedVolatility(Py
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -19100,8 +19100,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelCalculateOptionPrice(PyObject
   arg2 = static_cast< TickerId >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -19147,8 +19147,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqGlobalCancel(PyObject *SWIGUNUSE
   arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -19201,8 +19201,8 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMarketDataType(PyObject *SWIGUNU
   arg2 = static_cast< int >(val2);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -19246,8 +19246,8 @@ SWIGINTERN PyObject *_wrap_new_Execution(PyObject *SWIGUNUSEDPARM(self), PyObjec
   if (!SWIG_Python_UnpackTuple(args,"new_Execution",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -20175,8 +20175,8 @@ SWIGINTERN PyObject *_wrap_delete_Execution(PyObject *SWIGUNUSEDPARM(self), PyOb
   arg1 = reinterpret_cast< Execution * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -20224,8 +20224,8 @@ SWIGINTERN PyObject *_wrap_new_ExecutionFilter(PyObject *SWIGUNUSEDPARM(self), P
   if (!SWIG_Python_UnpackTuple(args,"new_ExecutionFilter",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -20733,8 +20733,8 @@ SWIGINTERN PyObject *_wrap_delete_ExecutionFilter(PyObject *SWIGUNUSEDPARM(self)
   arg1 = reinterpret_cast< ExecutionFilter * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -20782,8 +20782,8 @@ SWIGINTERN PyObject *_wrap_new_TagValue__SWIG_0(PyObject *SWIGUNUSEDPARM(self), 
   if ((nobjs < 0) || (nobjs > 0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -20846,8 +20846,8 @@ SWIGINTERN PyObject *_wrap_new_TagValue__SWIG_1(PyObject *SWIGUNUSEDPARM(self), 
   }
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -21053,8 +21053,8 @@ SWIGINTERN PyObject *_wrap_delete_TagValue(PyObject *SWIGUNUSEDPARM(self), PyObj
   arg1 = reinterpret_cast< TagValue * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -21102,8 +21102,8 @@ SWIGINTERN PyObject *_wrap_new_Order(PyObject *SWIGUNUSEDPARM(self), PyObject *a
   if (!SWIG_Python_UnpackTuple(args,"new_Order",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -25764,8 +25764,8 @@ SWIGINTERN PyObject *_wrap_delete_Order(PyObject *SWIGUNUSEDPARM(self), PyObject
   arg1 = reinterpret_cast< Order * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -25813,8 +25813,8 @@ SWIGINTERN PyObject *_wrap_new_OrderState(PyObject *SWIGUNUSEDPARM(self), PyObje
   if (!SWIG_Python_UnpackTuple(args,"new_OrderState",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -26442,8 +26442,8 @@ SWIGINTERN PyObject *_wrap_delete_OrderState(PyObject *SWIGUNUSEDPARM(self), PyO
   arg1 = reinterpret_cast< OrderState * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -26491,8 +26491,8 @@ SWIGINTERN PyObject *_wrap_new_ScannerSubscription(PyObject *SWIGUNUSEDPARM(self
   if (!SWIG_Python_UnpackTuple(args,"new_ScannerSubscription",0,0,0)) SWIG_fail;
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -27875,8 +27875,8 @@ SWIGINTERN PyObject *_wrap_delete_ScannerSubscription(PyObject *SWIGUNUSEDPARM(s
   arg1 = reinterpret_cast< ScannerSubscription * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -27934,8 +27934,8 @@ SWIGINTERN PyObject *_wrap_new_EPosixClientSocket(PyObject *SWIGUNUSEDPARM(self)
   arg1 = reinterpret_cast< EWrapper * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -27981,8 +27981,8 @@ SWIGINTERN PyObject *_wrap_delete_EPosixClientSocket(PyObject *SWIGUNUSEDPARM(se
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28052,8 +28052,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect__SWIG_0(PyObject *SWIGUNU
   arg4 = static_cast< int >(val4);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28117,8 +28117,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect__SWIG_1(PyObject *SWIGUNU
   arg3 = static_cast< unsigned int >(val3);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28188,8 +28188,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eDisconnect(PyObject *SWIGUNUSEDPA
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28236,8 +28236,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_isSocketOK(PyObject *SWIGUNUSEDPAR
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28284,8 +28284,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_fd(PyObject *SWIGUNUSEDPARM(self),
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28331,8 +28331,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onReceive(PyObject *SWIGUNUSEDPARM
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28378,8 +28378,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onSend(PyObject *SWIGUNUSEDPARM(se
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28425,8 +28425,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onError(PyObject *SWIGUNUSEDPARM(s
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28473,8 +28473,8 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_handleSocketError(PyObject *SWIGUN
   arg1 = reinterpret_cast< EPosixClientSocket * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28532,8 +28532,8 @@ SWIGINTERN PyObject *_wrap_isPrice(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   arg1 = static_cast< TickType >(val1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28579,8 +28579,8 @@ SWIGINTERN PyObject *_wrap_delete_EWrapper(PyObject *SWIGUNUSEDPARM(self), PyObj
   arg1 = reinterpret_cast< EWrapper * >(argp1);
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {
@@ -28662,8 +28662,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickPrice(PyObject *SWIGUNUSEDPARM(self), Py
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -28740,8 +28740,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickSize(PyObject *SWIGUNUSEDPARM(self), PyO
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -28874,8 +28874,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickOptionComputation(PyObject *SWIGUNUSEDPA
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -28952,8 +28952,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickGeneric(PyObject *SWIGUNUSEDPARM(self), 
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29035,8 +29035,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickString(PyObject *SWIGUNUSEDPARM(self), P
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29173,8 +29173,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickEFP(PyObject *SWIGUNUSEDPARM(self), PyOb
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29321,8 +29321,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_orderStatus(PyObject *SWIGUNUSEDPARM(self), 
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29420,8 +29420,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_openOrder(PyObject *SWIGUNUSEDPARM(self), Py
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29475,8 +29475,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_openOrderEnd(PyObject *SWIGUNUSEDPARM(self),
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29550,8 +29550,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_winError(PyObject *SWIGUNUSEDPARM(self), PyO
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29607,8 +29607,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_connectionClosed(PyObject *SWIGUNUSEDPARM(se
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29713,8 +29713,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateAccountValue(PyObject *SWIGUNUSEDPARM(
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29847,8 +29847,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_updatePortfolio(PyObject *SWIGUNUSEDPARM(sel
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29916,8 +29916,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateAccountTime(PyObject *SWIGUNUSEDPARM(s
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -29985,8 +29985,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_accountDownloadEnd(PyObject *SWIGUNUSEDPARM(
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30049,8 +30049,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_nextValidId(PyObject *SWIGUNUSEDPARM(self), 
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30122,8 +30122,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_contractDetails(PyObject *SWIGUNUSEDPARM(sel
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30195,8 +30195,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_bondContractDetails(PyObject *SWIGUNUSEDPARM
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30257,8 +30257,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_contractDetailsEnd(PyObject *SWIGUNUSEDPARM(
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30341,8 +30341,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_execDetails(PyObject *SWIGUNUSEDPARM(self), 
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30403,8 +30403,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_execDetailsEnd(PyObject *SWIGUNUSEDPARM(self
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30483,8 +30483,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_error(PyObject *SWIGUNUSEDPARM(self), PyObje
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30585,8 +30585,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateMktDepth(PyObject *SWIGUNUSEDPARM(self
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30697,8 +30697,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateMktDepthL2(PyObject *SWIGUNUSEDPARM(se
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30793,8 +30793,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateNewsBulletin(PyObject *SWIGUNUSEDPARM(
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30864,8 +30864,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_managedAccounts(PyObject *SWIGUNUSEDPARM(sel
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -30941,8 +30941,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_receiveFA(PyObject *SWIGUNUSEDPARM(self), Py
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31082,8 +31082,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_historicalData(PyObject *SWIGUNUSEDPARM(self
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31151,8 +31151,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerParameters(PyObject *SWIGUNUSEDPARM(s
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31286,8 +31286,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerData(PyObject *SWIGUNUSEDPARM(self), 
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31356,8 +31356,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerDataEnd(PyObject *SWIGUNUSEDPARM(self
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31482,8 +31482,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_realtimeBar(PyObject *SWIGUNUSEDPARM(self), 
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31544,8 +31544,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_currentTime(PyObject *SWIGUNUSEDPARM(self), 
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31619,8 +31619,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_fundamentalData(PyObject *SWIGUNUSEDPARM(sel
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31694,8 +31694,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_deltaNeutralValidation(PyObject *SWIGUNUSEDP
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31756,8 +31756,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickSnapshotEnd(PyObject *SWIGUNUSEDPARM(sel
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31826,8 +31826,8 @@ SWIGINTERN PyObject *_wrap_EWrapper_marketDataType(PyObject *SWIGUNUSEDPARM(self
   try {
     {
       /*
-      		most errors should be propagated through to EWrapper->error,
-          	others should be added here as and when needed / encountered.
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
           */
       try {
         if (upcall) {
@@ -31871,8 +31871,8 @@ SWIGINTERN PyObject *_wrap_new_EWrapper(PyObject *SWIGUNUSEDPARM(self), PyObject
   arg1 = swig_obj[0];
   {
     /*
-    		most errors should be propagated through to EWrapper->error,
-        	others should be added here as and when needed / encountered.
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
         */
     try {
       {

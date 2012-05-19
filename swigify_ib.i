@@ -1,6 +1,6 @@
 /*
-	SWIG interface file for Interactive Brokers API.
-	
+    SWIG interface file for Interactive Brokers API.
+    
 */
 
 %module(directors="1",docstring="Python wrapper for Interactive Brokers TWS C++ API") swigibpy
@@ -52,24 +52,24 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
 // Exception handling 
 %include exception.i     
 %exception {
-	/*
-		most errors should be propagated through to EWrapper->error,
-    	others should be added here as and when needed / encountered.
+    /*
+        most errors should be propagated through to EWrapper->error,
+        others should be added here as and when needed / encountered.
     */
     try {
         $action
     } catch(Swig::DirectorPureVirtualException &e) {
-    	/* Call to pure virtual method, raise not implemented error */
-    	PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        /* Call to pure virtual method, raise not implemented error */
+        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
     } catch(Swig::DirectorException &e) {
-		/* Fail if there is a problem in the director proxy transport */
-	    SWIG_fail;
+        /* Fail if there is a problem in the director proxy transport */
+        SWIG_fail;
     } catch(std::exception& e) {
-    	/* Convert standard error to Exception */
+        /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
     
     } catch(...) {
-    	/* Final catch all, results in runtime error */ 
+        /* Final catch all, results in runtime error */ 
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
     }
 } 
