@@ -65,8 +65,8 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
 		/* Fail if there is a problem in the director proxy transport */
 	    SWIG_fail;
     } catch(std::exception& e) {
-    	/* Convert standard error to standard error */
-        PyErr_SetString(PyExc_StandardError, const_cast<char*>(e.what()));
+    	/* Convert standard error to Exception */
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));        
     
     } catch(...) {
     	/* Final catch all, results in runtime error */ 
@@ -157,7 +157,7 @@ class TWSClientError(TWSError):
         '''Error during communication with TWS'''
         
         if errorCode == 165:
-            print "TWS Message %s: %s" % (errorCode, errorString)
+            print("TWS Message %s: %s" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:
             raise TWSError(errorCode, errorString)
         elif  errorCode >= 1100 and errorCode < 2100:
