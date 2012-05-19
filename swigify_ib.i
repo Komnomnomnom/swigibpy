@@ -8,8 +8,25 @@
 /* Turn on auto-generated docstrings */
 %feature("autodoc", "1");
 
+/* auto convert std::string and typedefs to Python strings */
+%include "std_string.i"
+typedef std::string IBString;
+
+/* auto convert std::vector to Python lists */
+%include "std_vector.i"
+
+%{
+struct ComboLeg;
+%}
+
+namespace std {
+    %template(ComboLegList) std::vector<ComboLeg*>;
+}      
+typedef std::vector<ComboLeg*> Contract::ComboLegList;
+
 /*Inclusions for generated cpp file*/
 %{
+#include "Shared/IBString.h"
 #include "Shared/EClient.h"
 #include "Shared/EClientSocketBase.h"
 
@@ -23,10 +40,6 @@
 #include "Shared/OrderState.h"
 #include "Shared/ScannerSubscription.h"
 %}
-
-/* auto convert std::string and typedefs to Python strings */
-%include "std_string.i"
-typedef std::string IBString;
 
 /*EWrapper will be subclassed in Python*/
 %feature("director") EWrapper;

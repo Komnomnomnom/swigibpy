@@ -92,6 +92,299 @@ except:
     weakref_proxy = lambda x: x
 
 
+class SwigPyIterator(object):
+    """Proxy of C++ swig::SwigPyIterator class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _swigibpy.delete_SwigPyIterator
+    def value(self):
+        """value(self) -> PyObject"""
+        return _swigibpy.SwigPyIterator_value(self)
+
+    def incr(self, n = 1):
+        """
+        incr(self, size_t n = 1) -> SwigPyIterator
+        incr(self) -> SwigPyIterator
+        """
+        return _swigibpy.SwigPyIterator_incr(self, n)
+
+    def decr(self, n = 1):
+        """
+        decr(self, size_t n = 1) -> SwigPyIterator
+        decr(self) -> SwigPyIterator
+        """
+        return _swigibpy.SwigPyIterator_decr(self, n)
+
+    def distance(self, *args):
+        """distance(self, SwigPyIterator x) -> ptrdiff_t"""
+        return _swigibpy.SwigPyIterator_distance(self, *args)
+
+    def equal(self, *args):
+        """equal(self, SwigPyIterator x) -> bool"""
+        return _swigibpy.SwigPyIterator_equal(self, *args)
+
+    def copy(self):
+        """copy(self) -> SwigPyIterator"""
+        return _swigibpy.SwigPyIterator_copy(self)
+
+    def next(self):
+        """next(self) -> PyObject"""
+        return _swigibpy.SwigPyIterator_next(self)
+
+    def __next__(self):
+        """__next__(self) -> PyObject"""
+        return _swigibpy.SwigPyIterator___next__(self)
+
+    def previous(self):
+        """previous(self) -> PyObject"""
+        return _swigibpy.SwigPyIterator_previous(self)
+
+    def advance(self, *args):
+        """advance(self, ptrdiff_t n) -> SwigPyIterator"""
+        return _swigibpy.SwigPyIterator_advance(self, *args)
+
+    def __eq__(self, *args):
+        """__eq__(self, SwigPyIterator x) -> bool"""
+        return _swigibpy.SwigPyIterator___eq__(self, *args)
+
+    def __ne__(self, *args):
+        """__ne__(self, SwigPyIterator x) -> bool"""
+        return _swigibpy.SwigPyIterator___ne__(self, *args)
+
+    def __iadd__(self, *args):
+        """__iadd__(self, ptrdiff_t n) -> SwigPyIterator"""
+        return _swigibpy.SwigPyIterator___iadd__(self, *args)
+
+    def __isub__(self, *args):
+        """__isub__(self, ptrdiff_t n) -> SwigPyIterator"""
+        return _swigibpy.SwigPyIterator___isub__(self, *args)
+
+    def __add__(self, *args):
+        """__add__(self, ptrdiff_t n) -> SwigPyIterator"""
+        return _swigibpy.SwigPyIterator___add__(self, *args)
+
+    def __sub__(self, *args):
+        """
+        __sub__(self, ptrdiff_t n) -> SwigPyIterator
+        __sub__(self, SwigPyIterator x) -> ptrdiff_t
+        """
+        return _swigibpy.SwigPyIterator___sub__(self, *args)
+
+    def __iter__(self): return self
+SwigPyIterator.value = new_instancemethod(_swigibpy.SwigPyIterator_value,None,SwigPyIterator)
+SwigPyIterator.incr = new_instancemethod(_swigibpy.SwigPyIterator_incr,None,SwigPyIterator)
+SwigPyIterator.decr = new_instancemethod(_swigibpy.SwigPyIterator_decr,None,SwigPyIterator)
+SwigPyIterator.distance = new_instancemethod(_swigibpy.SwigPyIterator_distance,None,SwigPyIterator)
+SwigPyIterator.equal = new_instancemethod(_swigibpy.SwigPyIterator_equal,None,SwigPyIterator)
+SwigPyIterator.copy = new_instancemethod(_swigibpy.SwigPyIterator_copy,None,SwigPyIterator)
+SwigPyIterator.next = new_instancemethod(_swigibpy.SwigPyIterator_next,None,SwigPyIterator)
+SwigPyIterator.__next__ = new_instancemethod(_swigibpy.SwigPyIterator___next__,None,SwigPyIterator)
+SwigPyIterator.previous = new_instancemethod(_swigibpy.SwigPyIterator_previous,None,SwigPyIterator)
+SwigPyIterator.advance = new_instancemethod(_swigibpy.SwigPyIterator_advance,None,SwigPyIterator)
+SwigPyIterator.__eq__ = new_instancemethod(_swigibpy.SwigPyIterator___eq__,None,SwigPyIterator)
+SwigPyIterator.__ne__ = new_instancemethod(_swigibpy.SwigPyIterator___ne__,None,SwigPyIterator)
+SwigPyIterator.__iadd__ = new_instancemethod(_swigibpy.SwigPyIterator___iadd__,None,SwigPyIterator)
+SwigPyIterator.__isub__ = new_instancemethod(_swigibpy.SwigPyIterator___isub__,None,SwigPyIterator)
+SwigPyIterator.__add__ = new_instancemethod(_swigibpy.SwigPyIterator___add__,None,SwigPyIterator)
+SwigPyIterator.__sub__ = new_instancemethod(_swigibpy.SwigPyIterator___sub__,None,SwigPyIterator)
+SwigPyIterator_swigregister = _swigibpy.SwigPyIterator_swigregister
+SwigPyIterator_swigregister(SwigPyIterator)
+
+class ComboLegList(object):
+    """Proxy of C++ std::vector<(p.ComboLeg)> class"""
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    def iterator(self):
+        """iterator(self) -> SwigPyIterator"""
+        return _swigibpy.ComboLegList_iterator(self)
+
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self):
+        """__nonzero__(self) -> bool"""
+        return _swigibpy.ComboLegList___nonzero__(self)
+
+    def __bool__(self):
+        """__bool__(self) -> bool"""
+        return _swigibpy.ComboLegList___bool__(self)
+
+    def __len__(self):
+        """__len__(self) -> size_type"""
+        return _swigibpy.ComboLegList___len__(self)
+
+    def pop(self):
+        """pop(self) -> value_type"""
+        return _swigibpy.ComboLegList_pop(self)
+
+    def __getslice__(self, *args):
+        """__getslice__(self, difference_type i, difference_type j) -> ComboLegList"""
+        return _swigibpy.ComboLegList___getslice__(self, *args)
+
+    def __setslice__(self, *args):
+        """
+        __setslice__(self, difference_type i, difference_type j, ComboLegList v = std::vector< ComboLeg *,std::allocator< ComboLeg * > >())
+        __setslice__(self, difference_type i, difference_type j)
+        """
+        return _swigibpy.ComboLegList___setslice__(self, *args)
+
+    def __delslice__(self, *args):
+        """__delslice__(self, difference_type i, difference_type j)"""
+        return _swigibpy.ComboLegList___delslice__(self, *args)
+
+    def __delitem__(self, *args):
+        """
+        __delitem__(self, difference_type i)
+        __delitem__(self, PySliceObject slice)
+        """
+        return _swigibpy.ComboLegList___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        """
+        __getitem__(self, PySliceObject slice) -> ComboLegList
+        __getitem__(self, difference_type i) -> value_type
+        """
+        return _swigibpy.ComboLegList___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        """
+        __setitem__(self, PySliceObject slice, ComboLegList v)
+        __setitem__(self, PySliceObject slice)
+        __setitem__(self, difference_type i, value_type x)
+        """
+        return _swigibpy.ComboLegList___setitem__(self, *args)
+
+    def append(self, *args):
+        """append(self, value_type x)"""
+        return _swigibpy.ComboLegList_append(self, *args)
+
+    def empty(self):
+        """empty(self) -> bool"""
+        return _swigibpy.ComboLegList_empty(self)
+
+    def size(self):
+        """size(self) -> size_type"""
+        return _swigibpy.ComboLegList_size(self)
+
+    def clear(self):
+        """clear(self)"""
+        return _swigibpy.ComboLegList_clear(self)
+
+    def swap(self, *args):
+        """swap(self, ComboLegList v)"""
+        return _swigibpy.ComboLegList_swap(self, *args)
+
+    def get_allocator(self):
+        """get_allocator(self) -> allocator_type"""
+        return _swigibpy.ComboLegList_get_allocator(self)
+
+    def begin(self):
+        """begin(self) -> iterator"""
+        return _swigibpy.ComboLegList_begin(self)
+
+    def end(self):
+        """end(self) -> iterator"""
+        return _swigibpy.ComboLegList_end(self)
+
+    def rbegin(self):
+        """rbegin(self) -> reverse_iterator"""
+        return _swigibpy.ComboLegList_rbegin(self)
+
+    def rend(self):
+        """rend(self) -> reverse_iterator"""
+        return _swigibpy.ComboLegList_rend(self)
+
+    def pop_back(self):
+        """pop_back(self)"""
+        return _swigibpy.ComboLegList_pop_back(self)
+
+    def erase(self, *args):
+        """
+        erase(self, iterator pos) -> iterator
+        erase(self, iterator first, iterator last) -> iterator
+        """
+        return _swigibpy.ComboLegList_erase(self, *args)
+
+    def __init__(self, *args): 
+        """
+        __init__(self) -> ComboLegList
+        __init__(self, ComboLegList arg0) -> ComboLegList
+        __init__(self, size_type size) -> ComboLegList
+        __init__(self, size_type size, value_type value) -> ComboLegList
+        """
+        _swigibpy.ComboLegList_swiginit(self,_swigibpy.new_ComboLegList(*args))
+    def push_back(self, *args):
+        """push_back(self, value_type x)"""
+        return _swigibpy.ComboLegList_push_back(self, *args)
+
+    def front(self):
+        """front(self) -> value_type"""
+        return _swigibpy.ComboLegList_front(self)
+
+    def back(self):
+        """back(self) -> value_type"""
+        return _swigibpy.ComboLegList_back(self)
+
+    def assign(self, *args):
+        """assign(self, size_type n, value_type x)"""
+        return _swigibpy.ComboLegList_assign(self, *args)
+
+    def resize(self, *args):
+        """
+        resize(self, size_type new_size)
+        resize(self, size_type new_size, value_type x)
+        """
+        return _swigibpy.ComboLegList_resize(self, *args)
+
+    def insert(self, *args):
+        """
+        insert(self, iterator pos, value_type x) -> iterator
+        insert(self, iterator pos, size_type n, value_type x)
+        """
+        return _swigibpy.ComboLegList_insert(self, *args)
+
+    def reserve(self, *args):
+        """reserve(self, size_type n)"""
+        return _swigibpy.ComboLegList_reserve(self, *args)
+
+    def capacity(self):
+        """capacity(self) -> size_type"""
+        return _swigibpy.ComboLegList_capacity(self)
+
+    __swig_destroy__ = _swigibpy.delete_ComboLegList
+ComboLegList.iterator = new_instancemethod(_swigibpy.ComboLegList_iterator,None,ComboLegList)
+ComboLegList.__nonzero__ = new_instancemethod(_swigibpy.ComboLegList___nonzero__,None,ComboLegList)
+ComboLegList.__bool__ = new_instancemethod(_swigibpy.ComboLegList___bool__,None,ComboLegList)
+ComboLegList.__len__ = new_instancemethod(_swigibpy.ComboLegList___len__,None,ComboLegList)
+ComboLegList.pop = new_instancemethod(_swigibpy.ComboLegList_pop,None,ComboLegList)
+ComboLegList.__getslice__ = new_instancemethod(_swigibpy.ComboLegList___getslice__,None,ComboLegList)
+ComboLegList.__setslice__ = new_instancemethod(_swigibpy.ComboLegList___setslice__,None,ComboLegList)
+ComboLegList.__delslice__ = new_instancemethod(_swigibpy.ComboLegList___delslice__,None,ComboLegList)
+ComboLegList.__delitem__ = new_instancemethod(_swigibpy.ComboLegList___delitem__,None,ComboLegList)
+ComboLegList.__getitem__ = new_instancemethod(_swigibpy.ComboLegList___getitem__,None,ComboLegList)
+ComboLegList.__setitem__ = new_instancemethod(_swigibpy.ComboLegList___setitem__,None,ComboLegList)
+ComboLegList.append = new_instancemethod(_swigibpy.ComboLegList_append,None,ComboLegList)
+ComboLegList.empty = new_instancemethod(_swigibpy.ComboLegList_empty,None,ComboLegList)
+ComboLegList.size = new_instancemethod(_swigibpy.ComboLegList_size,None,ComboLegList)
+ComboLegList.clear = new_instancemethod(_swigibpy.ComboLegList_clear,None,ComboLegList)
+ComboLegList.swap = new_instancemethod(_swigibpy.ComboLegList_swap,None,ComboLegList)
+ComboLegList.get_allocator = new_instancemethod(_swigibpy.ComboLegList_get_allocator,None,ComboLegList)
+ComboLegList.begin = new_instancemethod(_swigibpy.ComboLegList_begin,None,ComboLegList)
+ComboLegList.end = new_instancemethod(_swigibpy.ComboLegList_end,None,ComboLegList)
+ComboLegList.rbegin = new_instancemethod(_swigibpy.ComboLegList_rbegin,None,ComboLegList)
+ComboLegList.rend = new_instancemethod(_swigibpy.ComboLegList_rend,None,ComboLegList)
+ComboLegList.pop_back = new_instancemethod(_swigibpy.ComboLegList_pop_back,None,ComboLegList)
+ComboLegList.erase = new_instancemethod(_swigibpy.ComboLegList_erase,None,ComboLegList)
+ComboLegList.push_back = new_instancemethod(_swigibpy.ComboLegList_push_back,None,ComboLegList)
+ComboLegList.front = new_instancemethod(_swigibpy.ComboLegList_front,None,ComboLegList)
+ComboLegList.back = new_instancemethod(_swigibpy.ComboLegList_back,None,ComboLegList)
+ComboLegList.assign = new_instancemethod(_swigibpy.ComboLegList_assign,None,ComboLegList)
+ComboLegList.resize = new_instancemethod(_swigibpy.ComboLegList_resize,None,ComboLegList)
+ComboLegList.insert = new_instancemethod(_swigibpy.ComboLegList_insert,None,ComboLegList)
+ComboLegList.reserve = new_instancemethod(_swigibpy.ComboLegList_reserve,None,ComboLegList)
+ComboLegList.capacity = new_instancemethod(_swigibpy.ComboLegList_capacity,None,ComboLegList)
+ComboLegList_swigregister = _swigibpy.ComboLegList_swigregister
+ComboLegList_swigregister(ComboLegList)
+
 GROUPS = _swigibpy.GROUPS
 PROFILES = _swigibpy.PROFILES
 ALIASES = _swigibpy.ALIASES

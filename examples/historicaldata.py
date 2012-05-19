@@ -32,6 +32,10 @@ class HistoricalDataExample(EWrapper):
         '''Always called by TWS but not relevant for our example'''
         pass
 
+    def managedAccounts(self, openOrderEnd):
+        '''Called by TWS but not relevant for our example'''
+        pass
+
     def historicalData(self, reqId, date, open, high, 
                        low, close, volume,
                        barCount, WAP, hasGaps):
@@ -54,20 +58,20 @@ tws = EPosixClientSocket(callback)
 # Connect to tws running on localhost
 tws.eConnect("", 7496, 42)
 
-# Simple contract for DELL
-dell = Contract()
-dell.exchange = "SMART"
-dell.symbol = "DELL"
-dell.secType = "STK"
-dell.currency = "USD"
+# Simple contract for GOOG
+contract = Contract()
+contract.exchange = "SMART"
+contract.symbol = "GOOG"
+contract.secType = "STK"
+contract.currency = "USD"
 today = datetime.today()
 
-print "Requesting historical data for %s" % dell.symbol
+print "Requesting historical data for %s" % contract.symbol
 
 # Request some historical data. 
 tws.reqHistoricalData(
         1,                                          #tickerId, 
-        dell,                                       #contract, 
+        contract,                                   #contract, 
         today.strftime("%Y%m%d %H:%M:%S %Z"),       #endDateTime, 
         "1 W",                                      #durationStr, 
         "1 day",                                    #barSizeSetting, 
