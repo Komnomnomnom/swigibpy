@@ -1207,7 +1207,6 @@ ScannerSubscription_swigregister = _swigibpy.ScannerSubscription_swigregister
 ScannerSubscription_swigregister(ScannerSubscription)
 
 import threading
-import time
 class TWSPoller(threading.Thread):
     '''Polls TWS every second for any outstanding messages'''
 

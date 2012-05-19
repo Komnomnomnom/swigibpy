@@ -88,7 +88,6 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
 /* Customise EPosixClientSocket so that TWS is automatically polled for messages when we are connected to it */
 %pythoncode %{
 import threading
-import time
 class TWSPoller(threading.Thread):
     '''Polls TWS every second for any outstanding messages'''
 
