@@ -92,32 +92,36 @@ import time
 class TWSPoller(threading.Thread):
     '''Polls TWS every second for any outstanding messages'''
     
-    def __init__(self, tws):
+    def __init__(self, tws, poll_interval=0.5):
         super(TWSPoller, self).__init__()
         self.daemon = True
         self._tws = tws
-        self.stop_polling = False
+        self._poll_interval = poll_interval
+        self.stop_event = threading.Event()
     
     def run(self):
         '''Continually poll TWS until the stop flag is set'''
-        while not self.stop_polling:
+        while not self.stop_event.is_set():
             try:
                 self._tws.checkMessages()
             except:
-                if self.stop_polling:
+                if self.stop_event.is_set():
                     break
                 else:
                     raise
-            time.sleep(1)
+            self.stop_event.wait(self._poll_interval)
+%}
+%pythonprepend EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
+    poll_interval = kwargs.pop('poll_interval', 0.5)
 %}
 %pythonappend EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
     if val:
-        self.poller = TWSPoller(self)
+        self.poller = TWSPoller(self, poll_interval=poll_interval)
         self.poller.start()
 %}
 %pythonprepend EPosixClientSocket::eDisconnect() %{
     if self.poller:
-        self.poller.stop_polling = True
+        self.poller.stop_event.set()
         self.poller = None
 %}
 %include "PosixSocketClient/EPosixClientSocket.h"

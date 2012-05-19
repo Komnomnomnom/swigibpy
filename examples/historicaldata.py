@@ -56,7 +56,7 @@ callback = HistoricalDataExample()
 tws = EPosixClientSocket(callback)
 
 # Connect to tws running on localhost
-tws.eConnect("", 7496, 42)
+tws.eConnect("", 7496, 42, poll_interval=1)
 
 # Simple contract for GOOG
 contract = Contract()

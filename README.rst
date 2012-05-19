@@ -68,6 +68,12 @@ Usage
 To use simply import the swigibpy module, see the examples directory for more.
 For API reference refer to the `C++ API documentation`_.
 
+swigibpy operates by periodically polling TWS for messages. The default poll 
+interval is half a second but this can be customised by passing a 
+`poll_interval` argument to `eConnect`.::
+    
+    tws.eConnect("", 7496, 42, poll_interval=2)
+
 Develop
 =======
 
@@ -79,9 +85,10 @@ current dir::
 To regenerate the SWIG wrappers (SWIG 2.0+ required), in the IB API directory
 run::
 
-    $ swig -v -c++ -python -threads -o swig_wrap.cpp -outdir .. -modern
-        -fastdispatch -nosafecstrings -noproxydel -fastproxy -fastinit
-        -fastunpack -fastquery -modernargs -nobuildnone ../swigify_ib.i
+    $ swig -v -c++ -python -threads -keyword -w511 -o swig_wrap.cpp 
+        -outdir .. -modern -fastdispatch -nosafecstrings -noproxydel 
+        -fastproxy -fastinit -fastunpack -fastquery -modernargs -nobuildnone 
+        ../swigify_ib.i
 
 **NOTE:** SWIG options -builtin and -fvirtual are not compatible with swigibpy's
 interface file.
