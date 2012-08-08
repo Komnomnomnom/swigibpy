@@ -1,3 +1,8 @@
+0.3 Wed Aug 8 2012
+  * Allow customisation of poll interval #5
+  * Support for comboleg vector #3
+  * Python 3 supprt #4
+
 0.2.3 Wed Mar 28 2012
   * Update to TWS API v9.66
 
