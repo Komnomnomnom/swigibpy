@@ -112,9 +112,10 @@ class TWSPoller(threading.Thread):
 %}
 %pythonprepend EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
     poll_interval = kwargs.pop('poll_interval', 0.5)
+    poll_auto = kwargs.pop('poll_auto', True)
 %}
 %pythonappend EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
-    if val:
+    if poll_auto and val:
         self.poller = TWSPoller(self, poll_interval=poll_interval)
         self.poller.start()
 %}

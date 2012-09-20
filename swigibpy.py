@@ -1219,10 +1219,11 @@ class EPosixClientSocket(EClientSocketBase):
     def eConnect(self, *args, **kwargs):
         """eConnect(EPosixClientSocket self, char const * host, unsigned int port, int clientId=0) -> bool"""
         poll_interval = kwargs.pop('poll_interval', 0.5)
+        poll_auto = kwargs.pop('poll_auto', True)
 
 
         val = _swigibpy.EPosixClientSocket_eConnect(self, *args, **kwargs)
-        if val:
+        if poll_auto and val:
             self.poller = TWSPoller(self, poll_interval=poll_interval)
             self.poller.start()
 

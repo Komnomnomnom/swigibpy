@@ -74,6 +74,11 @@ interval is half a second but this can be customised by passing a
     
     tws.eConnect("", 7496, 42, poll_interval=2)
 
+If you wish to handle polling yourself, swigibpy's polling can be disabled
+using the ``poll_auto`` argument::
+    
+    tws.eConnect("", 7496, 42, poll_auto=False)
+
 Develop
 =======
 
