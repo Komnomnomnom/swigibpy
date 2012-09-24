@@ -1186,27 +1186,26 @@ ScannerSubscription_swigregister = _swigibpy.ScannerSubscription_swigregister
 ScannerSubscription_swigregister(ScannerSubscription)
 
 import threading
+from traceback import print_exc
+
 class TWSPoller(threading.Thread):
     '''Polls TWS every second for any outstanding messages'''
 
-    def __init__(self, tws, poll_interval=0.5):
+    def __init__(self, tws):
         super(TWSPoller, self).__init__()
         self.daemon = True
         self._tws = tws
-        self._poll_interval = poll_interval
-        self.stop_event = threading.Event()
 
     def run(self):
-        '''Continually poll TWS until the stop flag is set'''
-        while not self.stop_event.is_set():
+        '''Continually poll TWS'''
+        while True:
             try:
                 self._tws.checkMessages()
             except:
-                if self.stop_event.is_set():
+                if not self._tws or not self._tws.isConnected():
                     break
                 else:
-                    raise
-            self.stop_event.wait(self._poll_interval)
+                    print_exc()
 
 class EPosixClientSocket(EClientSocketBase):
     """Proxy of C++ EPosixClientSocket class"""
@@ -1218,13 +1217,12 @@ class EPosixClientSocket(EClientSocketBase):
     __swig_destroy__ = _swigibpy.delete_EPosixClientSocket
     def eConnect(self, *args, **kwargs):
         """eConnect(EPosixClientSocket self, char const * host, unsigned int port, int clientId=0) -> bool"""
-        poll_interval = kwargs.pop('poll_interval', 0.5)
         poll_auto = kwargs.pop('poll_auto', True)
 
 
         val = _swigibpy.EPosixClientSocket_eConnect(self, *args, **kwargs)
         if poll_auto and val:
-            self.poller = TWSPoller(self, poll_interval=poll_interval)
+            self.poller = TWSPoller(self)
             self.poller.start()
 
 
@@ -1233,7 +1231,6 @@ class EPosixClientSocket(EClientSocketBase):
     def eDisconnect(self):
         """eDisconnect(EPosixClientSocket self)"""
         if self.poller:
-            self.poller.stop_event.set()
             self.poller = None
 
 

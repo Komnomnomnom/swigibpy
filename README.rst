@@ -68,14 +68,9 @@ Usage
 To use simply import the swigibpy module, see the examples directory for more.
 For API reference refer to the `C++ API documentation`_.
 
-swigibpy operates by periodically polling TWS for messages. The default poll 
-interval is half a second but this can be customised by passing a 
-``poll_interval`` argument to ``eConnect``::
-    
-    tws.eConnect("", 7496, 42, poll_interval=2)
-
-If you wish to handle polling yourself, swigibpy's polling can be disabled
-using the ``poll_auto`` argument::
+By default swigibpy will automatically poll TWS for messages. If you wish to
+handle polling yourself, swigibpy's polling can be disabled using the 
+``poll_auto`` argument::
     
     tws.eConnect("", 7496, 42, poll_auto=False)
 

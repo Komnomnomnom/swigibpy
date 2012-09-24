@@ -12,11 +12,11 @@ unreliable.
 '''
 
 from datetime import datetime
-import time
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
 
 ###
+
 
 class HistoricalDataExample(EWrapper):
     '''Callback object passed to TWS, these functions will be called directly
@@ -44,8 +44,8 @@ class HistoricalDataExample(EWrapper):
             print "History request complete"
         else:
             date = datetime.strptime(date, "%Y%m%d").strftime("%d %b %Y")
-            print ( "History %s - Open: %s, High: %s, Low: %s, Close: " +
-                    "%s, Volume: %d" ) % (date, open, high, low, close, volume)
+            print ("History %s - Open: %s, High: %s, Low: %s, Close: " +
+                    "%s, Volume: %d") % (date, open, high, low, close, volume)
 
 
 # Instantiate our callback object
@@ -56,7 +56,7 @@ callback = HistoricalDataExample()
 tws = EPosixClientSocket(callback)
 
 # Connect to tws running on localhost
-tws.eConnect("", 7496, 42, poll_interval=1)
+tws.eConnect("", 7496, 42)
 
 # Simple contract for GOOG
 contract = Contract()
@@ -70,16 +70,15 @@ print "Requesting historical data for %s" % contract.symbol
 
 # Request some historical data.
 tws.reqHistoricalData(
-        1,                                          #tickerId,
-        contract,                                   #contract,
-        today.strftime("%Y%m%d %H:%M:%S %Z"),       #endDateTime,
-        "1 W",                                      #durationStr,
-        "1 day",                                    #barSizeSetting,
-        "TRADES",                                   #whatToShow,
-        0,                                          #useRTH,
-        1                                           #formatDate
+        2,                                          # tickerId,
+        contract,                                   # contract,
+        today.strftime("%Y%m%d %H:%M:%S %Z"),       # endDateTime,
+        "1 W",                                      # durationStr,
+        "1 day",                                    # barSizeSetting,
+        "TRADES",                                   # whatToShow,
+        0,                                          # useRTH,
+        1                                           # formatDate
     )
-
 
 print "\n====================================================================="
 print " History requested, waiting for TWS responses"
@@ -91,4 +90,3 @@ raw_input()
 
 print "\nDisconnecting..."
 tws.eDisconnect()
-time.sleep(1)
