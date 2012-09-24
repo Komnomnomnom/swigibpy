@@ -216,7 +216,7 @@ class ComboLegList(object):
 
     def __setslice__(self, *args, **kwargs):
         """
-        __setslice__(ComboLegList self, std::vector< ComboLeg * >::difference_type i, std::vector< ComboLeg * >::difference_type j, 
+        __setslice__(ComboLegList self, std::vector< ComboLeg * >::difference_type i, std::vector< ComboLeg * >::difference_type j,
             ComboLegList v=std::vector< ComboLeg *,std::allocator< ComboLeg * > >())
         """
         return _swigibpy.ComboLegList___setslice__(self, *args, **kwargs)
@@ -298,7 +298,7 @@ class ComboLegList(object):
         """
         return _swigibpy.ComboLegList_erase(self, *args)
 
-    def __init__(self, *args): 
+    def __init__(self, *args):
         """
         __init__(std::vector<(p.ComboLeg)> self) -> ComboLegList
         __init__(std::vector<(p.ComboLeg)> self, ComboLegList arg2) -> ComboLegList
@@ -332,7 +332,7 @@ class ComboLegList(object):
     def insert(self, *args):
         """
         insert(ComboLegList self, std::vector< ComboLeg * >::iterator pos, ComboLeg x) -> std::vector< ComboLeg * >::iterator
-        insert(ComboLegList self, std::vector< ComboLeg * >::iterator pos, std::vector< ComboLeg * >::size_type n, 
+        insert(ComboLegList self, std::vector< ComboLeg * >::iterator pos, std::vector< ComboLeg * >::size_type n,
             ComboLeg x)
         """
         return _swigibpy.ComboLegList_insert(self, *args)
@@ -397,7 +397,7 @@ class ComboLeg(object):
     """Proxy of C++ ComboLeg class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(ComboLeg self) -> ComboLeg"""
         _swigibpy.ComboLeg_swiginit(self,_swigibpy.new_ComboLeg())
     conId = _swig_property(_swigibpy.ComboLeg_conId_get, _swigibpy.ComboLeg_conId_set)
@@ -421,7 +421,7 @@ class UnderComp(object):
     """Proxy of C++ UnderComp class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(UnderComp self) -> UnderComp"""
         _swigibpy.UnderComp_swiginit(self,_swigibpy.new_UnderComp())
     conId = _swig_property(_swigibpy.UnderComp_conId_get, _swigibpy.UnderComp_conId_set)
@@ -435,7 +435,7 @@ class Contract(object):
     """Proxy of C++ Contract class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(Contract self) -> Contract"""
         _swigibpy.Contract_swiginit(self,_swigibpy.new_Contract())
     conId = _swig_property(_swigibpy.Contract_conId_get, _swigibpy.Contract_conId_set)
@@ -481,7 +481,7 @@ class ContractDetails(object):
     """Proxy of C++ ContractDetails class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(ContractDetails self) -> ContractDetails"""
         _swigibpy.ContractDetails_swiginit(self,_swigibpy.new_ContractDetails())
     summary = _swig_property(_swigibpy.ContractDetails_summary_get, _swigibpy.ContractDetails_summary_set)
@@ -623,15 +623,15 @@ class EClient(object):
 
     def reqHistoricalData(self, *args, **kwargs):
         """
-        reqHistoricalData(EClient self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, 
-            IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, 
+        reqHistoricalData(EClient self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr,
+            IBString const & barSizeSetting, IBString const & whatToShow, int useRTH,
             int formatDate)
         """
         return _swigibpy.EClient_reqHistoricalData(self, *args, **kwargs)
 
     def exerciseOptions(self, *args, **kwargs):
         """
-        exerciseOptions(EClient self, TickerId id, Contract contract, int exerciseAction, int exerciseQuantity, IBString const & account, 
+        exerciseOptions(EClient self, TickerId id, Contract contract, int exerciseAction, int exerciseQuantity, IBString const & account,
             int override)
         """
         return _swigibpy.EClient_exerciseOptions(self, *args, **kwargs)
@@ -860,15 +860,15 @@ class EClientSocketBase(EClient):
 
     def reqHistoricalData(self, *args, **kwargs):
         """
-        reqHistoricalData(EClientSocketBase self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, 
-            IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, 
+        reqHistoricalData(EClientSocketBase self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr,
+            IBString const & barSizeSetting, IBString const & whatToShow, int useRTH,
             int formatDate)
         """
         return _swigibpy.EClientSocketBase_reqHistoricalData(self, *args, **kwargs)
 
     def exerciseOptions(self, *args, **kwargs):
         """
-        exerciseOptions(EClientSocketBase self, TickerId tickerId, Contract contract, int exerciseAction, int exerciseQuantity, IBString const & account, 
+        exerciseOptions(EClientSocketBase self, TickerId tickerId, Contract contract, int exerciseAction, int exerciseQuantity, IBString const & account,
             int override)
         """
         return _swigibpy.EClientSocketBase_exerciseOptions(self, *args, **kwargs)
@@ -985,7 +985,7 @@ class Execution(object):
     """Proxy of C++ Execution class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(Execution self) -> Execution"""
         _swigibpy.Execution_swiginit(self,_swigibpy.new_Execution())
     execId = _swig_property(_swigibpy.Execution_execId_get, _swigibpy.Execution_execId_set)
@@ -1010,7 +1010,7 @@ class ExecutionFilter(object):
     """Proxy of C++ ExecutionFilter class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(ExecutionFilter self) -> ExecutionFilter"""
         _swigibpy.ExecutionFilter_swiginit(self,_swigibpy.new_ExecutionFilter())
     m_clientId = _swig_property(_swigibpy.ExecutionFilter_m_clientId_get, _swigibpy.ExecutionFilter_m_clientId_set)
@@ -1035,7 +1035,7 @@ class TagValue(object):
     """Proxy of C++ TagValue class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self, *args): 
+    def __init__(self, *args):
         """
         __init__(TagValue self) -> TagValue
         __init__(TagValue self, IBString const & p_tag, IBString const & p_value) -> TagValue
@@ -1051,7 +1051,7 @@ class Order(object):
     """Proxy of C++ Order class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(Order self) -> Order"""
         _swigibpy.Order_swiginit(self,_swigibpy.new_Order())
     orderId = _swig_property(_swigibpy.Order_orderId_get, _swigibpy.Order_orderId_set)
@@ -1136,7 +1136,7 @@ class OrderState(object):
     """Proxy of C++ OrderState class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(OrderState self) -> OrderState"""
         _swigibpy.OrderState_swiginit(self,_swigibpy.new_OrderState())
     status = _swig_property(_swigibpy.OrderState_status_get, _swigibpy.OrderState_status_set)
@@ -1157,7 +1157,7 @@ class ScannerSubscription(object):
     """Proxy of C++ ScannerSubscription class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self): 
+    def __init__(self):
         """__init__(ScannerSubscription self) -> ScannerSubscription"""
         _swigibpy.ScannerSubscription_swiginit(self,_swigibpy.new_ScannerSubscription())
     numberOfRows = _swig_property(_swigibpy.ScannerSubscription_numberOfRows_get, _swigibpy.ScannerSubscription_numberOfRows_set)
@@ -1201,8 +1201,8 @@ class TWSPoller(threading.Thread):
         while True:
             try:
                 self._tws.checkMessages()
-            except:
-                if not self._tws or not self._tws.isConnected():
+            except TWSError as e:
+                if e.code == 509 or not self._tws or not self._tws.isConnected():
                     break
                 else:
                     print_exc()
@@ -1211,7 +1211,7 @@ class EPosixClientSocket(EClientSocketBase):
     """Proxy of C++ EPosixClientSocket class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
-    def __init__(self, *args, **kwargs): 
+    def __init__(self, *args, **kwargs):
         """__init__(EPosixClientSocket self, EWrapper ptr) -> EPosixClientSocket"""
         _swigibpy.EPosixClientSocket_swiginit(self,_swigibpy.new_EPosixClientSocket(*args, **kwargs))
     __swig_destroy__ = _swigibpy.delete_EPosixClientSocket
@@ -1230,10 +1230,6 @@ class EPosixClientSocket(EClientSocketBase):
 
     def eDisconnect(self):
         """eDisconnect(EPosixClientSocket self)"""
-        if self.poller:
-            self.poller = None
-
-
         return _swigibpy.EPosixClientSocket_eDisconnect(self)
 
     def isSocketOK(self):
@@ -1260,6 +1256,7 @@ class EPosixClientSocket(EClientSocketBase):
         """handleSocketError(EPosixClientSocket self) -> bool"""
         return _swigibpy.EPosixClientSocket_handleSocketError(self)
 
+EPosixClientSocket.eDisconnect = new_instancemethod(_swigibpy.EPosixClientSocket_eDisconnect,None,EPosixClientSocket)
 EPosixClientSocket.isSocketOK = new_instancemethod(_swigibpy.EPosixClientSocket_isSocketOK,None,EPosixClientSocket)
 EPosixClientSocket.fd = new_instancemethod(_swigibpy.EPosixClientSocket_fd,None,EPosixClientSocket)
 EPosixClientSocket.onReceive = new_instancemethod(_swigibpy.EPosixClientSocket_onReceive,None,EPosixClientSocket)
@@ -1369,7 +1366,7 @@ class EWrapper(object):
 
     def tickOptionComputation(self, *args, **kwargs):
         """
-        tickOptionComputation(EWrapper self, TickerId tickerId, TickType tickType, double impliedVol, double delta, double optPrice, 
+        tickOptionComputation(EWrapper self, TickerId tickerId, TickType tickType, double impliedVol, double delta, double optPrice,
             double pvDividend, double gamma, double vega, double theta, double undPrice)
         """
         return _swigibpy.EWrapper_tickOptionComputation(self, *args, **kwargs)
@@ -1384,15 +1381,15 @@ class EWrapper(object):
 
     def tickEFP(self, *args, **kwargs):
         """
-        tickEFP(EWrapper self, TickerId tickerId, TickType tickType, double basisPoints, IBString const & formattedBasisPoints, 
-            double totalDividends, int holdDays, IBString const & futureExpiry, 
+        tickEFP(EWrapper self, TickerId tickerId, TickType tickType, double basisPoints, IBString const & formattedBasisPoints,
+            double totalDividends, int holdDays, IBString const & futureExpiry,
             double dividendImpact, double dividendsToExpiry)
         """
         return _swigibpy.EWrapper_tickEFP(self, *args, **kwargs)
 
     def orderStatus(self, *args, **kwargs):
         """
-        orderStatus(EWrapper self, OrderId orderId, IBString const & status, int filled, int remaining, double avgFillPrice, 
+        orderStatus(EWrapper self, OrderId orderId, IBString const & status, int filled, int remaining, double avgFillPrice,
             int permId, int parentId, double lastFillPrice, int clientId, IBString const & whyHeld)
         """
         return _swigibpy.EWrapper_orderStatus(self, *args, **kwargs)
@@ -1421,7 +1418,7 @@ class EWrapper(object):
 
     def updatePortfolio(self, *args, **kwargs):
         """
-        updatePortfolio(EWrapper self, Contract contract, int position, double marketPrice, double marketValue, double averageCost, 
+        updatePortfolio(EWrapper self, Contract contract, int position, double marketPrice, double marketValue, double averageCost,
             double unrealizedPNL, double realizedPNL, IBString const & accountName)
         """
         return _swigibpy.EWrapper_updatePortfolio(self, *args, **kwargs)
@@ -1480,7 +1477,7 @@ class EWrapper(object):
 
     def updateMktDepthL2(self, *args, **kwargs):
         """
-        updateMktDepthL2(EWrapper self, TickerId id, int position, IBString marketMaker, int operation, int side, double price, 
+        updateMktDepthL2(EWrapper self, TickerId id, int position, IBString marketMaker, int operation, int side, double price,
             int size)
         """
         return _swigibpy.EWrapper_updateMktDepthL2(self, *args, **kwargs)
@@ -1499,7 +1496,7 @@ class EWrapper(object):
 
     def historicalData(self, *args, **kwargs):
         """
-        historicalData(EWrapper self, TickerId reqId, IBString const & date, double open, double high, double low, double close, 
+        historicalData(EWrapper self, TickerId reqId, IBString const & date, double open, double high, double low, double close,
             int volume, int barCount, double WAP, int hasGaps)
         """
         return _swigibpy.EWrapper_historicalData(self, *args, **kwargs)
@@ -1510,7 +1507,7 @@ class EWrapper(object):
 
     def scannerData(self, *args, **kwargs):
         """
-        scannerData(EWrapper self, int reqId, int rank, ContractDetails contractDetails, IBString const & distance, 
+        scannerData(EWrapper self, int reqId, int rank, ContractDetails contractDetails, IBString const & distance,
             IBString const & benchmark, IBString const & projection, IBString const & legsStr)
         """
         return _swigibpy.EWrapper_scannerData(self, *args, **kwargs)
@@ -1521,7 +1518,7 @@ class EWrapper(object):
 
     def realtimeBar(self, *args, **kwargs):
         """
-        realtimeBar(EWrapper self, TickerId reqId, long time, double open, double high, double low, double close, long volume, 
+        realtimeBar(EWrapper self, TickerId reqId, long time, double open, double high, double low, double close, long volume,
             double wap, int count)
         """
         return _swigibpy.EWrapper_realtimeBar(self, *args, **kwargs)
@@ -1546,7 +1543,7 @@ class EWrapper(object):
         """marketDataType(EWrapper self, TickerId reqId, int marketDataType)"""
         return _swigibpy.EWrapper_marketDataType(self, *args, **kwargs)
 
-    def __init__(self): 
+    def __init__(self):
         """__init__(EWrapper self) -> EWrapper"""
         if self.__class__ == EWrapper:
             _self = None

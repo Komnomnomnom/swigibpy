@@ -103,8 +103,8 @@ class TWSPoller(threading.Thread):
         while True:
             try:
                 self._tws.checkMessages()
-            except:
-                if not self._tws or not self._tws.isConnected():
+            except TWSError as e:
+                if e.code == 509 or not self._tws or not self._tws.isConnected():
                     break
                 else:
                     print_exc()
@@ -116,10 +116,6 @@ class TWSPoller(threading.Thread):
     if poll_auto and val:
         self.poller = TWSPoller(self)
         self.poller.start()
-%}
-%pythonprepend EPosixClientSocket::eDisconnect() %{
-    if self.poller:
-        self.poller = None
 %}
 %include "PosixSocketClient/EPosixClientSocket.h"
 
