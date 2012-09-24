@@ -33,7 +33,6 @@ class ContractDetailsExample(EWrapper):
 
     def contractDetails(self, reqId, contractDetails):
         print "Contract details received (request id %i):" % reqId
-        print
         print "callable: %s" % contractDetails.callable
         print "category: %s" % contractDetails.category
         print "contractMonth: %s" % contractDetails.contractMonth
