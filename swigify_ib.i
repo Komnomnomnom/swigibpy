@@ -33,12 +33,14 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
 #include "PosixSocketClient/EPosixClientSocket.h"
 #include "Shared/EWrapper.h"
 
+#include "Shared/CommissionReport.h"
 #include "Shared/CommonDefs.h"
 #include "Shared/Contract.h"
 #include "Shared/Execution.h"
 #include "Shared/Order.h"
 #include "Shared/OrderState.h"
 #include "Shared/ScannerSubscription.h"
+#include "Shared/TagValue.h"
 %}
 
 /*EWrapper will be subclassed in Python*/
@@ -75,6 +77,7 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
 }
 
 /* Grab the header files to be wrapped */
+%include "Shared/CommissionReport.h"
 %include "Shared/CommonDefs.h"
 %include "Shared/Contract.h"
 %include "Shared/EClient.h"
@@ -83,7 +86,7 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
 %include "Shared/Order.h"
 %include "Shared/OrderState.h"
 %include "Shared/ScannerSubscription.h"
-
+%include "Shared/TagValue.h"
 
 /* Customise EPosixClientSocket so that TWS is automatically polled for messages when we are connected to it */
 %pythoncode %{
@@ -154,8 +157,10 @@ class TWSClientError(TWSError):
         '''Error during communication with TWS'''
         import sys
 
-        if errorCode == 165:
+        if errorCode == 165: # Historical data sevice message
             print("TWS Message %s: %s" % (errorCode, errorString))
+        elif errorCode == 509: # Socket read failed
+            raise TWSError(errorCode, errorString)
         elif errorCode >= 100 and errorCode < 1100:
             sys.stderr.write("TWS Error %s: %s\n" % (errorCode, errorString))
         elif  errorCode >= 1100 and errorCode < 2100:

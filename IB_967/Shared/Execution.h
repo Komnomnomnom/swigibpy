@@ -14,6 +14,7 @@ struct Execution
       orderId = 0;
 	  cumQty = 0;
 	  avgPrice = 0;
+	  evMultiplier = 0;
    }
 
    // main order fields
@@ -31,6 +32,8 @@ struct Execution
    int         cumQty;
    double      avgPrice;
    IBString    orderRef;
+   IBString	   evRule;
+   double      evMultiplier;
 };
 
 struct ExecutionFilter

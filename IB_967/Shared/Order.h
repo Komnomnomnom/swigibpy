@@ -1,13 +1,10 @@
 #ifndef order_def
 #define order_def
 
-#include "shared_ptr.h"
-#include "IBString.h"
+#include "TagValue.h"
 
 #include <float.h>
 #include <limits.h>
-
-#include <vector>
 
 #define UNSET_DOUBLE DBL_MAX
 #define UNSET_INTEGER INT_MAX
@@ -21,18 +18,22 @@ enum AuctionStrategy { AUCTION_UNSET = 0,
                        AUCTION_IMPROVEMENT = 2,
                        AUCTION_TRANSPARENT = 3 };
 
-struct TagValue
+struct OrderComboLeg
 {
-	TagValue() {}
-	TagValue(const IBString& p_tag, const IBString& p_value)
-		: tag(p_tag), value(p_value)
-	{}
+	OrderComboLeg()
+	{
+		price = UNSET_DOUBLE;
+	}
 
-	IBString tag;
-	IBString value;
+	double price;
+
+	bool operator==( const OrderComboLeg &other) const
+	{
+		return (price == other.price);
+	}
 };
 
-typedef shared_ptr<TagValue> TagValueSPtr;
+typedef shared_ptr<OrderComboLeg> OrderComboLegSPtr;
 
 struct Order
 {
@@ -45,8 +46,8 @@ struct Order
 
 		// main order fields
 		totalQuantity = 0;
-		lmtPrice      = 0;
-		auxPrice      = 0;
+		lmtPrice      = UNSET_DOUBLE;
+		auxPrice      = UNSET_DOUBLE;
 
 		// extended order fields
 		ocaType        = 0;
@@ -63,6 +64,7 @@ struct Order
 		percentOffset  = UNSET_DOUBLE;
 		overridePercentageConstraints = false;
 		trailStopPrice = UNSET_DOUBLE;
+		trailingPercent = UNSET_DOUBLE;
 
 		// institutional (ie non-cleared) only
 		openClose     = "O";
@@ -107,6 +109,13 @@ struct Order
 		scaleInitLevelSize  = UNSET_INTEGER;
 		scaleSubsLevelSize  = UNSET_INTEGER;
 		scalePriceIncrement = UNSET_DOUBLE;
+		scalePriceAdjustValue = UNSET_DOUBLE;
+		scalePriceAdjustInterval = UNSET_INTEGER;
+		scaleProfitOffset = UNSET_DOUBLE;
+		scaleAutoReset = false;
+		scaleInitPosition = UNSET_INTEGER;
+		scaleInitFillQty = UNSET_INTEGER;
+		scaleRandomPercent = false;
 
 		// What-if
 		whatIf = false;
@@ -148,6 +157,7 @@ struct Order
 	double   percentOffset; // REL orders only
 	bool     overridePercentageConstraints;
 	double   trailStopPrice; // TRAILLIMIT orders only
+	double   trailingPercent;
 
 	// financial advisors only
 	IBString faGroup;
@@ -199,6 +209,13 @@ struct Order
 	int      scaleInitLevelSize;
 	int      scaleSubsLevelSize;
 	double   scalePriceIncrement;
+	double   scalePriceAdjustValue;
+	int      scalePriceAdjustInterval;
+	double   scaleProfitOffset;
+	bool     scaleAutoReset;
+	int      scaleInitPosition;
+	int      scaleInitFillQty;
+	bool     scaleRandomPercent;
 
 	// HEDGE ORDERS
 	IBString hedgeType;  // 'D' - delta, 'B' - beta, 'F' - FX, 'P' - pair
@@ -213,9 +230,6 @@ struct Order
 	// ALGO ORDERS ONLY
 	IBString algoStrategy;
 
-	typedef std::vector<TagValueSPtr> TagValueList;
-	typedef shared_ptr<TagValueList> TagValueListSPtr;
-
 	TagValueListSPtr algoParams;
 	TagValueListSPtr smartComboRoutingParams;
 
@@ -224,6 +238,36 @@ struct Order
 
 	// Not Held
 	bool     notHeld;
+
+	// order combo legs
+	typedef std::vector<OrderComboLegSPtr> OrderComboLegList;
+	typedef shared_ptr<OrderComboLegList> OrderComboLegListSPtr;
+
+	OrderComboLegListSPtr orderComboLegs;
+
+public:
+
+	// Helpers
+	static void CloneOrderComboLegs(OrderComboLegListSPtr& dst, const OrderComboLegListSPtr& src);
 };
+
+inline void
+Order::CloneOrderComboLegs(OrderComboLegListSPtr& dst, const OrderComboLegListSPtr& src)
+{
+	if (!src.get())
+		return;
+
+	dst->reserve(src->size());
+
+	OrderComboLegList::const_iterator iter = src->begin();
+	const OrderComboLegList::const_iterator iterEnd = src->end();
+
+	for (; iter != iterEnd; ++iter) {
+		const OrderComboLeg* leg = iter->get();
+		if (!leg)
+			continue;
+		dst->push_back(OrderComboLegSPtr(new OrderComboLeg(*leg)));
+	}
+}
 
 #endif

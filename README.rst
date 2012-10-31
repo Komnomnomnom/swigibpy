@@ -3,7 +3,7 @@ Overview
 
 `Interactive Brokers`_ Python API, auto generated from C++ API using `SWIG`_.
 
-Latest version: 0.3 (TWS API v9.66)
+Latest version: 0.4 (TWS API v9.67)
 
 Install
 =======
@@ -73,6 +73,12 @@ handle polling yourself, swigibpy's polling can be disabled using the
 ``poll_auto`` argument::
     
     tws.eConnect("", 7496, 42, poll_auto=False)
+
+Notes
+-----
+
+The ``yield`` parameter in ``CommissionReport`` clashes with a Python reserved
+keyword so it is renamed to ``_yield``.
 
 Develop
 =======

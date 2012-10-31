@@ -11,6 +11,7 @@
 #include "OrderState.h"
 #include "Execution.h"
 #include "ScannerSubscription.h"
+#include "CommissionReport.h"
 
 
 #include <sstream>
@@ -90,7 +91,15 @@
 // 51 = can receive smartComboRoutingParams in openOrder
 // 52 = can receive deltaNeutralConId, deltaNeutralSettlingFirm, deltaNeutralClearingAccount and deltaNeutralClearingIntent in openOrder
 // 53 = can receive orderRef in execution
-const int CLIENT_VERSION    = 53;
+// 54 = can receive scale order fields (PriceAdjustValue, PriceAdjustInterval, ProfitOffset, AutoReset, 
+//      InitPosition, InitFillQty and RandomPercent) in openOrder
+// 55 = can receive orderComboLegs (price) in openOrder
+// 56 = can receive trailingPercent in openOrder
+// 57 = can receive commissionReport message
+// 58 = can receive CUSIP/ISIN/etc. in contractDescription/bondContractDescription
+// 59 = can receive evRule, evMultiplier in contractDescription/bondContractDescription/executionDetails
+//      can receive multiplier in executionDetails
+const int CLIENT_VERSION    = 59;
 const int SERVER_VERSION    = 38;
 
 // outgoing msg id's
@@ -160,6 +169,9 @@ const int MIN_SERVER_VER_REQ_MARKET_DATA_TYPE	= 55;
 const int MIN_SERVER_VER_OPT_OUT_SMART_ROUTING  = 56;
 const int MIN_SERVER_VER_SMART_COMBO_ROUTING_PARAMS = 57;
 const int MIN_SERVER_VER_DELTA_NEUTRAL_CONID    = 58;
+const int MIN_SERVER_VER_SCALE_ORDERS3          = 60;
+const int MIN_SERVER_VER_ORDER_COMBO_LEGS_PRICE = 61;
+const int MIN_SERVER_VER_TRAILING_PERCENT       = 62;
 
 // incoming msg id's
 const int TICK_PRICE                = 1;
@@ -196,6 +208,7 @@ const int EXECUTION_DATA_END        = 55;
 const int DELTA_NEUTRAL_VALIDATION  = 56;
 const int TICK_SNAPSHOT_END         = 57;
 const int MARKET_DATA_TYPE          = 58;
+const int COMMISSION_REPORT         = 59;
 
 // TWS New Bulletins constants
 const int NEWS_MSG              = 1;    // standard IB news bulleting message
@@ -523,17 +536,12 @@ void EClientSocketBase::reqMktData(TickerId tickerId, const Contract& contract,
 	// Send combo legs for BAG requests (srv v8 and above)
 	if( Compare(contract.secType, "BAG") == 0)
 	{
-		if( !contract.comboLegs || contract.comboLegs->empty()) {
-			ENCODE_FIELD( 0);
-		}
-		else {
-			typedef Contract::ComboLegList ComboLegList;
-			const ComboLegList& comboLegs = *contract.comboLegs;
-			ENCODE_FIELD( (int)comboLegs.size() );
-			ComboLegList::const_iterator iter = comboLegs.begin();
-			const ComboLegList::const_iterator iterEnd = comboLegs.end();
-			for( ; iter != iterEnd; ++iter) {
-				const ComboLeg* comboLeg = *iter;
+		const Contract::ComboLegList* const comboLegs = contract.comboLegs.get();
+		const int comboLegsCount = comboLegs ? comboLegs->size() : 0;
+		ENCODE_FIELD( comboLegsCount);
+		if( comboLegsCount > 0) {
+			for( int i = 0; i < comboLegsCount; ++i) {
+				const ComboLeg* comboLeg = ((*comboLegs)[i]).get();
 				assert( comboLeg);
 				ENCODE_FIELD( comboLeg->conId);
 				ENCODE_FIELD( comboLeg->ratio);
@@ -698,17 +706,12 @@ void EClientSocketBase::reqHistoricalData( TickerId tickerId, const Contract &co
 	// Send combo legs for BAG requests
 	if( Compare(contract.secType, "BAG") == 0)
 	{
-		if( !contract.comboLegs || contract.comboLegs->empty()) {
-			ENCODE_FIELD( 0);
-		}
-		else {
-			typedef Contract::ComboLegList ComboLegList;
-			const ComboLegList& comboLegs = *contract.comboLegs;
-			ENCODE_FIELD( (int)comboLegs.size());
-			ComboLegList::const_iterator iter = comboLegs.begin();
-			const ComboLegList::const_iterator iterEnd = comboLegs.end();
-			for( ; iter != iterEnd; ++iter) {
-				const ComboLeg* comboLeg = *iter;
+		const Contract::ComboLegList* const comboLegs = contract.comboLegs.get();
+		const int comboLegsCount = comboLegs ? comboLegs->size() : 0;
+		ENCODE_FIELD( comboLegsCount);
+		if( comboLegsCount > 0) {
+			for( int i = 0; i < comboLegsCount; ++i) {
+				const ComboLeg* comboLeg = ((*comboLegs)[i]).get();
 				assert( comboLeg);
 				ENCODE_FIELD( comboLeg->conId);
 				ENCODE_FIELD( comboLeg->ratio);
@@ -1296,19 +1299,15 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 	}
 
 	if (m_serverVersion < MIN_SERVER_VER_SSHORTX) {
-		if( contract.comboLegs && !contract.comboLegs->empty()) {
-			typedef Contract::ComboLegList ComboLegList;
-			const ComboLegList& comboLegs = *contract.comboLegs;
-			ComboLegList::const_iterator iter = comboLegs.begin();
-			const ComboLegList::const_iterator iterEnd = comboLegs.end();
-			for( ; iter != iterEnd; ++iter) {
-				const ComboLeg* comboLeg = *iter;
-				assert( comboLeg);
-				if( comboLeg->exemptCode != -1 ){
-					m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
-						"  It does not support exemptCode parameter.");
-					return;
-				}
+		const Contract::ComboLegList* const comboLegs = contract.comboLegs.get();
+		const int comboLegsCount = comboLegs ? comboLegs->size() : 0;
+		for( int i = 0; i < comboLegsCount; ++i) {
+			const ComboLeg* comboLeg = ((*comboLegs)[i]).get();
+			assert( comboLeg);
+			if( comboLeg->exemptCode != -1 ){
+				m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+					"  It does not support exemptCode parameter.");
+				return;
 			}
 		}
 	}
@@ -1341,9 +1340,48 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		}
 	}
 
+	if (m_serverVersion < MIN_SERVER_VER_SCALE_ORDERS3) {
+		if (order.scalePriceIncrement > 0 && order.scalePriceIncrement != UNSET_DOUBLE) {
+			if (order.scalePriceAdjustValue != UNSET_DOUBLE 
+				|| order.scalePriceAdjustInterval != UNSET_INTEGER 
+				|| order.scaleProfitOffset != UNSET_DOUBLE 
+				|| order.scaleAutoReset 
+				|| order.scaleInitPosition != UNSET_INTEGER 
+				|| order.scaleInitFillQty != UNSET_INTEGER 
+				|| order.scaleRandomPercent) {
+				m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+						"  It does not support Scale order parameters: PriceAdjustValue, PriceAdjustInterval, " +
+						"ProfitOffset, AutoReset, InitPosition, InitFillQty and RandomPercent");
+				return;
+			}
+		}
+	}
+
+	if (m_serverVersion < MIN_SERVER_VER_ORDER_COMBO_LEGS_PRICE && Compare(contract.secType, "BAG") == 0) {
+		const Order::OrderComboLegList* const orderComboLegs = order.orderComboLegs.get();
+		const int orderComboLegsCount = orderComboLegs ? orderComboLegs->size() : 0;
+		for( int i = 0; i < orderComboLegsCount; ++i) {
+			const OrderComboLeg* orderComboLeg = ((*orderComboLegs)[i]).get();
+			assert( orderComboLeg);
+			if( orderComboLeg->price != UNSET_DOUBLE) {
+				m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+					"  It does not support per-leg prices for order combo legs.");
+				return;
+			}
+		}
+	}
+
+	if (m_serverVersion < MIN_SERVER_VER_TRAILING_PERCENT) {
+		if (order.trailingPercent != UNSET_DOUBLE) {
+			m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+					"  It does not support trailing percent parameter");
+			return;
+		}
+	}
+
 	std::ostringstream msg;
 
-	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 35;
+	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 38;
 
 	// send place order msg
 	ENCODE_FIELD( PLACE_ORDER);
@@ -1374,8 +1412,18 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 	ENCODE_FIELD( order.action);
 	ENCODE_FIELD( order.totalQuantity);
 	ENCODE_FIELD( order.orderType);
-	ENCODE_FIELD( order.lmtPrice);
-	ENCODE_FIELD( order.auxPrice);
+	if( m_serverVersion < MIN_SERVER_VER_ORDER_COMBO_LEGS_PRICE) {
+		ENCODE_FIELD( order.lmtPrice == UNSET_DOUBLE ? 0 : order.lmtPrice);
+	}
+	else {
+		ENCODE_FIELD_MAX( order.lmtPrice);
+	}
+	if( m_serverVersion < MIN_SERVER_VER_TRAILING_PERCENT) {
+		ENCODE_FIELD( order.auxPrice == UNSET_DOUBLE ? 0 : order.auxPrice);
+	}
+	else {
+		ENCODE_FIELD_MAX( order.auxPrice);
+	}
 
 	// send extended order fields
 	ENCODE_FIELD( order.tif);
@@ -1403,20 +1451,14 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 	ENCODE_FIELD( order.hidden); // srv v7 and above
 
 	// Send combo legs for BAG requests (srv v8 and above)
-	if( /* m_serverVersion >= 8 && */ Compare(contract.secType, "BAG") == 0)
-
+	if( Compare(contract.secType, "BAG") == 0)
 	{
-		if( !contract.comboLegs || contract.comboLegs->empty()) {
-			ENCODE_FIELD( 0);
-		}
-		else {
-			typedef Contract::ComboLegList ComboLegList;
-			const ComboLegList& comboLegs = *contract.comboLegs;
-			ENCODE_FIELD( (int)comboLegs.size());
-			ComboLegList::const_iterator iter = comboLegs.begin();
-			const ComboLegList::const_iterator iterEnd = comboLegs.end();
-			for( ; iter != iterEnd; ++iter) {
-				const ComboLeg* comboLeg = *iter;
+		const Contract::ComboLegList* const comboLegs = contract.comboLegs.get();
+		const int comboLegsCount = comboLegs ? comboLegs->size() : 0;
+		ENCODE_FIELD( comboLegsCount);
+		if( comboLegsCount > 0) {
+			for( int i = 0; i < comboLegsCount; ++i) {
+				const ComboLeg* comboLeg = ((*comboLegs)[i]).get();
 				assert( comboLeg);
 				ENCODE_FIELD( comboLeg->conId);
 				ENCODE_FIELD( comboLeg->ratio);
@@ -1433,8 +1475,23 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		}
 	}
 
+	// Send order combo legs for BAG requests
+	if( m_serverVersion >= MIN_SERVER_VER_ORDER_COMBO_LEGS_PRICE && Compare(contract.secType, "BAG") == 0)
+	{
+		const Order::OrderComboLegList* const orderComboLegs = order.orderComboLegs.get();
+		const int orderComboLegsCount = orderComboLegs ? orderComboLegs->size() : 0;
+		ENCODE_FIELD( orderComboLegsCount);
+		if( orderComboLegsCount > 0) {
+			for( int i = 0; i < orderComboLegsCount; ++i) {
+				const OrderComboLeg* orderComboLeg = ((*orderComboLegs)[i]).get();
+				assert( orderComboLeg);
+				ENCODE_FIELD_MAX( orderComboLeg->price);
+			}
+		}
+	}	
+
 	if( m_serverVersion >= MIN_SERVER_VER_SMART_COMBO_ROUTING_PARAMS && Compare(contract.secType, "BAG") == 0) {
-		const Order::TagValueList* const smartComboRoutingParams = order.smartComboRoutingParams.get();
+		const TagValueList* const smartComboRoutingParams = order.smartComboRoutingParams.get();
 		const int smartComboRoutingParamsCount = smartComboRoutingParams ? smartComboRoutingParams->size() : 0;
 		ENCODE_FIELD( smartComboRoutingParamsCount);
 		if( smartComboRoutingParamsCount > 0) {
@@ -1539,6 +1596,10 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 
 	ENCODE_FIELD_MAX( order.trailStopPrice); // srv v30 and above
 
+	if( m_serverVersion >= MIN_SERVER_VER_TRAILING_PERCENT) {
+		ENCODE_FIELD_MAX( order.trailingPercent);
+	}
+
 	// SCALE orders
 	if( m_serverVersion >= MIN_SERVER_VER_SCALE_ORDERS2) {
 		ENCODE_FIELD_MAX( order.scaleInitLevelSize);
@@ -1551,6 +1612,17 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 	}
 
 	ENCODE_FIELD_MAX( order.scalePriceIncrement);
+
+	if( m_serverVersion >= MIN_SERVER_VER_SCALE_ORDERS3 
+		&& order.scalePriceIncrement > 0.0 && order.scalePriceIncrement != UNSET_DOUBLE) {
+		ENCODE_FIELD_MAX( order.scalePriceAdjustValue);
+		ENCODE_FIELD_MAX( order.scalePriceAdjustInterval);
+		ENCODE_FIELD_MAX( order.scaleProfitOffset);
+		ENCODE_FIELD( order.scaleAutoReset);
+		ENCODE_FIELD_MAX( order.scaleInitPosition);
+		ENCODE_FIELD_MAX( order.scaleInitFillQty);
+		ENCODE_FIELD( order.scaleRandomPercent);
+	}
 
 	// HEDGE orders
 	if( m_serverVersion >= MIN_SERVER_VER_HEDGE_ORDERS) {
@@ -1590,7 +1662,7 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		ENCODE_FIELD( order.algoStrategy);
 
 		if( !IsEmpty(order.algoStrategy)) {
-			const Order::TagValueList* const algoParams = order.algoParams.get();
+			const TagValueList* const algoParams = order.algoParams.get();
 			const int algoParamsCount = algoParams ? algoParams->size() : 0;
 			ENCODE_FIELD( algoParamsCount);
 			if( algoParamsCount > 0) {
@@ -2395,8 +2467,18 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( order.action);
 				DECODE_FIELD( order.totalQuantity);
 				DECODE_FIELD( order.orderType);
-				DECODE_FIELD( order.lmtPrice);
-				DECODE_FIELD( order.auxPrice);
+				if (version < 29) { 
+					DECODE_FIELD( order.lmtPrice);
+				}
+				else {
+					DECODE_FIELD_MAX( order.lmtPrice);
+				}
+				if (version < 30) { 
+					DECODE_FIELD( order.auxPrice);
+				}
+				else {
+					DECODE_FIELD_MAX( order.auxPrice);
+				}
 				DECODE_FIELD( order.tif);
 				DECODE_FIELD( order.ocaGroup);
 				DECODE_FIELD( order.account);
@@ -2433,7 +2515,7 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( order.goodTillDate); // ver 8 field
 
 				DECODE_FIELD( order.rule80A); // ver 9 field
-				DECODE_FIELD( order.percentOffset); // ver 9 field
+				DECODE_FIELD_MAX( order.percentOffset); // ver 9 field
 				DECODE_FIELD( order.settlingFirm); // ver 9 field
 				DECODE_FIELD( order.shortSaleSlot); // ver 9 field
 				DECODE_FIELD( order.designatedLocation); // ver 9 field
@@ -2445,11 +2527,11 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 					DECODE_FIELD( order.exemptCode);
 				}
 				DECODE_FIELD( order.auctionStrategy); // ver 9 field
-				DECODE_FIELD( order.startingPrice); // ver 9 field
-				DECODE_FIELD( order.stockRefPrice); // ver 9 field
-				DECODE_FIELD( order.delta); // ver 9 field
-				DECODE_FIELD( order.stockRangeLower); // ver 9 field
-				DECODE_FIELD( order.stockRangeUpper); // ver 9 field
+				DECODE_FIELD_MAX( order.startingPrice); // ver 9 field
+				DECODE_FIELD_MAX( order.stockRefPrice); // ver 9 field
+				DECODE_FIELD_MAX( order.delta); // ver 9 field
+				DECODE_FIELD_MAX( order.stockRangeLower); // ver 9 field
+				DECODE_FIELD_MAX( order.stockRangeUpper); // ver 9 field
 				DECODE_FIELD( order.displaySize); // ver 9 field
 
 				//if( version < 18) {
@@ -2460,19 +2542,19 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( order.blockOrder); // ver 9 field
 				DECODE_FIELD( order.sweepToFill); // ver 9 field
 				DECODE_FIELD( order.allOrNone); // ver 9 field
-				DECODE_FIELD( order.minQty); // ver 9 field
+				DECODE_FIELD_MAX( order.minQty); // ver 9 field
 				DECODE_FIELD( order.ocaType); // ver 9 field
 				DECODE_FIELD( order.eTradeOnly); // ver 9 field
 				DECODE_FIELD( order.firmQuoteOnly); // ver 9 field
-				DECODE_FIELD( order.nbboPriceCap); // ver 9 field
+				DECODE_FIELD_MAX( order.nbboPriceCap); // ver 9 field
 
 				DECODE_FIELD( order.parentId); // ver 10 field
 				DECODE_FIELD( order.triggerMethod); // ver 10 field
 
-				DECODE_FIELD( order.volatility); // ver 11 field
+				DECODE_FIELD_MAX( order.volatility); // ver 11 field
 				DECODE_FIELD( order.volatilityType); // ver 11 field
 				DECODE_FIELD( order.deltaNeutralOrderType); // ver 11 field (had a hack for ver 11)
-				DECODE_FIELD( order.deltaNeutralAuxPrice); // ver 12 field
+				DECODE_FIELD_MAX( order.deltaNeutralAuxPrice); // ver 12 field
 
 				if (version >= 27 && !IsEmpty(order.deltaNeutralOrderType)) {
 					DECODE_FIELD( order.deltaNeutralConId);
@@ -2491,17 +2573,59 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 
 				DECODE_FIELD( order.referencePriceType); // ver 11 field
 
-				DECODE_FIELD( order.trailStopPrice); // ver 13 field
+				DECODE_FIELD_MAX( order.trailStopPrice); // ver 13 field
 
-				DECODE_FIELD( order.basisPoints); // ver 14 field
-				DECODE_FIELD( order.basisPointsType); // ver 14 field
+				if (version >= 30) {
+					DECODE_FIELD_MAX( order.trailingPercent);
+				}
+
+				DECODE_FIELD_MAX( order.basisPoints); // ver 14 field
+				DECODE_FIELD_MAX( order.basisPointsType); // ver 14 field
 				DECODE_FIELD( contract.comboLegsDescrip); // ver 14 field
+
+				if (version >= 29) {
+				int comboLegsCount = 0;
+					DECODE_FIELD( comboLegsCount);
+
+					if (comboLegsCount > 0) {
+						Contract::ComboLegListSPtr comboLegs( new Contract::ComboLegList);
+						comboLegs->reserve( comboLegsCount);
+						for (int i = 0; i < comboLegsCount; ++i) {
+							ComboLegSPtr comboLeg( new ComboLeg());
+							DECODE_FIELD( comboLeg->conId);
+							DECODE_FIELD( comboLeg->ratio);
+							DECODE_FIELD( comboLeg->action);
+							DECODE_FIELD( comboLeg->exchange);
+							DECODE_FIELD( comboLeg->openClose);
+							DECODE_FIELD( comboLeg->shortSaleSlot);
+							DECODE_FIELD( comboLeg->designatedLocation);
+							DECODE_FIELD( comboLeg->exemptCode);
+
+							comboLegs->push_back( comboLeg);
+					}
+						contract.comboLegs = comboLegs;
+					}
+
+					int orderComboLegsCount = 0;
+					DECODE_FIELD( orderComboLegsCount);
+					if (orderComboLegsCount > 0) {
+						Order::OrderComboLegListSPtr orderComboLegs( new Order::OrderComboLegList);
+						orderComboLegs->reserve( orderComboLegsCount);
+						for (int i = 0; i < orderComboLegsCount; ++i) {
+							OrderComboLegSPtr orderComboLeg( new OrderComboLeg());
+							DECODE_FIELD_MAX( orderComboLeg->price);
+
+							orderComboLegs->push_back( orderComboLeg);
+						}
+						order.orderComboLegs = orderComboLegs;
+					}
+				}
 
 				if (version >= 26) {
 					int smartComboRoutingParamsCount = 0;
 					DECODE_FIELD( smartComboRoutingParamsCount);
 					if( smartComboRoutingParamsCount > 0) {
-						Order::TagValueListSPtr smartComboRoutingParams( new Order::TagValueList);
+						TagValueListSPtr smartComboRoutingParams( new TagValueList);
 						smartComboRoutingParams->reserve( smartComboRoutingParamsCount);
 						for( int i = 0; i < smartComboRoutingParamsCount; ++i) {
 							TagValueSPtr tagValue( new TagValue());
@@ -2524,6 +2648,16 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 					DECODE_FIELD_MAX( order.scaleInitLevelSize); // scaleComponectSize
 				}
 				DECODE_FIELD_MAX( order.scalePriceIncrement); // ver 15 field
+
+				if (version >= 28 && order.scalePriceIncrement > 0.0 && order.scalePriceIncrement != UNSET_DOUBLE) {
+					DECODE_FIELD_MAX( order.scalePriceAdjustValue);
+					DECODE_FIELD_MAX( order.scalePriceAdjustInterval);
+					DECODE_FIELD_MAX( order.scaleProfitOffset);
+					DECODE_FIELD( order.scaleAutoReset);
+					DECODE_FIELD_MAX( order.scaleInitPosition);
+					DECODE_FIELD_MAX( order.scaleInitFillQty);
+					DECODE_FIELD( order.scaleRandomPercent);
+				}
 
 				if( version >= 24) {
 					DECODE_FIELD( order.hedgeType);
@@ -2562,7 +2696,7 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 						int algoParamsCount = 0;
 						DECODE_FIELD( algoParamsCount);
 						if( algoParamsCount > 0) {
-							Order::TagValueListSPtr algoParams( new Order::TagValueList);
+							TagValueListSPtr algoParams( new TagValueList);
 							algoParams->reserve( algoParamsCount);
 							for( int i = 0; i < algoParamsCount; ++i) {
 								TagValueSPtr tagValue( new TagValue());
@@ -2729,6 +2863,25 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 					DECODE_FIELD( contract.tradingHours);
 					DECODE_FIELD( contract.liquidHours);
 				}
+				if( version >= 8) {
+					DECODE_FIELD( contract.evRule);
+					DECODE_FIELD( contract.evMultiplier);
+				}
+				if( version >= 7) {
+					int secIdListCount = 0;
+					DECODE_FIELD( secIdListCount);
+					if( secIdListCount > 0) {
+						TagValueListSPtr secIdList( new TagValueList);
+						secIdList->reserve( secIdListCount);
+						for( int i = 0; i < secIdListCount; ++i) {
+							TagValueSPtr tagValue( new TagValue());
+							DECODE_FIELD( tagValue->tag);
+							DECODE_FIELD( tagValue->value);
+							secIdList->push_back( tagValue);
+						}
+						contract.secIdList = secIdList;
+					}
+				}
 
 				m_pEWrapper->contractDetails( reqId, contract);
 				break;
@@ -2773,6 +2926,25 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				if( version >= 4) {
 					DECODE_FIELD( contract.longName);
 				}
+				if( version >= 6) {
+					DECODE_FIELD( contract.evRule);
+					DECODE_FIELD( contract.evMultiplier);
+				}
+				if( version >= 5) {
+					int secIdListCount = 0;
+					DECODE_FIELD( secIdListCount);
+					if( secIdListCount > 0) {
+						TagValueListSPtr secIdList( new TagValueList);
+						secIdList->reserve( secIdListCount);
+						for( int i = 0; i < secIdListCount; ++i) {
+							TagValueSPtr tagValue( new TagValue());
+							DECODE_FIELD( tagValue->tag);
+							DECODE_FIELD( tagValue->value);
+							secIdList->push_back( tagValue);
+						}
+						contract.secIdList = secIdList;
+					}
+				}
 
 				m_pEWrapper->bondContractDetails( reqId, contract);
 				break;
@@ -2799,6 +2971,9 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( contract.expiry);
 				DECODE_FIELD( contract.strike);
 				DECODE_FIELD( contract.right);
+				if( version >= 9) {
+					DECODE_FIELD( contract.multiplier);
+				}
 				DECODE_FIELD( contract.exchange);
 				DECODE_FIELD( contract.currency);
 				DECODE_FIELD( contract.localSymbol);
@@ -2824,6 +2999,11 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 
 				if( version >= 8) {
 					DECODE_FIELD( exec.orderRef);
+				}
+
+				if( version >= 9) {
+					DECODE_FIELD( exec.evRule);
+					DECODE_FIELD( exec.evMultiplier);
 				}
 
 				m_pEWrapper->execDetails( reqId, contract, exec);
@@ -3182,6 +3362,23 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				DECODE_FIELD( marketDataType);
 
 				m_pEWrapper->marketDataType( reqId, marketDataType);
+				break;
+			}
+
+			case COMMISSION_REPORT:
+			{
+				int version;
+				DECODE_FIELD( version);
+
+				CommissionReport commissionReport;
+				DECODE_FIELD( commissionReport.execId);
+				DECODE_FIELD( commissionReport.commission);
+				DECODE_FIELD( commissionReport.currency);
+				DECODE_FIELD( commissionReport.realizedPNL);
+				DECODE_FIELD( commissionReport.yield);
+				DECODE_FIELD( commissionReport.yieldRedemptionDate);
+
+				m_pEWrapper->commissionReport( commissionReport);
 				break;
 			}
 
