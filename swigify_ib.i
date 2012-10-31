@@ -152,15 +152,15 @@ class TWSClientError(TWSError):
 %feature("shadow") EWrapper::error(const int, const int, const IBString) %{
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
+        import sys
 
         if errorCode == 165:
             print("TWS Message %s: %s" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:
-            raise TWSError(errorCode, errorString)
+            sys.stderr.write("TWS Error %s: %s\n" % (errorCode, errorString))
         elif  errorCode >= 1100 and errorCode < 2100:
             raise TWSSystemError(errorCode, errorString)
         elif errorCode >= 2100 and errorCode < 2110:
-            import sys
             sys.stderr.write("TWS Warning %s: %s\n" % (errorCode, errorString))
         else:
             raise RuntimeError(errorCode, errorString)
