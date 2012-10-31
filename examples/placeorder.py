@@ -3,6 +3,7 @@ with interactive brokers.
 
 '''
 
+import sys
 from time import sleep
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract, Order
@@ -48,6 +49,10 @@ class PlaceOrderExample(EWrapper):
 
         print "Order opened for %s" % contract.symbol
 
+prompt = raw_input("WARNING: This example will place an order on your IB "
+                   "account, are you sure? (Type yes to continue): ")
+if prompt.lower() != 'yes':
+    sys.exit()
 
 # Instantiate our callback object
 callback = PlaceOrderExample()
@@ -79,7 +84,7 @@ order.action = 'BUY'
 order.lmtPrice = 0
 order.auxPrice = 0
 order.orderType = 'MTL'
-order.totalQuantity = 100
+order.totalQuantity = 1
 
 
 print "Placing order for %d %s's (id: %d)" % (order.totalQuantity,
