@@ -26,6 +26,7 @@
 	#include <arpa/inet.h>
 	#include <errno.h>
 	#include <sys/select.h>
+	#include <unistd.h>
 
 	// helpers
 	inline bool SocketsInit() { return true; };

@@ -1,0 +1,12 @@
+diff --git a/IB/PosixSocketClient/EPosixClientSocketPlatform.h b/IB/PosixSocketClient/EPosixClientSocketPlatform.h
+index 9fc7197..f1079c4 100644
+--- a/IB/PosixSocketClient/EPosixClientSocketPlatform.h
++++ b/IB/PosixSocketClient/EPosixClientSocketPlatform.h
+@@ -26,6 +26,7 @@
+ 	#include <arpa/inet.h>
+ 	#include <errno.h>
+ 	#include <sys/select.h>
++	#include <unistd.h>
+ 
+ 	// helpers
+ 	inline bool SocketsInit() { return true; };
