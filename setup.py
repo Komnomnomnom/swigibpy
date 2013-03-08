@@ -7,7 +7,7 @@ from distutils.util import get_platform
 
 ###
 
-IB_DIR = 'IB_967'
+IB_DIR = 'IB'
 VERSION = '0.4'
 
 libraries = []

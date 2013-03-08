@@ -1,10 +1,10 @@
 include *.py
 include *.i
 include examples/*.py
-include IB_*/*/*.cpp
-include IB_*/*/*.h
-include IB_*/*.cpp
-include IB_*/*.h
+include IB/*/*.cpp
+include IB/*/*.h
+include IB/*.cpp
+include IB/*.h
 include README.rst
 include CHANGES
 include LICENSE
