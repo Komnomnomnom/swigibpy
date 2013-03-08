@@ -1,9 +1,8 @@
 /*
     SWIG interface file for Interactive Brokers API.
-
 */
 
-%module(directors="1",docstring="Python wrapper for Interactive Brokers TWS C++ API") swigibpy
+%module(directors="1", docstring="Python wrapper for Interactive Brokers TWS C++ API") swigibpy
 
 /* Turn on auto-generated docstrings */
 %feature("autodoc", "1");
@@ -15,17 +14,13 @@ typedef std::string IBString;
 /* auto convert std::vector to Python lists */
 %include "std_vector.i"
 
-%{
-struct ComboLeg;
-%}
+/* use boost template to generate shared pointer handling */
+%include <boost_shared_ptr.i>
 
-namespace std {
-    %template(ComboLegList) std::vector<ComboLeg*>;
-}
-typedef std::vector<ComboLeg*> Contract::ComboLegList;
-
-/*Inclusions for generated cpp file*/
+/* Inclusions for generated cpp file */
 %{
+#include "Shared/shared_ptr.h"
+
 #include "Shared/IBString.h"
 #include "Shared/EClient.h"
 #include "Shared/EClientSocketBase.h"
@@ -43,6 +38,30 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
 #include "Shared/TagValue.h"
 %}
 
+
+/* Shared Pointers */
+%shared_ptr(ComboLeg)
+%shared_ptr(std::vector<boost::shared_ptr<ComboLeg> >)
+
+%shared_ptr(OrderComboLeg)
+%shared_ptr(std::vector<boost::shared_ptr<OrderComboLeg> >)
+
+%shared_ptr(TagValue)
+%shared_ptr(std::vector<boost::shared_ptr<TagValue> >)
+
+/* Vector (list) containers */
+%template(ComboLegList) std::vector<boost::shared_ptr<ComboLeg> >;
+%template(OrderComboLegList) std::vector<boost::shared_ptr<OrderComboLeg> >;
+%template(TagValueList) std::vector<boost::shared_ptr<TagValue> >;
+
+/* 
+   TWS use their own shared_ptr class, need to fool SWIG into thinking
+   it's the standard boost::shared_ptr.
+   This means the generated cpp file must be post-processed to remove
+   references to boost (see setup.py).
+*/
+#define shared_ptr boost::shared_ptr
+
 /*EWrapper will be subclassed in Python*/
 %feature("director") EWrapper;
 %feature("director:except") {
@@ -51,7 +70,7 @@ typedef std::vector<ComboLeg*> Contract::ComboLegList;
     }
 }
 
-// Exception handling
+/* Exception handling */
 %include exception.i
 %exception {
     /*

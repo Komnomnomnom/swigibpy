@@ -1,8 +1,10 @@
 """Setup file for packaging swigibpy"""
 
-import os
+import re
+from os import system, chdir, getcwd, listdir
+from os.path import join, dirname, abspath
 from distutils.command.build_ext import build_ext
-from distutils.core import setup, Extension
+from distutils.core import setup, Extension, Command
 from distutils.util import get_platform
 
 ###
@@ -10,7 +12,9 @@ from distutils.util import get_platform
 IB_DIR = 'IB'
 VERSION = '0.4'
 
+root_dir = abspath(dirname(__file__))
 libraries = []
+
 if(get_platform().startswith('win')):
     libraries.append('ws2_32')
 
@@ -28,7 +32,88 @@ ib_module = Extension('_swigibpy',
                       )
 
 
-class swigibpy_build_ext(build_ext):
+class Swigify(Command):
+    description = "Regenerate swigibpy's wrapper code (requires SWIG)"
+    user_options = []
+
+    def initialize_options(self):
+        self.swig_opts = None
+        self.cwd = None
+
+    def finalize_options(self):
+        self.cwd = getcwd()
+        self.swig_opts = [
+                '-v',
+                '-c++',
+                '-python',
+                '-threads',
+                '-keyword',
+                '-w511',
+                '-outdir ' + root_dir,
+                '-modern',
+                '-fastdispatch',
+                '-nosafecstrings',
+                '-noproxydel',
+                '-fastproxy',
+                '-fastinit',
+                '-fastunpack',
+                '-fastquery',
+                '-modernargs',
+                '-nobuildnone'
+                ]
+
+    def run(self):
+        chdir(join(root_dir, IB_DIR))
+        system('swig ' + ' '.join(self.swig_opts) +
+               ' -o swig_wrap.cpp ' + join(root_dir, 'swigify_ib.i'))
+
+        print('Removing boost namespace')
+
+        # Remove boost namespace, added to support IB's custom shared_ptr
+        with open(join(root_dir, IB_DIR, 'swig_wrap.cpp'), 'r+') as swig_wrap:
+            contents = swig_wrap.read()
+            contents = contents.replace("boost::shared_ptr", "shared_ptr")
+            contents = re.sub(
+                    r'(shared_ptr<[^>]+>\([^)]+ )(SWIG_NO_NULL_DELETER_0)\)',
+                    r'\1)',
+                    contents
+                    )
+            swig_wrap.seek(0)
+            swig_wrap.truncate()
+            swig_wrap.write(contents)
+        chdir(self.cwd)
+
+
+class Patchify(Command):
+    description = "Apply swigibpy's patches to the TWS API"
+    user_options = [
+            ('reverse', 'r', 'Un-apply the patches')
+            ]
+
+    def initialize_options(self):
+        self.cwd = None
+        self.reverse = False
+        self.patch_opts = [
+                '-p1',
+                '-N',
+                '-t',
+                '-r -'
+                ]
+
+    def finalize_options(self):
+        self.cwd = getcwd()
+        if self.reverse:
+            self.patch_opts.append('-R')
+
+    def run(self):
+        chdir(root_dir)
+        for patch in listdir(join(root_dir, 'patches')):
+            system('patch ' + ' '.join(self.patch_opts) + 
+                   ' < ' + join(root_dir, 'patches', patch))
+        chdir(self.cwd)
+
+
+class SwigibpyBuildExt(build_ext):
     def build_extensions(self):
         compiler = self.compiler.compiler_type
         if compiler == 'msvc':
@@ -41,7 +126,7 @@ class swigibpy_build_ext(build_ext):
         build_ext.build_extensions(self)
 
 
-readme = os.path.join(os.path.dirname(__file__), 'README.rst')
+readme = join(dirname(__file__), 'README.rst')
 setup(version=VERSION,
       name='swigibpy',
       author="Kieran O'Mahony",
@@ -53,7 +138,11 @@ setup(version=VERSION,
       keywords=["interactive brokers", "tws"],
       ext_modules=[ib_module],
       py_modules=["swigibpy"],
-      cmdclass={'build_ext': swigibpy_build_ext},
+      cmdclass={
+          'build_ext': SwigibpyBuildExt,
+          'swigify': Swigify,
+          'patchify': Patchify,
+          },
       classifiers=[
           "Programming Language :: Python",
           "Programming Language :: Python :: 2.6",

@@ -1,0 +1,12 @@
+diff --git a/IB/Shared/shared_ptr.h b/IB/Shared/shared_ptr.h
+index c29f3aa..4c6403d 100644
+--- a/IB/Shared/shared_ptr.h
++++ b/IB/Shared/shared_ptr.h
+@@ -74,6 +74,7 @@ public:
+ 
+    X& operator*()  const { return *ptr_; }
+    X* operator->() const { return ptr_; }
++   operator bool() const { return ptr_ != 0; }
+    X* get()        const { return ptr_; }
+    bool only() const { return use_.only(); }
+ 

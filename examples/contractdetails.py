@@ -16,6 +16,14 @@ class ContractDetailsExample(EWrapper):
 
     '''
 
+    def orderStatus(self, id, status, filled, remaining, avgFillPrice, permId,
+            parentId, lastFilledPrice, clientId, whyHeld):
+        pass
+
+    def openOrder(self, orderID, contract, order, orderState):
+        pass
+
+
     def nextValidId(self, orderId):
         '''Always called by TWS but not relevant for our example'''
         pass
@@ -47,18 +55,32 @@ class ContractDetailsExample(EWrapper):
         print "orderTypes: %s" % contractDetails.orderTypes
         print "priceMagnifier: %s" % contractDetails.priceMagnifier
         print "putable: %s" % contractDetails.putable
-        # TagValueListSPtr secIdList()
+        if contractDetails.secIdList is not None:
+            for secId in contractDetails.secIdList:
+                print "secIdList: %s" % secId
+        else:
+            print "secIdList: None"
+
         print "subcategory: %s" % contractDetails.subcategory
         print "tradingClass: %s" % contractDetails.tradingClass
         print "tradingHours: %s" % contractDetails.tradingHours
         print "timeZoneId: %s" % contractDetails.timeZoneId
         print "underConId: %s" % contractDetails.underConId
+        print "evRule: %s" % contractDetails.evRule
+        print "evMultiplier: %s" % contractDetails.evMultiplier
+
+        contract = contractDetails.summary
 
         print "\nContract Summary:"
         print "exchange: %s" % contract.exchange
         print "symbol: %s" % contract.symbol
         print "secType: %s" % contract.secType
         print "currency: %s" % contract.currency
+        if contract.comboLegs is not None:
+            for comboLeg in contract.comboLegs:
+                print "comboLegs: %s - %s" % (comboLeg.action, comboLeg.exchange)
+        else:
+            print "comboLegs: None"
 
         print "\nBond Values:"
         print "bondType: %s" % contractDetails.bondType
@@ -92,7 +114,7 @@ contract.secType = "STK"
 contract.currency = "USD"
 today = datetime.today()
 
-print "Requesting historical data for %s" % contract.symbol
+print "Requesting contract details..."
 
 # Perform the request
 tws.reqContractDetails(

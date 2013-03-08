@@ -24,6 +24,13 @@ class HistoricalDataExample(EWrapper):
 
     '''
 
+    def orderStatus(self, id, status, filled, remaining, avgFillPrice, permId,
+            parentId, lastFilledPrice, clientId, whyHeld):
+        pass
+
+    def openOrder(self, orderID, contract, order, orderState):
+        pass
+
     def nextValidId(self, orderId):
         '''Always called by TWS but not relevant for our example'''
         pass

@@ -6,7 +6,8 @@ with interactive brokers.
 import sys
 from time import sleep
 
-from swigibpy import EWrapper, EPosixClientSocket, Contract, Order
+from swigibpy import EWrapper, EPosixClientSocket, Contract, Order, TagValue,\
+        TagValueList
 
 ###
 
@@ -66,9 +67,9 @@ tws.eConnect("", 7496, 42)
 
 # Simple contract for GOOG
 contract = Contract()
-contract.exchange = "SMART"
-contract.symbol = "DELL"
+contract.symbol = "IBM"
 contract.secType = "STK"
+contract.exchange = "SMART"
 contract.currency = "USD"
 
 if orderId is None:
@@ -79,12 +80,26 @@ if orderId is None:
         sleep(1)
 
 # Order details
+algoParams = TagValueList()
+algoParams.append(TagValue("componentSize","3"))
+algoParams.append(TagValue("timeBetweenOrders","60"))
+algoParams.append(TagValue("randomizeTime20","1"))
+algoParams.append(TagValue("randomizeSize55","1"))
+algoParams.append(TagValue("giveUp","1"))
+algoParams.append(TagValue("catchUp","1"))
+algoParams.append(TagValue("waitForFill","1"))
+algoParams.append(TagValue("startTime","20110302-14:30:00 GMT"))
+algoParams.append(TagValue("endTime","20110302-21:00:00 GMT"))
+
 order = Order()
 order.action = 'BUY'
-order.lmtPrice = 0
-order.auxPrice = 0
-order.orderType = 'MTL'
-order.totalQuantity = 1
+order.lmtPrice = 140
+order.orderType = 'LMT'
+order.totalQuantity = 10
+order.algoStrategy = "AD"
+order.tif = 'DAT'
+order.algoParams = algoParams
+#order.transmit = False
 
 
 print "Placing order for %d %s's (id: %d)" % (order.totalQuantity,
