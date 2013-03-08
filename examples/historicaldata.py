@@ -15,6 +15,11 @@ from datetime import datetime
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
 
+try:
+    input = raw_input
+except:
+    pass
+
 ###
 
 
@@ -48,11 +53,11 @@ class HistoricalDataExample(EWrapper):
                        barCount, WAP, hasGaps):
 
         if date[:8] == 'finished':
-            print "History request complete"
+            print("History request complete")
         else:
             date = datetime.strptime(date, "%Y%m%d").strftime("%d %b %Y")
-            print ("History %s - Open: %s, High: %s, Low: %s, Close: " +
-                    "%s, Volume: %d") % (date, open, high, low, close, volume)
+            print(("History %s - Open: %s, High: %s, Low: %s, Close: " +
+                    "%s, Volume: %d") % (date, open, high, low, close, volume))
 
 
 # Instantiate our callback object
@@ -73,7 +78,7 @@ contract.secType = "STK"
 contract.currency = "USD"
 today = datetime.today()
 
-print "Requesting historical data for %s" % contract.symbol
+print("Requesting historical data for %s" % contract.symbol)
 
 # Request some historical data.
 tws.reqHistoricalData(
@@ -87,13 +92,13 @@ tws.reqHistoricalData(
         1                                           # formatDate
     )
 
-print "\n====================================================================="
-print " History requested, waiting for TWS responses"
-print "=====================================================================\n"
+print("\n=====================================================================")
+print(" History requested, waiting for TWS responses")
+print("=====================================================================\n")
 
 
-print "******************* Press ENTER to quit when done *******************\n"
-raw_input()
+print("******************* Press ENTER to quit when done *******************\n")
+input()
 
-print "\nDisconnecting..."
+print("\nDisconnecting...")
 tws.eDisconnect()

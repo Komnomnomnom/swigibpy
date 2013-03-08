@@ -9,6 +9,11 @@ from time import sleep
 from swigibpy import EWrapper, EPosixClientSocket, Contract, Order, TagValue,\
         TagValueList
 
+try:
+    input = raw_input
+except:
+    pass
+
 ###
 
 orderId = None
@@ -42,15 +47,15 @@ class PlaceOrderExample(EWrapper):
     def orderStatus(self, id, status, filled, remaining, avgFillPrice, permId,
             parentId, lastFilledPrice, clientId, whyHeld):
 
-        print ("Order #%s - %s (filled %d, remaining %d, avgFillPrice %f,"
+        print(("Order #%s - %s (filled %d, remaining %d, avgFillPrice %f,"
                "last fill price %f)") % (
-                id, status, filled, remaining, avgFillPrice, lastFilledPrice)
+                id, status, filled, remaining, avgFillPrice, lastFilledPrice))
 
     def openOrder(self, orderID, contract, order, orderState):
 
-        print "Order opened for %s" % contract.symbol
+        print("Order opened for %s" % contract.symbol)
 
-prompt = raw_input("WARNING: This example will place an order on your IB "
+prompt = input("WARNING: This example will place an order on your IB "
                    "account, are you sure? (Type yes to continue): ")
 if prompt.lower() != 'yes':
     sys.exit()
@@ -73,10 +78,10 @@ contract.exchange = "SMART"
 contract.currency = "USD"
 
 if orderId is None:
-    print 'Waiting for valid order id'
+    print('Waiting for valid order id')
     sleep(1)
     while orderId is None:
-        print 'Still waiting for valid order id...'
+        print('Still waiting for valid order id...')
         sleep(1)
 
 # Order details
@@ -102,8 +107,8 @@ order.algoParams = algoParams
 #order.transmit = False
 
 
-print "Placing order for %d %s's (id: %d)" % (order.totalQuantity,
-        contract.symbol, orderId)
+print("Placing order for %d %s's (id: %d)" % (order.totalQuantity,
+        contract.symbol, orderId))
 
 # Place the order
 tws.placeOrder(
@@ -112,13 +117,13 @@ tws.placeOrder(
         order                                       # order
     )
 
-print "\n====================================================================="
-print " Order placed, waiting for TWS responses"
-print "=====================================================================\n"
+print("\n=====================================================================")
+print(" Order placed, waiting for TWS responses")
+print("=====================================================================\n")
 
 
-print "******************* Press ENTER to quit when done *******************\n"
-raw_input()
+print("******************* Press ENTER to quit when done *******************\n")
+input()
 
-print "\nDisconnecting..."
+print("\nDisconnecting...")
 tws.eDisconnect()

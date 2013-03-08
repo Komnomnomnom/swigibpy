@@ -7,6 +7,11 @@ from datetime import datetime
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
 
+try:
+    input = raw_input
+except:
+    pass
+
 ###
 
 
@@ -37,63 +42,63 @@ class ContractDetailsExample(EWrapper):
         pass
 
     def contractDetailsEnd(self, reqId):
-        print "Contract details request complete, (request id %i)" % reqId
+        print("Contract details request complete, (request id %i)" % reqId)
 
     def contractDetails(self, reqId, contractDetails):
-        print "Contract details received (request id %i):" % reqId
-        print "callable: %s" % contractDetails.callable
-        print "category: %s" % contractDetails.category
-        print "contractMonth: %s" % contractDetails.contractMonth
-        print "convertible: %s" % contractDetails.convertible
-        print "coupon: %s" % contractDetails.coupon
-        print "industry: %s" % contractDetails.industry
-        print "liquidHours: %s" % contractDetails.liquidHours
-        print "longName: %s" % contractDetails.longName
-        print "marketName: %s" % contractDetails.marketName
-        print "minTick: %s" % contractDetails.minTick
-        print "nextOptionPartial: %s" % contractDetails.nextOptionPartial
-        print "orderTypes: %s" % contractDetails.orderTypes
-        print "priceMagnifier: %s" % contractDetails.priceMagnifier
-        print "putable: %s" % contractDetails.putable
+        print("Contract details received (request id %i):" % reqId)
+        print("callable: %s" % contractDetails.callable)
+        print("category: %s" % contractDetails.category)
+        print("contractMonth: %s" % contractDetails.contractMonth)
+        print("convertible: %s" % contractDetails.convertible)
+        print("coupon: %s" % contractDetails.coupon)
+        print("industry: %s" % contractDetails.industry)
+        print("liquidHours: %s" % contractDetails.liquidHours)
+        print("longName: %s" % contractDetails.longName)
+        print("marketName: %s" % contractDetails.marketName)
+        print("minTick: %s" % contractDetails.minTick)
+        print("nextOptionPartial: %s" % contractDetails.nextOptionPartial)
+        print("orderTypes: %s" % contractDetails.orderTypes)
+        print("priceMagnifier: %s" % contractDetails.priceMagnifier)
+        print("putable: %s" % contractDetails.putable)
         if contractDetails.secIdList is not None:
             for secId in contractDetails.secIdList:
-                print "secIdList: %s" % secId
+                print("secIdList: %s" % secId)
         else:
-            print "secIdList: None"
+            print("secIdList: None")
 
-        print "subcategory: %s" % contractDetails.subcategory
-        print "tradingClass: %s" % contractDetails.tradingClass
-        print "tradingHours: %s" % contractDetails.tradingHours
-        print "timeZoneId: %s" % contractDetails.timeZoneId
-        print "underConId: %s" % contractDetails.underConId
-        print "evRule: %s" % contractDetails.evRule
-        print "evMultiplier: %s" % contractDetails.evMultiplier
+        print("subcategory: %s" % contractDetails.subcategory)
+        print("tradingClass: %s" % contractDetails.tradingClass)
+        print("tradingHours: %s" % contractDetails.tradingHours)
+        print("timeZoneId: %s" % contractDetails.timeZoneId)
+        print("underConId: %s" % contractDetails.underConId)
+        print("evRule: %s" % contractDetails.evRule)
+        print("evMultiplier: %s" % contractDetails.evMultiplier)
 
         contract = contractDetails.summary
 
-        print "\nContract Summary:"
-        print "exchange: %s" % contract.exchange
-        print "symbol: %s" % contract.symbol
-        print "secType: %s" % contract.secType
-        print "currency: %s" % contract.currency
+        print("\nContract Summary:")
+        print("exchange: %s" % contract.exchange)
+        print("symbol: %s" % contract.symbol)
+        print("secType: %s" % contract.secType)
+        print("currency: %s" % contract.currency)
         if contract.comboLegs is not None:
             for comboLeg in contract.comboLegs:
-                print "comboLegs: %s - %s" % (comboLeg.action, comboLeg.exchange)
+                print("comboLegs: %s - %s" % (comboLeg.action, comboLeg.exchange))
         else:
-            print "comboLegs: None"
+            print("comboLegs: None")
 
-        print "\nBond Values:"
-        print "bondType: %s" % contractDetails.bondType
-        print "couponType: %s" % contractDetails.couponType
-        print "cusip: %s" % contractDetails.cusip
-        print "descAppend: %s" % contractDetails.descAppend
-        print "issueDate: %s" % contractDetails.issueDate
-        print "maturity: %s" % contractDetails.maturity
-        print "nextOptionDate: %s" % contractDetails.nextOptionDate
-        print "nextOptionType: %s" % contractDetails.nextOptionType
-        print "notes: %s" % contractDetails.notes
-        print "ratings: %s" % contractDetails.ratings
-        print "validExchanges: %s" % contractDetails.validExchanges
+        print("\nBond Values:")
+        print("bondType: %s" % contractDetails.bondType)
+        print("couponType: %s" % contractDetails.couponType)
+        print("cusip: %s" % contractDetails.cusip)
+        print("descAppend: %s" % contractDetails.descAppend)
+        print("issueDate: %s" % contractDetails.issueDate)
+        print("maturity: %s" % contractDetails.maturity)
+        print("nextOptionDate: %s" % contractDetails.nextOptionDate)
+        print("nextOptionType: %s" % contractDetails.nextOptionType)
+        print("notes: %s" % contractDetails.notes)
+        print("ratings: %s" % contractDetails.ratings)
+        print("validExchanges: %s" % contractDetails.validExchanges)
 
 
 # Instantiate our callback object
@@ -114,7 +119,7 @@ contract.secType = "STK"
 contract.currency = "USD"
 today = datetime.today()
 
-print "Requesting contract details..."
+print("Requesting contract details...")
 
 # Perform the request
 tws.reqContractDetails(
@@ -122,13 +127,13 @@ tws.reqContractDetails(
         contract,                                   # contract,
     )
 
-print "\n====================================================================="
-print " Contract details requested, waiting for TWS responses"
-print "=====================================================================\n"
+print("\n=====================================================================")
+print(" Contract details requested, waiting for TWS responses")
+print("=====================================================================\n")
 
 
-print "******************* Press ENTER to quit when done *******************\n"
-raw_input()
+print("******************* Press ENTER to quit when done *******************\n")
+input()
 
-print "\nDisconnecting..."
+print("\nDisconnecting...")
 tws.eDisconnect()

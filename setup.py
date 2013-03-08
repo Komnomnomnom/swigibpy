@@ -1,11 +1,19 @@
 """Setup file for packaging swigibpy"""
 
 import re
+import sys
 from os import system, chdir, getcwd, listdir
 from os.path import join, dirname, abspath
-from distutils.command.build_ext import build_ext
-from distutils.core import setup, Extension, Command
-from distutils.util import get_platform
+from sysconfig import get_platform
+
+try:
+    from setuptools.command.build_ext import build_ext
+    from setuptools import setup, Extension, Command
+    _have_setuptools = True
+except:
+    from distutils.command.build_ext import build_ext
+    from distutils import setup, Extension, Command
+    _have_setuptools = False
 
 ###
 
@@ -14,6 +22,13 @@ VERSION = '0.4'
 
 root_dir = abspath(dirname(__file__))
 libraries = []
+
+setuptools_kwargs = {}
+if sys.version_info[0] >= 3:
+    setuptools_kwargs = {'use_2to3': True}
+    if not _have_setuptools:
+        sys.exit("need setuptools/distribute for Py3k"
+                 "\n$ pip install distribute")
 
 if(get_platform().startswith('win')):
     libraries.append('ws2_32')
@@ -108,7 +123,7 @@ class Patchify(Command):
     def run(self):
         chdir(root_dir)
         for patch in listdir(join(root_dir, 'patches')):
-            system('patch ' + ' '.join(self.patch_opts) + 
+            system('patch ' + ' '.join(self.patch_opts) +
                    ' < ' + join(root_dir, 'patches', patch))
         chdir(self.cwd)
 
@@ -154,4 +169,5 @@ setup(version=VERSION,
           "Topic :: Software Development :: Libraries :: Python Modules",
           "Topic :: Office/Business :: Financial",
           ],
+      **setuptools_kwargs
       )
