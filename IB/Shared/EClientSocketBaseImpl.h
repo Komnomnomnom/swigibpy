@@ -99,7 +99,10 @@
 // 58 = can receive CUSIP/ISIN/etc. in contractDescription/bondContractDescription
 // 59 = can receive evRule, evMultiplier in contractDescription/bondContractDescription/executionDetails
 //      can receive multiplier in executionDetails
-const int CLIENT_VERSION    = 59;
+// 60 = can receive deltaNeutralOpenClose, deltaNeutralShortSale, deltaNeutralShortSaleSlot 
+//      and deltaNeutralDesignatedLocation in openOrder
+
+const int CLIENT_VERSION    = 60;
 const int SERVER_VERSION    = 38;
 
 // outgoing msg id's
@@ -172,6 +175,7 @@ const int MIN_SERVER_VER_DELTA_NEUTRAL_CONID    = 58;
 const int MIN_SERVER_VER_SCALE_ORDERS3          = 60;
 const int MIN_SERVER_VER_ORDER_COMBO_LEGS_PRICE = 61;
 const int MIN_SERVER_VER_TRAILING_PERCENT       = 62;
+const int MIN_SERVER_VER_DELTA_NEUTRAL_OPEN_CLOSE = 66;
 
 // incoming msg id's
 const int TICK_PRICE                = 1;
@@ -1340,6 +1344,18 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		}
 	}
 
+	if (m_serverVersion < MIN_SERVER_VER_DELTA_NEUTRAL_OPEN_CLOSE) {
+		if (!IsEmpty(order.deltaNeutralOpenClose)
+				|| order.deltaNeutralShortSale
+				|| order.deltaNeutralShortSaleSlot > 0 
+				|| !IsEmpty(order.deltaNeutralDesignatedLocation)
+				) {
+			m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() + 
+				"  It does not support deltaNeutral parameters: OpenClose, ShortSale, ShortSaleSlot, DesignatedLocation.");
+			return;
+		}
+	}
+
 	if (m_serverVersion < MIN_SERVER_VER_SCALE_ORDERS3) {
 		if (order.scalePriceIncrement > 0 && order.scalePriceIncrement != UNSET_DOUBLE) {
 			if (order.scalePriceAdjustValue != UNSET_DOUBLE 
@@ -1381,7 +1397,7 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 
 	std::ostringstream msg;
 
-	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 38;
+	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 39;
 
 	// send place order msg
 	ENCODE_FIELD( PLACE_ORDER);
@@ -1581,6 +1597,13 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 			ENCODE_FIELD( order.deltaNeutralSettlingFirm);
 			ENCODE_FIELD( order.deltaNeutralClearingAccount);
 			ENCODE_FIELD( order.deltaNeutralClearingIntent);
+		}
+
+		if (m_serverVersion >= MIN_SERVER_VER_DELTA_NEUTRAL_OPEN_CLOSE && !IsEmpty(order.deltaNeutralOrderType)){
+			ENCODE_FIELD( order.deltaNeutralOpenClose);
+			ENCODE_FIELD( order.deltaNeutralShortSale);
+			ENCODE_FIELD( order.deltaNeutralShortSaleSlot);
+			ENCODE_FIELD( order.deltaNeutralDesignatedLocation);
 		}
 
 	//}
@@ -2561,6 +2584,13 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 					DECODE_FIELD( order.deltaNeutralSettlingFirm);
 					DECODE_FIELD( order.deltaNeutralClearingAccount);
 					DECODE_FIELD( order.deltaNeutralClearingIntent);
+				}
+
+				if (version >= 31 && !IsEmpty(order.deltaNeutralOrderType)) {
+					DECODE_FIELD( order.deltaNeutralOpenClose);
+					DECODE_FIELD( order.deltaNeutralShortSale);
+					DECODE_FIELD( order.deltaNeutralShortSaleSlot);
+					DECODE_FIELD( order.deltaNeutralDesignatedLocation);
 				}
 
 				DECODE_FIELD( order.continuousUpdate); // ver 11 field

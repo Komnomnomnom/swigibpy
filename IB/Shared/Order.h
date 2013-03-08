@@ -98,6 +98,10 @@ struct Order
 		deltaNeutralSettlingFirm = "";
 		deltaNeutralClearingAccount = "";
 		deltaNeutralClearingIntent = "";
+		deltaNeutralOpenClose = "";
+		deltaNeutralShortSale = false;
+		deltaNeutralShortSaleSlot = 0;
+		deltaNeutralDesignatedLocation = "";
 		continuousUpdate      = false;
 		referencePriceType    = UNSET_INTEGER; // 1=Average, 2 = BidOrAsk
 
@@ -198,6 +202,10 @@ struct Order
 	IBString deltaNeutralSettlingFirm;
 	IBString deltaNeutralClearingAccount;
 	IBString deltaNeutralClearingIntent;
+	IBString deltaNeutralOpenClose;
+	bool     deltaNeutralShortSale;
+	int      deltaNeutralShortSaleSlot;
+	IBString deltaNeutralDesignatedLocation;
 	bool     continuousUpdate;
 	int      referencePriceType; // 1=Average, 2 = BidOrAsk
 
