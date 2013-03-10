@@ -67,17 +67,30 @@ Usage
 To use simply import the swigibpy module, see the examples directory for more.
 For API reference refer to the `C++ API documentation`_.
 
-By default swigibpy will automatically poll TWS for messages. If you wish to
-handle polling yourself, swigibpy's polling can be disabled using the 
-``poll_auto`` argument::
-    
-    tws.eConnect("", 7496, 42, poll_auto=False)
+The minimum you will need to do is define an ``EWrapper`` sub-class whose 
+methods will be invoked when a message is received from TWS. See the 
+`examples`_ for more.
+
+By default swigibpy will automatically poll TWS for messages, see `Notes`_ for
+more about this.
 
 Notes
 -----
 
 The ``yield`` parameter in ``CommissionReport`` clashes with a Python reserved
 keyword so it is renamed to ``_yield``.
+
+By default swigibpy will create a background thread to automatically poll TWS 
+for messages.  If you wish to disable this behaviour and handle polling 
+yourself use the ``poll_auto`` argument when calling ``eConnect``::
+    
+    tws.eConnect("", 7496, 42, poll_auto=False)
+
+The TWS C++ API performs synchronous I/O using socket receive, swigibpy does 
+not alter this behaviour (hence the background thread).
+
+Apart from a few trivial `patches`_ to aid compilation and interoperability 
+with Python swigibpy does not alter the TWS C++ API code in any way.
 
 Develop
 =======
@@ -118,3 +131,5 @@ swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
 .. _add MinGW to your path: http://www.mingw.org/wiki/Getting_Started#toc5
 .. _compatability problem: http://bugs.python.org/issue12641
 .. _here: https://github.com/Komnomnomnom/swigibpy/issues/2
+.. _patches: https://github.com/Komnomnomnom/swigibpy/tree/master/patches
+.. _examples: https://github.com/Komnomnomnom/swigibpy/tree/master/examples
