@@ -1,6 +1,9 @@
 '''Simple example of using custom error hanlding with the SWIG generated TWS 
 wrapper.
 
+Check http://www.interactivebrokers.com/en/software/api/api.htm -> 'Reference 
+Tables' -> 'API Message Codes' for error codes and their interpretation.
+
 '''
 
 import sys
