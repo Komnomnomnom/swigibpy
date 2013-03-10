@@ -95,7 +95,7 @@ with Python swigibpy does not alter the TWS C++ API code in any way.
 Develop
 =======
 
-Contributions are welcome! For developement you can build the extension in the
+Contributions are welcome! For development you can build the extension in the
 current dir::
 
     $ python setup.py build_ext --build-lib .
