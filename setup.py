@@ -108,12 +108,7 @@ class Patchify(Command):
     def initialize_options(self):
         self.cwd = None
         self.reverse = False
-        self.patch_opts = [
-                '-p1',
-                '-N',
-                '-t',
-                '-r -'
-                ]
+        self.patch_opts = []
 
     def finalize_options(self):
         self.cwd = getcwd()
@@ -123,8 +118,8 @@ class Patchify(Command):
     def run(self):
         chdir(root_dir)
         for patch in listdir(join(root_dir, 'patches')):
-            system('patch ' + ' '.join(self.patch_opts) +
-                   ' < ' + join(root_dir, 'patches', patch))
+            system('git apply ' + ' '.join(self.patch_opts) + ' ' +
+                   join(root_dir, 'patches', patch))
         chdir(self.cwd)
 
 
