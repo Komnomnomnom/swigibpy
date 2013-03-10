@@ -432,7 +432,7 @@ static IBString errMsg(std::exception e) {
 }
 
 
-#ifdef _MSC_VER
+#ifdef _MFC_VER
 static IBString errMsg(CException *e) {
 	// return the error associated with this exception
 	char buf[1024];
@@ -2200,7 +2200,7 @@ int EClientSocketBase::processConnectAck(const char*& beginPtr, const char* endP
 		beginPtr = ptr;
 		return processed;
 	}
-#ifdef _MSC_VER
+#ifdef _MFC_VER
 	catch( CException* e) {
 		m_pEWrapper->error( NO_VALID_ID, SOCKET_EXCEPTION.code(),
 			SOCKET_EXCEPTION.msg() + errMsg(e));
@@ -3426,7 +3426,7 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 		return processed;
 	}
 
-#ifdef _MSC_VER
+#ifdef _MFC_VER
 	catch( CException* e) {
 		m_pEWrapper->error( NO_VALID_ID, SOCKET_EXCEPTION.code(),
 			SOCKET_EXCEPTION.msg() + errMsg(e));

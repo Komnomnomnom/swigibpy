@@ -7,7 +7,9 @@
 #define assert ASSERT
 #define snprintf _snprintf
 
+#ifdef _MFC_VER
 #include <afxwin.h>
+#endif
 
 #endif
 

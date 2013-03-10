@@ -58,7 +58,6 @@ a few caveats:
 
 - Distutils has issues building with anything later than Visual Studio 2008
   (version 9).
-- The MFC library is required by the TWS API.
 - Visual Studio 11 doesn't like the ``/MD`` compile flag, which distutils adds.
   For a workaround see `here`_.
 
