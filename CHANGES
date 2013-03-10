@@ -3,6 +3,7 @@
   * Update to TWS v9.68 API.
   * Support for GCC 4.7+
   * Remove TWS's (false) dependency on MFC (#17 thanks Koneski)
+  * Better support for custom error handling (#15, #18)
 
 0.3 Wed Aug 8 2012
   * Allow customisation of poll interval #5
