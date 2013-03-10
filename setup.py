@@ -112,7 +112,7 @@ class Swigify(Command):
         except subprocess.CalledProcessError as cpe:
             pass
         finally:
-           chdir(self.cwd)
+            chdir(self.cwd)
 
 
 class Patchify(Command):
