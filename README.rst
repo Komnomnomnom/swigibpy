@@ -64,15 +64,14 @@ a few caveats:
 Usage
 =====
 
-To use simply import the swigibpy module, see the examples directory for more.
-For API reference refer to the `C++ API documentation`_.
-
-The minimum you will need to do is define an ``EWrapper`` sub-class whose 
-methods will be invoked when a message is received from TWS. See the 
-`examples`_ for more.
+To use simply import the swigibpy module. The minimum you will need to do is 
+define an ``EWrapper`` sub-class whose methods will be invoked when a message
+is received from TWS, see the `examples`_ for more.
 
 By default swigibpy will automatically poll TWS for messages, see `Notes`_ for
 more about this.
+
+For API reference refer to the `C++ API documentation`_.
 
 Notes
 -----
