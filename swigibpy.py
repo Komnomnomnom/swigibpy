@@ -1628,11 +1628,17 @@ class TagValue(object):
 TagValue_swigregister = _swigibpy.TagValue_swigregister
 TagValue_swigregister(TagValue)
 
+import sys
 import threading
 from traceback import print_exc
 
 class TWSPoller(threading.Thread):
-    '''Polls TWS every second for any outstanding messages'''
+    '''Continually polls TWS for any outstanding messages.
+    
+    Loops indefinitely until killed or a fatal error is encountered. Calls 
+    TWS's `EClientSocketBase::checkMessages` function which blocks on socket 
+    receive (synchronous I/O).
+    '''
 
     def __init__(self, tws):
         super(TWSPoller, self).__init__()
@@ -1641,14 +1647,20 @@ class TWSPoller(threading.Thread):
 
     def run(self):
         '''Continually poll TWS'''
-        while True:
+        ok = True
+        while ok:
             try:
-                self._tws.checkMessages()
+                ok = self._tws.checkMessages()
+            except TWSWarning as e:
+                sys.stderr.write("TWS Warning - %s: %s" % (e.code, e.msg))
             except TWSError as e:
-                if e.code == 509 or not self._tws or not self._tws.isConnected():
-                    break
+                if e.code == 509:
+                    ok = False
                 else:
                     print_exc()
+
+            if ok and (not self._tws or not self._tws.isConnected()):
+                ok = False
 
 class EPosixClientSocket(EClientSocketBase):
     """Proxy of C++ EPosixClientSocket class"""
@@ -1720,6 +1732,12 @@ class TWSError(Exception):
 
     def __str__(self):
         return "%s: %s" % (self.code, repr(self.msg))
+
+class TWSWarning(TWSError):
+    '''Warning raised during communication with Interactive Brokers TWS 
+    application.
+    '''
+    pass
 
 class TWSSystemError(TWSError):
     '''System related exception raised during communication with Interactive
@@ -1903,15 +1921,15 @@ class EWrapper(object):
         import sys
 
         if errorCode == 165: # Historical data sevice message
-            print("TWS Message %s: %s" % (errorCode, errorString))
-        elif errorCode == 509: # Socket read failed
-            raise TWSError(errorCode, errorString)
+            raise TWSWarning(errorCode, errorString)
+        elif errorCode >= 501 and errorCode < 600: # Socket read failed
+            raise TWSClientError(errorCode, errorString)
         elif errorCode >= 100 and errorCode < 1100:
-            sys.stderr.write("TWS Error %s: %s\n" % (errorCode, errorString))
+            raise TWSError(errorCode, errorString)
         elif  errorCode >= 1100 and errorCode < 2100:
             raise TWSSystemError(errorCode, errorString)
-        elif errorCode >= 2100 and errorCode < 2110:
-            sys.stderr.write("TWS Warning %s: %s\n" % (errorCode, errorString))
+        elif errorCode >= 2100 and errorCode <= 2110:
+            raise TWSWarning(errorCode, errorString)
         else:
             raise RuntimeError(errorCode, errorString)
 
