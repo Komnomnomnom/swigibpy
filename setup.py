@@ -1,8 +1,9 @@
 """Setup file for packaging swigibpy"""
 
 import re
+import subprocess
 import sys
-from os import system, chdir, getcwd, listdir
+from os import chdir, getcwd, listdir
 from os.path import join, dirname, abspath
 from sysconfig import get_platform
 
@@ -64,7 +65,8 @@ class Swigify(Command):
                 '-threads',
                 '-keyword',
                 '-w511',
-                '-outdir ' + root_dir,
+                '-outdir',
+                root_dir,
                 '-modern',
                 '-fastdispatch',
                 '-nosafecstrings',
@@ -79,24 +81,38 @@ class Swigify(Command):
 
     def run(self):
         chdir(join(root_dir, IB_DIR))
-        system('swig ' + ' '.join(self.swig_opts) +
-               ' -o swig_wrap.cpp ' + join(root_dir, 'swigify_ib.i'))
+        try:
+            swig_cmd = ['swig'] + self.swig_opts + ['-o', 'swig_wrap.cpp']
+            swig_cmd.append(join(root_dir, 'swigify_ib.i'))
+            subprocess.check_call(swig_cmd)
 
-        print('Removing boost namespace')
+            print('Removing boost namespace')
 
-        # Remove boost namespace, added to support IB's custom shared_ptr
-        with open(join(root_dir, IB_DIR, 'swig_wrap.cpp'), 'r+') as swig_wrap:
-            contents = swig_wrap.read()
-            contents = contents.replace("boost::shared_ptr", "shared_ptr")
-            contents = re.sub(
-                    r'(shared_ptr<[^>]+>\([^)]+ )(SWIG_NO_NULL_DELETER_0)\)',
-                    r'\1)',
-                    contents
-                    )
-            swig_wrap.seek(0)
-            swig_wrap.truncate()
-            swig_wrap.write(contents)
-        chdir(self.cwd)
+            # Remove boost namespace, added to support IB's custom shared_ptr
+            swig_files = [
+                join(root_dir, IB_DIR, 'swig_wrap.cpp'),
+                join(root_dir, IB_DIR, 'swig_wrap.h'),
+                join(root_dir, 'swigibpy.py')
+                ]
+
+            for swig_file in swig_files:
+                with open(swig_file, 'r+') as swig_file_handle:
+                    contents = swig_file_handle.read()
+                    contents = contents.replace(
+                            "boost::shared_ptr", "shared_ptr")
+                    contents = re.sub(
+                        r'(shared_ptr<[^>]+>\([^)]+ )'
+                            r'(SWIG_NO_NULL_DELETER_0)\)',
+                        r'\1)',
+                        contents
+                        )
+                    swig_file_handle.seek(0)
+                    swig_file_handle.truncate()
+                    swig_file_handle.write(contents)
+        except subprocess.CalledProcessError as cpe:
+            pass
+        finally:
+           chdir(self.cwd)
 
 
 class Patchify(Command):
@@ -108,7 +124,7 @@ class Patchify(Command):
     def initialize_options(self):
         self.cwd = None
         self.reverse = False
-        self.patch_opts = []
+        self.patch_opts = ['-v']
 
     def finalize_options(self):
         self.cwd = getcwd()
@@ -118,8 +134,9 @@ class Patchify(Command):
     def run(self):
         chdir(root_dir)
         for patch in listdir(join(root_dir, 'patches')):
-            system('git apply ' + ' '.join(self.patch_opts) + ' ' +
-                   join(root_dir, 'patches', patch))
+            patch_cmd = ['git', 'apply'] + self.patch_opts
+            patch_cmd.append(join(root_dir, 'patches', patch))
+            subprocess.call(patch_cmd)
         chdir(self.cwd)
 
 

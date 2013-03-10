@@ -187,7 +187,7 @@ SwigPyIterator_swigregister(SwigPyIterator)
 
 SHARED_PTR_DISOWN = _swigibpy.SHARED_PTR_DISOWN
 class ComboLegList(object):
-    """Proxy of C++ std::vector<(boost::shared_ptr<(ComboLeg)>)> class"""
+    """Proxy of C++ std::vector<(shared_ptr<(ComboLeg)>)> class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def iterator(self):
@@ -204,31 +204,31 @@ class ComboLegList(object):
         return _swigibpy.ComboLegList___bool__(self)
 
     def __len__(self):
-        """__len__(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::size_type"""
+        """__len__(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::size_type"""
         return _swigibpy.ComboLegList___len__(self)
 
     def pop(self):
-        """pop(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::value_type"""
+        """pop(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::value_type"""
         return _swigibpy.ComboLegList_pop(self)
 
     def __getslice__(self, *args, **kwargs):
-        """__getslice__(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::difference_type i, std::vector< boost::shared_ptr< ComboLeg > >::difference_type j) -> ComboLegList"""
+        """__getslice__(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::difference_type i, std::vector< shared_ptr< ComboLeg > >::difference_type j) -> ComboLegList"""
         return _swigibpy.ComboLegList___getslice__(self, *args, **kwargs)
 
     def __setslice__(self, *args, **kwargs):
         """
-        __setslice__(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::difference_type i, std::vector< boost::shared_ptr< ComboLeg > >::difference_type j, 
-            ComboLegList v=std::vector< boost::shared_ptr< ComboLeg >,std::allocator< boost::shared_ptr< ComboLeg > > >())
+        __setslice__(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::difference_type i, std::vector< shared_ptr< ComboLeg > >::difference_type j, 
+            ComboLegList v=std::vector< shared_ptr< ComboLeg >,std::allocator< shared_ptr< ComboLeg > > >())
         """
         return _swigibpy.ComboLegList___setslice__(self, *args, **kwargs)
 
     def __delslice__(self, *args, **kwargs):
-        """__delslice__(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::difference_type i, std::vector< boost::shared_ptr< ComboLeg > >::difference_type j)"""
+        """__delslice__(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::difference_type i, std::vector< shared_ptr< ComboLeg > >::difference_type j)"""
         return _swigibpy.ComboLegList___delslice__(self, *args, **kwargs)
 
     def __delitem__(self, *args):
         """
-        __delitem__(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::difference_type i)
+        __delitem__(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::difference_type i)
         __delitem__(ComboLegList self, PySliceObject * slice)
         """
         return _swigibpy.ComboLegList___delitem__(self, *args)
@@ -236,7 +236,7 @@ class ComboLegList(object):
     def __getitem__(self, *args):
         """
         __getitem__(ComboLegList self, PySliceObject * slice) -> ComboLegList
-        __getitem__(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::difference_type i) -> std::vector< boost::shared_ptr< ComboLeg > >::value_type const &
+        __getitem__(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::difference_type i) -> std::vector< shared_ptr< ComboLeg > >::value_type const &
         """
         return _swigibpy.ComboLegList___getitem__(self, *args)
 
@@ -244,12 +244,12 @@ class ComboLegList(object):
         """
         __setitem__(ComboLegList self, PySliceObject * slice, ComboLegList v)
         __setitem__(ComboLegList self, PySliceObject * slice)
-        __setitem__(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::difference_type i, std::vector< boost::shared_ptr< ComboLeg > >::value_type const & x)
+        __setitem__(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::difference_type i, std::vector< shared_ptr< ComboLeg > >::value_type const & x)
         """
         return _swigibpy.ComboLegList___setitem__(self, *args)
 
     def append(self, *args, **kwargs):
-        """append(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::value_type const & x)"""
+        """append(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::value_type const & x)"""
         return _swigibpy.ComboLegList_append(self, *args, **kwargs)
 
     def empty(self):
@@ -257,7 +257,7 @@ class ComboLegList(object):
         return _swigibpy.ComboLegList_empty(self)
 
     def size(self):
-        """size(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::size_type"""
+        """size(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::size_type"""
         return _swigibpy.ComboLegList_size(self)
 
     def clear(self):
@@ -269,23 +269,23 @@ class ComboLegList(object):
         return _swigibpy.ComboLegList_swap(self, *args, **kwargs)
 
     def get_allocator(self):
-        """get_allocator(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::allocator_type"""
+        """get_allocator(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::allocator_type"""
         return _swigibpy.ComboLegList_get_allocator(self)
 
     def begin(self):
-        """begin(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::iterator"""
+        """begin(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::iterator"""
         return _swigibpy.ComboLegList_begin(self)
 
     def end(self):
-        """end(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::iterator"""
+        """end(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::iterator"""
         return _swigibpy.ComboLegList_end(self)
 
     def rbegin(self):
-        """rbegin(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::reverse_iterator"""
+        """rbegin(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::reverse_iterator"""
         return _swigibpy.ComboLegList_rbegin(self)
 
     def rend(self):
-        """rend(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::reverse_iterator"""
+        """rend(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::reverse_iterator"""
         return _swigibpy.ComboLegList_rend(self)
 
     def pop_back(self):
@@ -294,56 +294,56 @@ class ComboLegList(object):
 
     def erase(self, *args):
         """
-        erase(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::iterator pos) -> std::vector< boost::shared_ptr< ComboLeg > >::iterator
-        erase(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::iterator first, std::vector< boost::shared_ptr< ComboLeg > >::iterator last) -> std::vector< boost::shared_ptr< ComboLeg > >::iterator
+        erase(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::iterator pos) -> std::vector< shared_ptr< ComboLeg > >::iterator
+        erase(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::iterator first, std::vector< shared_ptr< ComboLeg > >::iterator last) -> std::vector< shared_ptr< ComboLeg > >::iterator
         """
         return _swigibpy.ComboLegList_erase(self, *args)
 
     def __init__(self, *args): 
         """
-        __init__(std::vector<(boost::shared_ptr<(ComboLeg)>)> self) -> ComboLegList
-        __init__(std::vector<(boost::shared_ptr<(ComboLeg)>)> self, ComboLegList arg2) -> ComboLegList
-        __init__(std::vector<(boost::shared_ptr<(ComboLeg)>)> self, std::vector< boost::shared_ptr< ComboLeg > >::size_type size) -> ComboLegList
-        __init__(std::vector<(boost::shared_ptr<(ComboLeg)>)> self, std::vector< boost::shared_ptr< ComboLeg > >::size_type size, std::vector< boost::shared_ptr< ComboLeg > >::value_type const & value) -> ComboLegList
+        __init__(std::vector<(shared_ptr<(ComboLeg)>)> self) -> ComboLegList
+        __init__(std::vector<(shared_ptr<(ComboLeg)>)> self, ComboLegList arg2) -> ComboLegList
+        __init__(std::vector<(shared_ptr<(ComboLeg)>)> self, std::vector< shared_ptr< ComboLeg > >::size_type size) -> ComboLegList
+        __init__(std::vector<(shared_ptr<(ComboLeg)>)> self, std::vector< shared_ptr< ComboLeg > >::size_type size, std::vector< shared_ptr< ComboLeg > >::value_type const & value) -> ComboLegList
         """
         _swigibpy.ComboLegList_swiginit(self,_swigibpy.new_ComboLegList(*args))
     def push_back(self, *args, **kwargs):
-        """push_back(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::value_type const & x)"""
+        """push_back(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::value_type const & x)"""
         return _swigibpy.ComboLegList_push_back(self, *args, **kwargs)
 
     def front(self):
-        """front(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::value_type const &"""
+        """front(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::value_type const &"""
         return _swigibpy.ComboLegList_front(self)
 
     def back(self):
-        """back(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::value_type const &"""
+        """back(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::value_type const &"""
         return _swigibpy.ComboLegList_back(self)
 
     def assign(self, *args, **kwargs):
-        """assign(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::size_type n, std::vector< boost::shared_ptr< ComboLeg > >::value_type const & x)"""
+        """assign(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::size_type n, std::vector< shared_ptr< ComboLeg > >::value_type const & x)"""
         return _swigibpy.ComboLegList_assign(self, *args, **kwargs)
 
     def resize(self, *args):
         """
-        resize(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::size_type new_size)
-        resize(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::size_type new_size, std::vector< boost::shared_ptr< ComboLeg > >::value_type const & x)
+        resize(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::size_type new_size)
+        resize(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::size_type new_size, std::vector< shared_ptr< ComboLeg > >::value_type const & x)
         """
         return _swigibpy.ComboLegList_resize(self, *args)
 
     def insert(self, *args):
         """
-        insert(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::iterator pos, std::vector< boost::shared_ptr< ComboLeg > >::value_type const & x) -> std::vector< boost::shared_ptr< ComboLeg > >::iterator
-        insert(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::iterator pos, std::vector< boost::shared_ptr< ComboLeg > >::size_type n, 
-            std::vector< boost::shared_ptr< ComboLeg > >::value_type const & x)
+        insert(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::iterator pos, std::vector< shared_ptr< ComboLeg > >::value_type const & x) -> std::vector< shared_ptr< ComboLeg > >::iterator
+        insert(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::iterator pos, std::vector< shared_ptr< ComboLeg > >::size_type n, 
+            std::vector< shared_ptr< ComboLeg > >::value_type const & x)
         """
         return _swigibpy.ComboLegList_insert(self, *args)
 
     def reserve(self, *args, **kwargs):
-        """reserve(ComboLegList self, std::vector< boost::shared_ptr< ComboLeg > >::size_type n)"""
+        """reserve(ComboLegList self, std::vector< shared_ptr< ComboLeg > >::size_type n)"""
         return _swigibpy.ComboLegList_reserve(self, *args, **kwargs)
 
     def capacity(self):
-        """capacity(ComboLegList self) -> std::vector< boost::shared_ptr< ComboLeg > >::size_type"""
+        """capacity(ComboLegList self) -> std::vector< shared_ptr< ComboLeg > >::size_type"""
         return _swigibpy.ComboLegList_capacity(self)
 
     __swig_destroy__ = _swigibpy.delete_ComboLegList
@@ -382,7 +382,7 @@ ComboLegList_swigregister = _swigibpy.ComboLegList_swigregister
 ComboLegList_swigregister(ComboLegList)
 
 class OrderComboLegList(object):
-    """Proxy of C++ std::vector<(boost::shared_ptr<(OrderComboLeg)>)> class"""
+    """Proxy of C++ std::vector<(shared_ptr<(OrderComboLeg)>)> class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def iterator(self):
@@ -399,31 +399,31 @@ class OrderComboLegList(object):
         return _swigibpy.OrderComboLegList___bool__(self)
 
     def __len__(self):
-        """__len__(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::size_type"""
+        """__len__(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::size_type"""
         return _swigibpy.OrderComboLegList___len__(self)
 
     def pop(self):
-        """pop(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::value_type"""
+        """pop(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::value_type"""
         return _swigibpy.OrderComboLegList_pop(self)
 
     def __getslice__(self, *args, **kwargs):
-        """__getslice__(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type i, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type j) -> OrderComboLegList"""
+        """__getslice__(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::difference_type i, std::vector< shared_ptr< OrderComboLeg > >::difference_type j) -> OrderComboLegList"""
         return _swigibpy.OrderComboLegList___getslice__(self, *args, **kwargs)
 
     def __setslice__(self, *args, **kwargs):
         """
-        __setslice__(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type i, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type j, 
-            OrderComboLegList v=std::vector< boost::shared_ptr< OrderComboLeg >,std::allocator< boost::shared_ptr< OrderComboLeg > > >())
+        __setslice__(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::difference_type i, std::vector< shared_ptr< OrderComboLeg > >::difference_type j, 
+            OrderComboLegList v=std::vector< shared_ptr< OrderComboLeg >,std::allocator< shared_ptr< OrderComboLeg > > >())
         """
         return _swigibpy.OrderComboLegList___setslice__(self, *args, **kwargs)
 
     def __delslice__(self, *args, **kwargs):
-        """__delslice__(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type i, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type j)"""
+        """__delslice__(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::difference_type i, std::vector< shared_ptr< OrderComboLeg > >::difference_type j)"""
         return _swigibpy.OrderComboLegList___delslice__(self, *args, **kwargs)
 
     def __delitem__(self, *args):
         """
-        __delitem__(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type i)
+        __delitem__(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::difference_type i)
         __delitem__(OrderComboLegList self, PySliceObject * slice)
         """
         return _swigibpy.OrderComboLegList___delitem__(self, *args)
@@ -431,7 +431,7 @@ class OrderComboLegList(object):
     def __getitem__(self, *args):
         """
         __getitem__(OrderComboLegList self, PySliceObject * slice) -> OrderComboLegList
-        __getitem__(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type i) -> std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const &
+        __getitem__(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::difference_type i) -> std::vector< shared_ptr< OrderComboLeg > >::value_type const &
         """
         return _swigibpy.OrderComboLegList___getitem__(self, *args)
 
@@ -439,12 +439,12 @@ class OrderComboLegList(object):
         """
         __setitem__(OrderComboLegList self, PySliceObject * slice, OrderComboLegList v)
         __setitem__(OrderComboLegList self, PySliceObject * slice)
-        __setitem__(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::difference_type i, std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & x)
+        __setitem__(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::difference_type i, std::vector< shared_ptr< OrderComboLeg > >::value_type const & x)
         """
         return _swigibpy.OrderComboLegList___setitem__(self, *args)
 
     def append(self, *args, **kwargs):
-        """append(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & x)"""
+        """append(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::value_type const & x)"""
         return _swigibpy.OrderComboLegList_append(self, *args, **kwargs)
 
     def empty(self):
@@ -452,7 +452,7 @@ class OrderComboLegList(object):
         return _swigibpy.OrderComboLegList_empty(self)
 
     def size(self):
-        """size(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::size_type"""
+        """size(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::size_type"""
         return _swigibpy.OrderComboLegList_size(self)
 
     def clear(self):
@@ -464,23 +464,23 @@ class OrderComboLegList(object):
         return _swigibpy.OrderComboLegList_swap(self, *args, **kwargs)
 
     def get_allocator(self):
-        """get_allocator(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::allocator_type"""
+        """get_allocator(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::allocator_type"""
         return _swigibpy.OrderComboLegList_get_allocator(self)
 
     def begin(self):
-        """begin(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::iterator"""
+        """begin(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::iterator"""
         return _swigibpy.OrderComboLegList_begin(self)
 
     def end(self):
-        """end(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::iterator"""
+        """end(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::iterator"""
         return _swigibpy.OrderComboLegList_end(self)
 
     def rbegin(self):
-        """rbegin(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::reverse_iterator"""
+        """rbegin(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::reverse_iterator"""
         return _swigibpy.OrderComboLegList_rbegin(self)
 
     def rend(self):
-        """rend(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::reverse_iterator"""
+        """rend(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::reverse_iterator"""
         return _swigibpy.OrderComboLegList_rend(self)
 
     def pop_back(self):
@@ -489,56 +489,56 @@ class OrderComboLegList(object):
 
     def erase(self, *args):
         """
-        erase(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::iterator pos) -> std::vector< boost::shared_ptr< OrderComboLeg > >::iterator
-        erase(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::iterator first, std::vector< boost::shared_ptr< OrderComboLeg > >::iterator last) -> std::vector< boost::shared_ptr< OrderComboLeg > >::iterator
+        erase(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::iterator pos) -> std::vector< shared_ptr< OrderComboLeg > >::iterator
+        erase(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::iterator first, std::vector< shared_ptr< OrderComboLeg > >::iterator last) -> std::vector< shared_ptr< OrderComboLeg > >::iterator
         """
         return _swigibpy.OrderComboLegList_erase(self, *args)
 
     def __init__(self, *args): 
         """
-        __init__(std::vector<(boost::shared_ptr<(OrderComboLeg)>)> self) -> OrderComboLegList
-        __init__(std::vector<(boost::shared_ptr<(OrderComboLeg)>)> self, OrderComboLegList arg2) -> OrderComboLegList
-        __init__(std::vector<(boost::shared_ptr<(OrderComboLeg)>)> self, std::vector< boost::shared_ptr< OrderComboLeg > >::size_type size) -> OrderComboLegList
-        __init__(std::vector<(boost::shared_ptr<(OrderComboLeg)>)> self, std::vector< boost::shared_ptr< OrderComboLeg > >::size_type size, std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & value) -> OrderComboLegList
+        __init__(std::vector<(shared_ptr<(OrderComboLeg)>)> self) -> OrderComboLegList
+        __init__(std::vector<(shared_ptr<(OrderComboLeg)>)> self, OrderComboLegList arg2) -> OrderComboLegList
+        __init__(std::vector<(shared_ptr<(OrderComboLeg)>)> self, std::vector< shared_ptr< OrderComboLeg > >::size_type size) -> OrderComboLegList
+        __init__(std::vector<(shared_ptr<(OrderComboLeg)>)> self, std::vector< shared_ptr< OrderComboLeg > >::size_type size, std::vector< shared_ptr< OrderComboLeg > >::value_type const & value) -> OrderComboLegList
         """
         _swigibpy.OrderComboLegList_swiginit(self,_swigibpy.new_OrderComboLegList(*args))
     def push_back(self, *args, **kwargs):
-        """push_back(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & x)"""
+        """push_back(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::value_type const & x)"""
         return _swigibpy.OrderComboLegList_push_back(self, *args, **kwargs)
 
     def front(self):
-        """front(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const &"""
+        """front(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::value_type const &"""
         return _swigibpy.OrderComboLegList_front(self)
 
     def back(self):
-        """back(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const &"""
+        """back(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::value_type const &"""
         return _swigibpy.OrderComboLegList_back(self)
 
     def assign(self, *args, **kwargs):
-        """assign(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::size_type n, std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & x)"""
+        """assign(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::size_type n, std::vector< shared_ptr< OrderComboLeg > >::value_type const & x)"""
         return _swigibpy.OrderComboLegList_assign(self, *args, **kwargs)
 
     def resize(self, *args):
         """
-        resize(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::size_type new_size)
-        resize(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::size_type new_size, std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & x)
+        resize(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::size_type new_size)
+        resize(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::size_type new_size, std::vector< shared_ptr< OrderComboLeg > >::value_type const & x)
         """
         return _swigibpy.OrderComboLegList_resize(self, *args)
 
     def insert(self, *args):
         """
-        insert(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::iterator pos, std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & x) -> std::vector< boost::shared_ptr< OrderComboLeg > >::iterator
-        insert(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::iterator pos, std::vector< boost::shared_ptr< OrderComboLeg > >::size_type n, 
-            std::vector< boost::shared_ptr< OrderComboLeg > >::value_type const & x)
+        insert(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::iterator pos, std::vector< shared_ptr< OrderComboLeg > >::value_type const & x) -> std::vector< shared_ptr< OrderComboLeg > >::iterator
+        insert(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::iterator pos, std::vector< shared_ptr< OrderComboLeg > >::size_type n, 
+            std::vector< shared_ptr< OrderComboLeg > >::value_type const & x)
         """
         return _swigibpy.OrderComboLegList_insert(self, *args)
 
     def reserve(self, *args, **kwargs):
-        """reserve(OrderComboLegList self, std::vector< boost::shared_ptr< OrderComboLeg > >::size_type n)"""
+        """reserve(OrderComboLegList self, std::vector< shared_ptr< OrderComboLeg > >::size_type n)"""
         return _swigibpy.OrderComboLegList_reserve(self, *args, **kwargs)
 
     def capacity(self):
-        """capacity(OrderComboLegList self) -> std::vector< boost::shared_ptr< OrderComboLeg > >::size_type"""
+        """capacity(OrderComboLegList self) -> std::vector< shared_ptr< OrderComboLeg > >::size_type"""
         return _swigibpy.OrderComboLegList_capacity(self)
 
     __swig_destroy__ = _swigibpy.delete_OrderComboLegList
@@ -577,7 +577,7 @@ OrderComboLegList_swigregister = _swigibpy.OrderComboLegList_swigregister
 OrderComboLegList_swigregister(OrderComboLegList)
 
 class TagValueList(object):
-    """Proxy of C++ std::vector<(boost::shared_ptr<(TagValue)>)> class"""
+    """Proxy of C++ std::vector<(shared_ptr<(TagValue)>)> class"""
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def iterator(self):
@@ -594,31 +594,31 @@ class TagValueList(object):
         return _swigibpy.TagValueList___bool__(self)
 
     def __len__(self):
-        """__len__(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::size_type"""
+        """__len__(TagValueList self) -> std::vector< shared_ptr< TagValue > >::size_type"""
         return _swigibpy.TagValueList___len__(self)
 
     def pop(self):
-        """pop(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::value_type"""
+        """pop(TagValueList self) -> std::vector< shared_ptr< TagValue > >::value_type"""
         return _swigibpy.TagValueList_pop(self)
 
     def __getslice__(self, *args, **kwargs):
-        """__getslice__(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::difference_type i, std::vector< boost::shared_ptr< TagValue > >::difference_type j) -> TagValueList"""
+        """__getslice__(TagValueList self, std::vector< shared_ptr< TagValue > >::difference_type i, std::vector< shared_ptr< TagValue > >::difference_type j) -> TagValueList"""
         return _swigibpy.TagValueList___getslice__(self, *args, **kwargs)
 
     def __setslice__(self, *args, **kwargs):
         """
-        __setslice__(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::difference_type i, std::vector< boost::shared_ptr< TagValue > >::difference_type j, 
-            TagValueList v=std::vector< boost::shared_ptr< TagValue >,std::allocator< boost::shared_ptr< TagValue > > >())
+        __setslice__(TagValueList self, std::vector< shared_ptr< TagValue > >::difference_type i, std::vector< shared_ptr< TagValue > >::difference_type j, 
+            TagValueList v=std::vector< shared_ptr< TagValue >,std::allocator< shared_ptr< TagValue > > >())
         """
         return _swigibpy.TagValueList___setslice__(self, *args, **kwargs)
 
     def __delslice__(self, *args, **kwargs):
-        """__delslice__(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::difference_type i, std::vector< boost::shared_ptr< TagValue > >::difference_type j)"""
+        """__delslice__(TagValueList self, std::vector< shared_ptr< TagValue > >::difference_type i, std::vector< shared_ptr< TagValue > >::difference_type j)"""
         return _swigibpy.TagValueList___delslice__(self, *args, **kwargs)
 
     def __delitem__(self, *args):
         """
-        __delitem__(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::difference_type i)
+        __delitem__(TagValueList self, std::vector< shared_ptr< TagValue > >::difference_type i)
         __delitem__(TagValueList self, PySliceObject * slice)
         """
         return _swigibpy.TagValueList___delitem__(self, *args)
@@ -626,7 +626,7 @@ class TagValueList(object):
     def __getitem__(self, *args):
         """
         __getitem__(TagValueList self, PySliceObject * slice) -> TagValueList
-        __getitem__(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::difference_type i) -> std::vector< boost::shared_ptr< TagValue > >::value_type const &
+        __getitem__(TagValueList self, std::vector< shared_ptr< TagValue > >::difference_type i) -> std::vector< shared_ptr< TagValue > >::value_type const &
         """
         return _swigibpy.TagValueList___getitem__(self, *args)
 
@@ -634,12 +634,12 @@ class TagValueList(object):
         """
         __setitem__(TagValueList self, PySliceObject * slice, TagValueList v)
         __setitem__(TagValueList self, PySliceObject * slice)
-        __setitem__(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::difference_type i, std::vector< boost::shared_ptr< TagValue > >::value_type const & x)
+        __setitem__(TagValueList self, std::vector< shared_ptr< TagValue > >::difference_type i, std::vector< shared_ptr< TagValue > >::value_type const & x)
         """
         return _swigibpy.TagValueList___setitem__(self, *args)
 
     def append(self, *args, **kwargs):
-        """append(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::value_type const & x)"""
+        """append(TagValueList self, std::vector< shared_ptr< TagValue > >::value_type const & x)"""
         return _swigibpy.TagValueList_append(self, *args, **kwargs)
 
     def empty(self):
@@ -647,7 +647,7 @@ class TagValueList(object):
         return _swigibpy.TagValueList_empty(self)
 
     def size(self):
-        """size(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::size_type"""
+        """size(TagValueList self) -> std::vector< shared_ptr< TagValue > >::size_type"""
         return _swigibpy.TagValueList_size(self)
 
     def clear(self):
@@ -659,23 +659,23 @@ class TagValueList(object):
         return _swigibpy.TagValueList_swap(self, *args, **kwargs)
 
     def get_allocator(self):
-        """get_allocator(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::allocator_type"""
+        """get_allocator(TagValueList self) -> std::vector< shared_ptr< TagValue > >::allocator_type"""
         return _swigibpy.TagValueList_get_allocator(self)
 
     def begin(self):
-        """begin(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::iterator"""
+        """begin(TagValueList self) -> std::vector< shared_ptr< TagValue > >::iterator"""
         return _swigibpy.TagValueList_begin(self)
 
     def end(self):
-        """end(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::iterator"""
+        """end(TagValueList self) -> std::vector< shared_ptr< TagValue > >::iterator"""
         return _swigibpy.TagValueList_end(self)
 
     def rbegin(self):
-        """rbegin(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::reverse_iterator"""
+        """rbegin(TagValueList self) -> std::vector< shared_ptr< TagValue > >::reverse_iterator"""
         return _swigibpy.TagValueList_rbegin(self)
 
     def rend(self):
-        """rend(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::reverse_iterator"""
+        """rend(TagValueList self) -> std::vector< shared_ptr< TagValue > >::reverse_iterator"""
         return _swigibpy.TagValueList_rend(self)
 
     def pop_back(self):
@@ -684,56 +684,56 @@ class TagValueList(object):
 
     def erase(self, *args):
         """
-        erase(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::iterator pos) -> std::vector< boost::shared_ptr< TagValue > >::iterator
-        erase(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::iterator first, std::vector< boost::shared_ptr< TagValue > >::iterator last) -> std::vector< boost::shared_ptr< TagValue > >::iterator
+        erase(TagValueList self, std::vector< shared_ptr< TagValue > >::iterator pos) -> std::vector< shared_ptr< TagValue > >::iterator
+        erase(TagValueList self, std::vector< shared_ptr< TagValue > >::iterator first, std::vector< shared_ptr< TagValue > >::iterator last) -> std::vector< shared_ptr< TagValue > >::iterator
         """
         return _swigibpy.TagValueList_erase(self, *args)
 
     def __init__(self, *args): 
         """
-        __init__(std::vector<(boost::shared_ptr<(TagValue)>)> self) -> TagValueList
-        __init__(std::vector<(boost::shared_ptr<(TagValue)>)> self, TagValueList arg2) -> TagValueList
-        __init__(std::vector<(boost::shared_ptr<(TagValue)>)> self, std::vector< boost::shared_ptr< TagValue > >::size_type size) -> TagValueList
-        __init__(std::vector<(boost::shared_ptr<(TagValue)>)> self, std::vector< boost::shared_ptr< TagValue > >::size_type size, std::vector< boost::shared_ptr< TagValue > >::value_type const & value) -> TagValueList
+        __init__(std::vector<(shared_ptr<(TagValue)>)> self) -> TagValueList
+        __init__(std::vector<(shared_ptr<(TagValue)>)> self, TagValueList arg2) -> TagValueList
+        __init__(std::vector<(shared_ptr<(TagValue)>)> self, std::vector< shared_ptr< TagValue > >::size_type size) -> TagValueList
+        __init__(std::vector<(shared_ptr<(TagValue)>)> self, std::vector< shared_ptr< TagValue > >::size_type size, std::vector< shared_ptr< TagValue > >::value_type const & value) -> TagValueList
         """
         _swigibpy.TagValueList_swiginit(self,_swigibpy.new_TagValueList(*args))
     def push_back(self, *args, **kwargs):
-        """push_back(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::value_type const & x)"""
+        """push_back(TagValueList self, std::vector< shared_ptr< TagValue > >::value_type const & x)"""
         return _swigibpy.TagValueList_push_back(self, *args, **kwargs)
 
     def front(self):
-        """front(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::value_type const &"""
+        """front(TagValueList self) -> std::vector< shared_ptr< TagValue > >::value_type const &"""
         return _swigibpy.TagValueList_front(self)
 
     def back(self):
-        """back(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::value_type const &"""
+        """back(TagValueList self) -> std::vector< shared_ptr< TagValue > >::value_type const &"""
         return _swigibpy.TagValueList_back(self)
 
     def assign(self, *args, **kwargs):
-        """assign(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::size_type n, std::vector< boost::shared_ptr< TagValue > >::value_type const & x)"""
+        """assign(TagValueList self, std::vector< shared_ptr< TagValue > >::size_type n, std::vector< shared_ptr< TagValue > >::value_type const & x)"""
         return _swigibpy.TagValueList_assign(self, *args, **kwargs)
 
     def resize(self, *args):
         """
-        resize(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::size_type new_size)
-        resize(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::size_type new_size, std::vector< boost::shared_ptr< TagValue > >::value_type const & x)
+        resize(TagValueList self, std::vector< shared_ptr< TagValue > >::size_type new_size)
+        resize(TagValueList self, std::vector< shared_ptr< TagValue > >::size_type new_size, std::vector< shared_ptr< TagValue > >::value_type const & x)
         """
         return _swigibpy.TagValueList_resize(self, *args)
 
     def insert(self, *args):
         """
-        insert(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::iterator pos, std::vector< boost::shared_ptr< TagValue > >::value_type const & x) -> std::vector< boost::shared_ptr< TagValue > >::iterator
-        insert(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::iterator pos, std::vector< boost::shared_ptr< TagValue > >::size_type n, 
-            std::vector< boost::shared_ptr< TagValue > >::value_type const & x)
+        insert(TagValueList self, std::vector< shared_ptr< TagValue > >::iterator pos, std::vector< shared_ptr< TagValue > >::value_type const & x) -> std::vector< shared_ptr< TagValue > >::iterator
+        insert(TagValueList self, std::vector< shared_ptr< TagValue > >::iterator pos, std::vector< shared_ptr< TagValue > >::size_type n, 
+            std::vector< shared_ptr< TagValue > >::value_type const & x)
         """
         return _swigibpy.TagValueList_insert(self, *args)
 
     def reserve(self, *args, **kwargs):
-        """reserve(TagValueList self, std::vector< boost::shared_ptr< TagValue > >::size_type n)"""
+        """reserve(TagValueList self, std::vector< shared_ptr< TagValue > >::size_type n)"""
         return _swigibpy.TagValueList_reserve(self, *args, **kwargs)
 
     def capacity(self):
-        """capacity(TagValueList self) -> std::vector< boost::shared_ptr< TagValue > >::size_type"""
+        """capacity(TagValueList self) -> std::vector< shared_ptr< TagValue > >::size_type"""
         return _swigibpy.TagValueList_capacity(self)
 
     __swig_destroy__ = _swigibpy.delete_TagValueList
