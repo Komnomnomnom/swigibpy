@@ -10,11 +10,9 @@ from sysconfig import get_platform
 try:
     from setuptools.command.build_ext import build_ext
     from setuptools import setup, Extension, Command
-    _have_setuptools = True
 except:
     from distutils.command.build_ext import build_ext
     from distutils import setup, Extension, Command
-    _have_setuptools = False
 
 ###
 
@@ -23,13 +21,6 @@ VERSION = '0.4'
 
 root_dir = abspath(dirname(__file__))
 libraries = []
-
-setuptools_kwargs = {}
-if sys.version_info[0] >= 3:
-    setuptools_kwargs = {'use_2to3': True}
-    if not _have_setuptools:
-        sys.exit("need setuptools/distribute for Py3k"
-                 "\n$ pip install distribute")
 
 if(get_platform().startswith('win')):
     libraries.append('ws2_32')
@@ -153,7 +144,7 @@ class SwigibpyBuildExt(build_ext):
         build_ext.build_extensions(self)
 
 
-readme = join(dirname(__file__), 'README.rst')
+readme = open(join(root_dir, 'README.rst'))
 setup(version=VERSION,
       name='swigibpy',
       author="Kieran O'Mahony",
@@ -161,7 +152,7 @@ setup(version=VERSION,
       url="https://github.com/Komnomnomnom/swigibpy/",
       license='New BSD License',
       description="""Third party Python API for Interactive Brokers""",
-      long_description=open(readme).read(),
+      long_description=readme.read(),
       keywords=["interactive brokers", "tws"],
       ext_modules=[ib_module],
       py_modules=["swigibpy"],
@@ -181,5 +172,5 @@ setup(version=VERSION,
           "Topic :: Software Development :: Libraries :: Python Modules",
           "Topic :: Office/Business :: Financial",
           ],
-      **setuptools_kwargs
       )
+readme.close()
