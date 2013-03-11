@@ -5,6 +5,8 @@ include IB/*/*.cpp
 include IB/*/*.h
 include IB/*.cpp
 include IB/*.h
+include IB/*.txt
+include patches/*
 include README.rst
 include CHANGES
 include LICENSE
