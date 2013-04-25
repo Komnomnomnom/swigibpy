@@ -10,7 +10,6 @@ import sys
 from datetime import datetime
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
-from swigibpy import TWSError, TWSClientError, TWSSystemError, TWSWarning
 
 try:
     input = raw_input
@@ -52,27 +51,24 @@ class CustomErrorExample(EWrapper):
         pass
 
     def error(self, id, errCode, errString):
-        try:
+
+        if errCode == 165 or (errCode >= 2100 and errCode <= 2110):
+            print("TWS warns %s" % errString)
+        elif errCode == 502:
+            print('Looks like TWS is not running, '
+                  'start it up and try again')
+            sys.exit()
+        elif errCode == 501:
+            print("TWS reports error in client: %s" % errString)
+        elif errCode >= 1100 and errCode < 2100:
+            print("TWS reports system error: %s" % errString)
+        elif errCode == 321:
+            print("TWS complaining about bad request: %s" % errString)
+        else:
             super(CustomErrorExample, self).error(id, errCode, errString)
-        except TWSWarning as w:
-            print("TWS warns %s" % w.msg)
-        except TWSClientError as c:
-            if c.code == 502:
-                print('Looks like TWS is not running, '
-                      'start it up and try again')
-                sys.exit()
-            else:
-                print("TWS reports error in client: %s" % c.msg)
-        except TWSSystemError as s:
-            print("TWS reports system error: %s" % s.msg)
-        except TWSError as e:
-            print("TWS reports error: %s" % e.msg)
 
     def winError(self, msg, lastError):
-        try:
-            super(CustomErrorExample, self).winError(msg, lastError)
-        except TWSClientError as c:
-            print("TWS reports API error: %s" % c.msg)
+        print("TWS reports API error: %s" % msg)
 
 
 # Instantiate our callback object

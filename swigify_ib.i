@@ -130,15 +130,7 @@ class TWSPoller(threading.Thread):
         '''Continually poll TWS'''
         ok = True
         while ok:
-            try:
-                ok = self._tws.checkMessages()
-            except TWSWarning as e:
-                sys.stderr.write("TWS Warning - %s: %s" % (e.code, e.msg))
-            except TWSError as e:
-                if e.code == 509:
-                    ok = False
-                else:
-                    print_exc()
+            ok = self._tws.checkMessages()
 
             if ok and (not self._tws or not self._tws.isConnected()):
                 ok = False
@@ -153,58 +145,26 @@ class TWSPoller(threading.Thread):
 %}
 %include "PosixSocketClient/EPosixClientSocket.h"
 
-/* Override EWrapper's error methods  with default implementations */
-%pythoncode %{
-class TWSError(Exception):
-    '''Exception raised during communication with Interactive Brokers TWS
-    application
-    '''
-
-    def __init__(self, code, msg):
-        self.code = code
-        self.msg = msg
-
-    def __str__(self):
-        return "%s: %s" % (self.code, repr(self.msg))
-
-class TWSWarning(TWSError):
-    '''Warning raised during communication with Interactive Brokers TWS 
-    application.
-    '''
-    pass
-
-class TWSSystemError(TWSError):
-    '''System related exception raised during communication with Interactive
-    Brokers TWS application.
-    '''
-    pass
-
-class TWSClientError(TWSError):
-    '''Exception raised on client (python) side by Interactive Brokers API'''
-    pass
-%}
 %feature("shadow") EWrapper::winError(const IBString &, int) %{
     def winError(self, str, lastError):
         '''Error in TWS API library'''
-
-        raise TWSClientError(lastError, str)
+        sys.stderr.write("TWS Error - %s: %s\n" % (lastError, str))
 %}
 %feature("shadow") EWrapper::error(const int, const int, const IBString) %{
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
         import sys
-
         if errorCode == 165: # Historical data sevice message
-            raise TWSWarning(errorCode, errorString)
+            sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 501 and errorCode < 600: # Socket read failed
-            raise TWSClientError(errorCode, errorString)
+            sys.stderr.write("TWS Client Error - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:
-            raise TWSError(errorCode, errorString)
+            sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
         elif  errorCode >= 1100 and errorCode < 2100:
-            raise TWSSystemError(errorCode, errorString)
+            sys.stderr.write("TWS System Error - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 2100 and errorCode <= 2110:
-            raise TWSWarning(errorCode, errorString)
+            sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))
         else:
-            raise RuntimeError(errorCode, errorString)
+            sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
 %}
 %include "Shared/EWrapper.h"
