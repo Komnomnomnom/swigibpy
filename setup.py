@@ -17,7 +17,7 @@ except:
 ###
 
 IB_DIR = 'IB'
-VERSION = '0.4'
+VERSION = '0.4.1'
 
 root_dir = abspath(dirname(__file__))
 libraries = []

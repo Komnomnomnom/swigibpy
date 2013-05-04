@@ -1,4 +1,8 @@
-0.4 TBA
+0.4.1 Sat May 04 2013
+  * Fix for exception bubbling up and killing poller #19
+  * Remove swigibpy custom exceptions
+
+0.4 Sun Mar 24 2013
   * Support for TWS Contract and Order ComboLegs and AlgoParams (#7)
   * Update to TWS v9.68 API.
   * Support for GCC 4.7+

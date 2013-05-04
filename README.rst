@@ -3,7 +3,7 @@ Overview
 
 `Interactive Brokers`_ Python API, auto generated from C++ API using `SWIG`_.
 
-Latest version: 0.4 (TWS API v9.68)
+Latest version: 0.4.1 (TWS API v9.68)
 
 Install
 =======
