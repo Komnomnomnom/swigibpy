@@ -81,17 +81,20 @@ typedef std::string IBString;
         $action
     } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "$decl not implemented");
+        SWIG_fail;
     } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
     } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
 
     } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
     }
 }
 

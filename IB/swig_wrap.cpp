@@ -10143,17 +10143,20 @@ SWIGINTERN PyObject *_wrap_delete_ComboLegList(PyObject *SWIGUNUSEDPARM(self), P
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "std::vector< shared_ptr< ComboLeg > >::~vector() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -12528,17 +12531,20 @@ SWIGINTERN PyObject *_wrap_delete_OrderComboLegList(PyObject *SWIGUNUSEDPARM(sel
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "std::vector< shared_ptr< OrderComboLeg > >::~vector() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -14913,17 +14919,20 @@ SWIGINTERN PyObject *_wrap_delete_TagValueList(PyObject *SWIGUNUSEDPARM(self), P
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "std::vector< shared_ptr< TagValue > >::~vector() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -14962,17 +14971,20 @@ SWIGINTERN PyObject *_wrap_new_CommissionReport(PyObject *SWIGUNUSEDPARM(self), 
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "CommissionReport::CommissionReport() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_CommissionReport, SWIG_POINTER_NEW |  0 );
@@ -15383,17 +15395,20 @@ SWIGINTERN PyObject *_wrap_delete_CommissionReport(PyObject *SWIGUNUSEDPARM(self
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "CommissionReport::~CommissionReport() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -15444,17 +15459,20 @@ SWIGINTERN PyObject *_wrap_faDataTypeStr(PyObject *SWIGUNUSEDPARM(self), PyObjec
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "faDataTypeStr(faDataType) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_FromCharPtr((const char *)result);
@@ -15482,17 +15500,20 @@ SWIGINTERN PyObject *_wrap_new_ComboLeg(PyObject *SWIGUNUSEDPARM(self), PyObject
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ComboLeg::ComboLeg() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   {
@@ -16262,17 +16283,20 @@ SWIGINTERN PyObject *_wrap_ComboLeg___eq__(PyObject *SWIGUNUSEDPARM(self), PyObj
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ComboLeg::operator ==(ComboLeg const &) const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -16321,17 +16345,20 @@ SWIGINTERN PyObject *_wrap_delete_ComboLeg(PyObject *SWIGUNUSEDPARM(self), PyObj
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ComboLeg::~ComboLeg() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -16370,17 +16397,20 @@ SWIGINTERN PyObject *_wrap_new_UnderComp(PyObject *SWIGUNUSEDPARM(self), PyObjec
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "UnderComp::UnderComp() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_UnderComp, SWIG_POINTER_NEW |  0 );
@@ -16597,17 +16627,20 @@ SWIGINTERN PyObject *_wrap_delete_UnderComp(PyObject *SWIGUNUSEDPARM(self), PyOb
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "UnderComp::~UnderComp() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -16646,17 +16679,20 @@ SWIGINTERN PyObject *_wrap_new_Contract(PyObject *SWIGUNUSEDPARM(self), PyObject
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Contract::Contract() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Contract, SWIG_POINTER_NEW |  0 );
@@ -17841,17 +17877,20 @@ SWIGINTERN PyObject *_wrap_Contract_CloneComboLegs(PyObject *SWIGUNUSEDPARM(self
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Contract::CloneComboLegs(Contract::ComboLegListSPtr &,Contract::ComboLegListSPtr const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -17888,17 +17927,20 @@ SWIGINTERN PyObject *_wrap_delete_Contract(PyObject *SWIGUNUSEDPARM(self), PyObj
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Contract::~Contract() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -17937,17 +17979,20 @@ SWIGINTERN PyObject *_wrap_new_ContractDetails(PyObject *SWIGUNUSEDPARM(self), P
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ContractDetails::ContractDetails() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ContractDetails, SWIG_POINTER_NEW |  0 );
@@ -20198,17 +20243,20 @@ SWIGINTERN PyObject *_wrap_delete_ContractDetails(PyObject *SWIGUNUSEDPARM(self)
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ContractDetails::~ContractDetails() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20256,17 +20304,20 @@ SWIGINTERN PyObject *_wrap_delete_EClient(PyObject *SWIGUNUSEDPARM(self), PyObje
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::~EClient() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20336,17 +20387,20 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect(PyObject *SWIGUNUSEDPARM(self), PyOb
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::eConnect(char const *,unsigned int,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -20385,17 +20439,20 @@ SWIGINTERN PyObject *_wrap_EClient_eDisconnect(PyObject *SWIGUNUSEDPARM(self), P
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::eDisconnect() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20433,17 +20490,20 @@ SWIGINTERN PyObject *_wrap_EClient_serverVersion(PyObject *SWIGUNUSEDPARM(self),
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::serverVersion() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_int(static_cast< int >(result));
@@ -20481,17 +20541,20 @@ SWIGINTERN PyObject *_wrap_EClient_TwsConnectionTime(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::TwsConnectionTime() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_std_string(static_cast< std::string >(result));
@@ -20574,17 +20637,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktData(PyObject *SWIGUNUSEDPARM(self), Py
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqMktData(TickerId,Contract const &,IBString const &,bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20634,17 +20700,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelMktData(PyObject *SWIGUNUSEDPARM(self),
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelMktData(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20716,17 +20785,20 @@ SWIGINTERN PyObject *_wrap_EClient_placeOrder(PyObject *SWIGUNUSEDPARM(self), Py
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::placeOrder(OrderId,Contract const &,Order const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20774,17 +20846,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelOrder(PyObject *SWIGUNUSEDPARM(self), P
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelOrder(OrderId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20821,17 +20896,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqOpenOrders(PyObject *SWIGUNUSEDPARM(self),
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqOpenOrders() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20893,17 +20971,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqAccountUpdates(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqAccountUpdates(bool,IBString const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -20965,17 +21046,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqExecutions(PyObject *SWIGUNUSEDPARM(self),
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqExecutions(int,ExecutionFilter const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21023,17 +21107,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqIds(PyObject *SWIGUNUSEDPARM(self), PyObje
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqIds(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21071,17 +21158,20 @@ SWIGINTERN PyObject *_wrap_EClient_checkMessages(PyObject *SWIGUNUSEDPARM(self),
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::checkMessages() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -21141,17 +21231,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqContractDetails(PyObject *SWIGUNUSEDPARM(s
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqContractDetails(int,Contract const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21220,17 +21313,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktDepth(PyObject *SWIGUNUSEDPARM(self), P
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqMktDepth(TickerId,Contract const &,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21278,17 +21374,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelMktDepth(PyObject *SWIGUNUSEDPARM(self)
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelMktDepth(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21336,17 +21435,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqNewsBulletins(PyObject *SWIGUNUSEDPARM(sel
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqNewsBulletins(bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21383,17 +21485,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelNewsBulletins(PyObject *SWIGUNUSEDPARM(
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelNewsBulletins() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21441,17 +21546,20 @@ SWIGINTERN PyObject *_wrap_EClient_setServerLogLevel(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::setServerLogLevel(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21499,17 +21607,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqAutoOpenOrders(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqAutoOpenOrders(bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21546,17 +21657,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqAllOpenOrders(PyObject *SWIGUNUSEDPARM(sel
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqAllOpenOrders() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21593,17 +21707,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqManagedAccts(PyObject *SWIGUNUSEDPARM(self
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqManagedAccts() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21651,17 +21768,20 @@ SWIGINTERN PyObject *_wrap_EClient_requestFA(PyObject *SWIGUNUSEDPARM(self), PyO
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::requestFA(faDataType) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21723,17 +21843,20 @@ SWIGINTERN PyObject *_wrap_EClient_replaceFA(PyObject *SWIGUNUSEDPARM(self), PyO
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::replaceFA(faDataType,IBString const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21869,17 +21992,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqHistoricalData(TickerId,Contract const &,IBString const &,IBString const &,IBString const &,IBString const &,int,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -21988,17 +22114,20 @@ SWIGINTERN PyObject *_wrap_EClient_exerciseOptions(PyObject *SWIGUNUSEDPARM(self
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::exerciseOptions(TickerId,Contract const &,int,int,IBString const &,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22048,17 +22177,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelHistoricalData(PyObject *SWIGUNUSEDPARM
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelHistoricalData(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22150,17 +22282,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqRealTimeBars(PyObject *SWIGUNUSEDPARM(self
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqRealTimeBars(TickerId,Contract const &,int,IBString const &,bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22210,17 +22345,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelRealTimeBars(PyObject *SWIGUNUSEDPARM(s
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelRealTimeBars(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22268,17 +22406,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelScannerSubscription(PyObject *SWIGUNUSE
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelScannerSubscription(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22315,17 +22456,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerParameters(PyObject *SWIGUNUSEDPARM
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqScannerParameters() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22385,17 +22529,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerSubscription(PyObject *SWIGUNUSEDPA
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqScannerSubscription(int,ScannerSubscription const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22432,17 +22579,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqCurrentTime(PyObject *SWIGUNUSEDPARM(self)
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqCurrentTime() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22516,17 +22666,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqFundamentalData(PyObject *SWIGUNUSEDPARM(s
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqFundamentalData(TickerId,Contract const &,IBString const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22576,17 +22729,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelFundamentalData(PyObject *SWIGUNUSEDPAR
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelFundamentalData(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22664,17 +22820,20 @@ SWIGINTERN PyObject *_wrap_EClient_calculateImpliedVolatility(PyObject *SWIGUNUS
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::calculateImpliedVolatility(TickerId,Contract const &,double,double) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22752,17 +22911,20 @@ SWIGINTERN PyObject *_wrap_EClient_calculateOptionPrice(PyObject *SWIGUNUSEDPARM
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::calculateOptionPrice(TickerId,Contract const &,double,double) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22810,17 +22972,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelCalculateImpliedVolatility(PyObject *SW
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelCalculateImpliedVolatility(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22868,17 +23033,20 @@ SWIGINTERN PyObject *_wrap_EClient_cancelCalculateOptionPrice(PyObject *SWIGUNUS
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::cancelCalculateOptionPrice(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22915,17 +23083,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqGlobalCancel(PyObject *SWIGUNUSEDPARM(self
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqGlobalCancel() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -22973,17 +23144,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqMarketDataType(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqMarketDataType(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23027,17 +23201,20 @@ SWIGINTERN PyObject *_wrap_delete_EClientSocketBase(PyObject *SWIGUNUSEDPARM(sel
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::~EClientSocketBase() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23107,17 +23284,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect(PyObject *SWIGUNUSEDPARM(s
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::eConnect(char const *,unsigned int,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -23156,17 +23336,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eDisconnect(PyObject *SWIGUNUSEDPAR
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::eDisconnect() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23204,17 +23387,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_clientId(PyObject *SWIGUNUSEDPARM(s
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::clientId() const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_int(static_cast< int >(result));
@@ -23252,17 +23438,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isConnected(PyObject *SWIGUNUSEDPAR
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::isConnected() const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -23300,17 +23489,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isInBufferEmpty(PyObject *SWIGUNUSE
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::isInBufferEmpty() const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -23348,17 +23540,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_isOutBufferEmpty(PyObject *SWIGUNUS
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::isOutBufferEmpty() const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -23396,17 +23591,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_serverVersion(PyObject *SWIGUNUSEDP
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::serverVersion() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_int(static_cast< int >(result));
@@ -23444,17 +23642,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_TwsConnectionTime(PyObject *SWIGUNU
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::TwsConnectionTime() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_std_string(static_cast< std::string >(result));
@@ -23537,17 +23738,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktData(PyObject *SWIGUNUSEDPARM
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqMktData(TickerId,Contract const &,IBString const &,bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23597,17 +23801,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelMktData(PyObject *SWIGUNUSEDP
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelMktData(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23679,17 +23886,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_placeOrder(PyObject *SWIGUNUSEDPARM
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::placeOrder(OrderId,Contract const &,Order const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23737,17 +23947,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelOrder(PyObject *SWIGUNUSEDPAR
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelOrder(OrderId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23784,17 +23997,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqOpenOrders(PyObject *SWIGUNUSEDP
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqOpenOrders() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23856,17 +24072,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAccountUpdates(PyObject *SWIGUNU
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqAccountUpdates(bool,IBString const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23928,17 +24147,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqExecutions(PyObject *SWIGUNUSEDP
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqExecutions(int,ExecutionFilter const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -23986,17 +24208,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqIds(PyObject *SWIGUNUSEDPARM(sel
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqIds(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24034,17 +24259,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_checkMessages(PyObject *SWIGUNUSEDP
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::checkMessages() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -24104,17 +24332,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqContractDetails(PyObject *SWIGUN
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqContractDetails(int,Contract const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24183,17 +24414,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktDepth(PyObject *SWIGUNUSEDPAR
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqMktDepth(TickerId,Contract const &,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24241,17 +24475,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelMktDepth(PyObject *SWIGUNUSED
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelMktDepth(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24299,17 +24536,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqNewsBulletins(PyObject *SWIGUNUS
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqNewsBulletins(bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24346,17 +24586,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelNewsBulletins(PyObject *SWIGU
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelNewsBulletins() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24404,17 +24647,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_setServerLogLevel(PyObject *SWIGUNU
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::setServerLogLevel(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24462,17 +24708,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAutoOpenOrders(PyObject *SWIGUNU
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqAutoOpenOrders(bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24509,17 +24758,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqAllOpenOrders(PyObject *SWIGUNUS
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqAllOpenOrders() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24556,17 +24808,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqManagedAccts(PyObject *SWIGUNUSE
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqManagedAccts() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24614,17 +24869,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_requestFA(PyObject *SWIGUNUSEDPARM(
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::requestFA(faDataType) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24686,17 +24944,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_replaceFA(PyObject *SWIGUNUSEDPARM(
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::replaceFA(faDataType,IBString const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24832,17 +25093,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqHistoricalData(TickerId,Contract const &,IBString const &,IBString const &,IBString const &,IBString const &,int,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -24951,17 +25215,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_exerciseOptions(PyObject *SWIGUNUSE
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::exerciseOptions(TickerId,Contract const &,int,int,IBString const &,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25011,17 +25278,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelHistoricalData(PyObject *SWIG
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelHistoricalData(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25113,17 +25383,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqRealTimeBars(PyObject *SWIGUNUSE
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqRealTimeBars(TickerId,Contract const &,int,IBString const &,bool) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25173,17 +25446,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelRealTimeBars(PyObject *SWIGUN
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelRealTimeBars(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25231,17 +25507,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelScannerSubscription(PyObject 
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelScannerSubscription(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25278,17 +25557,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerParameters(PyObject *SWIG
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqScannerParameters() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25348,17 +25630,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerSubscription(PyObject *SW
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqScannerSubscription(int,ScannerSubscription const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25395,17 +25680,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqCurrentTime(PyObject *SWIGUNUSED
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqCurrentTime() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25479,17 +25767,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqFundamentalData(PyObject *SWIGUN
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqFundamentalData(TickerId,Contract const &,IBString const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25539,17 +25830,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelFundamentalData(PyObject *SWI
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelFundamentalData(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25627,17 +25921,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_calculateImpliedVolatility(PyObject
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::calculateImpliedVolatility(TickerId,Contract const &,double,double) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25715,17 +26012,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_calculateOptionPrice(PyObject *SWIG
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::calculateOptionPrice(TickerId,Contract const &,double,double) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25773,17 +26073,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelCalculateImpliedVolatility(Py
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelCalculateImpliedVolatility(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25831,17 +26134,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelCalculateOptionPrice(PyObject
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelCalculateOptionPrice(TickerId) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25878,17 +26184,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqGlobalCancel(PyObject *SWIGUNUSE
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqGlobalCancel() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25936,17 +26245,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMarketDataType(PyObject *SWIGUNU
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqMarketDataType(int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -25981,17 +26293,20 @@ SWIGINTERN PyObject *_wrap_new_Execution(PyObject *SWIGUNUSEDPARM(self), PyObjec
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Execution::Execution() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Execution, SWIG_POINTER_NEW |  0 );
@@ -27037,17 +27352,20 @@ SWIGINTERN PyObject *_wrap_delete_Execution(PyObject *SWIGUNUSEDPARM(self), PyOb
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Execution::~Execution() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -27086,17 +27404,20 @@ SWIGINTERN PyObject *_wrap_new_ExecutionFilter(PyObject *SWIGUNUSEDPARM(self), P
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ExecutionFilter::ExecutionFilter() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ExecutionFilter, SWIG_POINTER_NEW |  0 );
@@ -27595,17 +27916,20 @@ SWIGINTERN PyObject *_wrap_delete_ExecutionFilter(PyObject *SWIGUNUSEDPARM(self)
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ExecutionFilter::~ExecutionFilter() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -27644,17 +27968,20 @@ SWIGINTERN PyObject *_wrap_new_OrderComboLeg(PyObject *SWIGUNUSEDPARM(self), PyO
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "OrderComboLeg::OrderComboLeg() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   {
@@ -27815,17 +28142,20 @@ SWIGINTERN PyObject *_wrap_OrderComboLeg___eq__(PyObject *SWIGUNUSEDPARM(self), 
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "OrderComboLeg::operator ==(OrderComboLeg const &) const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -27874,17 +28204,20 @@ SWIGINTERN PyObject *_wrap_delete_OrderComboLeg(PyObject *SWIGUNUSEDPARM(self), 
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "OrderComboLeg::~OrderComboLeg() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -27923,17 +28256,20 @@ SWIGINTERN PyObject *_wrap_new_Order(PyObject *SWIGUNUSEDPARM(self), PyObject *a
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Order::Order() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Order, SWIG_POINTER_NEW |  0 );
@@ -33449,17 +33785,20 @@ SWIGINTERN PyObject *_wrap_Order_CloneOrderComboLegs(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Order::CloneOrderComboLegs(Order::OrderComboLegListSPtr &,Order::OrderComboLegListSPtr const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -33496,17 +33835,20 @@ SWIGINTERN PyObject *_wrap_delete_Order(PyObject *SWIGUNUSEDPARM(self), PyObject
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "Order::~Order() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -33545,17 +33887,20 @@ SWIGINTERN PyObject *_wrap_new_OrderState(PyObject *SWIGUNUSEDPARM(self), PyObje
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "OrderState::OrderState() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OrderState, SWIG_POINTER_NEW |  0 );
@@ -34174,17 +34519,20 @@ SWIGINTERN PyObject *_wrap_delete_OrderState(PyObject *SWIGUNUSEDPARM(self), PyO
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "OrderState::~OrderState() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -34223,17 +34571,20 @@ SWIGINTERN PyObject *_wrap_new_ScannerSubscription(PyObject *SWIGUNUSEDPARM(self
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ScannerSubscription::ScannerSubscription() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ScannerSubscription, SWIG_POINTER_NEW |  0 );
@@ -35607,17 +35958,20 @@ SWIGINTERN PyObject *_wrap_delete_ScannerSubscription(PyObject *SWIGUNUSEDPARM(s
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "ScannerSubscription::~ScannerSubscription() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -35656,17 +36010,20 @@ SWIGINTERN PyObject *_wrap_new_TagValue__SWIG_0(PyObject *SWIGUNUSEDPARM(self), 
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "TagValue::TagValue() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   {
@@ -35723,17 +36080,20 @@ SWIGINTERN PyObject *_wrap_new_TagValue__SWIG_1(PyObject *SWIGUNUSEDPARM(self), 
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "TagValue::TagValue(IBString const &,IBString const &) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   {
@@ -35993,17 +36353,20 @@ SWIGINTERN PyObject *_wrap_delete_TagValue(PyObject *SWIGUNUSEDPARM(self), PyObj
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "TagValue::~TagValue() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -36054,17 +36417,20 @@ SWIGINTERN PyObject *_wrap_new_EPosixClientSocket(PyObject *SWIGUNUSEDPARM(self)
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::EPosixClientSocket(EWrapper *) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_EPosixClientSocket, SWIG_POINTER_NEW |  0 );
@@ -36101,17 +36467,20 @@ SWIGINTERN PyObject *_wrap_delete_EPosixClientSocket(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::~EPosixClientSocket() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -36181,17 +36550,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect(PyObject *SWIGUNUSEDPARM(
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::eConnect(char const *,unsigned int,int) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -36230,17 +36602,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eDisconnect(PyObject *SWIGUNUSEDPA
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::eDisconnect() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -36278,17 +36653,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_isSocketOK(PyObject *SWIGUNUSEDPAR
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::isSocketOK() const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -36326,17 +36704,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_fd(PyObject *SWIGUNUSEDPARM(self),
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::fd() const not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_int(static_cast< int >(result));
@@ -36373,17 +36754,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onReceive(PyObject *SWIGUNUSEDPARM
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::onReceive() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -36420,17 +36804,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onSend(PyObject *SWIGUNUSEDPARM(se
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::onSend() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -36467,17 +36854,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_onError(PyObject *SWIGUNUSEDPARM(s
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::onError() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -36515,17 +36905,20 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_handleSocketError(PyObject *SWIGUN
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::handleSocketError() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -36576,17 +36969,20 @@ SWIGINTERN PyObject *_wrap_isPrice(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "isPrice(TickType) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
@@ -36623,17 +37019,20 @@ SWIGINTERN PyObject *_wrap_delete_EWrapper(PyObject *SWIGUNUSEDPARM(self), PyObj
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EWrapper::~EWrapper() not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_Py_Void();
@@ -36713,17 +37112,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickPrice(PyObject *SWIGUNUSEDPARM(self), Py
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::tickPrice(TickerId,TickType,double,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -36797,17 +37199,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickSize(PyObject *SWIGUNUSEDPARM(self), PyO
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::tickSize(TickerId,TickType,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -36944,17 +37349,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickOptionComputation(PyObject *SWIGUNUSEDPA
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::tickOptionComputation(TickerId,TickType,double,double,double,double,double,double,double,double) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37028,17 +37436,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickGeneric(PyObject *SWIGUNUSEDPARM(self), 
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::tickGeneric(TickerId,TickType,double) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37117,17 +37528,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickString(PyObject *SWIGUNUSEDPARM(self), P
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::tickString(TickerId,TickType,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37267,17 +37681,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickEFP(PyObject *SWIGUNUSEDPARM(self), PyOb
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::tickEFP(TickerId,TickType,double,IBString const &,double,int,IBString const &,double,double) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37428,17 +37845,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_orderStatus(PyObject *SWIGUNUSEDPARM(self), 
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::orderStatus(OrderId,IBString const &,int,int,double,int,int,double,int,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37534,17 +37954,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_openOrder(PyObject *SWIGUNUSEDPARM(self), Py
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::openOrder(OrderId,Contract const &,Order const &,OrderState const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37589,17 +38012,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_openOrderEnd(PyObject *SWIGUNUSEDPARM(self),
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::openOrderEnd() not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37669,17 +38095,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_winError(PyObject *SWIGUNUSEDPARM(self), PyO
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::winError(IBString const &,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37726,17 +38155,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_connectionClosed(PyObject *SWIGUNUSEDPARM(se
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::connectionClosed() not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37839,17 +38271,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateAccountValue(PyObject *SWIGUNUSEDPARM(
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::updateAccountValue(IBString const &,IBString const &,IBString const &,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -37984,17 +38419,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_updatePortfolio(PyObject *SWIGUNUSEDPARM(sel
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::updatePortfolio(Contract const &,int,double,double,double,double,double,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38057,17 +38495,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateAccountTime(PyObject *SWIGUNUSEDPARM(s
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::updateAccountTime(IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38130,17 +38571,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_accountDownloadEnd(PyObject *SWIGUNUSEDPARM(
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::accountDownloadEnd(IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38198,17 +38642,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_nextValidId(PyObject *SWIGUNUSEDPARM(self), 
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::nextValidId(OrderId) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38276,17 +38723,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_contractDetails(PyObject *SWIGUNUSEDPARM(sel
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::contractDetails(int,ContractDetails const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38354,17 +38804,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_bondContractDetails(PyObject *SWIGUNUSEDPARM
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::bondContractDetails(int,ContractDetails const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38420,17 +38873,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_contractDetailsEnd(PyObject *SWIGUNUSEDPARM(
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::contractDetailsEnd(int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38510,17 +38966,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_execDetails(PyObject *SWIGUNUSEDPARM(self), 
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::execDetails(int,Contract const &,Execution const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38576,17 +39035,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_execDetailsEnd(PyObject *SWIGUNUSEDPARM(self
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::execDetailsEnd(int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38662,17 +39124,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_error(PyObject *SWIGUNUSEDPARM(self), PyObje
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::error(int const,int const,IBString const) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38773,17 +39238,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateMktDepth(PyObject *SWIGUNUSEDPARM(self
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::updateMktDepth(TickerId,int,int,int,double,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38895,17 +39363,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateMktDepthL2(PyObject *SWIGUNUSEDPARM(se
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::updateMktDepthL2(TickerId,int,IBString,int,int,double,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -38998,17 +39469,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_updateNewsBulletin(PyObject *SWIGUNUSEDPARM(
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::updateNewsBulletin(int,int,IBString const &,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39073,17 +39547,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_managedAccounts(PyObject *SWIGUNUSEDPARM(sel
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::managedAccounts(IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39155,17 +39632,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_receiveFA(PyObject *SWIGUNUSEDPARM(self), Py
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::receiveFA(faDataType,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39309,17 +39789,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_historicalData(PyObject *SWIGUNUSEDPARM(self
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::historicalData(TickerId,IBString const &,double,double,double,double,int,int,double,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39382,17 +39865,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerParameters(PyObject *SWIGUNUSEDPARM(s
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::scannerParameters(IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39527,17 +40013,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerData(PyObject *SWIGUNUSEDPARM(self), 
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::scannerData(int,int,ContractDetails const &,IBString const &,IBString const &,IBString const &,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39601,17 +40090,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_scannerDataEnd(PyObject *SWIGUNUSEDPARM(self
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::scannerDataEnd(int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39739,17 +40231,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_realtimeBar(PyObject *SWIGUNUSEDPARM(self), 
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::realtimeBar(TickerId,long,double,double,double,double,long,double,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39805,17 +40300,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_currentTime(PyObject *SWIGUNUSEDPARM(self), 
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::currentTime(long) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39885,17 +40383,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_fundamentalData(PyObject *SWIGUNUSEDPARM(sel
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::fundamentalData(TickerId,IBString const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -39965,17 +40466,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_deltaNeutralValidation(PyObject *SWIGUNUSEDP
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::deltaNeutralValidation(int,UnderComp const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -40031,17 +40535,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_tickSnapshotEnd(PyObject *SWIGUNUSEDPARM(sel
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::tickSnapshotEnd(int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -40106,17 +40613,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_marketDataType(PyObject *SWIGUNUSEDPARM(self
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::marketDataType(TickerId,int) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -40175,17 +40685,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_commissionReport(PyObject *SWIGUNUSEDPARM(se
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::commissionReport(CommissionReport const &) not implemented");
+        SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
         SWIG_fail;
       } catch(std::exception& e) {
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
         
       } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
       }
     }
   } catch (Swig::DirectorException&) {
@@ -40229,17 +40742,20 @@ SWIGINTERN PyObject *_wrap_new_EWrapper(PyObject *SWIGUNUSEDPARM(self), PyObject
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, e.getMessage());
+      PyErr_SetString(PyExc_NotImplementedError, "EWrapper::EWrapper(PyObject *) not implemented");
+      SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
       SWIG_fail;
     } catch(std::exception& e) {
       /* Convert standard error to Exception */
       PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
       
     } catch(...) {
       /* Final catch all, results in runtime error */
       PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
     }
   }
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_EWrapper, SWIG_POINTER_NEW |  0 );
