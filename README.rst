@@ -85,8 +85,8 @@ yourself use the ``poll_auto`` argument when calling ``eConnect``::
     
     tws.eConnect("", 7496, 42, poll_auto=False)
 
-The TWS C++ API performs synchronous I/O using socket receive, swigibpy does 
-not alter this behaviour (hence the background thread).
+The TWS C++ API performs non-blocking socket I/O to communicate with TWS,
+swigibpy's background thread uses socket select to poll for incoming messages.
 
 Apart from a few trivial `patches`_ to aid compilation and interoperability 
 with Python swigibpy does not alter the TWS C++ API code in any way.
@@ -123,7 +123,7 @@ swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
 
 --------------
 
-.. _Interactive Brokers: http://www.interactivebrokers.co.uk/
+.. _Interactive Brokers: http://www.interactivebrokers.com/
 .. _SWIG: http://www.swig.org/
 .. _C++ API documentation: http://www.interactivebrokers.com/en/software/api/api.htm
 .. _MinGW: http://www.mingw.org/
