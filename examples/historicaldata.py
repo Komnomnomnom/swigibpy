@@ -12,13 +12,12 @@ unreliable.
 '''
 
 from datetime import datetime
+from threading import Event
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
 
-try:
-    input = raw_input
-except:
-    pass
+
+WAIT_TIME = 10.0
 
 ###
 
@@ -29,8 +28,12 @@ class HistoricalDataExample(EWrapper):
 
     '''
 
+    def __init__(self):
+        super(HistoricalDataExample, self).__init__()
+        self.got_history = Event()
+
     def orderStatus(self, id, status, filled, remaining, avgFillPrice, permId,
-            parentId, lastFilledPrice, clientId, whyHeld):
+                    parentId, lastFilledPrice, clientId, whyHeld):
         pass
 
     def openOrder(self, orderID, contract, order, orderState):
@@ -54,10 +57,11 @@ class HistoricalDataExample(EWrapper):
 
         if date[:8] == 'finished':
             print("History request complete")
+            self.got_history.set()
         else:
             date = datetime.strptime(date, "%Y%m%d").strftime("%d %b %Y")
-            print(("History %s - Open: %s, High: %s, Low: %s, Close: " +
-                    "%s, Volume: %d") % (date, open, high, low, close, volume))
+            print(("History %s - Open: %s, High: %s, Low: %s, Close: "
+                   "%s, Volume: %d") % (date, open, high, low, close, volume))
 
 
 # Instantiate our callback object
@@ -68,7 +72,8 @@ callback = HistoricalDataExample()
 tws = EPosixClientSocket(callback)
 
 # Connect to tws running on localhost
-tws.eConnect("", 7496, 42)
+if not tws.eConnect("", 7496, 42):
+    raise RuntimeError('Failed to connect to TWS')
 
 # Simple contract for GOOG
 contract = Contract()
@@ -82,23 +87,28 @@ print("Requesting historical data for %s" % contract.symbol)
 
 # Request some historical data.
 tws.reqHistoricalData(
-        2,                                          # tickerId,
-        contract,                                   # contract,
-        today.strftime("%Y%m%d %H:%M:%S %Z"),       # endDateTime,
-        "1 W",                                      # durationStr,
-        "1 day",                                    # barSizeSetting,
-        "TRADES",                                   # whatToShow,
-        0,                                          # useRTH,
-        1                                           # formatDate
-    )
+    2,                                          # tickerId,
+    contract,                                   # contract,
+    today.strftime("%Y%m%d %H:%M:%S %Z"),       # endDateTime,
+    "1 W",                                      # durationStr,
+    "1 day",                                    # barSizeSetting,
+    "TRADES",                                   # whatToShow,
+    0,                                          # useRTH,
+    1                                           # formatDate
+)
 
-print("\n=====================================================================")
-print(" History requested, waiting for TWS responses")
-print("=====================================================================\n")
+print("\n====================================================================")
+print(" History requested, waiting %ds for TWS responses" % WAIT_TIME)
+print("====================================================================\n")
 
 
-print("******************* Press ENTER to quit when done *******************\n")
-input()
+try:
+    callback.got_history.wait(timeout=WAIT_TIME)
+except KeyboardInterrupt:
+    pass
+finally:
+    if not callback.got_history.is_set():
+        print('Failed to get history within %d seconds' % WAIT_TIME)
 
-print("\nDisconnecting...")
-tws.eDisconnect()
+    print("\nDisconnecting...")
+    tws.eDisconnect()

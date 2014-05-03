@@ -4,13 +4,13 @@ request contract details from Interactive Brokers.
 '''
 
 from datetime import datetime
+from threading import Event
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
 
-try:
-    input = raw_input
-except:
-    pass
+
+WAIT_TIME = 10.0
+
 
 ###
 
@@ -21,13 +21,16 @@ class ContractDetailsExample(EWrapper):
 
     '''
 
+    def __init__(self):
+        super(ContractDetailsExample, self).__init__()
+        self.got_contract = Event()
+
     def orderStatus(self, id, status, filled, remaining, avgFillPrice, permId,
-            parentId, lastFilledPrice, clientId, whyHeld):
+                    parentId, lastFilledPrice, clientId, whyHeld):
         pass
 
     def openOrder(self, orderID, contract, order, orderState):
         pass
-
 
     def nextValidId(self, orderId):
         '''Always called by TWS but not relevant for our example'''
@@ -67,7 +70,6 @@ class ContractDetailsExample(EWrapper):
             print("secIdList: None")
 
         print("subcategory: %s" % contractDetails.subcategory)
-        print("tradingClass: %s" % contractDetails.tradingClass)
         print("tradingHours: %s" % contractDetails.tradingHours)
         print("timeZoneId: %s" % contractDetails.timeZoneId)
         print("underConId: %s" % contractDetails.underConId)
@@ -81,9 +83,11 @@ class ContractDetailsExample(EWrapper):
         print("symbol: %s" % contract.symbol)
         print("secType: %s" % contract.secType)
         print("currency: %s" % contract.currency)
+        print("tradingClass: %s" % contract.tradingClass)
         if contract.comboLegs is not None:
             for comboLeg in contract.comboLegs:
-                print("comboLegs: %s - %s" % (comboLeg.action, comboLeg.exchange))
+                print("comboLegs: %s - %s" %
+                      (comboLeg.action, comboLeg.exchange))
         else:
             print("comboLegs: None")
 
@@ -100,6 +104,8 @@ class ContractDetailsExample(EWrapper):
         print("ratings: %s" % contractDetails.ratings)
         print("validExchanges: %s" % contractDetails.validExchanges)
 
+        self.got_contract.set()
+
 
 # Instantiate our callback object
 callback = ContractDetailsExample()
@@ -109,7 +115,8 @@ callback = ContractDetailsExample()
 tws = EPosixClientSocket(callback)
 
 # Connect to tws running on localhost
-tws.eConnect("", 7496, 42)
+if not tws.eConnect("", 7496, 42):
+    raise RuntimeError('Failed to connect to TWS')
 
 # Simple contract for GOOG
 contract = Contract()
@@ -123,17 +130,22 @@ print("Requesting contract details...")
 
 # Perform the request
 tws.reqContractDetails(
-        42,                                         # reqId,
-        contract,                                   # contract,
-    )
+    42,                                         # reqId,
+    contract,                                   # contract,
+)
 
-print("\n=====================================================================")
-print(" Contract details requested, waiting for TWS responses")
-print("=====================================================================\n")
+print("\n====================================================================")
+print(" Contract details requested, waiting %ds for TWS responses" % WAIT_TIME)
+print("====================================================================\n")
 
 
-print("******************* Press ENTER to quit when done *******************\n")
-input()
+try:
+    callback.got_contract.wait(timeout=WAIT_TIME)
+except KeyboardInterrupt:
+    pass
+finally:
+    if not callback.got_contract.is_set():
+        print('Failed to get contract within %d seconds' % WAIT_TIME)
 
-print("\nDisconnecting...")
-tws.eDisconnect()
+    print("\nDisconnecting...")
+    tws.eDisconnect()

@@ -1,20 +1,20 @@
-'''Simple example of using custom error hanlding with the SWIG generated TWS 
+'''Simple example of using custom error hanlding with the SWIG generated TWS
 wrapper.
 
-Check http://www.interactivebrokers.com/en/software/api/api.htm -> 'Reference 
+Check http://www.interactivebrokers.com/en/software/api/api.htm -> 'Reference
 Tables' -> 'API Message Codes' for error codes and their interpretation.
 
 '''
 
 import sys
 from datetime import datetime
+from threading import Event
 
 from swigibpy import EWrapper, EPosixClientSocket, Contract
 
-try:
-    input = raw_input
-except:
-    pass
+
+WAIT_TIME = 10.0
+
 
 ###
 
@@ -25,8 +25,12 @@ class CustomErrorExample(EWrapper):
 
     '''
 
+    def __init__(self):
+        super(CustomErrorExample, self).__init__()
+        self.got_err = Event()
+
     def orderStatus(self, id, status, filled, remaining, avgFillPrice, permId,
-            parentId, lastFilledPrice, clientId, whyHeld):
+                    parentId, lastFilledPrice, clientId, whyHeld):
         pass
 
     def openOrder(self, orderID, contract, order, orderState):
@@ -66,9 +70,11 @@ class CustomErrorExample(EWrapper):
             print("TWS complaining about bad request: %s" % errString)
         else:
             super(CustomErrorExample, self).error(id, errCode, errString)
+        self.got_err.set()
 
     def winError(self, msg, lastError):
         print("TWS reports API error: %s" % msg)
+        self.got_err.set()
 
 
 # Instantiate our callback object
@@ -79,7 +85,8 @@ callback = CustomErrorExample()
 tws = EPosixClientSocket(callback)
 
 # Connect to tws running on localhost
-tws.eConnect("", 7496, 42)
+if not tws.eConnect("", 7496, 42):
+    raise RuntimeError('Failed to connect to TWS')
 
 # Simple (badly formed) contract
 contract = Contract()
@@ -91,23 +98,28 @@ print("Sending bad request for historical data")
 
 # Request some historical data.
 tws.reqHistoricalData(
-        2,                                          # tickerId,
-        contract,                                   # contract,
-        today.strftime("%Y%m%d %H:%M:%S %Z"),       # endDateTime,
-        "1 W",                                      # durationStr,
-        "1 day",                                    # barSizeSetting,
-        "TRADES",                                   # whatToShow,
-        0,                                          # useRTH,
-        1                                           # formatDate
-    )
+    2,                                          # tickerId,
+    contract,                                   # contract,
+    today.strftime("%Y%m%d %H:%M:%S %Z"),       # endDateTime,
+    "1 W",                                      # durationStr,
+    "1 day",                                    # barSizeSetting,
+    "TRADES",                                   # whatToShow,
+    0,                                          # useRTH,
+    1                                           # formatDate
+)
 
-print("\n=====================================================================")
-print(" Waiting for TWS responses")
-print("=====================================================================\n")
+print("\n====================================================================")
+print(" Waiting %ds for TWS responses" % WAIT_TIME)
+print("====================================================================\n")
 
 
-print("******************* Press ENTER to quit when done *******************\n")
-input()
+try:
+    callback.got_err.wait(timeout=WAIT_TIME)
+except KeyboardInterrupt:
+    pass
+finally:
+    if not callback.got_err.is_set():
+        print('Failed to get response within %d seconds' % WAIT_TIME)
 
-print("\nDisconnecting...")
-tws.eDisconnect()
+    print("\nDisconnecting...")
+    tws.eDisconnect()
