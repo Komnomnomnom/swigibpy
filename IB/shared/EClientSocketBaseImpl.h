@@ -4,7 +4,7 @@
 #ifndef eclientsocketbaseimpl_h__INCLUDED
 #define eclientsocketbaseimpl_h__INCLUDED
 
-#include "StdAfx.h"
+//#include "StdAfx.h"
 #include "EClientSocketBase.h"
 
 #include "EWrapper.h"

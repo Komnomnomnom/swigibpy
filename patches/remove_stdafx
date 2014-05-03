@@ -1,0 +1,13 @@
+diff --git a/IB/shared/EClientSocketBaseImpl.h b/IB/shared/EClientSocketBaseImpl.h
+index c5acee8..a56fcd7 100644
+--- a/IB/shared/EClientSocketBaseImpl.h
++++ b/IB/shared/EClientSocketBaseImpl.h
+@@ -4,7 +4,7 @@
+ #ifndef eclientsocketbaseimpl_h__INCLUDED
+ #define eclientsocketbaseimpl_h__INCLUDED
+ 
+-#include "StdAfx.h"
++//#include "StdAfx.h"
+ #include "EClientSocketBase.h"
+ 
+ #include "EWrapper.h"
