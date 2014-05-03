@@ -1,3 +1,6 @@
+/* Copyright (C) 2013 Interactive Brokers LLC. All rights reserved. This code is subject to the terms
+ * and conditions of the IB API Non-Commercial License or the IB API Commercial License, as applicable. */
+
 #ifndef ewrapper_def
 #define ewrapper_def
 
@@ -124,6 +127,10 @@ public:
    virtual void tickSnapshotEnd( int reqId) = 0;
    virtual void marketDataType( TickerId reqId, int marketDataType) = 0;
    virtual void commissionReport( const CommissionReport &commissionReport) = 0;
+   virtual void position( const IBString& account, const Contract& contract, int position) = 0;
+   virtual void positionEnd() = 0;
+   virtual void accountSummary( int reqId, const IBString& account, const IBString& tag, const IBString& value, const IBString& curency) = 0;
+   virtual void accountSummaryEnd( int reqId) = 0;
 };
 
 

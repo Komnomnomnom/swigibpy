@@ -1,3 +1,6 @@
+/* Copyright (C) 2013 Interactive Brokers LLC. All rights reserved. This code is subject to the terms
+ * and conditions of the IB API Non-Commercial License or the IB API Commercial License, as applicable. */
+
 #include "EPosixClientSocket.h"
 
 #include "EPosixClientSocketPlatform.h"
@@ -78,6 +81,15 @@ bool EPosixClientSocket::eConnect( const char *host, unsigned int port, int clie
 			getWrapper()->error( NO_VALID_ID, CONNECT_FAIL.code(), CONNECT_FAIL.msg());
 			return false;
 		}
+	}
+
+
+	// set socket to non-blocking state
+	if ( !SetSocketNonBlocking(m_fd)){
+		// error setting socket to non-blocking
+		SocketsDestroy();
+		getWrapper()->error( NO_VALID_ID, CONNECT_FAIL.code(), CONNECT_FAIL.msg());
+		return false;
 	}
 
 	// successfully connected

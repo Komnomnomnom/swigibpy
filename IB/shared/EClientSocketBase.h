@@ -1,3 +1,6 @@
+/* Copyright (C) 2013 Interactive Brokers LLC. All rights reserved. This code is subject to the terms
+ * and conditions of the IB API Non-Commercial License or the IB API Commercial License, as applicable. */
+
 #ifndef eclientsocketbase_h__INCLUDED
 #define eclientsocketbase_h__INCLUDED
 
@@ -89,6 +92,10 @@ public:
 	void cancelCalculateOptionPrice(TickerId reqId);
 	void reqGlobalCancel();
 	void reqMarketDataType(int marketDataType);
+	void reqPositions();
+	void cancelPositions();
+	void reqAccountSummary( int reqId, const IBString& groupName, const IBString& tags);
+	void cancelAccountSummary( int reqId);
 
 private:
 

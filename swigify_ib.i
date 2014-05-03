@@ -19,23 +19,23 @@ typedef std::string IBString;
 
 /* Inclusions for generated cpp file */
 %{
-#include "Shared/shared_ptr.h"
+#include "shared/shared_ptr.h"
 
-#include "Shared/IBString.h"
-#include "Shared/EClient.h"
-#include "Shared/EClientSocketBase.h"
+#include "shared/IBString.h"
+#include "shared/EClient.h"
+#include "shared/EClientSocketBase.h"
 
-#include "PosixSocketClient/EPosixClientSocket.h"
-#include "Shared/EWrapper.h"
+#include "src/EPosixClientSocket.h"
+#include "shared/EWrapper.h"
 
-#include "Shared/CommissionReport.h"
-#include "Shared/CommonDefs.h"
-#include "Shared/Contract.h"
-#include "Shared/Execution.h"
-#include "Shared/Order.h"
-#include "Shared/OrderState.h"
-#include "Shared/ScannerSubscription.h"
-#include "Shared/TagValue.h"
+#include "shared/CommissionReport.h"
+#include "shared/CommonDefs.h"
+#include "shared/Contract.h"
+#include "shared/Execution.h"
+#include "shared/Order.h"
+#include "shared/OrderState.h"
+#include "shared/ScannerSubscription.h"
+#include "shared/TagValue.h"
 %}
 
 
@@ -99,16 +99,16 @@ typedef std::string IBString;
 }
 
 /* Grab the header files to be wrapped */
-%include "Shared/CommissionReport.h"
-%include "Shared/CommonDefs.h"
-%include "Shared/Contract.h"
-%include "Shared/EClient.h"
-%include "Shared/EClientSocketBase.h"
-%include "Shared/Execution.h"
-%include "Shared/Order.h"
-%include "Shared/OrderState.h"
-%include "Shared/ScannerSubscription.h"
-%include "Shared/TagValue.h"
+%include "shared/CommissionReport.h"
+%include "shared/CommonDefs.h"
+%include "shared/Contract.h"
+%include "shared/EClient.h"
+%include "shared/EClientSocketBase.h"
+%include "shared/Execution.h"
+%include "shared/Order.h"
+%include "shared/OrderState.h"
+%include "shared/ScannerSubscription.h"
+%include "shared/TagValue.h"
 
 /* Customise EPosixClientSocket so that TWS is automatically polled for messages when we are connected to it */
 %pythoncode %{
@@ -146,7 +146,7 @@ class TWSPoller(threading.Thread):
         self.poller = TWSPoller(self)
         self.poller.start()
 %}
-%include "PosixSocketClient/EPosixClientSocket.h"
+%include "src/EPosixClientSocket.h"
 
 %feature("shadow") EWrapper::winError(const IBString &, int) %{
     def winError(self, str, lastError):
@@ -170,4 +170,4 @@ class TWSPoller(threading.Thread):
         else:
             sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
 %}
-%include "Shared/EWrapper.h"
+%include "shared/EWrapper.h"

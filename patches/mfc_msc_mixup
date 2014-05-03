@@ -1,8 +1,8 @@
-diff --git a/IB/Shared/EClientSocketBaseImpl.h b/IB/Shared/EClientSocketBaseImpl.h
-index 23446b7..a2a557d 100644
---- a/IB/Shared/EClientSocketBaseImpl.h
-+++ b/IB/Shared/EClientSocketBaseImpl.h
-@@ -432,7 +432,7 @@ static IBString errMsg(std::exception e) {
+diff --git a/IB/shared/EClientSocketBaseImpl.h b/IB/shared/EClientSocketBaseImpl.h
+index 3deab75..c5acee8 100644
+--- a/IB/shared/EClientSocketBaseImpl.h
++++ b/IB/shared/EClientSocketBaseImpl.h
+@@ -449,7 +449,7 @@ static IBString errMsg(std::exception e) {
  }
  
  
@@ -11,7 +11,7 @@ index 23446b7..a2a557d 100644
  static IBString errMsg(CException *e) {
  	// return the error associated with this exception
  	char buf[1024];
-@@ -2200,7 +2200,7 @@ int EClientSocketBase::processConnectAck(const char*& beginPtr, const char* endP
+@@ -2440,7 +2440,7 @@ int EClientSocketBase::processConnectAck(const char*& beginPtr, const char* endP
  		beginPtr = ptr;
  		return processed;
  	}
@@ -20,7 +20,7 @@ index 23446b7..a2a557d 100644
  	catch( CException* e) {
  		m_pEWrapper->error( NO_VALID_ID, SOCKET_EXCEPTION.code(),
  			SOCKET_EXCEPTION.msg() + errMsg(e));
-@@ -3426,7 +3426,7 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
+@@ -3751,7 +3751,7 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
  		return processed;
  	}
  
@@ -29,17 +29,3 @@ index 23446b7..a2a557d 100644
  	catch( CException* e) {
  		m_pEWrapper->error( NO_VALID_ID, SOCKET_EXCEPTION.code(),
  			SOCKET_EXCEPTION.msg() + errMsg(e));
-diff --git a/IB/Shared/StdAfx.h b/IB/Shared/StdAfx.h
-index de814b7..d0e92e7 100644
---- a/IB/Shared/StdAfx.h
-+++ b/IB/Shared/StdAfx.h
-@@ -7,7 +7,9 @@
- #define assert ASSERT
- #define snprintf _snprintf
- 
-+#ifdef _MFC_VER
- #include <afxwin.h>
-+#endif
- 
- #endif
- 

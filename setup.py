@@ -17,7 +17,7 @@ except:
 ###
 
 IB_DIR = 'IB'
-VERSION = '0.4.1'
+VERSION = '0.5.0'
 
 root_dir = abspath(dirname(__file__))
 libraries = []
@@ -27,13 +27,13 @@ if(get_platform().startswith('win')):
 
 ib_module = Extension('_swigibpy',
                       sources=[IB_DIR +
-                               '/PosixSocketClient/EClientSocketBase.cpp',
+                               '/src/EClientSocketBase.cpp',
                                IB_DIR +
-                               '/PosixSocketClient/EPosixClientSocket.cpp',
+                               '/src/EPosixClientSocket.cpp',
                                IB_DIR + '/swig_wrap.cpp'],
                       include_dirs=[IB_DIR,
-                                    IB_DIR + '/PosixSocketClient',
-                                    IB_DIR + '/Shared'],
+                                    IB_DIR + '/src',
+                                    IB_DIR + '/shared'],
                       define_macros=[('IB_USE_STD_STRING', '1')],
                       libraries=libraries
                       )

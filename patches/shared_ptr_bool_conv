@@ -1,8 +1,8 @@
-diff --git a/IB/Shared/shared_ptr.h b/IB/Shared/shared_ptr.h
-index c29f3aa..4c6403d 100644
---- a/IB/Shared/shared_ptr.h
-+++ b/IB/Shared/shared_ptr.h
-@@ -74,6 +74,7 @@ public:
+diff --git a/IB/shared/shared_ptr.h b/IB/shared/shared_ptr.h
+index 20a5d7f..839434b 100644
+--- a/IB/shared/shared_ptr.h
++++ b/IB/shared/shared_ptr.h
+@@ -77,6 +77,7 @@ public:
  
     X& operator*()  const { return *ptr_; }
     X* operator->() const { return ptr_; }

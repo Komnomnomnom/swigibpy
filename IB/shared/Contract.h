@@ -1,3 +1,6 @@
+/* Copyright (C) 2013 Interactive Brokers LLC. All rights reserved. This code is subject to the terms
+ * and conditions of the IB API Non-Commercial License or the IB API Commercial License, as applicable. */
+
 #ifndef contract_def
 #define contract_def
 
@@ -84,6 +87,7 @@ struct Contract
 	IBString	primaryExchange; // pick an actual (ie non-aggregate) exchange that the contract trades on.  DO NOT SET TO SMART.
 	IBString	currency;
 	IBString	localSymbol;
+	IBString	tradingClass;
 	bool		includeExpired;
 	IBString	secIdType;		// CUSIP;SEDOL;ISIN;RIC
 	IBString	secId;
@@ -123,7 +127,6 @@ struct ContractDetails
 
 	Contract	summary;
 	IBString	marketName;
-	IBString	tradingClass;
 	double		minTick;
 	IBString	orderTypes;
 	IBString	validExchanges;
