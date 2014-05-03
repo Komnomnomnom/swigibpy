@@ -1672,14 +1672,15 @@ TagValue_swigregister(TagValue)
 
 import sys
 import threading
+from select import select
 from traceback import print_exc
 
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
     
-    Loops indefinitely until killed or a fatal error is encountered. Calls 
-    TWS's `EClientSocketBase::checkMessages` function which blocks on socket 
-    receive (synchronous I/O).
+    Loops indefinitely until killed or a fatal error is encountered. Uses
+    socket select to poll for input and calls TWS's
+    `EClientSocketBase::checkMessages` function.
     '''
 
     def __init__(self, tws):
@@ -1689,12 +1690,18 @@ class TWSPoller(threading.Thread):
 
     def run(self):
         '''Continually poll TWS'''
-        ok = True
-        while ok:
-            ok = self._tws.checkMessages()
+        fd = self._tws.fd()
+        pollin = [fd]
+        pollout = []
+        pollerr = [fd]
 
-            if ok and (not self._tws or not self._tws.isConnected()):
-                ok = False
+        while self._tws and self._tws.isConnected():
+            evts = select(pollin, pollout, pollerr)
+            if fd in evts[0]:
+                while self._tws.checkMessages():
+                    pass
+            else:
+                break
 
 class EPosixClientSocket(EClientSocketBase):
     """Proxy of C++ EPosixClientSocket class"""
