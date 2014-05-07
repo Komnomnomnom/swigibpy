@@ -65,6 +65,11 @@ class PlaceOrderExample(EWrapper):
 
         print("Order opened for %s" % contract.symbol)
 
+    def commissionReport(self, commissionReport):
+        print 'Commission %s %s P&L: %s' % (commissionReport.currency,
+                                            commissionReport.commission,
+                                            commissionReport.realizedPNL)
+
 prompt = input("WARNING: This example will place an order on your IB "
                "account, are you sure? (Type yes to continue): ")
 if prompt.lower() != 'yes':
