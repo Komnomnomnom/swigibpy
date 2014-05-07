@@ -178,3 +178,29 @@ class TWSPoller(threading.Thread):
             sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
 %}
 %include "shared/EWrapper.h"
+
+%pythoncode  %{
+
+class EWrapperVerbose(EWrapper):
+    def _print_call(self, name, *args, **kwargs):
+        argspec = []
+        if args:
+            argspec.append(', '.join(str(a) for a in args))
+        if kwargs:
+            argspec.append(', '.join('%s = %s' for k, v in kwargs.iteritems()))
+        print('TWS call ignored - %s(%s)' % (name, ', '.join(argspec)))
+
+class EWrapperQuiet(EWrapper):
+    def _ignore_call(self, *args, **kwargs):
+        pass
+
+def _make_printer(name):
+    return lambda self, *a, **kw: self._print_call(name, *a, **kw)
+
+for name, attr in EWrapper.__dict__.iteritems():
+    if name[0] == '_' or not callable(attr) or name in ('error', 'winError'):
+        continue
+
+    setattr(EWrapperQuiet, name, EWrapperQuiet.__dict__['_ignore_call'])
+    setattr(EWrapperVerbose, name, _make_printer(name))
+%}
