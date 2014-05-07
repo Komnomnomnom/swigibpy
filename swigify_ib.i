@@ -187,7 +187,7 @@ class EWrapperVerbose(EWrapper):
         if args:
             argspec.append(', '.join(str(a) for a in args))
         if kwargs:
-            argspec.append(', '.join('%s = %s' for k, v in kwargs.iteritems()))
+            argspec.append(', '.join('%s=%s' for k, v in kwargs.iteritems()))
         print('TWS call ignored - %s(%s)' % (name, ', '.join(argspec)))
 
 class EWrapperQuiet(EWrapper):
