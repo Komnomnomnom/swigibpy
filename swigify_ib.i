@@ -116,6 +116,7 @@ import sys
 import threading
 from select import select
 from traceback import print_exc
+import six
 
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
@@ -187,7 +188,7 @@ class EWrapperVerbose(EWrapper):
         if args:
             argspec.append(', '.join(str(a) for a in args))
         if kwargs:
-            argspec.append(', '.join('%s=%s' for k, v in kwargs.iteritems()))
+            argspec.append(', '.join('%s=%s' for k, v in six.iteritems(kwargs)))
         print('TWS call ignored - %s(%s)' % (name, ', '.join(argspec)))
 
 class EWrapperQuiet(EWrapper):
@@ -197,7 +198,7 @@ class EWrapperQuiet(EWrapper):
 def _make_printer(name):
     return lambda self, *a, **kw: self._print_call(name, *a, **kw)
 
-for name, attr in EWrapper.__dict__.iteritems():
+for name, attr in six.iteritems(EWrapper.__dict__):
     if name[0] == '_' or not callable(attr) or name in ('error', 'winError'):
         continue
 
