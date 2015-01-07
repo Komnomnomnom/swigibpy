@@ -173,5 +173,8 @@ setup(version=VERSION,
           "Topic :: Software Development :: Libraries :: Python Modules",
           "Topic :: Office/Business :: Financial",
           ],
+        install_requires=[
+            'six',
+        ],
       )
 readme.close()
