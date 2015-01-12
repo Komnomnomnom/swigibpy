@@ -146,9 +146,9 @@ class TWSPoller(threading.Thread):
                 break
 %}
 
-%feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
+%feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0, bool extraAuth=0) %{
     def eConnect(self, host, port, clientId=0, poll_auto=True):
-        val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId)
+        val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId, extraAuth)
         if poll_auto and val:
             self.poller = TWSPoller(self)
             self.poller.start()
@@ -171,7 +171,7 @@ class TWSPoller(threading.Thread):
             sys.stderr.write("TWS Client Error - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:
             sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
-        elif  errorCode >= 1100 and errorCode < 2100:
+        elif errorCode >= 1100 and errorCode < 2100:
             sys.stderr.write("TWS System Error - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 2100 and errorCode <= 2110:
             sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))

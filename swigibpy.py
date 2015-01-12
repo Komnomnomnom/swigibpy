@@ -1065,9 +1065,9 @@ class EClient(object):
     __repr__ = _swig_repr
     __swig_destroy__ = _swigibpy.delete_EClient
 
-    def eConnect(self, host, port, clientId=0):
-        """eConnect(EClient self, char const * host, unsigned int port, int clientId=0) -> bool"""
-        return _swigibpy.EClient_eConnect(self, host, port, clientId)
+    def eConnect(self, host, port, clientId=0, extraAuth=0):
+        """eConnect(EClient self, char const * host, unsigned int port, int clientId=0, bool extraAuth=0) -> bool"""
+        return _swigibpy.EClient_eConnect(self, host, port, clientId, extraAuth)
 
 
     def eDisconnect(self):
@@ -1085,9 +1085,9 @@ class EClient(object):
         return _swigibpy.EClient_TwsConnectionTime(self)
 
 
-    def reqMktData(self, id, contract, genericTicks, snapshot):
-        """reqMktData(EClient self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot)"""
-        return _swigibpy.EClient_reqMktData(self, id, contract, genericTicks, snapshot)
+    def reqMktData(self, id, contract, genericTicks, snapshot, mktDataOptions):
+        """reqMktData(EClient self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot, TagValueListSPtr const & mktDataOptions)"""
+        return _swigibpy.EClient_reqMktData(self, id, contract, genericTicks, snapshot, mktDataOptions)
 
 
     def cancelMktData(self, id):
@@ -1135,9 +1135,9 @@ class EClient(object):
         return _swigibpy.EClient_reqContractDetails(self, reqId, contract)
 
 
-    def reqMktDepth(self, id, contract, numRows):
-        """reqMktDepth(EClient self, TickerId id, Contract contract, int numRows)"""
-        return _swigibpy.EClient_reqMktDepth(self, id, contract, numRows)
+    def reqMktDepth(self, id, contract, numRows, mktDepthOptions):
+        """reqMktDepth(EClient self, TickerId id, Contract contract, int numRows, TagValueListSPtr const & mktDepthOptions)"""
+        return _swigibpy.EClient_reqMktDepth(self, id, contract, numRows, mktDepthOptions)
 
 
     def cancelMktDepth(self, id):
@@ -1185,9 +1185,9 @@ class EClient(object):
         return _swigibpy.EClient_replaceFA(self, pFaDataType, cxml)
 
 
-    def reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate):
-        """reqHistoricalData(EClient self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate)"""
-        return _swigibpy.EClient_reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate)
+    def reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate, chartOptions):
+        """reqHistoricalData(EClient self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate, TagValueListSPtr const & chartOptions)"""
+        return _swigibpy.EClient_reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate, chartOptions)
 
 
     def exerciseOptions(self, id, contract, exerciseAction, exerciseQuantity, account, override):
@@ -1200,9 +1200,9 @@ class EClient(object):
         return _swigibpy.EClient_cancelHistoricalData(self, tickerId)
 
 
-    def reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH):
-        """reqRealTimeBars(EClient self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH)"""
-        return _swigibpy.EClient_reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH)
+    def reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH, realTimeBarsOptions):
+        """reqRealTimeBars(EClient self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH, TagValueListSPtr const & realTimeBarsOptions)"""
+        return _swigibpy.EClient_reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH, realTimeBarsOptions)
 
 
     def cancelRealTimeBars(self, tickerId):
@@ -1220,9 +1220,9 @@ class EClient(object):
         return _swigibpy.EClient_reqScannerParameters(self)
 
 
-    def reqScannerSubscription(self, tickerId, subscription):
-        """reqScannerSubscription(EClient self, int tickerId, ScannerSubscription subscription)"""
-        return _swigibpy.EClient_reqScannerSubscription(self, tickerId, subscription)
+    def reqScannerSubscription(self, tickerId, subscription, scannerSubscriptionOptions):
+        """reqScannerSubscription(EClient self, int tickerId, ScannerSubscription subscription, TagValueListSPtr const & scannerSubscriptionOptions)"""
+        return _swigibpy.EClient_reqScannerSubscription(self, tickerId, subscription, scannerSubscriptionOptions)
 
 
     def reqCurrentTime(self):
@@ -1289,6 +1289,36 @@ class EClient(object):
         """cancelAccountSummary(EClient self, int reqId)"""
         return _swigibpy.EClient_cancelAccountSummary(self, reqId)
 
+
+    def verifyRequest(self, apiName, apiVersion):
+        """verifyRequest(EClient self, IBString const & apiName, IBString const & apiVersion)"""
+        return _swigibpy.EClient_verifyRequest(self, apiName, apiVersion)
+
+
+    def verifyMessage(self, apiData):
+        """verifyMessage(EClient self, IBString const & apiData)"""
+        return _swigibpy.EClient_verifyMessage(self, apiData)
+
+
+    def queryDisplayGroups(self, reqId):
+        """queryDisplayGroups(EClient self, int reqId)"""
+        return _swigibpy.EClient_queryDisplayGroups(self, reqId)
+
+
+    def subscribeToGroupEvents(self, reqId, groupId):
+        """subscribeToGroupEvents(EClient self, int reqId, int groupId)"""
+        return _swigibpy.EClient_subscribeToGroupEvents(self, reqId, groupId)
+
+
+    def updateDisplayGroup(self, reqId, contractInfo):
+        """updateDisplayGroup(EClient self, int reqId, IBString const & contractInfo)"""
+        return _swigibpy.EClient_updateDisplayGroup(self, reqId, contractInfo)
+
+
+    def unsubscribeFromGroupEvents(self, reqId):
+        """unsubscribeFromGroupEvents(EClient self, int reqId)"""
+        return _swigibpy.EClient_unsubscribeFromGroupEvents(self, reqId)
+
 EClient.eConnect = new_instancemethod(_swigibpy.EClient_eConnect, None, EClient)
 EClient.eDisconnect = new_instancemethod(_swigibpy.EClient_eDisconnect, None, EClient)
 EClient.serverVersion = new_instancemethod(_swigibpy.EClient_serverVersion, None, EClient)
@@ -1334,6 +1364,12 @@ EClient.reqPositions = new_instancemethod(_swigibpy.EClient_reqPositions, None, 
 EClient.cancelPositions = new_instancemethod(_swigibpy.EClient_cancelPositions, None, EClient)
 EClient.reqAccountSummary = new_instancemethod(_swigibpy.EClient_reqAccountSummary, None, EClient)
 EClient.cancelAccountSummary = new_instancemethod(_swigibpy.EClient_cancelAccountSummary, None, EClient)
+EClient.verifyRequest = new_instancemethod(_swigibpy.EClient_verifyRequest, None, EClient)
+EClient.verifyMessage = new_instancemethod(_swigibpy.EClient_verifyMessage, None, EClient)
+EClient.queryDisplayGroups = new_instancemethod(_swigibpy.EClient_queryDisplayGroups, None, EClient)
+EClient.subscribeToGroupEvents = new_instancemethod(_swigibpy.EClient_subscribeToGroupEvents, None, EClient)
+EClient.updateDisplayGroup = new_instancemethod(_swigibpy.EClient_updateDisplayGroup, None, EClient)
+EClient.unsubscribeFromGroupEvents = new_instancemethod(_swigibpy.EClient_unsubscribeFromGroupEvents, None, EClient)
 EClient_swigregister = _swigibpy.EClient_swigregister
 EClient_swigregister(EClient)
 
@@ -1346,9 +1382,9 @@ class EClientSocketBase(EClient):
     __repr__ = _swig_repr
     __swig_destroy__ = _swigibpy.delete_EClientSocketBase
 
-    def eConnect(self, host, port, clientId=0):
-        """eConnect(EClientSocketBase self, char const * host, unsigned int port, int clientId=0) -> bool"""
-        return _swigibpy.EClientSocketBase_eConnect(self, host, port, clientId)
+    def eConnect(self, host, port, clientId=0, extraAuth=False):
+        """eConnect(EClientSocketBase self, char const * host, unsigned int port, int clientId=0, bool extraAuth=False) -> bool"""
+        return _swigibpy.EClientSocketBase_eConnect(self, host, port, clientId, extraAuth)
 
 
     def eDisconnect(self):
@@ -1386,9 +1422,9 @@ class EClientSocketBase(EClient):
         return _swigibpy.EClientSocketBase_TwsConnectionTime(self)
 
 
-    def reqMktData(self, id, contract, genericTicks, snapshot):
-        """reqMktData(EClientSocketBase self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot)"""
-        return _swigibpy.EClientSocketBase_reqMktData(self, id, contract, genericTicks, snapshot)
+    def reqMktData(self, id, contract, genericTicks, snapshot, mktDataOptions):
+        """reqMktData(EClientSocketBase self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot, TagValueListSPtr const & mktDataOptions)"""
+        return _swigibpy.EClientSocketBase_reqMktData(self, id, contract, genericTicks, snapshot, mktDataOptions)
 
 
     def cancelMktData(self, id):
@@ -1436,9 +1472,9 @@ class EClientSocketBase(EClient):
         return _swigibpy.EClientSocketBase_reqContractDetails(self, reqId, contract)
 
 
-    def reqMktDepth(self, tickerId, contract, numRows):
-        """reqMktDepth(EClientSocketBase self, TickerId tickerId, Contract contract, int numRows)"""
-        return _swigibpy.EClientSocketBase_reqMktDepth(self, tickerId, contract, numRows)
+    def reqMktDepth(self, tickerId, contract, numRows, mktDepthOptions):
+        """reqMktDepth(EClientSocketBase self, TickerId tickerId, Contract contract, int numRows, TagValueListSPtr const & mktDepthOptions)"""
+        return _swigibpy.EClientSocketBase_reqMktDepth(self, tickerId, contract, numRows, mktDepthOptions)
 
 
     def cancelMktDepth(self, tickerId):
@@ -1486,9 +1522,9 @@ class EClientSocketBase(EClient):
         return _swigibpy.EClientSocketBase_replaceFA(self, pFaDataType, cxml)
 
 
-    def reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate):
-        """reqHistoricalData(EClientSocketBase self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate)"""
-        return _swigibpy.EClientSocketBase_reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate)
+    def reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate, chartOptions):
+        """reqHistoricalData(EClientSocketBase self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate, TagValueListSPtr const & chartOptions)"""
+        return _swigibpy.EClientSocketBase_reqHistoricalData(self, id, contract, endDateTime, durationStr, barSizeSetting, whatToShow, useRTH, formatDate, chartOptions)
 
 
     def exerciseOptions(self, tickerId, contract, exerciseAction, exerciseQuantity, account, override):
@@ -1501,9 +1537,9 @@ class EClientSocketBase(EClient):
         return _swigibpy.EClientSocketBase_cancelHistoricalData(self, tickerId)
 
 
-    def reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH):
-        """reqRealTimeBars(EClientSocketBase self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH)"""
-        return _swigibpy.EClientSocketBase_reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH)
+    def reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH, realTimeBarsOptions):
+        """reqRealTimeBars(EClientSocketBase self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH, TagValueListSPtr const & realTimeBarsOptions)"""
+        return _swigibpy.EClientSocketBase_reqRealTimeBars(self, id, contract, barSize, whatToShow, useRTH, realTimeBarsOptions)
 
 
     def cancelRealTimeBars(self, tickerId):
@@ -1521,9 +1557,9 @@ class EClientSocketBase(EClient):
         return _swigibpy.EClientSocketBase_reqScannerParameters(self)
 
 
-    def reqScannerSubscription(self, tickerId, subscription):
-        """reqScannerSubscription(EClientSocketBase self, int tickerId, ScannerSubscription subscription)"""
-        return _swigibpy.EClientSocketBase_reqScannerSubscription(self, tickerId, subscription)
+    def reqScannerSubscription(self, tickerId, subscription, scannerSubscriptionOptions):
+        """reqScannerSubscription(EClientSocketBase self, int tickerId, ScannerSubscription subscription, TagValueListSPtr const & scannerSubscriptionOptions)"""
+        return _swigibpy.EClientSocketBase_reqScannerSubscription(self, tickerId, subscription, scannerSubscriptionOptions)
 
 
     def reqCurrentTime(self):
@@ -1590,6 +1626,36 @@ class EClientSocketBase(EClient):
         """cancelAccountSummary(EClientSocketBase self, int reqId)"""
         return _swigibpy.EClientSocketBase_cancelAccountSummary(self, reqId)
 
+
+    def verifyRequest(self, apiName, apiVersion):
+        """verifyRequest(EClientSocketBase self, IBString const & apiName, IBString const & apiVersion)"""
+        return _swigibpy.EClientSocketBase_verifyRequest(self, apiName, apiVersion)
+
+
+    def verifyMessage(self, apiData):
+        """verifyMessage(EClientSocketBase self, IBString const & apiData)"""
+        return _swigibpy.EClientSocketBase_verifyMessage(self, apiData)
+
+
+    def queryDisplayGroups(self, reqId):
+        """queryDisplayGroups(EClientSocketBase self, int reqId)"""
+        return _swigibpy.EClientSocketBase_queryDisplayGroups(self, reqId)
+
+
+    def subscribeToGroupEvents(self, reqId, groupId):
+        """subscribeToGroupEvents(EClientSocketBase self, int reqId, int groupId)"""
+        return _swigibpy.EClientSocketBase_subscribeToGroupEvents(self, reqId, groupId)
+
+
+    def updateDisplayGroup(self, reqId, contractInfo):
+        """updateDisplayGroup(EClientSocketBase self, int reqId, IBString const & contractInfo)"""
+        return _swigibpy.EClientSocketBase_updateDisplayGroup(self, reqId, contractInfo)
+
+
+    def unsubscribeFromGroupEvents(self, reqId):
+        """unsubscribeFromGroupEvents(EClientSocketBase self, int reqId)"""
+        return _swigibpy.EClientSocketBase_unsubscribeFromGroupEvents(self, reqId)
+
 EClientSocketBase.eConnect = new_instancemethod(_swigibpy.EClientSocketBase_eConnect, None, EClientSocketBase)
 EClientSocketBase.eDisconnect = new_instancemethod(_swigibpy.EClientSocketBase_eDisconnect, None, EClientSocketBase)
 EClientSocketBase.clientId = new_instancemethod(_swigibpy.EClientSocketBase_clientId, None, EClientSocketBase)
@@ -1639,6 +1705,12 @@ EClientSocketBase.reqPositions = new_instancemethod(_swigibpy.EClientSocketBase_
 EClientSocketBase.cancelPositions = new_instancemethod(_swigibpy.EClientSocketBase_cancelPositions, None, EClientSocketBase)
 EClientSocketBase.reqAccountSummary = new_instancemethod(_swigibpy.EClientSocketBase_reqAccountSummary, None, EClientSocketBase)
 EClientSocketBase.cancelAccountSummary = new_instancemethod(_swigibpy.EClientSocketBase_cancelAccountSummary, None, EClientSocketBase)
+EClientSocketBase.verifyRequest = new_instancemethod(_swigibpy.EClientSocketBase_verifyRequest, None, EClientSocketBase)
+EClientSocketBase.verifyMessage = new_instancemethod(_swigibpy.EClientSocketBase_verifyMessage, None, EClientSocketBase)
+EClientSocketBase.queryDisplayGroups = new_instancemethod(_swigibpy.EClientSocketBase_queryDisplayGroups, None, EClientSocketBase)
+EClientSocketBase.subscribeToGroupEvents = new_instancemethod(_swigibpy.EClientSocketBase_subscribeToGroupEvents, None, EClientSocketBase)
+EClientSocketBase.updateDisplayGroup = new_instancemethod(_swigibpy.EClientSocketBase_updateDisplayGroup, None, EClientSocketBase)
+EClientSocketBase.unsubscribeFromGroupEvents = new_instancemethod(_swigibpy.EClientSocketBase_unsubscribeFromGroupEvents, None, EClientSocketBase)
 EClientSocketBase_swigregister = _swigibpy.EClientSocketBase_swigregister
 EClientSocketBase_swigregister(EClientSocketBase)
 
@@ -1732,6 +1804,8 @@ class Order(object):
     lmtPrice = _swig_property(_swigibpy.Order_lmtPrice_get, _swigibpy.Order_lmtPrice_set)
     auxPrice = _swig_property(_swigibpy.Order_auxPrice_get, _swigibpy.Order_auxPrice_set)
     tif = _swig_property(_swigibpy.Order_tif_get, _swigibpy.Order_tif_set)
+    activeStartTime = _swig_property(_swigibpy.Order_activeStartTime_get, _swigibpy.Order_activeStartTime_set)
+    activeStopTime = _swig_property(_swigibpy.Order_activeStopTime_get, _swigibpy.Order_activeStopTime_set)
     ocaGroup = _swig_property(_swigibpy.Order_ocaGroup_get, _swigibpy.Order_ocaGroup_set)
     ocaType = _swig_property(_swigibpy.Order_ocaType_get, _swigibpy.Order_ocaType_set)
     orderRef = _swig_property(_swigibpy.Order_orderRef_get, _swigibpy.Order_orderRef_set)
@@ -1798,6 +1872,7 @@ class Order(object):
     scaleInitPosition = _swig_property(_swigibpy.Order_scaleInitPosition_get, _swigibpy.Order_scaleInitPosition_set)
     scaleInitFillQty = _swig_property(_swigibpy.Order_scaleInitFillQty_get, _swigibpy.Order_scaleInitFillQty_set)
     scaleRandomPercent = _swig_property(_swigibpy.Order_scaleRandomPercent_get, _swigibpy.Order_scaleRandomPercent_set)
+    scaleTable = _swig_property(_swigibpy.Order_scaleTable_get, _swigibpy.Order_scaleTable_set)
     hedgeType = _swig_property(_swigibpy.Order_hedgeType_get, _swigibpy.Order_hedgeType_set)
     hedgeParam = _swig_property(_swigibpy.Order_hedgeParam_get, _swigibpy.Order_hedgeParam_set)
     account = _swig_property(_swigibpy.Order_account_get, _swigibpy.Order_account_set)
@@ -1810,6 +1885,7 @@ class Order(object):
     whatIf = _swig_property(_swigibpy.Order_whatIf_get, _swigibpy.Order_whatIf_set)
     notHeld = _swig_property(_swigibpy.Order_notHeld_get, _swigibpy.Order_notHeld_set)
     orderComboLegs = _swig_property(_swigibpy.Order_orderComboLegs_get, _swigibpy.Order_orderComboLegs_set)
+    orderMiscOptions = _swig_property(_swigibpy.Order_orderMiscOptions_get, _swigibpy.Order_orderMiscOptions_set)
 
     def CloneOrderComboLegs(dst, src):
         """CloneOrderComboLegs(Order::OrderComboLegListSPtr & dst, Order::OrderComboLegListSPtr const & src)"""
@@ -1939,7 +2015,7 @@ class EPosixClientSocket(EClientSocketBase):
         _swigibpy.EPosixClientSocket_swiginit(self,_swigibpy.new_EPosixClientSocket(ptr))
     __swig_destroy__ = _swigibpy.delete_EPosixClientSocket
     def eConnect(self, host, port, clientId=0, poll_auto=True):
-        val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId)
+        val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId, extraAuth)
         if poll_auto and val:
             self.poller = TWSPoller(self)
             self.poller.start()
@@ -2173,7 +2249,7 @@ class EWrapper(object):
             sys.stderr.write("TWS Client Error - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:
             sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
-        elif  errorCode >= 1100 and errorCode < 2100:
+        elif errorCode >= 1100 and errorCode < 2100:
             sys.stderr.write("TWS System Error - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 2100 and errorCode <= 2110:
             sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))
@@ -2262,9 +2338,9 @@ class EWrapper(object):
         return _swigibpy.EWrapper_commissionReport(self, commissionReport)
 
 
-    def position(self, account, contract, position):
-        """position(EWrapper self, IBString const & account, Contract contract, int position)"""
-        return _swigibpy.EWrapper_position(self, account, contract, position)
+    def position(self, account, contract, position, avgCost):
+        """position(EWrapper self, IBString const & account, Contract contract, int position, double avgCost)"""
+        return _swigibpy.EWrapper_position(self, account, contract, position, avgCost)
 
 
     def positionEnd(self):
@@ -2280,6 +2356,26 @@ class EWrapper(object):
     def accountSummaryEnd(self, reqId):
         """accountSummaryEnd(EWrapper self, int reqId)"""
         return _swigibpy.EWrapper_accountSummaryEnd(self, reqId)
+
+
+    def verifyMessageAPI(self, apiData):
+        """verifyMessageAPI(EWrapper self, IBString const & apiData)"""
+        return _swigibpy.EWrapper_verifyMessageAPI(self, apiData)
+
+
+    def verifyCompleted(self, isSuccessful, errorText):
+        """verifyCompleted(EWrapper self, bool isSuccessful, IBString const & errorText)"""
+        return _swigibpy.EWrapper_verifyCompleted(self, isSuccessful, errorText)
+
+
+    def displayGroupList(self, reqId, groups):
+        """displayGroupList(EWrapper self, int reqId, IBString const & groups)"""
+        return _swigibpy.EWrapper_displayGroupList(self, reqId, groups)
+
+
+    def displayGroupUpdated(self, reqId, contractInfo):
+        """displayGroupUpdated(EWrapper self, int reqId, IBString const & contractInfo)"""
+        return _swigibpy.EWrapper_displayGroupUpdated(self, reqId, contractInfo)
 
 
     def __init__(self):
@@ -2333,6 +2429,10 @@ EWrapper.position = new_instancemethod(_swigibpy.EWrapper_position, None, EWrapp
 EWrapper.positionEnd = new_instancemethod(_swigibpy.EWrapper_positionEnd, None, EWrapper)
 EWrapper.accountSummary = new_instancemethod(_swigibpy.EWrapper_accountSummary, None, EWrapper)
 EWrapper.accountSummaryEnd = new_instancemethod(_swigibpy.EWrapper_accountSummaryEnd, None, EWrapper)
+EWrapper.verifyMessageAPI = new_instancemethod(_swigibpy.EWrapper_verifyMessageAPI, None, EWrapper)
+EWrapper.verifyCompleted = new_instancemethod(_swigibpy.EWrapper_verifyCompleted, None, EWrapper)
+EWrapper.displayGroupList = new_instancemethod(_swigibpy.EWrapper_displayGroupList, None, EWrapper)
+EWrapper.displayGroupUpdated = new_instancemethod(_swigibpy.EWrapper_displayGroupUpdated, None, EWrapper)
 EWrapper_swigregister = _swigibpy.EWrapper_swigregister
 EWrapper_swigregister(EWrapper)
 
