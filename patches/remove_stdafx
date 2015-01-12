@@ -1,5 +1,5 @@
 diff --git a/IB/shared/EClientSocketBaseImpl.h b/IB/shared/EClientSocketBaseImpl.h
-index c5acee8..a56fcd7 100644
+index 1dc4e78..9350b43 100644
 --- a/IB/shared/EClientSocketBaseImpl.h
 +++ b/IB/shared/EClientSocketBaseImpl.h
 @@ -4,7 +4,7 @@
