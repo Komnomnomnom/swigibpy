@@ -127,10 +127,14 @@ public:
    virtual void tickSnapshotEnd( int reqId) = 0;
    virtual void marketDataType( TickerId reqId, int marketDataType) = 0;
    virtual void commissionReport( const CommissionReport &commissionReport) = 0;
-   virtual void position( const IBString& account, const Contract& contract, int position) = 0;
+   virtual void position( const IBString& account, const Contract& contract, int position, double avgCost) = 0;
    virtual void positionEnd() = 0;
    virtual void accountSummary( int reqId, const IBString& account, const IBString& tag, const IBString& value, const IBString& curency) = 0;
    virtual void accountSummaryEnd( int reqId) = 0;
+   virtual void verifyMessageAPI( const IBString& apiData) = 0;
+   virtual void verifyCompleted( bool isSuccessful, const IBString& errorText) = 0;
+   virtual void displayGroupList( int reqId, const IBString& groups) = 0;
+   virtual void displayGroupUpdated( int reqId, const IBString& contractInfo) = 0;
 };
 
 

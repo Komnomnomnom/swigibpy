@@ -34,7 +34,6 @@
 	#include <arpa/inet.h>
 	#include <errno.h>
 	#include <sys/select.h>
-	#include <unistd.h>
 	#include <sys/fcntl.h>
 
 	// helpers

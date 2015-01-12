@@ -19,7 +19,7 @@ public:
 	explicit EClientSocketBase(EWrapper *ptr);
 	~EClientSocketBase();
 
-	virtual bool eConnect(const char *host, unsigned int port, int clientId=0) = 0;
+	virtual bool eConnect(const char *host, unsigned int port, int clientId = 0, bool extraAuth = false) = 0;
 	virtual void eDisconnect() = 0;
 
 	int clientId() const { return m_clientId; }
@@ -39,6 +39,7 @@ protected:
 	// access to protected variables
 	EWrapper * getWrapper() const;
 	void setClientId( int clientId);
+	void setExtraAuth( bool extraAuth);
 
 public:
 
@@ -49,7 +50,7 @@ public:
 	int serverVersion();
 	IBString TwsConnectionTime();
 	void reqMktData(TickerId id, const Contract &contract,
-		const IBString &genericTicks, bool snapshot);
+		const IBString &genericTicks, bool snapshot, const TagValueListSPtr& mktDataOptions);
 	void cancelMktData(TickerId id);
 	void placeOrder(OrderId id, const Contract &contract, const Order &order);
 	void cancelOrder(OrderId id) ;
@@ -59,7 +60,7 @@ public:
 	void reqIds(int numIds);
 	bool checkMessages();
 	void reqContractDetails(int reqId, const Contract &contract);
-	void reqMktDepth(TickerId tickerId, const Contract &contract, int numRows);
+	void reqMktDepth(TickerId tickerId, const Contract &contract, int numRows, const TagValueListSPtr& mktDepthOptions);
 	void cancelMktDepth(TickerId tickerId);
 	void reqNewsBulletins(bool allMsgs);
 	void cancelNewsBulletins();
@@ -72,17 +73,17 @@ public:
 	void reqHistoricalData( TickerId id, const Contract &contract,
 		const IBString &endDateTime, const IBString &durationStr,
 		const IBString & barSizeSetting, const IBString &whatToShow,
-		int useRTH, int formatDate);
+		int useRTH, int formatDate, const TagValueListSPtr& chartOptions);
 	void exerciseOptions(TickerId tickerId, const Contract &contract,
 		int exerciseAction, int exerciseQuantity,
 		const IBString &account, int override);
 	void cancelHistoricalData(TickerId tickerId );
 	void reqRealTimeBars(TickerId id, const Contract &contract, int barSize,
-		const IBString &whatToShow, bool useRTH);
+		const IBString &whatToShow, bool useRTH, const TagValueListSPtr& realTimeBarsOptions);
 	void cancelRealTimeBars(TickerId tickerId );
 	void cancelScannerSubscription(int tickerId);
 	void reqScannerParameters();
-	void reqScannerSubscription(int tickerId, const ScannerSubscription &subscription);
+	void reqScannerSubscription(int tickerId, const ScannerSubscription &subscription, const TagValueListSPtr& scannerSubscriptionOptions);
 	void reqCurrentTime();
 	void reqFundamentalData(TickerId reqId, const Contract&, const IBString& reportType);
 	void cancelFundamentalData(TickerId reqId);
@@ -96,6 +97,12 @@ public:
 	void cancelPositions();
 	void reqAccountSummary( int reqId, const IBString& groupName, const IBString& tags);
 	void cancelAccountSummary( int reqId);
+	void verifyRequest( const IBString& apiName, const IBString& apiVersion);
+	void verifyMessage( const IBString& apiData);
+	void queryDisplayGroups( int reqId);
+	void subscribeToGroupEvents( int reqId, int groupId);
+	void updateDisplayGroup( int reqId, const IBString& contractInfo);
+	void unsubscribeFromGroupEvents( int reqId);
 
 private:
 
@@ -119,6 +126,8 @@ private:
 
 	// try to process single msg
 	int processMsg(const char*& ptr, const char* endPtr);
+
+	void startApi();
 
 	static bool CheckOffset(const char* ptr, const char* endPtr);
 	static const char* FindFieldEnd(const char* ptr, const char* endPtr);
@@ -166,6 +175,7 @@ private:
 	int m_clientId;
 
 	bool m_connected;
+	bool m_extraAuth;
 	int m_serverVersion;
 	IBString m_TwsTime;
 

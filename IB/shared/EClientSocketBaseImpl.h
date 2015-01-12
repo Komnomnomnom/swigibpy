@@ -4,7 +4,7 @@
 #ifndef eclientsocketbaseimpl_h__INCLUDED
 #define eclientsocketbaseimpl_h__INCLUDED
 
-//#include "StdAfx.h"
+#include "StdAfx.h"
 #include "EClientSocketBase.h"
 
 #include "EWrapper.h"
@@ -107,8 +107,10 @@
 //      can receive position, positionEnd, accountSummary and accountSummaryEnd
 // 61 = can receive multiplier in openOrder
 //      can receive tradingClass in openOrder, updatePortfolio, execDetails and position
+// 62 = can receive avgCost in position message
+// 63 = can receive verifyMessageAPI, verifyCompleted, displayGroupList and displayGroupUpdated messages
 
-const int CLIENT_VERSION    = 61;
+const int CLIENT_VERSION    = 63;
 const int SERVER_VERSION    = 38;
 
 // outgoing msg id's
@@ -152,6 +154,13 @@ const int REQ_POSITIONS                 = 61;
 const int REQ_ACCOUNT_SUMMARY           = 62;
 const int CANCEL_ACCOUNT_SUMMARY        = 63;
 const int CANCEL_POSITIONS              = 64;
+const int VERIFY_REQUEST                = 65;
+const int VERIFY_MESSAGE                = 66;
+const int QUERY_DISPLAY_GROUPS          = 67;
+const int SUBSCRIBE_TO_GROUP_EVENTS     = 68;
+const int UPDATE_DISPLAY_GROUP          = 69;
+const int UNSUBSCRIBE_FROM_GROUP_EVENTS = 70;
+const int START_API                     = 71;
 
 //const int MIN_SERVER_VER_REAL_TIME_BARS       = 34;
 //const int MIN_SERVER_VER_SCALE_ORDERS         = 35;
@@ -189,6 +198,8 @@ const int MIN_SERVER_VER_DELTA_NEUTRAL_OPEN_CLOSE = 66;
 const int MIN_SERVER_VER_POSITIONS              = 67;
 const int MIN_SERVER_VER_ACCOUNT_SUMMARY        = 67;
 const int MIN_SERVER_VER_TRADING_CLASS          = 68;
+const int MIN_SERVER_VER_SCALE_TABLE            = 69;
+const int MIN_SERVER_VER_LINKING            = 70;
 
 // incoming msg id's
 const int TICK_PRICE                = 1;
@@ -230,6 +241,10 @@ const int POSITION_DATA             = 61;
 const int POSITION_END              = 62;
 const int ACCOUNT_SUMMARY           = 63;
 const int ACCOUNT_SUMMARY_END       = 64;
+const int VERIFY_MESSAGE_API        = 65;
+const int VERIFY_COMPLETED          = 66;
+const int DISPLAY_GROUP_LIST        = 67;
+const int DISPLAY_GROUP_UPDATED     = 68;
 
 // TWS New Bulletins constants
 const int NEWS_MSG              = 1;    // standard IB news bulleting message
@@ -449,7 +464,7 @@ static IBString errMsg(std::exception e) {
 }
 
 
-#ifdef _MFC_VER
+#ifdef _MSC_VER
 static IBString errMsg(CException *e) {
 	// return the error associated with this exception
 	char buf[1024];
@@ -464,6 +479,7 @@ EClientSocketBase::EClientSocketBase( EWrapper *ptr)
 	: m_pEWrapper(ptr)
 	, m_clientId(-1)
 	, m_connected(false)
+	, m_extraAuth(false)
 	, m_serverVersion(0)
 {
 }
@@ -481,6 +497,7 @@ void EClientSocketBase::eDisconnectBase()
 	Empty(m_TwsTime);
 	m_serverVersion = 0;
 	m_connected = false;
+	m_extraAuth = false;
 	m_clientId = -1;
 	m_outBuffer.clear();
 	m_inBuffer.clear();
@@ -497,7 +514,7 @@ IBString EClientSocketBase::TwsConnectionTime()
 }
 
 void EClientSocketBase::reqMktData(TickerId tickerId, const Contract& contract,
-							   const IBString& genericTicks, bool snapshot)
+							   const IBString& genericTicks, bool snapshot, const TagValueListSPtr& mktDataOptions)
 {
 	// not connected?
 	if( !m_connected) {
@@ -538,7 +555,7 @@ void EClientSocketBase::reqMktData(TickerId tickerId, const Contract& contract,
 
 	std::ostringstream msg;
 
-	const int VERSION = 10;
+	const int VERSION = 11;
 
 	// send req mkt data msg
 	ENCODE_FIELD( REQ_MKT_DATA);
@@ -600,6 +617,22 @@ void EClientSocketBase::reqMktData(TickerId tickerId, const Contract& contract,
 	ENCODE_FIELD( genericTicks); // srv v31 and above
 	ENCODE_FIELD( snapshot); // srv v35 and above
 
+	// send mktDataOptions parameter
+	if( m_serverVersion >= MIN_SERVER_VER_LINKING) {
+		IBString mktDataOptionsStr("");
+		const int mktDataOptionsCount = mktDataOptions.get() ? mktDataOptions->size() : 0;
+		if( mktDataOptionsCount > 0) {
+			for( int i = 0; i < mktDataOptionsCount; ++i) {
+				const TagValue* tagValue = ((*mktDataOptions)[i]).get();
+				mktDataOptionsStr += tagValue->tag;
+				mktDataOptionsStr += "=";
+				mktDataOptionsStr += tagValue->value;
+				mktDataOptionsStr += ";";
+			}
+		}
+		ENCODE_FIELD( mktDataOptionsStr);
+	}
+
 	bufferedSend( msg.str());
 }
 
@@ -623,7 +656,7 @@ void EClientSocketBase::cancelMktData(TickerId tickerId)
 	bufferedSend( msg.str());
 }
 
-void EClientSocketBase::reqMktDepth( TickerId tickerId, const Contract &contract, int numRows)
+void EClientSocketBase::reqMktDepth( TickerId tickerId, const Contract &contract, int numRows, const TagValueListSPtr& mktDepthOptions)
 {
 	// not connected?
 	if( !m_connected) {
@@ -648,7 +681,7 @@ void EClientSocketBase::reqMktDepth( TickerId tickerId, const Contract &contract
 
 	std::ostringstream msg;
 
-	const int VERSION = 4;
+	const int VERSION = 5;
 
 	// send req mkt data msg
 	ENCODE_FIELD( REQ_MKT_DEPTH);
@@ -673,6 +706,22 @@ void EClientSocketBase::reqMktDepth( TickerId tickerId, const Contract &contract
 	}
 
 	ENCODE_FIELD( numRows); // srv v19 and above
+
+	// send mktDepthOptions parameter
+	if( m_serverVersion >= MIN_SERVER_VER_LINKING) {
+		IBString mktDepthOptionsStr("");
+		const int mktDepthOptionsCount = mktDepthOptions.get() ? mktDepthOptions->size() : 0;
+		if( mktDepthOptionsCount > 0) {
+			for( int i = 0; i < mktDepthOptionsCount; ++i) {
+				const TagValue* tagValue = ((*mktDepthOptions)[i]).get();
+				mktDepthOptionsStr += tagValue->tag;
+				mktDepthOptionsStr += "=";
+				mktDepthOptionsStr += tagValue->value;
+				mktDepthOptionsStr += ";";
+			}
+		}
+		ENCODE_FIELD( mktDepthOptionsStr);
+	}
 
 	bufferedSend( msg.str());
 }
@@ -708,7 +757,7 @@ void EClientSocketBase::cancelMktDepth( TickerId tickerId)
 void EClientSocketBase::reqHistoricalData( TickerId tickerId, const Contract &contract,
 									   const IBString &endDateTime, const IBString &durationStr,
 									   const IBString & barSizeSetting, const IBString &whatToShow,
-									   int useRTH, int formatDate)
+									   int useRTH, int formatDate, const TagValueListSPtr& chartOptions)
 {
 	// not connected?
 	if( !m_connected) {
@@ -732,7 +781,7 @@ void EClientSocketBase::reqHistoricalData( TickerId tickerId, const Contract &co
 
 	std::ostringstream msg;
 
-	const int VERSION = 5;
+	const int VERSION = 6;
 
 	ENCODE_FIELD( REQ_HISTORICAL_DATA);
 	ENCODE_FIELD( VERSION);
@@ -783,6 +832,22 @@ void EClientSocketBase::reqHistoricalData( TickerId tickerId, const Contract &co
 		}
 	}
 
+	// send chartOptions parameter
+	if( m_serverVersion >= MIN_SERVER_VER_LINKING) {
+		IBString chartOptionsStr("");
+		const int chartOptionsCount = chartOptions.get() ? chartOptions->size() : 0;
+		if( chartOptionsCount > 0) {
+			for( int i = 0; i < chartOptionsCount; ++i) {
+				const TagValue* tagValue = ((*chartOptions)[i]).get();
+				chartOptionsStr += tagValue->tag;
+				chartOptionsStr += "=";
+				chartOptionsStr += tagValue->value;
+				chartOptionsStr += ";";
+			}
+		}
+		ENCODE_FIELD( chartOptionsStr);
+	}
+
 	bufferedSend( msg.str());
 }
 
@@ -813,7 +878,8 @@ void EClientSocketBase::cancelHistoricalData(TickerId tickerId)
 }
 
 void EClientSocketBase::reqRealTimeBars(TickerId tickerId, const Contract &contract,
-									int barSize, const IBString &whatToShow, bool useRTH)
+									int barSize, const IBString &whatToShow, bool useRTH,
+									const TagValueListSPtr& realTimeBarsOptions)
 {
 	// not connected?
 	if( !m_connected) {
@@ -838,7 +904,7 @@ void EClientSocketBase::reqRealTimeBars(TickerId tickerId, const Contract &contr
 
 	std::ostringstream msg;
 
-	const int VERSION = 2;
+	const int VERSION = 3;
 
 	ENCODE_FIELD( REQ_REAL_TIME_BARS);
 	ENCODE_FIELD( VERSION);
@@ -864,6 +930,22 @@ void EClientSocketBase::reqRealTimeBars(TickerId tickerId, const Contract &contr
 	ENCODE_FIELD( barSize);
 	ENCODE_FIELD( whatToShow);
 	ENCODE_FIELD( useRTH);
+
+	// send realTimeBarsOptions parameter
+	if( m_serverVersion >= MIN_SERVER_VER_LINKING) {
+		IBString realTimeBarsOptionsStr("");
+		const int realTimeBarsOptionsCount = realTimeBarsOptions.get() ? realTimeBarsOptions->size() : 0;
+		if( realTimeBarsOptionsCount > 0) {
+			for( int i = 0; i < realTimeBarsOptionsCount; ++i) {
+				const TagValue* tagValue = ((*realTimeBarsOptions)[i]).get();
+				realTimeBarsOptionsStr += tagValue->tag;
+				realTimeBarsOptionsStr += "=";
+				realTimeBarsOptionsStr += tagValue->value;
+				realTimeBarsOptionsStr += ";";
+			}
+		}
+		ENCODE_FIELD( realTimeBarsOptionsStr);
+	}
 
 	bufferedSend( msg.str());
 }
@@ -923,7 +1005,7 @@ void EClientSocketBase::reqScannerParameters()
 
 
 void EClientSocketBase::reqScannerSubscription(int tickerId,
-	const ScannerSubscription& subscription)
+	const ScannerSubscription& subscription, const TagValueListSPtr& scannerSubscriptionOptions)
 {
 	// not connected?
 	if( !m_connected) {
@@ -940,7 +1022,7 @@ void EClientSocketBase::reqScannerSubscription(int tickerId,
 
 	std::ostringstream msg;
 
-	const int VERSION = 3;
+	const int VERSION = 4;
 
 	ENCODE_FIELD( REQ_SCANNER_SUBSCRIPTION);
 	ENCODE_FIELD( VERSION);
@@ -966,6 +1048,22 @@ void EClientSocketBase::reqScannerSubscription(int tickerId,
 	ENCODE_FIELD_MAX( subscription.averageOptionVolumeAbove); // srv v25 and above
 	ENCODE_FIELD( subscription.scannerSettingPairs); // srv v25 and above
 	ENCODE_FIELD( subscription.stockTypeFilter); // srv v27 and above
+
+	// send scannerSubscriptionOptions parameter
+	if( m_serverVersion >= MIN_SERVER_VER_LINKING) {
+		IBString scannerSubscriptionOptionsStr("");
+		const int scannerSubscriptionOptionsCount = scannerSubscriptionOptions.get() ? scannerSubscriptionOptions->size() : 0;
+		if( scannerSubscriptionOptionsCount > 0) {
+			for( int i = 0; i < scannerSubscriptionOptionsCount; ++i) {
+				const TagValue* tagValue = ((*scannerSubscriptionOptions)[i]).get();
+				scannerSubscriptionOptionsStr += tagValue->tag;
+				scannerSubscriptionOptionsStr += "=";
+				scannerSubscriptionOptionsStr += tagValue->value;
+				scannerSubscriptionOptionsStr += ";";
+			}
+		}
+		ENCODE_FIELD( scannerSubscriptionOptionsStr);
+	}
 
 	bufferedSend( msg.str());
 }
@@ -996,8 +1094,8 @@ void EClientSocketBase::cancelScannerSubscription(int tickerId)
 	bufferedSend( msg.str());
 }
 
-void EClientSocketBase::reqFundamentalData(TickerId reqId, const Contract& contract,
-									   const IBString& reportType)
+void EClientSocketBase::reqFundamentalData(TickerId reqId, const Contract& contract, 
+										   const IBString& reportType)
 {
 	// not connected?
 	if( !m_connected) {
@@ -1518,9 +1616,17 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		}
 	}
 
+	if (m_serverVersion < MIN_SERVER_VER_SCALE_TABLE) {
+		if( !IsEmpty(order.scaleTable) || !IsEmpty(order.activeStartTime) || !IsEmpty(order.activeStopTime)) {
+			m_pEWrapper->error( id, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+					"  It does not support scaleTable, activeStartTime and activeStopTime parameters");
+			return;
+		}
+	}
+
 	std::ostringstream msg;
 
-	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 40;
+	int VERSION = (m_serverVersion < MIN_SERVER_VER_NOT_HELD) ? 27 : 42;
 
 	// send place order msg
 	ENCODE_FIELD( PLACE_ORDER);
@@ -1773,6 +1879,12 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 		ENCODE_FIELD( order.scaleRandomPercent);
 	}
 
+	if( m_serverVersion >= MIN_SERVER_VER_SCALE_TABLE) {
+		ENCODE_FIELD( order.scaleTable);
+		ENCODE_FIELD( order.activeStartTime);
+		ENCODE_FIELD( order.activeStopTime);
+	}
+
 	// HEDGE orders
 	if( m_serverVersion >= MIN_SERVER_VER_HEDGE_ORDERS) {
 		ENCODE_FIELD( order.hedgeType);
@@ -1825,6 +1937,23 @@ void EClientSocketBase::placeOrder( OrderId id, const Contract &contract, const 
 	}
 
 	ENCODE_FIELD( order.whatIf); // srv v36 and above
+
+	// send miscOptions parameter
+	if( m_serverVersion >= MIN_SERVER_VER_LINKING) {
+		IBString miscOptionsStr("");
+		const TagValueList* const orderMiscOptions = order.orderMiscOptions.get();
+		const int orderMiscOptionsCount = orderMiscOptions ? orderMiscOptions->size() : 0;
+		if( orderMiscOptionsCount > 0) {
+			for( int i = 0; i < orderMiscOptionsCount; ++i) {
+				const TagValue* tagValue = ((*orderMiscOptions)[i]).get();
+				miscOptionsStr += tagValue->tag;
+				miscOptionsStr += "=";
+				miscOptionsStr += tagValue->value;
+				miscOptionsStr += ";";
+			}
+		}
+		ENCODE_FIELD( miscOptionsStr);
+	}
 
 	bufferedSend( msg.str());
 }
@@ -2372,6 +2501,184 @@ void EClientSocketBase::cancelAccountSummary( int reqId)
 	bufferedSend( msg.str());
 }
 
+void EClientSocketBase::verifyRequest(const IBString& apiName, const IBString& apiVersion)
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_LINKING) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  It does not support verification request.");
+		return;
+	}
+
+	if( !m_extraAuth) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  Intent to authenticate needs to be expressed during initial connect request.");
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( VERIFY_REQUEST);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( apiName);
+	ENCODE_FIELD( apiVersion);
+
+	bufferedSend( msg.str());
+}
+
+void EClientSocketBase::verifyMessage(const IBString& apiData)
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_LINKING) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  It does not support verification message sending.");
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( VERIFY_MESSAGE);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( apiData);
+
+	bufferedSend( msg.str());
+}
+
+void EClientSocketBase::queryDisplayGroups( int reqId)
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_LINKING) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  It does not support queryDisplayGroups request.");
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( QUERY_DISPLAY_GROUPS);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( reqId);
+
+	bufferedSend( msg.str());
+}
+
+void EClientSocketBase::subscribeToGroupEvents( int reqId, int groupId)
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_LINKING) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  It does not support subscribeToGroupEvents request.");
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( SUBSCRIBE_TO_GROUP_EVENTS);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( reqId);
+	ENCODE_FIELD( groupId);
+
+	bufferedSend( msg.str());
+}
+
+void EClientSocketBase::updateDisplayGroup( int reqId, const IBString& contractInfo)
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_LINKING) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  It does not support updateDisplayGroup request.");
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( UPDATE_DISPLAY_GROUP);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( reqId);
+	ENCODE_FIELD( contractInfo);
+
+	bufferedSend( msg.str());
+}
+
+void EClientSocketBase::startApi()
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( START_API);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( m_clientId);
+
+	bufferedSend( msg.str());
+}
+
+void EClientSocketBase::unsubscribeFromGroupEvents( int reqId)
+{
+	// not connected?
+	if( !m_connected) {
+		m_pEWrapper->error( NO_VALID_ID, NOT_CONNECTED.code(), NOT_CONNECTED.msg());
+		return;
+	}
+
+	if( m_serverVersion < MIN_SERVER_VER_LINKING) {
+		m_pEWrapper->error(NO_VALID_ID, UPDATE_TWS.code(), UPDATE_TWS.msg() +
+			"  It does not support unsubscribeFromGroupEvents request.");
+		return;
+	}
+
+	std::ostringstream msg;
+
+	const int VERSION = 1;
+
+	ENCODE_FIELD( UNSUBSCRIBE_FROM_GROUP_EVENTS);
+	ENCODE_FIELD( VERSION);
+	ENCODE_FIELD( reqId);
+
+	bufferedSend( msg.str());
+}
+
 bool EClientSocketBase::checkMessages()
 {
 	if( !isSocketOK())
@@ -2381,13 +2688,13 @@ bool EClientSocketBase::checkMessages()
 		return false;
 	}
 
-	const char* beginPtr = &m_inBuffer[0];
+	const char*	beginPtr = &m_inBuffer[0];
 	const char*	ptr = beginPtr;
 	const char*	endPtr = ptr + m_inBuffer.size();
 
 	try {
 		while( (m_connected ? processMsg( ptr, endPtr)
-			                : processConnectAck( ptr, endPtr)) > 0) {
+			: processConnectAck( ptr, endPtr)) > 0) {
 			if( (ptr - beginPtr) >= (int)m_inBuffer.size())
 				break;
 		}
@@ -2423,14 +2730,19 @@ int EClientSocketBase::processConnectAck(const char*& beginPtr, const char* endP
 			return -1;
 		}
 
+		m_connected = true;
+
 		// send the clientId
 		if( m_serverVersion >= 3) {
-			std::ostringstream msg;
-			ENCODE_FIELD( m_clientId);
-			bufferedSend( msg.str());
+			if( m_serverVersion < MIN_SERVER_VER_LINKING) {
+				std::ostringstream msg;
+				ENCODE_FIELD( m_clientId);
+				bufferedSend( msg.str());
+			}
+			else if (!m_extraAuth) {
+				startApi();
+			}
 		}
-
-		m_connected = true;
 
 		// That would be the place to notify client
 		// that we are fully connected
@@ -2440,7 +2752,7 @@ int EClientSocketBase::processConnectAck(const char*& beginPtr, const char* endP
 		beginPtr = ptr;
 		return processed;
 	}
-#ifdef _MFC_VER
+#ifdef _MSC_VER
 	catch( CException* e) {
 		m_pEWrapper->error( NO_VALID_ID, SOCKET_EXCEPTION.code(),
 			SOCKET_EXCEPTION.msg() + errMsg(e));
@@ -3669,6 +3981,7 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				int version;
 				IBString account;
 				int position;
+				double avgCost = 0;
 
 				DECODE_FIELD( version);
 				DECODE_FIELD( account);
@@ -3690,8 +4003,11 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				}
 
 				DECODE_FIELD( position);
+				if (version >= 3) {
+					DECODE_FIELD( avgCost);
+				}
 
-				m_pEWrapper->position( account, contract, position);
+				m_pEWrapper->position( account, contract, position, avgCost);
 				break;
 			}
 
@@ -3737,6 +4053,66 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 				break;
 			}
 
+			case VERIFY_MESSAGE_API:
+			{
+				int version;
+				IBString apiData;
+
+				DECODE_FIELD( version);
+				DECODE_FIELD( apiData);
+
+				m_pEWrapper->verifyMessageAPI( apiData);
+				break;
+			}
+
+			case VERIFY_COMPLETED:
+			{
+				int version;
+				IBString isSuccessful;
+				IBString errorText;
+
+				DECODE_FIELD( version);
+				DECODE_FIELD( isSuccessful);
+				DECODE_FIELD( errorText);
+
+				bool bRes = Compare(isSuccessful, "true") == 0;
+
+				if (bRes) {
+					startApi();
+				}
+
+				m_pEWrapper->verifyCompleted( bRes, errorText);
+				break;
+			}
+
+			case DISPLAY_GROUP_LIST:
+			{
+				int version;
+				int reqId;
+				IBString groups;
+
+				DECODE_FIELD( version);
+				DECODE_FIELD( reqId);
+				DECODE_FIELD( groups);
+
+				m_pEWrapper->displayGroupList( reqId, groups);
+				break;
+			}
+
+			case DISPLAY_GROUP_UPDATED:
+			{
+				int version;
+				int reqId;
+				IBString contractInfo;
+
+				DECODE_FIELD( version);
+				DECODE_FIELD( reqId);
+				DECODE_FIELD( contractInfo);
+
+				m_pEWrapper->displayGroupUpdated( reqId, contractInfo);
+				break;
+			}
+
 			default:
 			{
 				m_pEWrapper->error( msgId, UNKNOWN_ID.code(), UNKNOWN_ID.msg());
@@ -3751,7 +4127,7 @@ int EClientSocketBase::processMsg(const char*& beginPtr, const char* endPtr)
 		return processed;
 	}
 
-#ifdef _MFC_VER
+#ifdef _MSC_VER
 	catch( CException* e) {
 		m_pEWrapper->error( NO_VALID_ID, SOCKET_EXCEPTION.code(),
 			SOCKET_EXCEPTION.msg() + errMsg(e));
@@ -3779,6 +4155,12 @@ void EClientSocketBase::setClientId( int clientId)
 {
 	m_clientId = clientId;
 }
+
+void EClientSocketBase::setExtraAuth( bool extraAuth)
+{
+	m_extraAuth = extraAuth;
+}
+
 
 ///////////////////////////////////////////////////////////
 // callbacks from socket

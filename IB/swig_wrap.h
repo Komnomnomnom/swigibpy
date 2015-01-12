@@ -58,10 +58,14 @@ public:
     virtual void tickSnapshotEnd(int reqId);
     virtual void marketDataType(TickerId reqId, int marketDataType);
     virtual void commissionReport(CommissionReport const &commissionReport);
-    virtual void position(IBString const &account, Contract const &contract, int position);
+    virtual void position(IBString const &account, Contract const &contract, int position, double avgCost);
     virtual void positionEnd();
     virtual void accountSummary(int reqId, IBString const &account, IBString const &tag, IBString const &value, IBString const &curency);
     virtual void accountSummaryEnd(int reqId);
+    virtual void verifyMessageAPI(IBString const &apiData);
+    virtual void verifyCompleted(bool isSuccessful, IBString const &errorText);
+    virtual void displayGroupList(int reqId, IBString const &groups);
+    virtual void displayGroupUpdated(int reqId, IBString const &contractInfo);
 
 /* Internal director utilities */
 public:
@@ -92,7 +96,7 @@ private:
       return method;
     }
 private:
-    mutable swig::SwigVar_PyObject vtable[42];
+    mutable swig::SwigVar_PyObject vtable[46];
 #endif
 
 };

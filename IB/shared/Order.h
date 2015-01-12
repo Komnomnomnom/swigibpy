@@ -53,6 +53,8 @@ struct Order
 		auxPrice      = UNSET_DOUBLE;
 
 		// extended order fields
+		activeStartTime = "";
+		activeStopTime = "";
 		ocaType        = 0;
 		transmit       = true;
 		parentId       = 0;
@@ -123,6 +125,7 @@ struct Order
 		scaleInitPosition = UNSET_INTEGER;
 		scaleInitFillQty = UNSET_INTEGER;
 		scaleRandomPercent = false;
+		scaleTable = "";
 
 		// What-if
 		whatIf = false;
@@ -145,6 +148,8 @@ struct Order
 
 	// extended order fields
 	IBString tif;           // "Time in Force" - DAY, GTC, etc.
+	IBString activeStartTime;	// for GTC orders
+	IBString activeStopTime;	// for GTC orders
 	IBString ocaGroup;      // one cancels all group name
 	int      ocaType;       // 1 = CANCEL_WITH_BLOCK, 2 = REDUCE_WITH_BLOCK, 3 = REDUCE_NON_BLOCK
 	IBString orderRef;      // order reference
@@ -227,6 +232,7 @@ struct Order
 	int      scaleInitPosition;
 	int      scaleInitFillQty;
 	bool     scaleRandomPercent;
+	IBString scaleTable;
 
 	// HEDGE ORDERS
 	IBString hedgeType;  // 'D' - delta, 'B' - beta, 'F' - FX, 'P' - pair
@@ -255,6 +261,8 @@ struct Order
 	typedef shared_ptr<OrderComboLegList> OrderComboLegListSPtr;
 
 	OrderComboLegListSPtr orderComboLegs;
+
+	TagValueListSPtr orderMiscOptions;
 
 public:
 

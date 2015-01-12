@@ -6961,7 +6961,7 @@ void SwigDirector_EWrapper::commissionReport(CommissionReport const &commissionR
 }
 
 
-void SwigDirector_EWrapper::position(IBString const &account, Contract const &contract, int position) {
+void SwigDirector_EWrapper::position(IBString const &account, Contract const &contract, int position, double avgCost) {
   SWIG_PYTHON_THREAD_BEGIN_BLOCK;
   {
     swig::SwigVar_PyObject obj0;
@@ -6970,6 +6970,8 @@ void SwigDirector_EWrapper::position(IBString const &account, Contract const &co
     obj1 = SWIG_NewPointerObj(SWIG_as_voidptr(&contract), SWIGTYPE_p_Contract,  0 );
     swig::SwigVar_PyObject obj2;
     obj2 = SWIG_From_int(static_cast< int >(position));
+    swig::SwigVar_PyObject obj3;
+    obj3 = SWIG_From_double(static_cast< double >(avgCost));
     if (!swig_get_self()) {
       Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call EWrapper.__init__.");
     }
@@ -6977,10 +6979,10 @@ void SwigDirector_EWrapper::position(IBString const &account, Contract const &co
     const size_t swig_method_index = 38;
     const char * const swig_method_name = "position";
     PyObject* method = swig_get_method(swig_method_index, swig_method_name);
-    swig::SwigVar_PyObject result = PyObject_CallFunctionObjArgs(method ,(PyObject *)obj0,(PyObject *)obj1,(PyObject *)obj2, NULL);
+    swig::SwigVar_PyObject result = PyObject_CallFunctionObjArgs(method ,(PyObject *)obj0,(PyObject *)obj1,(PyObject *)obj2,(PyObject *)obj3, NULL);
 #else
     swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *)"position");
-    swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0,(PyObject *)obj1,(PyObject *)obj2, NULL);
+    swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0,(PyObject *)obj1,(PyObject *)obj2,(PyObject *)obj3, NULL);
 #endif
     if (!result) {
       PyObject *error = PyErr_Occurred();
@@ -7078,6 +7080,132 @@ void SwigDirector_EWrapper::accountSummaryEnd(int reqId) {
 #else
     swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *)"accountSummaryEnd");
     swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0, NULL);
+#endif
+    if (!result) {
+      PyObject *error = PyErr_Occurred();
+      {
+        if (error != NULL) {
+          throw Swig::DirectorMethodException();
+        }
+      }
+    }
+  }
+  SWIG_PYTHON_THREAD_END_BLOCK;
+}
+
+
+void SwigDirector_EWrapper::verifyMessageAPI(IBString const &apiData) {
+  SWIG_PYTHON_THREAD_BEGIN_BLOCK;
+  {
+    swig::SwigVar_PyObject obj0;
+    obj0 = SWIG_From_std_string(static_cast< std::string >(apiData));
+    if (!swig_get_self()) {
+      Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call EWrapper.__init__.");
+    }
+#if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
+    const size_t swig_method_index = 42;
+    const char * const swig_method_name = "verifyMessageAPI";
+    PyObject* method = swig_get_method(swig_method_index, swig_method_name);
+    swig::SwigVar_PyObject result = PyObject_CallFunctionObjArgs(method ,(PyObject *)obj0, NULL);
+#else
+    swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *)"verifyMessageAPI");
+    swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0, NULL);
+#endif
+    if (!result) {
+      PyObject *error = PyErr_Occurred();
+      {
+        if (error != NULL) {
+          throw Swig::DirectorMethodException();
+        }
+      }
+    }
+  }
+  SWIG_PYTHON_THREAD_END_BLOCK;
+}
+
+
+void SwigDirector_EWrapper::verifyCompleted(bool isSuccessful, IBString const &errorText) {
+  SWIG_PYTHON_THREAD_BEGIN_BLOCK;
+  {
+    swig::SwigVar_PyObject obj0;
+    obj0 = SWIG_From_bool(static_cast< bool >(isSuccessful));
+    swig::SwigVar_PyObject obj1;
+    obj1 = SWIG_From_std_string(static_cast< std::string >(errorText));
+    if (!swig_get_self()) {
+      Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call EWrapper.__init__.");
+    }
+#if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
+    const size_t swig_method_index = 43;
+    const char * const swig_method_name = "verifyCompleted";
+    PyObject* method = swig_get_method(swig_method_index, swig_method_name);
+    swig::SwigVar_PyObject result = PyObject_CallFunctionObjArgs(method ,(PyObject *)obj0,(PyObject *)obj1, NULL);
+#else
+    swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *)"verifyCompleted");
+    swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0,(PyObject *)obj1, NULL);
+#endif
+    if (!result) {
+      PyObject *error = PyErr_Occurred();
+      {
+        if (error != NULL) {
+          throw Swig::DirectorMethodException();
+        }
+      }
+    }
+  }
+  SWIG_PYTHON_THREAD_END_BLOCK;
+}
+
+
+void SwigDirector_EWrapper::displayGroupList(int reqId, IBString const &groups) {
+  SWIG_PYTHON_THREAD_BEGIN_BLOCK;
+  {
+    swig::SwigVar_PyObject obj0;
+    obj0 = SWIG_From_int(static_cast< int >(reqId));
+    swig::SwigVar_PyObject obj1;
+    obj1 = SWIG_From_std_string(static_cast< std::string >(groups));
+    if (!swig_get_self()) {
+      Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call EWrapper.__init__.");
+    }
+#if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
+    const size_t swig_method_index = 44;
+    const char * const swig_method_name = "displayGroupList";
+    PyObject* method = swig_get_method(swig_method_index, swig_method_name);
+    swig::SwigVar_PyObject result = PyObject_CallFunctionObjArgs(method ,(PyObject *)obj0,(PyObject *)obj1, NULL);
+#else
+    swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *)"displayGroupList");
+    swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0,(PyObject *)obj1, NULL);
+#endif
+    if (!result) {
+      PyObject *error = PyErr_Occurred();
+      {
+        if (error != NULL) {
+          throw Swig::DirectorMethodException();
+        }
+      }
+    }
+  }
+  SWIG_PYTHON_THREAD_END_BLOCK;
+}
+
+
+void SwigDirector_EWrapper::displayGroupUpdated(int reqId, IBString const &contractInfo) {
+  SWIG_PYTHON_THREAD_BEGIN_BLOCK;
+  {
+    swig::SwigVar_PyObject obj0;
+    obj0 = SWIG_From_int(static_cast< int >(reqId));
+    swig::SwigVar_PyObject obj1;
+    obj1 = SWIG_From_std_string(static_cast< std::string >(contractInfo));
+    if (!swig_get_self()) {
+      Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call EWrapper.__init__.");
+    }
+#if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
+    const size_t swig_method_index = 45;
+    const char * const swig_method_name = "displayGroupUpdated";
+    PyObject* method = swig_get_method(swig_method_index, swig_method_name);
+    swig::SwigVar_PyObject result = PyObject_CallFunctionObjArgs(method ,(PyObject *)obj0,(PyObject *)obj1, NULL);
+#else
+    swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *)"displayGroupUpdated");
+    swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name ,(PyObject *)obj0,(PyObject *)obj1, NULL);
 #endif
     if (!result) {
       PyObject *error = PyErr_Occurred();
@@ -20421,6 +20549,7 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect(PyObject *SWIGUNUSEDPARM(self), PyOb
   char *arg2 = (char *) 0 ;
   unsigned int arg3 ;
   int arg4 = (int) 0 ;
+  bool arg5 = (bool) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
@@ -20430,16 +20559,19 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect(PyObject *SWIGUNUSEDPARM(self), PyOb
   int ecode3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "host",(char *) "port",(char *) "clientId", NULL 
+    (char *) "self",(char *) "host",(char *) "port",(char *) "clientId",(char *) "extraAuth", NULL 
   };
   bool result;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|O:EClient_eConnect",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|OO:EClient_eConnect",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_eConnect" "', argument " "1"" of type '" "EClient *""'"); 
@@ -20462,6 +20594,13 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect(PyObject *SWIGUNUSEDPARM(self), PyOb
     } 
     arg4 = static_cast< int >(val4);
   }
+  if (obj4) {
+    ecode5 = SWIG_AsVal_bool(obj4, &val5);
+    if (!SWIG_IsOK(ecode5)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "EClient_eConnect" "', argument " "5"" of type '" "bool""'");
+    } 
+    arg5 = static_cast< bool >(val5);
+  }
   {
     /*
             most errors should be propagated through to EWrapper->error,
@@ -20470,12 +20609,12 @@ SWIGINTERN PyObject *_wrap_EClient_eConnect(PyObject *SWIGUNUSEDPARM(self), PyOb
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        result = (bool)(arg1)->eConnect((char const *)arg2,arg3,arg4);
+        result = (bool)(arg1)->eConnect((char const *)arg2,arg3,arg4,arg5);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClient::eConnect(char const *,unsigned int,int) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::eConnect(char const *,unsigned int,int,bool) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -20659,6 +20798,7 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktData(PyObject *SWIGUNUSEDPARM(self), Py
   Contract *arg3 = 0 ;
   IBString *arg4 = 0 ;
   bool arg5 ;
+  TagValueListSPtr *arg6 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -20668,16 +20808,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktData(PyObject *SWIGUNUSEDPARM(self), Py
   int res4 = SWIG_OLDOBJ ;
   bool val5 ;
   int ecode5 = 0 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  TagValueListSPtr tempshared6 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
   PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "id",(char *) "contract",(char *) "genericTicks",(char *) "snapshot", NULL 
+    (char *) "self",(char *) "id",(char *) "contract",(char *) "genericTicks",(char *) "snapshot",(char *) "mktDataOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:EClient_reqMktData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO:EClient_reqMktData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_reqMktData" "', argument " "1"" of type '" "EClient *""'"); 
@@ -20713,6 +20857,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktData(PyObject *SWIGUNUSEDPARM(self), Py
   } 
   arg5 = static_cast< bool >(val5);
   {
+    int newmem = 0;
+    res6 = SWIG_ConvertPtrAndOwn(obj5, &argp6, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "EClient_reqMktData" "', argument " "6"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp6) tempshared6 = *reinterpret_cast< TagValueListSPtr * >(argp6);
+      delete reinterpret_cast< TagValueListSPtr * >(argp6);
+      arg6 = &tempshared6;
+    } else {
+      arg6 = (argp6) ? reinterpret_cast< TagValueListSPtr * >(argp6) : &tempshared6;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -20720,12 +20878,12 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktData(PyObject *SWIGUNUSEDPARM(self), Py
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqMktData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,arg5);
+        (arg1)->reqMktData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,arg5,(TagValueListSPtr const &)*arg6);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqMktData(TickerId,Contract const &,IBString const &,bool) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqMktData(TickerId,Contract const &,IBString const &,bool,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -21348,6 +21506,7 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktDepth(PyObject *SWIGUNUSEDPARM(self), P
   TickerId arg2 ;
   Contract *arg3 = 0 ;
   int arg4 ;
+  TagValueListSPtr *arg5 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -21356,15 +21515,19 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktDepth(PyObject *SWIGUNUSEDPARM(self), P
   int res3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  TagValueListSPtr tempshared5 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "id",(char *) "contract",(char *) "numRows", NULL 
+    (char *) "self",(char *) "id",(char *) "contract",(char *) "numRows",(char *) "mktDepthOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:EClient_reqMktDepth",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:EClient_reqMktDepth",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_reqMktDepth" "', argument " "1"" of type '" "EClient *""'"); 
@@ -21389,6 +21552,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktDepth(PyObject *SWIGUNUSEDPARM(self), P
   } 
   arg4 = static_cast< int >(val4);
   {
+    int newmem = 0;
+    res5 = SWIG_ConvertPtrAndOwn(obj4, &argp5, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "EClient_reqMktDepth" "', argument " "5"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp5) tempshared5 = *reinterpret_cast< TagValueListSPtr * >(argp5);
+      delete reinterpret_cast< TagValueListSPtr * >(argp5);
+      arg5 = &tempshared5;
+    } else {
+      arg5 = (argp5) ? reinterpret_cast< TagValueListSPtr * >(argp5) : &tempshared5;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -21396,12 +21573,12 @@ SWIGINTERN PyObject *_wrap_EClient_reqMktDepth(PyObject *SWIGUNUSEDPARM(self), P
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqMktDepth(arg2,(Contract const &)*arg3,arg4);
+        (arg1)->reqMktDepth(arg2,(Contract const &)*arg3,arg4,(TagValueListSPtr const &)*arg5);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqMktDepth(TickerId,Contract const &,int) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqMktDepth(TickerId,Contract const &,int,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -21967,6 +22144,7 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
   IBString *arg7 = 0 ;
   int arg8 ;
   int arg9 ;
+  TagValueListSPtr *arg10 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -21981,6 +22159,9 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
   int ecode8 = 0 ;
   int val9 ;
   int ecode9 = 0 ;
+  void *argp10 ;
+  int res10 = 0 ;
+  TagValueListSPtr tempshared10 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
@@ -21990,11 +22171,12 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
   PyObject * obj6 = 0 ;
   PyObject * obj7 = 0 ;
   PyObject * obj8 = 0 ;
+  PyObject * obj9 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "id",(char *) "contract",(char *) "endDateTime",(char *) "durationStr",(char *) "barSizeSetting",(char *) "whatToShow",(char *) "useRTH",(char *) "formatDate", NULL 
+    (char *) "self",(char *) "id",(char *) "contract",(char *) "endDateTime",(char *) "durationStr",(char *) "barSizeSetting",(char *) "whatToShow",(char *) "useRTH",(char *) "formatDate",(char *) "chartOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOOOO:EClient_reqHistoricalData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOOOOO:EClient_reqHistoricalData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8,&obj9)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_reqHistoricalData" "', argument " "1"" of type '" "EClient *""'"); 
@@ -22068,6 +22250,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
   } 
   arg9 = static_cast< int >(val9);
   {
+    int newmem = 0;
+    res10 = SWIG_ConvertPtrAndOwn(obj9, &argp10, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res10)) {
+      SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "EClient_reqHistoricalData" "', argument " "10"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp10) tempshared10 = *reinterpret_cast< TagValueListSPtr * >(argp10);
+      delete reinterpret_cast< TagValueListSPtr * >(argp10);
+      arg10 = &tempshared10;
+    } else {
+      arg10 = (argp10) ? reinterpret_cast< TagValueListSPtr * >(argp10) : &tempshared10;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -22075,12 +22271,12 @@ SWIGINTERN PyObject *_wrap_EClient_reqHistoricalData(PyObject *SWIGUNUSEDPARM(se
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqHistoricalData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,(IBString const &)*arg5,(IBString const &)*arg6,(IBString const &)*arg7,arg8,arg9);
+        (arg1)->reqHistoricalData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,(IBString const &)*arg5,(IBString const &)*arg6,(IBString const &)*arg7,arg8,arg9,(TagValueListSPtr const &)*arg10);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqHistoricalData(TickerId,Contract const &,IBString const &,IBString const &,IBString const &,IBString const &,int,int) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqHistoricalData(TickerId,Contract const &,IBString const &,IBString const &,IBString const &,IBString const &,int,int,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -22296,6 +22492,7 @@ SWIGINTERN PyObject *_wrap_EClient_reqRealTimeBars(PyObject *SWIGUNUSEDPARM(self
   int arg4 ;
   IBString *arg5 = 0 ;
   bool arg6 ;
+  TagValueListSPtr *arg7 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -22307,17 +22504,21 @@ SWIGINTERN PyObject *_wrap_EClient_reqRealTimeBars(PyObject *SWIGUNUSEDPARM(self
   int res5 = SWIG_OLDOBJ ;
   bool val6 ;
   int ecode6 = 0 ;
+  void *argp7 ;
+  int res7 = 0 ;
+  TagValueListSPtr tempshared7 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
   PyObject * obj4 = 0 ;
   PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "id",(char *) "contract",(char *) "barSize",(char *) "whatToShow",(char *) "useRTH", NULL 
+    (char *) "self",(char *) "id",(char *) "contract",(char *) "barSize",(char *) "whatToShow",(char *) "useRTH",(char *) "realTimeBarsOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO:EClient_reqRealTimeBars",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOO:EClient_reqRealTimeBars",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_reqRealTimeBars" "', argument " "1"" of type '" "EClient *""'"); 
@@ -22358,6 +22559,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqRealTimeBars(PyObject *SWIGUNUSEDPARM(self
   } 
   arg6 = static_cast< bool >(val6);
   {
+    int newmem = 0;
+    res7 = SWIG_ConvertPtrAndOwn(obj6, &argp7, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "EClient_reqRealTimeBars" "', argument " "7"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp7) tempshared7 = *reinterpret_cast< TagValueListSPtr * >(argp7);
+      delete reinterpret_cast< TagValueListSPtr * >(argp7);
+      arg7 = &tempshared7;
+    } else {
+      arg7 = (argp7) ? reinterpret_cast< TagValueListSPtr * >(argp7) : &tempshared7;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -22365,12 +22580,12 @@ SWIGINTERN PyObject *_wrap_EClient_reqRealTimeBars(PyObject *SWIGUNUSEDPARM(self
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqRealTimeBars(arg2,(Contract const &)*arg3,arg4,(IBString const &)*arg5,arg6);
+        (arg1)->reqRealTimeBars(arg2,(Contract const &)*arg3,arg4,(IBString const &)*arg5,arg6,(TagValueListSPtr const &)*arg7);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqRealTimeBars(TickerId,Contract const &,int,IBString const &,bool) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqRealTimeBars(TickerId,Contract const &,int,IBString const &,bool,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -22572,20 +22787,25 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerSubscription(PyObject *SWIGUNUSEDPA
   EClient *arg1 = (EClient *) 0 ;
   int arg2 ;
   ScannerSubscription *arg3 = 0 ;
+  TagValueListSPtr *arg4 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
   void *argp3 = 0 ;
   int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  TagValueListSPtr tempshared4 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "tickerId",(char *) "subscription", NULL 
+    (char *) "self",(char *) "tickerId",(char *) "subscription",(char *) "scannerSubscriptionOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClient_reqScannerSubscription",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:EClient_reqScannerSubscription",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_reqScannerSubscription" "', argument " "1"" of type '" "EClient *""'"); 
@@ -22605,6 +22825,20 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerSubscription(PyObject *SWIGUNUSEDPA
   }
   arg3 = reinterpret_cast< ScannerSubscription * >(argp3);
   {
+    int newmem = 0;
+    res4 = SWIG_ConvertPtrAndOwn(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "EClient_reqScannerSubscription" "', argument " "4"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp4) tempshared4 = *reinterpret_cast< TagValueListSPtr * >(argp4);
+      delete reinterpret_cast< TagValueListSPtr * >(argp4);
+      arg4 = &tempshared4;
+    } else {
+      arg4 = (argp4) ? reinterpret_cast< TagValueListSPtr * >(argp4) : &tempshared4;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -22612,12 +22846,12 @@ SWIGINTERN PyObject *_wrap_EClient_reqScannerSubscription(PyObject *SWIGUNUSEDPA
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqScannerSubscription(arg2,(ScannerSubscription const &)*arg3);
+        (arg1)->reqScannerSubscription(arg2,(ScannerSubscription const &)*arg3,(TagValueListSPtr const &)*arg4);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqScannerSubscription(int,ScannerSubscription const &) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::reqScannerSubscription(int,ScannerSubscription const &,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -23509,6 +23743,427 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_EClient_verifyRequest(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  IBString *arg2 = 0 ;
+  IBString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "apiName",(char *) "apiVersion", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClient_verifyRequest",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_verifyRequest" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EClient_verifyRequest" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClient_verifyRequest" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EClient_verifyRequest" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClient_verifyRequest" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->verifyRequest((IBString const &)*arg2,(IBString const &)*arg3);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::verifyRequest(IBString const &,IBString const &) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClient_verifyMessage(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "apiData", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:EClient_verifyMessage",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_verifyMessage" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EClient_verifyMessage" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClient_verifyMessage" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->verifyMessage((IBString const &)*arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::verifyMessage(IBString const &) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClient_queryDisplayGroups(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:EClient_queryDisplayGroups",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_queryDisplayGroups" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClient_queryDisplayGroups" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->queryDisplayGroups(arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::queryDisplayGroups(int) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClient_subscribeToGroupEvents(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId",(char *) "groupId", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClient_subscribeToGroupEvents",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_subscribeToGroupEvents" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClient_subscribeToGroupEvents" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "EClient_subscribeToGroupEvents" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->subscribeToGroupEvents(arg2,arg3);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::subscribeToGroupEvents(int,int) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClient_updateDisplayGroup(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  int arg2 ;
+  IBString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId",(char *) "contractInfo", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClient_updateDisplayGroup",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_updateDisplayGroup" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClient_updateDisplayGroup" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EClient_updateDisplayGroup" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClient_updateDisplayGroup" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->updateDisplayGroup(arg2,(IBString const &)*arg3);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::updateDisplayGroup(int,IBString const &) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClient_unsubscribeFromGroupEvents(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClient *arg1 = (EClient *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:EClient_unsubscribeFromGroupEvents",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClient, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClient_unsubscribeFromGroupEvents" "', argument " "1"" of type '" "EClient *""'"); 
+  }
+  arg1 = reinterpret_cast< EClient * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClient_unsubscribeFromGroupEvents" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->unsubscribeFromGroupEvents(arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClient::unsubscribeFromGroupEvents(int) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *EClient_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!SWIG_Python_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
@@ -23572,6 +24227,7 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect(PyObject *SWIGUNUSEDPARM(s
   char *arg2 = (char *) 0 ;
   unsigned int arg3 ;
   int arg4 = (int) 0 ;
+  bool arg5 = (bool) false ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
@@ -23581,16 +24237,19 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect(PyObject *SWIGUNUSEDPARM(s
   int ecode3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "host",(char *) "port",(char *) "clientId", NULL 
+    (char *) "self",(char *) "host",(char *) "port",(char *) "clientId",(char *) "extraAuth", NULL 
   };
   bool result;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|O:EClientSocketBase_eConnect",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|OO:EClientSocketBase_eConnect",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_eConnect" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
@@ -23613,6 +24272,13 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect(PyObject *SWIGUNUSEDPARM(s
     } 
     arg4 = static_cast< int >(val4);
   }
+  if (obj4) {
+    ecode5 = SWIG_AsVal_bool(obj4, &val5);
+    if (!SWIG_IsOK(ecode5)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "EClientSocketBase_eConnect" "', argument " "5"" of type '" "bool""'");
+    } 
+    arg5 = static_cast< bool >(val5);
+  }
   {
     /*
             most errors should be propagated through to EWrapper->error,
@@ -23621,12 +24287,12 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_eConnect(PyObject *SWIGUNUSEDPARM(s
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        result = (bool)(arg1)->eConnect((char const *)arg2,arg3,arg4);
+        result = (bool)(arg1)->eConnect((char const *)arg2,arg3,arg4,arg5);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::eConnect(char const *,unsigned int,int) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::eConnect(char const *,unsigned int,int,bool) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -24014,6 +24680,7 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktData(PyObject *SWIGUNUSEDPARM
   Contract *arg3 = 0 ;
   IBString *arg4 = 0 ;
   bool arg5 ;
+  TagValueListSPtr *arg6 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -24023,16 +24690,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktData(PyObject *SWIGUNUSEDPARM
   int res4 = SWIG_OLDOBJ ;
   bool val5 ;
   int ecode5 = 0 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  TagValueListSPtr tempshared6 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
   PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "id",(char *) "contract",(char *) "genericTicks",(char *) "snapshot", NULL 
+    (char *) "self",(char *) "id",(char *) "contract",(char *) "genericTicks",(char *) "snapshot",(char *) "mktDataOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:EClientSocketBase_reqMktData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO:EClientSocketBase_reqMktData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_reqMktData" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
@@ -24068,6 +24739,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktData(PyObject *SWIGUNUSEDPARM
   } 
   arg5 = static_cast< bool >(val5);
   {
+    int newmem = 0;
+    res6 = SWIG_ConvertPtrAndOwn(obj5, &argp6, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "EClientSocketBase_reqMktData" "', argument " "6"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp6) tempshared6 = *reinterpret_cast< TagValueListSPtr * >(argp6);
+      delete reinterpret_cast< TagValueListSPtr * >(argp6);
+      arg6 = &tempshared6;
+    } else {
+      arg6 = (argp6) ? reinterpret_cast< TagValueListSPtr * >(argp6) : &tempshared6;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -24075,12 +24760,12 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktData(PyObject *SWIGUNUSEDPARM
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqMktData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,arg5);
+        (arg1)->reqMktData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,arg5,(TagValueListSPtr const &)*arg6);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqMktData(TickerId,Contract const &,IBString const &,bool) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqMktData(TickerId,Contract const &,IBString const &,bool,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -24703,6 +25388,7 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktDepth(PyObject *SWIGUNUSEDPAR
   TickerId arg2 ;
   Contract *arg3 = 0 ;
   int arg4 ;
+  TagValueListSPtr *arg5 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -24711,15 +25397,19 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktDepth(PyObject *SWIGUNUSEDPAR
   int res3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  TagValueListSPtr tempshared5 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "tickerId",(char *) "contract",(char *) "numRows", NULL 
+    (char *) "self",(char *) "tickerId",(char *) "contract",(char *) "numRows",(char *) "mktDepthOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:EClientSocketBase_reqMktDepth",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:EClientSocketBase_reqMktDepth",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_reqMktDepth" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
@@ -24744,6 +25434,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktDepth(PyObject *SWIGUNUSEDPAR
   } 
   arg4 = static_cast< int >(val4);
   {
+    int newmem = 0;
+    res5 = SWIG_ConvertPtrAndOwn(obj4, &argp5, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "EClientSocketBase_reqMktDepth" "', argument " "5"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp5) tempshared5 = *reinterpret_cast< TagValueListSPtr * >(argp5);
+      delete reinterpret_cast< TagValueListSPtr * >(argp5);
+      arg5 = &tempshared5;
+    } else {
+      arg5 = (argp5) ? reinterpret_cast< TagValueListSPtr * >(argp5) : &tempshared5;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -24751,12 +25455,12 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqMktDepth(PyObject *SWIGUNUSEDPAR
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqMktDepth(arg2,(Contract const &)*arg3,arg4);
+        (arg1)->reqMktDepth(arg2,(Contract const &)*arg3,arg4,(TagValueListSPtr const &)*arg5);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqMktDepth(TickerId,Contract const &,int) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqMktDepth(TickerId,Contract const &,int,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -25322,6 +26026,7 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
   IBString *arg7 = 0 ;
   int arg8 ;
   int arg9 ;
+  TagValueListSPtr *arg10 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -25336,6 +26041,9 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
   int ecode8 = 0 ;
   int val9 ;
   int ecode9 = 0 ;
+  void *argp10 ;
+  int res10 = 0 ;
+  TagValueListSPtr tempshared10 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
@@ -25345,11 +26053,12 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
   PyObject * obj6 = 0 ;
   PyObject * obj7 = 0 ;
   PyObject * obj8 = 0 ;
+  PyObject * obj9 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "id",(char *) "contract",(char *) "endDateTime",(char *) "durationStr",(char *) "barSizeSetting",(char *) "whatToShow",(char *) "useRTH",(char *) "formatDate", NULL 
+    (char *) "self",(char *) "id",(char *) "contract",(char *) "endDateTime",(char *) "durationStr",(char *) "barSizeSetting",(char *) "whatToShow",(char *) "useRTH",(char *) "formatDate",(char *) "chartOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOOOO:EClientSocketBase_reqHistoricalData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOOOOO:EClientSocketBase_reqHistoricalData",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8,&obj9)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_reqHistoricalData" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
@@ -25423,6 +26132,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
   } 
   arg9 = static_cast< int >(val9);
   {
+    int newmem = 0;
+    res10 = SWIG_ConvertPtrAndOwn(obj9, &argp10, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res10)) {
+      SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "EClientSocketBase_reqHistoricalData" "', argument " "10"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp10) tempshared10 = *reinterpret_cast< TagValueListSPtr * >(argp10);
+      delete reinterpret_cast< TagValueListSPtr * >(argp10);
+      arg10 = &tempshared10;
+    } else {
+      arg10 = (argp10) ? reinterpret_cast< TagValueListSPtr * >(argp10) : &tempshared10;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -25430,12 +26153,12 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqHistoricalData(PyObject *SWIGUNU
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqHistoricalData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,(IBString const &)*arg5,(IBString const &)*arg6,(IBString const &)*arg7,arg8,arg9);
+        (arg1)->reqHistoricalData(arg2,(Contract const &)*arg3,(IBString const &)*arg4,(IBString const &)*arg5,(IBString const &)*arg6,(IBString const &)*arg7,arg8,arg9,(TagValueListSPtr const &)*arg10);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqHistoricalData(TickerId,Contract const &,IBString const &,IBString const &,IBString const &,IBString const &,int,int) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqHistoricalData(TickerId,Contract const &,IBString const &,IBString const &,IBString const &,IBString const &,int,int,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -25651,6 +26374,7 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqRealTimeBars(PyObject *SWIGUNUSE
   int arg4 ;
   IBString *arg5 = 0 ;
   bool arg6 ;
+  TagValueListSPtr *arg7 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   long val2 ;
@@ -25662,17 +26386,21 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqRealTimeBars(PyObject *SWIGUNUSE
   int res5 = SWIG_OLDOBJ ;
   bool val6 ;
   int ecode6 = 0 ;
+  void *argp7 ;
+  int res7 = 0 ;
+  TagValueListSPtr tempshared7 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
   PyObject * obj4 = 0 ;
   PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "id",(char *) "contract",(char *) "barSize",(char *) "whatToShow",(char *) "useRTH", NULL 
+    (char *) "self",(char *) "id",(char *) "contract",(char *) "barSize",(char *) "whatToShow",(char *) "useRTH",(char *) "realTimeBarsOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO:EClientSocketBase_reqRealTimeBars",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOO:EClientSocketBase_reqRealTimeBars",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_reqRealTimeBars" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
@@ -25713,6 +26441,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqRealTimeBars(PyObject *SWIGUNUSE
   } 
   arg6 = static_cast< bool >(val6);
   {
+    int newmem = 0;
+    res7 = SWIG_ConvertPtrAndOwn(obj6, &argp7, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "EClientSocketBase_reqRealTimeBars" "', argument " "7"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp7) tempshared7 = *reinterpret_cast< TagValueListSPtr * >(argp7);
+      delete reinterpret_cast< TagValueListSPtr * >(argp7);
+      arg7 = &tempshared7;
+    } else {
+      arg7 = (argp7) ? reinterpret_cast< TagValueListSPtr * >(argp7) : &tempshared7;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -25720,12 +26462,12 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqRealTimeBars(PyObject *SWIGUNUSE
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqRealTimeBars(arg2,(Contract const &)*arg3,arg4,(IBString const &)*arg5,arg6);
+        (arg1)->reqRealTimeBars(arg2,(Contract const &)*arg3,arg4,(IBString const &)*arg5,arg6,(TagValueListSPtr const &)*arg7);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqRealTimeBars(TickerId,Contract const &,int,IBString const &,bool) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqRealTimeBars(TickerId,Contract const &,int,IBString const &,bool,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -25927,20 +26669,25 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerSubscription(PyObject *SW
   EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
   int arg2 ;
   ScannerSubscription *arg3 = 0 ;
+  TagValueListSPtr *arg4 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
   void *argp3 = 0 ;
   int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  TagValueListSPtr tempshared4 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "tickerId",(char *) "subscription", NULL 
+    (char *) "self",(char *) "tickerId",(char *) "subscription",(char *) "scannerSubscriptionOptions", NULL 
   };
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClientSocketBase_reqScannerSubscription",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:EClientSocketBase_reqScannerSubscription",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_reqScannerSubscription" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
@@ -25960,6 +26707,20 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerSubscription(PyObject *SW
   }
   arg3 = reinterpret_cast< ScannerSubscription * >(argp3);
   {
+    int newmem = 0;
+    res4 = SWIG_ConvertPtrAndOwn(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "EClientSocketBase_reqScannerSubscription" "', argument " "4"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp4) tempshared4 = *reinterpret_cast< TagValueListSPtr * >(argp4);
+      delete reinterpret_cast< TagValueListSPtr * >(argp4);
+      arg4 = &tempshared4;
+    } else {
+      arg4 = (argp4) ? reinterpret_cast< TagValueListSPtr * >(argp4) : &tempshared4;
+    }
+  }
+  {
     /*
             most errors should be propagated through to EWrapper->error,
             others should be added here as and when needed / encountered.
@@ -25967,12 +26728,12 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_reqScannerSubscription(PyObject *SW
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        (arg1)->reqScannerSubscription(arg2,(ScannerSubscription const &)*arg3);
+        (arg1)->reqScannerSubscription(arg2,(ScannerSubscription const &)*arg3,(TagValueListSPtr const &)*arg4);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqScannerSubscription(int,ScannerSubscription const &) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::reqScannerSubscription(int,ScannerSubscription const &,TagValueListSPtr const &) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -26842,6 +27603,427 @@ SWIGINTERN PyObject *_wrap_EClientSocketBase_cancelAccountSummary(PyObject *SWIG
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
       PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::cancelAccountSummary(int) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClientSocketBase_verifyRequest(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  IBString *arg2 = 0 ;
+  IBString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "apiName",(char *) "apiVersion", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClientSocketBase_verifyRequest",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_verifyRequest" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EClientSocketBase_verifyRequest" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClientSocketBase_verifyRequest" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EClientSocketBase_verifyRequest" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClientSocketBase_verifyRequest" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->verifyRequest((IBString const &)*arg2,(IBString const &)*arg3);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::verifyRequest(IBString const &,IBString const &) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClientSocketBase_verifyMessage(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "apiData", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:EClientSocketBase_verifyMessage",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_verifyMessage" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EClientSocketBase_verifyMessage" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClientSocketBase_verifyMessage" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->verifyMessage((IBString const &)*arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::verifyMessage(IBString const &) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClientSocketBase_queryDisplayGroups(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:EClientSocketBase_queryDisplayGroups",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_queryDisplayGroups" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClientSocketBase_queryDisplayGroups" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->queryDisplayGroups(arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::queryDisplayGroups(int) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClientSocketBase_subscribeToGroupEvents(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId",(char *) "groupId", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClientSocketBase_subscribeToGroupEvents",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_subscribeToGroupEvents" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClientSocketBase_subscribeToGroupEvents" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "EClientSocketBase_subscribeToGroupEvents" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->subscribeToGroupEvents(arg2,arg3);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::subscribeToGroupEvents(int,int) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClientSocketBase_updateDisplayGroup(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  int arg2 ;
+  IBString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId",(char *) "contractInfo", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EClientSocketBase_updateDisplayGroup",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_updateDisplayGroup" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClientSocketBase_updateDisplayGroup" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EClientSocketBase_updateDisplayGroup" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EClientSocketBase_updateDisplayGroup" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->updateDisplayGroup(arg2,(IBString const &)*arg3);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::updateDisplayGroup(int,IBString const &) not implemented");
+      SWIG_fail;
+    } catch(Swig::DirectorException &e) {
+      /* Fail if there is a problem in the director proxy transport */
+      SWIG_fail;
+    } catch(std::exception& e) {
+      /* Convert standard error to Exception */
+      PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+      SWIG_fail;
+      
+    } catch(...) {
+      /* Final catch all, results in runtime error */
+      PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+      SWIG_fail;
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EClientSocketBase_unsubscribeFromGroupEvents(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EClientSocketBase *arg1 = (EClientSocketBase *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:EClientSocketBase_unsubscribeFromGroupEvents",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EClientSocketBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EClientSocketBase_unsubscribeFromGroupEvents" "', argument " "1"" of type '" "EClientSocketBase *""'"); 
+  }
+  arg1 = reinterpret_cast< EClientSocketBase * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EClientSocketBase_unsubscribeFromGroupEvents" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    /*
+            most errors should be propagated through to EWrapper->error,
+            others should be added here as and when needed / encountered.
+        */
+    try {
+      {
+        SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+        (arg1)->unsubscribeFromGroupEvents(arg2);
+        SWIG_PYTHON_THREAD_END_ALLOW;
+      }
+    } catch(Swig::DirectorPureVirtualException &e) {
+      /* Call to pure virtual method, raise not implemented error */
+      PyErr_SetString(PyExc_NotImplementedError, "EClientSocketBase::unsubscribeFromGroupEvents(int) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -29427,6 +30609,140 @@ SWIGINTERN PyObject *_wrap_Order_tif_get(PyObject *SWIGUNUSEDPARM(self), PyObjec
   {
     SWIG_PYTHON_THREAD_BEGIN_ALLOW;
     result = (IBString *) & ((arg1)->tif);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_activeStartTime_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_activeStartTime_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_activeStartTime_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_activeStartTime_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_activeStartTime_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->activeStartTime = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_activeStartTime_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_activeStartTime_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->activeStartTime);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_activeStopTime_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_activeStopTime_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_activeStopTime_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_activeStopTime_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_activeStopTime_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->activeStopTime = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_activeStopTime_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_activeStopTime_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->activeStopTime);
     SWIG_PYTHON_THREAD_END_ALLOW;
   }
   resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
@@ -33515,6 +34831,73 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Order_scaleTable_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_scaleTable_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_scaleTable_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(swig_obj[1], &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_scaleTable_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Order_scaleTable_set" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->scaleTable = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_scaleTable_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  IBString *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_scaleTable_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (IBString *) & ((arg1)->scaleTable);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Order_hedgeType_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Order *arg1 = (Order *) 0 ;
@@ -34316,6 +35699,79 @@ SWIGINTERN PyObject *_wrap_Order_orderComboLegs_get(PyObject *SWIGUNUSEDPARM(sel
   {
     shared_ptr<  std::vector<shared_ptr<OrderComboLeg> > > *smartresult = *result ? new shared_ptr<  std::vector<shared_ptr<OrderComboLeg> > >(*result) : 0;
     resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_OrderComboLeg_t_std__allocatorT_boost__shared_ptrT_OrderComboLeg_t_t_t_t, SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_orderMiscOptions_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  TagValueListSPtr *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  TagValueListSPtr tempshared2 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"Order_orderMiscOptions_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_orderMiscOptions_set" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    int newmem = 0;
+    res2 = SWIG_ConvertPtrAndOwn(swig_obj[1], &argp2, SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t,  0 , &newmem);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Order_orderMiscOptions_set" "', argument " "2"" of type '" "TagValueListSPtr const &""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      if (argp2) tempshared2 = *reinterpret_cast< TagValueListSPtr * >(argp2);
+      delete reinterpret_cast< TagValueListSPtr * >(argp2);
+      arg2 = &tempshared2;
+    } else {
+      arg2 = (argp2) ? reinterpret_cast< TagValueListSPtr * >(argp2) : &tempshared2;
+    }
+  }
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    if (arg1) (arg1)->orderMiscOptions = *arg2;
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Order_orderMiscOptions_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Order *arg1 = (Order *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  TagValueListSPtr *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Order, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Order_orderMiscOptions_get" "', argument " "1"" of type '" "Order *""'"); 
+  }
+  arg1 = reinterpret_cast< Order * >(argp1);
+  {
+    SWIG_PYTHON_THREAD_BEGIN_ALLOW;
+    result = (TagValueListSPtr *) & ((arg1)->orderMiscOptions);
+    SWIG_PYTHON_THREAD_END_ALLOW;
+  }
+  {
+    shared_ptr<  std::vector<shared_ptr<TagValue> > > *smartresult = *result ? new shared_ptr<  std::vector<shared_ptr<TagValue> > >(*result) : 0;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(smartresult), SWIGTYPE_p_boost__shared_ptrT_std__vectorT_boost__shared_ptrT_TagValue_t_std__allocatorT_boost__shared_ptrT_TagValue_t_t_t_t, SWIG_POINTER_OWN);
   }
   return resultobj;
 fail:
@@ -37092,6 +38548,7 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect(PyObject *SWIGUNUSEDPARM(
   char *arg2 = (char *) 0 ;
   unsigned int arg3 ;
   int arg4 = (int) 0 ;
+  bool arg5 = (bool) false ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 ;
@@ -37101,16 +38558,19 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect(PyObject *SWIGUNUSEDPARM(
   int ecode3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "host",(char *) "port",(char *) "clientId", NULL 
+    (char *) "self",(char *) "host",(char *) "port",(char *) "clientId",(char *) "extraAuth", NULL 
   };
   bool result;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|O:EPosixClientSocket_eConnect",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|OO:EPosixClientSocket_eConnect",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EPosixClientSocket, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EPosixClientSocket_eConnect" "', argument " "1"" of type '" "EPosixClientSocket *""'"); 
@@ -37133,6 +38593,13 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect(PyObject *SWIGUNUSEDPARM(
     } 
     arg4 = static_cast< int >(val4);
   }
+  if (obj4) {
+    ecode5 = SWIG_AsVal_bool(obj4, &val5);
+    if (!SWIG_IsOK(ecode5)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "EPosixClientSocket_eConnect" "', argument " "5"" of type '" "bool""'");
+    } 
+    arg5 = static_cast< bool >(val5);
+  }
   {
     /*
             most errors should be propagated through to EWrapper->error,
@@ -37141,12 +38608,12 @@ SWIGINTERN PyObject *_wrap_EPosixClientSocket_eConnect(PyObject *SWIGUNUSEDPARM(
     try {
       {
         SWIG_PYTHON_THREAD_BEGIN_ALLOW;
-        result = (bool)(arg1)->eConnect((char const *)arg2,arg3,arg4);
+        result = (bool)(arg1)->eConnect((char const *)arg2,arg3,arg4,arg5);
         SWIG_PYTHON_THREAD_END_ALLOW;
       }
     } catch(Swig::DirectorPureVirtualException &e) {
       /* Call to pure virtual method, raise not implemented error */
-      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::eConnect(char const *,unsigned int,int) not implemented");
+      PyErr_SetString(PyExc_NotImplementedError, "EPosixClientSocket::eConnect(char const *,unsigned int,int,bool) not implemented");
       SWIG_fail;
     } catch(Swig::DirectorException &e) {
       /* Fail if there is a problem in the director proxy transport */
@@ -41313,6 +42780,7 @@ SWIGINTERN PyObject *_wrap_EWrapper_position(PyObject *SWIGUNUSEDPARM(self), PyO
   IBString *arg2 = 0 ;
   Contract *arg3 = 0 ;
   int arg4 ;
+  double arg5 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
@@ -41320,17 +42788,20 @@ SWIGINTERN PyObject *_wrap_EWrapper_position(PyObject *SWIGUNUSEDPARM(self), PyO
   int res3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "account",(char *) "contract",(char *) "position", NULL 
+    (char *) "self",(char *) "account",(char *) "contract",(char *) "position",(char *) "avgCost", NULL 
   };
   Swig::Director *director = 0;
   bool upcall = false;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:EWrapper_position",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:EWrapper_position",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EWrapper, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EWrapper_position" "', argument " "1"" of type '" "EWrapper *""'"); 
@@ -41360,6 +42831,11 @@ SWIGINTERN PyObject *_wrap_EWrapper_position(PyObject *SWIGUNUSEDPARM(self), PyO
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "EWrapper_position" "', argument " "4"" of type '" "int""'");
   } 
   arg4 = static_cast< int >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "EWrapper_position" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
   director = SWIG_DIRECTOR_CAST(arg1);
   upcall = (director && (director->swig_get_self()==obj0));
   try {
@@ -41372,11 +42848,11 @@ SWIGINTERN PyObject *_wrap_EWrapper_position(PyObject *SWIGUNUSEDPARM(self), PyO
         if (upcall) {
           Swig::DirectorPureVirtualException::raise("EWrapper::position");
         } else {
-          (arg1)->position((IBString const &)*arg2,(Contract const &)*arg3,arg4);
+          (arg1)->position((IBString const &)*arg2,(Contract const &)*arg3,arg4,arg5);
         }
       } catch(Swig::DirectorPureVirtualException &e) {
         /* Call to pure virtual method, raise not implemented error */
-        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::position(IBString const &,Contract const &,int) not implemented");
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::position(IBString const &,Contract const &,int,double) not implemented");
         SWIG_fail;
       } catch(Swig::DirectorException &e) {
         /* Fail if there is a problem in the director proxy transport */
@@ -41660,6 +43136,337 @@ SWIGINTERN PyObject *_wrap_EWrapper_accountSummaryEnd(PyObject *SWIGUNUSEDPARM(s
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EWrapper_verifyMessageAPI(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EWrapper *arg1 = (EWrapper *) 0 ;
+  IBString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "apiData", NULL 
+  };
+  Swig::Director *director = 0;
+  bool upcall = false;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:EWrapper_verifyMessageAPI",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EWrapper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EWrapper_verifyMessageAPI" "', argument " "1"" of type '" "EWrapper *""'"); 
+  }
+  arg1 = reinterpret_cast< EWrapper * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EWrapper_verifyMessageAPI" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EWrapper_verifyMessageAPI" "', argument " "2"" of type '" "IBString const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  director = SWIG_DIRECTOR_CAST(arg1);
+  upcall = (director && (director->swig_get_self()==obj0));
+  try {
+    {
+      /*
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
+          */
+      try {
+        if (upcall) {
+          Swig::DirectorPureVirtualException::raise("EWrapper::verifyMessageAPI");
+        } else {
+          (arg1)->verifyMessageAPI((IBString const &)*arg2);
+        }
+      } catch(Swig::DirectorPureVirtualException &e) {
+        /* Call to pure virtual method, raise not implemented error */
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::verifyMessageAPI(IBString const &) not implemented");
+        SWIG_fail;
+      } catch(Swig::DirectorException &e) {
+        /* Fail if there is a problem in the director proxy transport */
+        SWIG_fail;
+      } catch(std::exception& e) {
+        /* Convert standard error to Exception */
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
+        
+      } catch(...) {
+        /* Final catch all, results in runtime error */
+        PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
+      }
+    }
+  } catch (Swig::DirectorException&) {
+    SWIG_fail;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EWrapper_verifyCompleted(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EWrapper *arg1 = (EWrapper *) 0 ;
+  bool arg2 ;
+  IBString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "isSuccessful",(char *) "errorText", NULL 
+  };
+  Swig::Director *director = 0;
+  bool upcall = false;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EWrapper_verifyCompleted",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EWrapper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EWrapper_verifyCompleted" "', argument " "1"" of type '" "EWrapper *""'"); 
+  }
+  arg1 = reinterpret_cast< EWrapper * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EWrapper_verifyCompleted" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EWrapper_verifyCompleted" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EWrapper_verifyCompleted" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  director = SWIG_DIRECTOR_CAST(arg1);
+  upcall = (director && (director->swig_get_self()==obj0));
+  try {
+    {
+      /*
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
+          */
+      try {
+        if (upcall) {
+          Swig::DirectorPureVirtualException::raise("EWrapper::verifyCompleted");
+        } else {
+          (arg1)->verifyCompleted(arg2,(IBString const &)*arg3);
+        }
+      } catch(Swig::DirectorPureVirtualException &e) {
+        /* Call to pure virtual method, raise not implemented error */
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::verifyCompleted(bool,IBString const &) not implemented");
+        SWIG_fail;
+      } catch(Swig::DirectorException &e) {
+        /* Fail if there is a problem in the director proxy transport */
+        SWIG_fail;
+      } catch(std::exception& e) {
+        /* Convert standard error to Exception */
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
+        
+      } catch(...) {
+        /* Final catch all, results in runtime error */
+        PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
+      }
+    }
+  } catch (Swig::DirectorException&) {
+    SWIG_fail;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EWrapper_displayGroupList(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EWrapper *arg1 = (EWrapper *) 0 ;
+  int arg2 ;
+  IBString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId",(char *) "groups", NULL 
+  };
+  Swig::Director *director = 0;
+  bool upcall = false;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EWrapper_displayGroupList",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EWrapper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EWrapper_displayGroupList" "', argument " "1"" of type '" "EWrapper *""'"); 
+  }
+  arg1 = reinterpret_cast< EWrapper * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EWrapper_displayGroupList" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EWrapper_displayGroupList" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EWrapper_displayGroupList" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  director = SWIG_DIRECTOR_CAST(arg1);
+  upcall = (director && (director->swig_get_self()==obj0));
+  try {
+    {
+      /*
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
+          */
+      try {
+        if (upcall) {
+          Swig::DirectorPureVirtualException::raise("EWrapper::displayGroupList");
+        } else {
+          (arg1)->displayGroupList(arg2,(IBString const &)*arg3);
+        }
+      } catch(Swig::DirectorPureVirtualException &e) {
+        /* Call to pure virtual method, raise not implemented error */
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::displayGroupList(int,IBString const &) not implemented");
+        SWIG_fail;
+      } catch(Swig::DirectorException &e) {
+        /* Fail if there is a problem in the director proxy transport */
+        SWIG_fail;
+      } catch(std::exception& e) {
+        /* Convert standard error to Exception */
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
+        
+      } catch(...) {
+        /* Final catch all, results in runtime error */
+        PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
+      }
+    }
+  } catch (Swig::DirectorException&) {
+    SWIG_fail;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EWrapper_displayGroupUpdated(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  EWrapper *arg1 = (EWrapper *) 0 ;
+  int arg2 ;
+  IBString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "reqId",(char *) "contractInfo", NULL 
+  };
+  Swig::Director *director = 0;
+  bool upcall = false;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:EWrapper_displayGroupUpdated",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EWrapper, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EWrapper_displayGroupUpdated" "', argument " "1"" of type '" "EWrapper *""'"); 
+  }
+  arg1 = reinterpret_cast< EWrapper * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "EWrapper_displayGroupUpdated" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EWrapper_displayGroupUpdated" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EWrapper_displayGroupUpdated" "', argument " "3"" of type '" "IBString const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  director = SWIG_DIRECTOR_CAST(arg1);
+  upcall = (director && (director->swig_get_self()==obj0));
+  try {
+    {
+      /*
+              most errors should be propagated through to EWrapper->error,
+              others should be added here as and when needed / encountered.
+          */
+      try {
+        if (upcall) {
+          Swig::DirectorPureVirtualException::raise("EWrapper::displayGroupUpdated");
+        } else {
+          (arg1)->displayGroupUpdated(arg2,(IBString const &)*arg3);
+        }
+      } catch(Swig::DirectorPureVirtualException &e) {
+        /* Call to pure virtual method, raise not implemented error */
+        PyErr_SetString(PyExc_NotImplementedError, "EWrapper::displayGroupUpdated(int,IBString const &) not implemented");
+        SWIG_fail;
+      } catch(Swig::DirectorException &e) {
+        /* Fail if there is a problem in the director proxy transport */
+        SWIG_fail;
+      } catch(std::exception& e) {
+        /* Convert standard error to Exception */
+        PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
+        SWIG_fail;
+        
+      } catch(...) {
+        /* Final catch all, results in runtime error */
+        PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
+        SWIG_fail;
+      }
+    }
+  } catch (Swig::DirectorException&) {
+    SWIG_fail;
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res3)) delete arg3;
   return NULL;
 }
 
@@ -42121,11 +43928,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ContractDetails_swigregister", ContractDetails_swigregister, METH_VARARGS, NULL},
 	 { (char *)"ContractDetails_swiginit", ContractDetails_swiginit, METH_VARARGS, NULL},
 	 { (char *)"delete_EClient", (PyCFunction)_wrap_delete_EClient, METH_O, (char *)"delete_EClient(EClient self)"},
-	 { (char *)"EClient_eConnect", (PyCFunction) _wrap_EClient_eConnect, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_eConnect(EClient self, char const * host, unsigned int port, int clientId=0) -> bool"},
+	 { (char *)"EClient_eConnect", (PyCFunction) _wrap_EClient_eConnect, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_eConnect(EClient self, char const * host, unsigned int port, int clientId=0, bool extraAuth=0) -> bool"},
 	 { (char *)"EClient_eDisconnect", (PyCFunction)_wrap_EClient_eDisconnect, METH_O, (char *)"EClient_eDisconnect(EClient self)"},
 	 { (char *)"EClient_serverVersion", (PyCFunction)_wrap_EClient_serverVersion, METH_O, (char *)"EClient_serverVersion(EClient self) -> int"},
 	 { (char *)"EClient_TwsConnectionTime", (PyCFunction)_wrap_EClient_TwsConnectionTime, METH_O, (char *)"EClient_TwsConnectionTime(EClient self) -> IBString"},
-	 { (char *)"EClient_reqMktData", (PyCFunction) _wrap_EClient_reqMktData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqMktData(EClient self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot)"},
+	 { (char *)"EClient_reqMktData", (PyCFunction) _wrap_EClient_reqMktData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqMktData(EClient self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot, TagValueListSPtr const & mktDataOptions)"},
 	 { (char *)"EClient_cancelMktData", (PyCFunction) _wrap_EClient_cancelMktData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelMktData(EClient self, TickerId id)"},
 	 { (char *)"EClient_placeOrder", (PyCFunction) _wrap_EClient_placeOrder, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_placeOrder(EClient self, OrderId id, Contract contract, Order order)"},
 	 { (char *)"EClient_cancelOrder", (PyCFunction) _wrap_EClient_cancelOrder, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelOrder(EClient self, OrderId id)"},
@@ -42135,7 +43942,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClient_reqIds", (PyCFunction) _wrap_EClient_reqIds, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqIds(EClient self, int numIds)"},
 	 { (char *)"EClient_checkMessages", (PyCFunction)_wrap_EClient_checkMessages, METH_O, (char *)"EClient_checkMessages(EClient self) -> bool"},
 	 { (char *)"EClient_reqContractDetails", (PyCFunction) _wrap_EClient_reqContractDetails, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqContractDetails(EClient self, int reqId, Contract contract)"},
-	 { (char *)"EClient_reqMktDepth", (PyCFunction) _wrap_EClient_reqMktDepth, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqMktDepth(EClient self, TickerId id, Contract contract, int numRows)"},
+	 { (char *)"EClient_reqMktDepth", (PyCFunction) _wrap_EClient_reqMktDepth, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqMktDepth(EClient self, TickerId id, Contract contract, int numRows, TagValueListSPtr const & mktDepthOptions)"},
 	 { (char *)"EClient_cancelMktDepth", (PyCFunction) _wrap_EClient_cancelMktDepth, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelMktDepth(EClient self, TickerId id)"},
 	 { (char *)"EClient_reqNewsBulletins", (PyCFunction) _wrap_EClient_reqNewsBulletins, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqNewsBulletins(EClient self, bool allMsgs)"},
 	 { (char *)"EClient_cancelNewsBulletins", (PyCFunction)_wrap_EClient_cancelNewsBulletins, METH_O, (char *)"EClient_cancelNewsBulletins(EClient self)"},
@@ -42145,14 +43952,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClient_reqManagedAccts", (PyCFunction)_wrap_EClient_reqManagedAccts, METH_O, (char *)"EClient_reqManagedAccts(EClient self)"},
 	 { (char *)"EClient_requestFA", (PyCFunction) _wrap_EClient_requestFA, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_requestFA(EClient self, faDataType pFaDataType)"},
 	 { (char *)"EClient_replaceFA", (PyCFunction) _wrap_EClient_replaceFA, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_replaceFA(EClient self, faDataType pFaDataType, IBString const & cxml)"},
-	 { (char *)"EClient_reqHistoricalData", (PyCFunction) _wrap_EClient_reqHistoricalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqHistoricalData(EClient self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate)"},
+	 { (char *)"EClient_reqHistoricalData", (PyCFunction) _wrap_EClient_reqHistoricalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqHistoricalData(EClient self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate, TagValueListSPtr const & chartOptions)"},
 	 { (char *)"EClient_exerciseOptions", (PyCFunction) _wrap_EClient_exerciseOptions, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_exerciseOptions(EClient self, TickerId id, Contract contract, int exerciseAction, int exerciseQuantity, IBString const & account, int override)"},
 	 { (char *)"EClient_cancelHistoricalData", (PyCFunction) _wrap_EClient_cancelHistoricalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelHistoricalData(EClient self, TickerId tickerId)"},
-	 { (char *)"EClient_reqRealTimeBars", (PyCFunction) _wrap_EClient_reqRealTimeBars, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqRealTimeBars(EClient self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH)"},
+	 { (char *)"EClient_reqRealTimeBars", (PyCFunction) _wrap_EClient_reqRealTimeBars, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqRealTimeBars(EClient self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH, TagValueListSPtr const & realTimeBarsOptions)"},
 	 { (char *)"EClient_cancelRealTimeBars", (PyCFunction) _wrap_EClient_cancelRealTimeBars, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelRealTimeBars(EClient self, TickerId tickerId)"},
 	 { (char *)"EClient_cancelScannerSubscription", (PyCFunction) _wrap_EClient_cancelScannerSubscription, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelScannerSubscription(EClient self, int tickerId)"},
 	 { (char *)"EClient_reqScannerParameters", (PyCFunction)_wrap_EClient_reqScannerParameters, METH_O, (char *)"EClient_reqScannerParameters(EClient self)"},
-	 { (char *)"EClient_reqScannerSubscription", (PyCFunction) _wrap_EClient_reqScannerSubscription, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqScannerSubscription(EClient self, int tickerId, ScannerSubscription subscription)"},
+	 { (char *)"EClient_reqScannerSubscription", (PyCFunction) _wrap_EClient_reqScannerSubscription, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqScannerSubscription(EClient self, int tickerId, ScannerSubscription subscription, TagValueListSPtr const & scannerSubscriptionOptions)"},
 	 { (char *)"EClient_reqCurrentTime", (PyCFunction)_wrap_EClient_reqCurrentTime, METH_O, (char *)"EClient_reqCurrentTime(EClient self)"},
 	 { (char *)"EClient_reqFundamentalData", (PyCFunction) _wrap_EClient_reqFundamentalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqFundamentalData(EClient self, TickerId reqId, Contract arg4, IBString const & reportType)"},
 	 { (char *)"EClient_cancelFundamentalData", (PyCFunction) _wrap_EClient_cancelFundamentalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelFundamentalData(EClient self, TickerId reqId)"},
@@ -42166,9 +43973,15 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClient_cancelPositions", (PyCFunction)_wrap_EClient_cancelPositions, METH_O, (char *)"EClient_cancelPositions(EClient self)"},
 	 { (char *)"EClient_reqAccountSummary", (PyCFunction) _wrap_EClient_reqAccountSummary, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_reqAccountSummary(EClient self, int reqId, IBString const & groupName, IBString const & tags)"},
 	 { (char *)"EClient_cancelAccountSummary", (PyCFunction) _wrap_EClient_cancelAccountSummary, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_cancelAccountSummary(EClient self, int reqId)"},
+	 { (char *)"EClient_verifyRequest", (PyCFunction) _wrap_EClient_verifyRequest, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_verifyRequest(EClient self, IBString const & apiName, IBString const & apiVersion)"},
+	 { (char *)"EClient_verifyMessage", (PyCFunction) _wrap_EClient_verifyMessage, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_verifyMessage(EClient self, IBString const & apiData)"},
+	 { (char *)"EClient_queryDisplayGroups", (PyCFunction) _wrap_EClient_queryDisplayGroups, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_queryDisplayGroups(EClient self, int reqId)"},
+	 { (char *)"EClient_subscribeToGroupEvents", (PyCFunction) _wrap_EClient_subscribeToGroupEvents, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_subscribeToGroupEvents(EClient self, int reqId, int groupId)"},
+	 { (char *)"EClient_updateDisplayGroup", (PyCFunction) _wrap_EClient_updateDisplayGroup, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_updateDisplayGroup(EClient self, int reqId, IBString const & contractInfo)"},
+	 { (char *)"EClient_unsubscribeFromGroupEvents", (PyCFunction) _wrap_EClient_unsubscribeFromGroupEvents, METH_VARARGS | METH_KEYWORDS, (char *)"EClient_unsubscribeFromGroupEvents(EClient self, int reqId)"},
 	 { (char *)"EClient_swigregister", EClient_swigregister, METH_VARARGS, NULL},
 	 { (char *)"delete_EClientSocketBase", (PyCFunction)_wrap_delete_EClientSocketBase, METH_O, (char *)"delete_EClientSocketBase(EClientSocketBase self)"},
-	 { (char *)"EClientSocketBase_eConnect", (PyCFunction) _wrap_EClientSocketBase_eConnect, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_eConnect(EClientSocketBase self, char const * host, unsigned int port, int clientId=0) -> bool"},
+	 { (char *)"EClientSocketBase_eConnect", (PyCFunction) _wrap_EClientSocketBase_eConnect, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_eConnect(EClientSocketBase self, char const * host, unsigned int port, int clientId=0, bool extraAuth=False) -> bool"},
 	 { (char *)"EClientSocketBase_eDisconnect", (PyCFunction)_wrap_EClientSocketBase_eDisconnect, METH_O, (char *)"EClientSocketBase_eDisconnect(EClientSocketBase self)"},
 	 { (char *)"EClientSocketBase_clientId", (PyCFunction)_wrap_EClientSocketBase_clientId, METH_O, (char *)"EClientSocketBase_clientId(EClientSocketBase self) -> int"},
 	 { (char *)"EClientSocketBase_isConnected", (PyCFunction)_wrap_EClientSocketBase_isConnected, METH_O, (char *)"EClientSocketBase_isConnected(EClientSocketBase self) -> bool"},
@@ -42176,7 +43989,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClientSocketBase_isOutBufferEmpty", (PyCFunction)_wrap_EClientSocketBase_isOutBufferEmpty, METH_O, (char *)"EClientSocketBase_isOutBufferEmpty(EClientSocketBase self) -> bool"},
 	 { (char *)"EClientSocketBase_serverVersion", (PyCFunction)_wrap_EClientSocketBase_serverVersion, METH_O, (char *)"EClientSocketBase_serverVersion(EClientSocketBase self) -> int"},
 	 { (char *)"EClientSocketBase_TwsConnectionTime", (PyCFunction)_wrap_EClientSocketBase_TwsConnectionTime, METH_O, (char *)"EClientSocketBase_TwsConnectionTime(EClientSocketBase self) -> IBString"},
-	 { (char *)"EClientSocketBase_reqMktData", (PyCFunction) _wrap_EClientSocketBase_reqMktData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqMktData(EClientSocketBase self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot)"},
+	 { (char *)"EClientSocketBase_reqMktData", (PyCFunction) _wrap_EClientSocketBase_reqMktData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqMktData(EClientSocketBase self, TickerId id, Contract contract, IBString const & genericTicks, bool snapshot, TagValueListSPtr const & mktDataOptions)"},
 	 { (char *)"EClientSocketBase_cancelMktData", (PyCFunction) _wrap_EClientSocketBase_cancelMktData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelMktData(EClientSocketBase self, TickerId id)"},
 	 { (char *)"EClientSocketBase_placeOrder", (PyCFunction) _wrap_EClientSocketBase_placeOrder, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_placeOrder(EClientSocketBase self, OrderId id, Contract contract, Order order)"},
 	 { (char *)"EClientSocketBase_cancelOrder", (PyCFunction) _wrap_EClientSocketBase_cancelOrder, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelOrder(EClientSocketBase self, OrderId id)"},
@@ -42186,7 +43999,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClientSocketBase_reqIds", (PyCFunction) _wrap_EClientSocketBase_reqIds, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqIds(EClientSocketBase self, int numIds)"},
 	 { (char *)"EClientSocketBase_checkMessages", (PyCFunction)_wrap_EClientSocketBase_checkMessages, METH_O, (char *)"EClientSocketBase_checkMessages(EClientSocketBase self) -> bool"},
 	 { (char *)"EClientSocketBase_reqContractDetails", (PyCFunction) _wrap_EClientSocketBase_reqContractDetails, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqContractDetails(EClientSocketBase self, int reqId, Contract contract)"},
-	 { (char *)"EClientSocketBase_reqMktDepth", (PyCFunction) _wrap_EClientSocketBase_reqMktDepth, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqMktDepth(EClientSocketBase self, TickerId tickerId, Contract contract, int numRows)"},
+	 { (char *)"EClientSocketBase_reqMktDepth", (PyCFunction) _wrap_EClientSocketBase_reqMktDepth, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqMktDepth(EClientSocketBase self, TickerId tickerId, Contract contract, int numRows, TagValueListSPtr const & mktDepthOptions)"},
 	 { (char *)"EClientSocketBase_cancelMktDepth", (PyCFunction) _wrap_EClientSocketBase_cancelMktDepth, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelMktDepth(EClientSocketBase self, TickerId tickerId)"},
 	 { (char *)"EClientSocketBase_reqNewsBulletins", (PyCFunction) _wrap_EClientSocketBase_reqNewsBulletins, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqNewsBulletins(EClientSocketBase self, bool allMsgs)"},
 	 { (char *)"EClientSocketBase_cancelNewsBulletins", (PyCFunction)_wrap_EClientSocketBase_cancelNewsBulletins, METH_O, (char *)"EClientSocketBase_cancelNewsBulletins(EClientSocketBase self)"},
@@ -42196,14 +44009,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClientSocketBase_reqManagedAccts", (PyCFunction)_wrap_EClientSocketBase_reqManagedAccts, METH_O, (char *)"EClientSocketBase_reqManagedAccts(EClientSocketBase self)"},
 	 { (char *)"EClientSocketBase_requestFA", (PyCFunction) _wrap_EClientSocketBase_requestFA, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_requestFA(EClientSocketBase self, faDataType pFaDataType)"},
 	 { (char *)"EClientSocketBase_replaceFA", (PyCFunction) _wrap_EClientSocketBase_replaceFA, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_replaceFA(EClientSocketBase self, faDataType pFaDataType, IBString const & cxml)"},
-	 { (char *)"EClientSocketBase_reqHistoricalData", (PyCFunction) _wrap_EClientSocketBase_reqHistoricalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqHistoricalData(EClientSocketBase self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate)"},
+	 { (char *)"EClientSocketBase_reqHistoricalData", (PyCFunction) _wrap_EClientSocketBase_reqHistoricalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqHistoricalData(EClientSocketBase self, TickerId id, Contract contract, IBString const & endDateTime, IBString const & durationStr, IBString const & barSizeSetting, IBString const & whatToShow, int useRTH, int formatDate, TagValueListSPtr const & chartOptions)"},
 	 { (char *)"EClientSocketBase_exerciseOptions", (PyCFunction) _wrap_EClientSocketBase_exerciseOptions, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_exerciseOptions(EClientSocketBase self, TickerId tickerId, Contract contract, int exerciseAction, int exerciseQuantity, IBString const & account, int override)"},
 	 { (char *)"EClientSocketBase_cancelHistoricalData", (PyCFunction) _wrap_EClientSocketBase_cancelHistoricalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelHistoricalData(EClientSocketBase self, TickerId tickerId)"},
-	 { (char *)"EClientSocketBase_reqRealTimeBars", (PyCFunction) _wrap_EClientSocketBase_reqRealTimeBars, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqRealTimeBars(EClientSocketBase self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH)"},
+	 { (char *)"EClientSocketBase_reqRealTimeBars", (PyCFunction) _wrap_EClientSocketBase_reqRealTimeBars, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqRealTimeBars(EClientSocketBase self, TickerId id, Contract contract, int barSize, IBString const & whatToShow, bool useRTH, TagValueListSPtr const & realTimeBarsOptions)"},
 	 { (char *)"EClientSocketBase_cancelRealTimeBars", (PyCFunction) _wrap_EClientSocketBase_cancelRealTimeBars, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelRealTimeBars(EClientSocketBase self, TickerId tickerId)"},
 	 { (char *)"EClientSocketBase_cancelScannerSubscription", (PyCFunction) _wrap_EClientSocketBase_cancelScannerSubscription, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelScannerSubscription(EClientSocketBase self, int tickerId)"},
 	 { (char *)"EClientSocketBase_reqScannerParameters", (PyCFunction)_wrap_EClientSocketBase_reqScannerParameters, METH_O, (char *)"EClientSocketBase_reqScannerParameters(EClientSocketBase self)"},
-	 { (char *)"EClientSocketBase_reqScannerSubscription", (PyCFunction) _wrap_EClientSocketBase_reqScannerSubscription, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqScannerSubscription(EClientSocketBase self, int tickerId, ScannerSubscription subscription)"},
+	 { (char *)"EClientSocketBase_reqScannerSubscription", (PyCFunction) _wrap_EClientSocketBase_reqScannerSubscription, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqScannerSubscription(EClientSocketBase self, int tickerId, ScannerSubscription subscription, TagValueListSPtr const & scannerSubscriptionOptions)"},
 	 { (char *)"EClientSocketBase_reqCurrentTime", (PyCFunction)_wrap_EClientSocketBase_reqCurrentTime, METH_O, (char *)"EClientSocketBase_reqCurrentTime(EClientSocketBase self)"},
 	 { (char *)"EClientSocketBase_reqFundamentalData", (PyCFunction) _wrap_EClientSocketBase_reqFundamentalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqFundamentalData(EClientSocketBase self, TickerId reqId, Contract arg4, IBString const & reportType)"},
 	 { (char *)"EClientSocketBase_cancelFundamentalData", (PyCFunction) _wrap_EClientSocketBase_cancelFundamentalData, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelFundamentalData(EClientSocketBase self, TickerId reqId)"},
@@ -42217,6 +44030,12 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EClientSocketBase_cancelPositions", (PyCFunction)_wrap_EClientSocketBase_cancelPositions, METH_O, (char *)"EClientSocketBase_cancelPositions(EClientSocketBase self)"},
 	 { (char *)"EClientSocketBase_reqAccountSummary", (PyCFunction) _wrap_EClientSocketBase_reqAccountSummary, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_reqAccountSummary(EClientSocketBase self, int reqId, IBString const & groupName, IBString const & tags)"},
 	 { (char *)"EClientSocketBase_cancelAccountSummary", (PyCFunction) _wrap_EClientSocketBase_cancelAccountSummary, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_cancelAccountSummary(EClientSocketBase self, int reqId)"},
+	 { (char *)"EClientSocketBase_verifyRequest", (PyCFunction) _wrap_EClientSocketBase_verifyRequest, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_verifyRequest(EClientSocketBase self, IBString const & apiName, IBString const & apiVersion)"},
+	 { (char *)"EClientSocketBase_verifyMessage", (PyCFunction) _wrap_EClientSocketBase_verifyMessage, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_verifyMessage(EClientSocketBase self, IBString const & apiData)"},
+	 { (char *)"EClientSocketBase_queryDisplayGroups", (PyCFunction) _wrap_EClientSocketBase_queryDisplayGroups, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_queryDisplayGroups(EClientSocketBase self, int reqId)"},
+	 { (char *)"EClientSocketBase_subscribeToGroupEvents", (PyCFunction) _wrap_EClientSocketBase_subscribeToGroupEvents, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_subscribeToGroupEvents(EClientSocketBase self, int reqId, int groupId)"},
+	 { (char *)"EClientSocketBase_updateDisplayGroup", (PyCFunction) _wrap_EClientSocketBase_updateDisplayGroup, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_updateDisplayGroup(EClientSocketBase self, int reqId, IBString const & contractInfo)"},
+	 { (char *)"EClientSocketBase_unsubscribeFromGroupEvents", (PyCFunction) _wrap_EClientSocketBase_unsubscribeFromGroupEvents, METH_VARARGS | METH_KEYWORDS, (char *)"EClientSocketBase_unsubscribeFromGroupEvents(EClientSocketBase self, int reqId)"},
 	 { (char *)"EClientSocketBase_swigregister", EClientSocketBase_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Execution", (PyCFunction)_wrap_new_Execution, METH_NOARGS, (char *)"new_Execution() -> Execution"},
 	 { (char *)"Execution_execId_set", _wrap_Execution_execId_set, METH_VARARGS, (char *)"Execution_execId_set(Execution self, IBString const & execId)"},
@@ -42298,6 +44117,10 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Order_auxPrice_get", (PyCFunction)_wrap_Order_auxPrice_get, METH_O, (char *)"Order_auxPrice_get(Order self) -> double"},
 	 { (char *)"Order_tif_set", _wrap_Order_tif_set, METH_VARARGS, (char *)"Order_tif_set(Order self, IBString const & tif)"},
 	 { (char *)"Order_tif_get", (PyCFunction)_wrap_Order_tif_get, METH_O, (char *)"Order_tif_get(Order self) -> IBString const &"},
+	 { (char *)"Order_activeStartTime_set", _wrap_Order_activeStartTime_set, METH_VARARGS, (char *)"Order_activeStartTime_set(Order self, IBString const & activeStartTime)"},
+	 { (char *)"Order_activeStartTime_get", (PyCFunction)_wrap_Order_activeStartTime_get, METH_O, (char *)"Order_activeStartTime_get(Order self) -> IBString const &"},
+	 { (char *)"Order_activeStopTime_set", _wrap_Order_activeStopTime_set, METH_VARARGS, (char *)"Order_activeStopTime_set(Order self, IBString const & activeStopTime)"},
+	 { (char *)"Order_activeStopTime_get", (PyCFunction)_wrap_Order_activeStopTime_get, METH_O, (char *)"Order_activeStopTime_get(Order self) -> IBString const &"},
 	 { (char *)"Order_ocaGroup_set", _wrap_Order_ocaGroup_set, METH_VARARGS, (char *)"Order_ocaGroup_set(Order self, IBString const & ocaGroup)"},
 	 { (char *)"Order_ocaGroup_get", (PyCFunction)_wrap_Order_ocaGroup_get, METH_O, (char *)"Order_ocaGroup_get(Order self) -> IBString const &"},
 	 { (char *)"Order_ocaType_set", _wrap_Order_ocaType_set, METH_VARARGS, (char *)"Order_ocaType_set(Order self, int ocaType)"},
@@ -42430,6 +44253,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Order_scaleInitFillQty_get", (PyCFunction)_wrap_Order_scaleInitFillQty_get, METH_O, (char *)"Order_scaleInitFillQty_get(Order self) -> int"},
 	 { (char *)"Order_scaleRandomPercent_set", _wrap_Order_scaleRandomPercent_set, METH_VARARGS, (char *)"Order_scaleRandomPercent_set(Order self, bool scaleRandomPercent)"},
 	 { (char *)"Order_scaleRandomPercent_get", (PyCFunction)_wrap_Order_scaleRandomPercent_get, METH_O, (char *)"Order_scaleRandomPercent_get(Order self) -> bool"},
+	 { (char *)"Order_scaleTable_set", _wrap_Order_scaleTable_set, METH_VARARGS, (char *)"Order_scaleTable_set(Order self, IBString const & scaleTable)"},
+	 { (char *)"Order_scaleTable_get", (PyCFunction)_wrap_Order_scaleTable_get, METH_O, (char *)"Order_scaleTable_get(Order self) -> IBString const &"},
 	 { (char *)"Order_hedgeType_set", _wrap_Order_hedgeType_set, METH_VARARGS, (char *)"Order_hedgeType_set(Order self, IBString const & hedgeType)"},
 	 { (char *)"Order_hedgeType_get", (PyCFunction)_wrap_Order_hedgeType_get, METH_O, (char *)"Order_hedgeType_get(Order self) -> IBString const &"},
 	 { (char *)"Order_hedgeParam_set", _wrap_Order_hedgeParam_set, METH_VARARGS, (char *)"Order_hedgeParam_set(Order self, IBString const & hedgeParam)"},
@@ -42454,6 +44279,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Order_notHeld_get", (PyCFunction)_wrap_Order_notHeld_get, METH_O, (char *)"Order_notHeld_get(Order self) -> bool"},
 	 { (char *)"Order_orderComboLegs_set", _wrap_Order_orderComboLegs_set, METH_VARARGS, (char *)"Order_orderComboLegs_set(Order self, Order::OrderComboLegListSPtr const & orderComboLegs)"},
 	 { (char *)"Order_orderComboLegs_get", (PyCFunction)_wrap_Order_orderComboLegs_get, METH_O, (char *)"Order_orderComboLegs_get(Order self) -> Order::OrderComboLegListSPtr const &"},
+	 { (char *)"Order_orderMiscOptions_set", _wrap_Order_orderMiscOptions_set, METH_VARARGS, (char *)"Order_orderMiscOptions_set(Order self, TagValueListSPtr const & orderMiscOptions)"},
+	 { (char *)"Order_orderMiscOptions_get", (PyCFunction)_wrap_Order_orderMiscOptions_get, METH_O, (char *)"Order_orderMiscOptions_get(Order self) -> TagValueListSPtr const &"},
 	 { (char *)"Order_CloneOrderComboLegs", (PyCFunction) _wrap_Order_CloneOrderComboLegs, METH_VARARGS | METH_KEYWORDS, (char *)"Order_CloneOrderComboLegs(Order::OrderComboLegListSPtr & dst, Order::OrderComboLegListSPtr const & src)"},
 	 { (char *)"delete_Order", (PyCFunction)_wrap_delete_Order, METH_O, (char *)"delete_Order(Order self)"},
 	 { (char *)"Order_swigregister", Order_swigregister, METH_VARARGS, NULL},
@@ -42539,7 +44366,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TagValue_swiginit", TagValue_swiginit, METH_VARARGS, NULL},
 	 { (char *)"new_EPosixClientSocket", (PyCFunction) _wrap_new_EPosixClientSocket, METH_VARARGS | METH_KEYWORDS, (char *)"new_EPosixClientSocket(EWrapper ptr) -> EPosixClientSocket"},
 	 { (char *)"delete_EPosixClientSocket", (PyCFunction)_wrap_delete_EPosixClientSocket, METH_O, (char *)"delete_EPosixClientSocket(EPosixClientSocket self)"},
-	 { (char *)"EPosixClientSocket_eConnect", (PyCFunction) _wrap_EPosixClientSocket_eConnect, METH_VARARGS | METH_KEYWORDS, (char *)"EPosixClientSocket_eConnect(EPosixClientSocket self, char const * host, unsigned int port, int clientId=0) -> bool"},
+	 { (char *)"EPosixClientSocket_eConnect", (PyCFunction) _wrap_EPosixClientSocket_eConnect, METH_VARARGS | METH_KEYWORDS, (char *)"EPosixClientSocket_eConnect(EPosixClientSocket self, char const * host, unsigned int port, int clientId=0, bool extraAuth=False) -> bool"},
 	 { (char *)"EPosixClientSocket_eDisconnect", (PyCFunction)_wrap_EPosixClientSocket_eDisconnect, METH_O, (char *)"EPosixClientSocket_eDisconnect(EPosixClientSocket self)"},
 	 { (char *)"EPosixClientSocket_isSocketOK", (PyCFunction)_wrap_EPosixClientSocket_isSocketOK, METH_O, (char *)"EPosixClientSocket_isSocketOK(EPosixClientSocket self) -> bool"},
 	 { (char *)"EPosixClientSocket_fd", (PyCFunction)_wrap_EPosixClientSocket_fd, METH_O, (char *)"EPosixClientSocket_fd(EPosixClientSocket self) -> int"},
@@ -42589,10 +44416,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"EWrapper_tickSnapshotEnd", (PyCFunction) _wrap_EWrapper_tickSnapshotEnd, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_tickSnapshotEnd(EWrapper self, int reqId)"},
 	 { (char *)"EWrapper_marketDataType", (PyCFunction) _wrap_EWrapper_marketDataType, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_marketDataType(EWrapper self, TickerId reqId, int marketDataType)"},
 	 { (char *)"EWrapper_commissionReport", (PyCFunction) _wrap_EWrapper_commissionReport, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_commissionReport(EWrapper self, CommissionReport commissionReport)"},
-	 { (char *)"EWrapper_position", (PyCFunction) _wrap_EWrapper_position, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_position(EWrapper self, IBString const & account, Contract contract, int position)"},
+	 { (char *)"EWrapper_position", (PyCFunction) _wrap_EWrapper_position, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_position(EWrapper self, IBString const & account, Contract contract, int position, double avgCost)"},
 	 { (char *)"EWrapper_positionEnd", (PyCFunction)_wrap_EWrapper_positionEnd, METH_O, (char *)"EWrapper_positionEnd(EWrapper self)"},
 	 { (char *)"EWrapper_accountSummary", (PyCFunction) _wrap_EWrapper_accountSummary, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_accountSummary(EWrapper self, int reqId, IBString const & account, IBString const & tag, IBString const & value, IBString const & curency)"},
 	 { (char *)"EWrapper_accountSummaryEnd", (PyCFunction) _wrap_EWrapper_accountSummaryEnd, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_accountSummaryEnd(EWrapper self, int reqId)"},
+	 { (char *)"EWrapper_verifyMessageAPI", (PyCFunction) _wrap_EWrapper_verifyMessageAPI, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_verifyMessageAPI(EWrapper self, IBString const & apiData)"},
+	 { (char *)"EWrapper_verifyCompleted", (PyCFunction) _wrap_EWrapper_verifyCompleted, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_verifyCompleted(EWrapper self, bool isSuccessful, IBString const & errorText)"},
+	 { (char *)"EWrapper_displayGroupList", (PyCFunction) _wrap_EWrapper_displayGroupList, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_displayGroupList(EWrapper self, int reqId, IBString const & groups)"},
+	 { (char *)"EWrapper_displayGroupUpdated", (PyCFunction) _wrap_EWrapper_displayGroupUpdated, METH_VARARGS | METH_KEYWORDS, (char *)"EWrapper_displayGroupUpdated(EWrapper self, int reqId, IBString const & contractInfo)"},
 	 { (char *)"new_EWrapper", (PyCFunction) _wrap_new_EWrapper, METH_VARARGS | METH_KEYWORDS, (char *)"new_EWrapper(PyObject * _self) -> EWrapper"},
 	 { (char *)"disown_EWrapper", (PyCFunction) _wrap_disown_EWrapper, METH_VARARGS | METH_KEYWORDS, NULL},
 	 { (char *)"EWrapper_swigregister", EWrapper_swigregister, METH_VARARGS, NULL},

@@ -77,7 +77,6 @@ public:
 
    X& operator*()  const { return *ptr_; }
    X* operator->() const { return ptr_; }
-   operator bool() const { return ptr_ != 0; }
    X* get()        const { return ptr_; }
    bool only() const { return use_.only(); }
 
