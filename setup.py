@@ -75,6 +75,7 @@ class Swigify(Command):
         try:
             swig_cmd = ['swig'] + self.swig_opts + ['-o', 'swig_wrap.cpp']
             swig_cmd.append(join(root_dir, 'swigify_ib.i'))
+            print('Running SWIG command: %s' % ' '.join(swig_cmd))
             subprocess.check_call(swig_cmd)
 
             print('Removing boost namespace')

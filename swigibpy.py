@@ -1938,19 +1938,13 @@ class EPosixClientSocket(EClientSocketBase):
         """__init__(EPosixClientSocket self, EWrapper ptr) -> EPosixClientSocket"""
         _swigibpy.EPosixClientSocket_swiginit(self,_swigibpy.new_EPosixClientSocket(ptr))
     __swig_destroy__ = _swigibpy.delete_EPosixClientSocket
-
-    def eConnect(self, host, port, clientId=0):
-        """eConnect(EPosixClientSocket self, char const * host, unsigned int port, int clientId=0) -> bool"""
-        poll_auto = kwargs.pop('poll_auto', True)
-
-
+    def eConnect(self, host, port, clientId=0, poll_auto=True):
         val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId)
         if poll_auto and val:
             self.poller = TWSPoller(self)
             self.poller.start()
-
-
         return val
+
 
 
     def eDisconnect(self):

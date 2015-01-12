@@ -145,13 +145,14 @@ class TWSPoller(threading.Thread):
             else:
                 break
 %}
-%pythonprepend EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
-    poll_auto = kwargs.pop('poll_auto', True)
-%}
-%pythonappend EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
-    if poll_auto and val:
-        self.poller = TWSPoller(self)
-        self.poller.start()
+
+%feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0) %{
+    def eConnect(self, host, port, clientId=0, poll_auto=True):
+        val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId)
+        if poll_auto and val:
+            self.poller = TWSPoller(self)
+            self.poller.start()
+        return val
 %}
 %include "src/EPosixClientSocket.h"
 
