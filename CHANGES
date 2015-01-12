@@ -1,5 +1,5 @@
 0.5.0 ???
-  * Update to TWS v9.70 API
+  * Update to TWS v9.71 API
 
 0.4.1 Sat May 04 2013
   * Fix for exception bubbling up and killing poller #19
