@@ -2015,7 +2015,7 @@ from traceback import print_exc
 
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
-    
+
     Loops indefinitely until killed or a fatal error is encountered. Uses
     socket select to poll for input and calls TWS's
     `EClientSocketBase::checkMessages` function.
@@ -2050,7 +2050,7 @@ class EPosixClientSocket(EClientSocketBase):
         """__init__(EPosixClientSocket self, EWrapper ptr) -> EPosixClientSocket"""
         _swigibpy.EPosixClientSocket_swiginit(self,_swigibpy.new_EPosixClientSocket(ptr))
     __swig_destroy__ = _swigibpy.delete_EPosixClientSocket
-    def eConnect(self, host, port, clientId=0, extraAuth=0, poll_auto=True):
+    def eConnect(self, host, port, clientId=0, extraAuth=False, poll_auto=True):
         val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId, extraAuth)
         if poll_auto and val:
             self.poller = TWSPoller(self)

@@ -54,7 +54,7 @@ typedef std::string IBString;
 %template(OrderComboLegList) std::vector<boost::shared_ptr<OrderComboLeg> >;
 %template(TagValueList) std::vector<boost::shared_ptr<TagValue> >;
 
-/* 
+/*
    TWS use their own shared_ptr class, need to fool SWIG into thinking
    it's the standard boost::shared_ptr.
    This means the generated cpp file must be post-processed to remove
@@ -119,7 +119,7 @@ from traceback import print_exc
 
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
-    
+
     Loops indefinitely until killed or a fatal error is encountered. Uses
     socket select to poll for input and calls TWS's
     `EClientSocketBase::checkMessages` function.
@@ -146,8 +146,8 @@ class TWSPoller(threading.Thread):
                 break
 %}
 
-%feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0, bool extraAuth=0) %{
-    def eConnect(self, host, port, clientId=0, extraAuth=0, poll_auto=True):
+%feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0, bool extraAuth=false) %{
+    def eConnect(self, host, port, clientId=0, extraAuth=False, poll_auto=True):
         val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId, extraAuth)
         if poll_auto and val:
             self.poller = TWSPoller(self)
