@@ -2011,7 +2011,8 @@ TagValue_swigregister(TagValue)
 import sys
 import threading
 from select import select
-from traceback import print_exc
+from traceback import print_exc, print_exception
+
 
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
@@ -2021,10 +2022,11 @@ class TWSPoller(threading.Thread):
     `EClientSocketBase::checkMessages` function.
     '''
 
-    def __init__(self, tws):
+    def __init__(self, tws, wrapper):
         super(TWSPoller, self).__init__()
         self.daemon = True
         self._tws = tws
+        self._wrapper = wrapper
 
     def run(self):
         '''Continually poll TWS'''
@@ -2036,8 +2038,16 @@ class TWSPoller(threading.Thread):
         while self._tws and self._tws.isConnected():
             evts = select(pollin, pollout, pollerr)
             if fd in evts[0]:
-                while self._tws.checkMessages():
-                    pass
+                try:
+                    while self._tws.checkMessages():
+                        pass
+                except (SystemExit, SystemError, KeyboardInterrupt):
+                    break
+                except:
+                    try:
+                        self._wrapper.pyError(*sys.exc_info())
+                    except:
+                        print_exc()
             else:
                 break
 
@@ -2049,11 +2059,16 @@ class EPosixClientSocket(EClientSocketBase):
     def __init__(self, ptr):
         """__init__(EPosixClientSocket self, EWrapper ptr) -> EPosixClientSocket"""
         _swigibpy.EPosixClientSocket_swiginit(self,_swigibpy.new_EPosixClientSocket(ptr))
+        # store a reference to EWrapper on the Python side (C++ member is protected so inaccessible from Python).
+        self._ewrapper = ptr
+
+
+
     __swig_destroy__ = _swigibpy.delete_EPosixClientSocket
     def eConnect(self, host, port, clientId=0, extraAuth=False, poll_auto=True):
         val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId, extraAuth)
         if poll_auto and val:
-            self.poller = TWSPoller(self)
+            self.poller = TWSPoller(self, self._ewrapper)
             self.poller.start()
         return val
 
@@ -2396,7 +2411,6 @@ class EWrapper(object):
 
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
-        import sys
         if errorCode == 165: # Historical data sevice message
             sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 501 and errorCode < 600: # Socket read failed
@@ -2530,6 +2544,10 @@ class EWrapper(object):
     def displayGroupUpdated(self, reqId, contractInfo):
         """displayGroupUpdated(EWrapper self, int reqId, IBString const & contractInfo)"""
         return _swigibpy.EWrapper_displayGroupUpdated(self, reqId, contractInfo)
+
+    def pyError(self, type, value, traceback):
+        sys.stderr.write("Exception thrown during EWrapper method dispatch:\n")
+        print_exception(type, value, traceback)
 
 
     def __init__(self):

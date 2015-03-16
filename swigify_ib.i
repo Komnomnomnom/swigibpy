@@ -66,17 +66,44 @@ typedef std::string IBString;
 %feature("director") EWrapper;
 %feature("director:except") {
     if ($error != NULL) {
-        throw Swig::DirectorMethodException();
+
+        if ( !( PyErr_ExceptionMatches(PyExc_SystemExit) ||
+                PyErr_ExceptionMatches(PyExc_SystemError) ||
+                PyErr_ExceptionMatches(PyExc_KeyboardInterrupt) ) )
+        {
+            PyObject *value = 0;
+            PyObject *traceback = 0;
+
+            PyErr_Fetch(&$error, &value, &traceback);
+            PyErr_NormalizeException(&$error, &value, &traceback);
+
+            {
+                swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *) "pyError");
+                swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name, $error, value, traceback, NULL);
+            }
+
+            Py_XDECREF($error);
+            Py_XDECREF(value);
+            Py_XDECREF(traceback);
+
+            $error = PyErr_Occurred();
+            if ($error != NULL) {
+                PyErr_Print();
+                throw Swig::DirectorMethodException();
+            }
+        }
+        else
+        {
+            throw Swig::DirectorMethodException();
+        }
     }
 }
 
 /* Exception handling */
 %include exception.i
 %exception {
-    /*
-        most errors should be propagated through to EWrapper->error,
-        others should be added here as and when needed / encountered.
-    */
+    // most errors should be propagated through to EWrapper->error,
+    // others should be added here as and when needed / encountered.
     try {
         $action
     } catch(Swig::DirectorPureVirtualException &e) {
@@ -90,7 +117,6 @@ typedef std::string IBString;
         /* Convert standard error to Exception */
         PyErr_SetString(PyExc_Exception, const_cast<char*>(e.what()));
         SWIG_fail;
-
     } catch(...) {
         /* Final catch all, results in runtime error */
         PyErr_SetString(PyExc_RuntimeError, "Unknown error caught in Interactive Brokers SWIG wrapper...");
@@ -115,7 +141,8 @@ typedef std::string IBString;
 import sys
 import threading
 from select import select
-from traceback import print_exc
+from traceback import print_exc, print_exception
+
 
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
@@ -125,10 +152,11 @@ class TWSPoller(threading.Thread):
     `EClientSocketBase::checkMessages` function.
     '''
 
-    def __init__(self, tws):
+    def __init__(self, tws, wrapper):
         super(TWSPoller, self).__init__()
         self.daemon = True
         self._tws = tws
+        self._wrapper = wrapper
 
     def run(self):
         '''Continually poll TWS'''
@@ -140,17 +168,29 @@ class TWSPoller(threading.Thread):
         while self._tws and self._tws.isConnected():
             evts = select(pollin, pollout, pollerr)
             if fd in evts[0]:
-                while self._tws.checkMessages():
-                    pass
+                try:
+                    while self._tws.checkMessages():
+                        pass
+                except (SystemExit, SystemError, KeyboardInterrupt):
+                    break
+                except:
+                    try:
+                        self._wrapper.pyError(*sys.exc_info())
+                    except:
+                        print_exc()
             else:
                 break
 %}
 
+%feature("pythonappend") EPosixClientSocket::EPosixClientSocket(EWrapper *ptr) %{
+        # store a reference to EWrapper on the Python side (C++ member is protected so inaccessible from Python).
+        self._ewrapper = ptr
+%}
 %feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0, bool extraAuth=false) %{
     def eConnect(self, host, port, clientId=0, extraAuth=False, poll_auto=True):
         val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId, extraAuth)
         if poll_auto and val:
-            self.poller = TWSPoller(self)
+            self.poller = TWSPoller(self, self._ewrapper)
             self.poller.start()
         return val
 %}
@@ -164,7 +204,6 @@ class TWSPoller(threading.Thread):
 %feature("shadow") EWrapper::error(const int, const int, const IBString) %{
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
-        import sys
         if errorCode == 165: # Historical data sevice message
             sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 501 and errorCode < 600: # Socket read failed
@@ -178,6 +217,14 @@ class TWSPoller(threading.Thread):
         else:
             sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
 %}
+
+%extend EWrapper {
+%pythoncode {
+    def pyError(self, type, value, traceback):
+        sys.stderr.write("Exception thrown during EWrapper method dispatch:\n")
+        print_exception(type, value, traceback)
+}
+}
 %include "shared/EWrapper.h"
 
 %pythoncode  %{

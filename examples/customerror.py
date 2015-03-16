@@ -76,6 +76,9 @@ class CustomErrorExample(EWrapper):
         print("TWS reports API error: %s" % msg)
         self.got_err.set()
 
+    def pyError(self, type, val, tb):
+        sys.print_exception(type, val, tb)
+
 
 # Instantiate our callback object
 callback = CustomErrorExample()
@@ -105,7 +108,8 @@ tws.reqHistoricalData(
     "1 day",                                    # barSizeSetting,
     "TRADES",                                   # whatToShow,
     0,                                          # useRTH,
-    1                                           # formatDate
+    1,                                          # formatDate
+    None                                        # chartOptions
 )
 
 print("\n====================================================================")

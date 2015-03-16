@@ -94,7 +94,8 @@ tws.reqHistoricalData(
     "1 day",                                    # barSizeSetting,
     "TRADES",                                   # whatToShow,
     0,                                          # useRTH,
-    1                                           # formatDate
+    1,                                          # formatDate
+    None                                        # chartOptions
 )
 
 print("\n====================================================================")

@@ -73,6 +73,18 @@ more about this.
 
 For API reference refer to the `C++ API documentation`_.
 
+Error Handling
+--------------
+
+If TWS reports an error then the ``EWrapper`` methods ``error`` and
+``winError`` will be called as described in the TWS `C++ API documentation`_.
+
+Additionally swigibpy augments ``EWrapper`` with an extra error handling method
+``def pyError(self, type, value, traceback)``
+which will be called if an exception is raised during execution of one of your
+``EWrapper`` Python methods. The default behaviour is to print the exception to
+standard error, override the ``pyError`` method to implement your own handling.
+
 Notes
 -----
 
@@ -106,7 +118,7 @@ generated, but if you need to rerun these steps the commands are::
 
     $ python setup.py swigify
 
-to regenerate the SWIG wrappers (SWIG 2.0+ required), and::
+to regenerate the SWIG wrappers (SWIG 3.0+ required), and::
 
     $ python setup.py patchify
 
