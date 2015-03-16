@@ -1,5 +1,10 @@
 0.5.0 ???
   * Update to TWS v9.71 API
+  * Raise NotImplementedError when EWrapper method missing.
+  * Improved error handling, introduction of EWrapper.pyError method.
+  * Use socket.select polling
+  * EWrapperVerbose and EWrapperQuiet utility classes
+  * Python 3 fixes
 
 0.4.1 Sat May 04 2013
   * Fix for exception bubbling up and killing poller #19
