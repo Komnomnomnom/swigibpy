@@ -246,7 +246,7 @@ def _make_printer(name):
     return lambda self, *a, **kw: self._print_call(name, *a, **kw)
 
 for name, attr in EWrapper.__dict__.items():
-    if name[0] == '_' or not callable(attr) or name in ('error', 'winError'):
+    if name[0] == '_' or not callable(attr) or name in ('error', 'winError', 'pyError'):
         continue
 
     setattr(EWrapperQuiet, name, EWrapperQuiet.__dict__['_ignore_call'])

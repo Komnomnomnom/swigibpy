@@ -85,6 +85,18 @@ which will be called if an exception is raised during execution of one of your
 ``EWrapper`` Python methods. The default behaviour is to print the exception to
 standard error, override the ``pyError`` method to implement your own handling.
 
+EWrapper Utility Classes
+------------------------
+
+swigibpy has defined two ``EWrapper`` subclasses which are useful for debugging
+and development.
+
+``EWrapperVerbose`` prints to standard out every time one of its methods is
+invoked. The message printed includes the arguments passed.
+
+``EWrapperQuiet`` silently ignores any calls that have not been implemented
+(useful if you are not interested in defining every ``EWrapper`` method).
+
 Notes
 -----
 
