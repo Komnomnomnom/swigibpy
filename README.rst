@@ -61,17 +61,23 @@ a few caveats:
 - Visual Studio 11 doesn't like the ``/MD`` compile flag, which distutils adds.
   For a workaround see `here`_.
 
-Usage
-=====
+Getting Started
+===============
 
-To use simply import the swigibpy module. The minimum you will need to do is 
+To use simply import the ``swigibpy`` module. The minimum you will need to do is 
 define an ``EWrapper`` sub-class whose methods will be invoked when a message
-is received from TWS, see the `examples`_ for more.
+is received from TWS.
 
 By default swigibpy will automatically poll TWS for messages, see `Notes`_ for
 more about this.
 
 For API reference refer to the `C++ API documentation`_.
+
+See the `examples`_ for some simple demos of using swigibpy.
+
+For a more detailed introduction Rob Carver has written a nice series of blog
+posts about `getting started with swigibpy and the Interative Brokers API`_.
+
 
 Error Handling
 --------------
@@ -79,8 +85,10 @@ Error Handling
 If TWS reports an error then the ``EWrapper`` methods ``error`` and
 ``winError`` will be called as described in the TWS `C++ API documentation`_.
 
-Additionally swigibpy augments ``EWrapper`` with an extra error handling method
-``def pyError(self, type, value, traceback)``
+Additionally swigibpy augments ``EWrapper`` with an extra error handling method::
+
+  def pyError(self, type, value, traceback)
+
 which will be called if an exception is raised during execution of one of your
 ``EWrapper`` Python methods. The default behaviour is to print the exception to
 standard error, override the ``pyError`` method to implement your own handling.
@@ -156,3 +164,4 @@ swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
 .. _here: https://github.com/Komnomnomnom/swigibpy/issues/2
 .. _patches: https://github.com/Komnomnomnom/swigibpy/tree/master/patches
 .. _examples: https://github.com/Komnomnomnom/swigibpy/tree/master/examples
+.. _getting started with swigibpy and the Interative Brokers API: http://qoppac.blogspot.co.uk/2014/03/using-swigibpy-so-that-python-will-play.html
