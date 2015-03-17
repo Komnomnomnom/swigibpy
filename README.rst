@@ -92,6 +92,7 @@ Additionally swigibpy augments ``EWrapper`` with an extra error handling method:
 which will be called if an exception is raised during execution of one of your
 ``EWrapper`` Python methods. The default behaviour is to print the exception to
 standard error, override the ``pyError`` method to implement your own handling.
+See the `python docs for sys.exc_info()`_ for details on the method's arguments.
 
 EWrapper Utility Classes
 ------------------------
@@ -165,3 +166,4 @@ swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
 .. _patches: https://github.com/Komnomnomnom/swigibpy/tree/master/patches
 .. _examples: https://github.com/Komnomnomnom/swigibpy/tree/master/examples
 .. _getting started with swigibpy and the Interative Brokers API: http://qoppac.blogspot.co.uk/2014/03/using-swigibpy-so-that-python-will-play.html
+.. _python docs for sys.exc_info(): https://docs.python.org/2/library/sys.html#sys.exc_info
