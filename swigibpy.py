@@ -2010,7 +2010,7 @@ TagValue_swigregister(TagValue)
 
 import sys
 import threading
-from select import select
+import select
 from traceback import print_exc, print_exception
 
 
@@ -2036,20 +2036,24 @@ class TWSPoller(threading.Thread):
         pollerr = [fd]
 
         while self._tws and self._tws.isConnected():
-            evts = select(pollin, pollout, pollerr)
-            if fd in evts[0]:
-                try:
-                    while self._tws.checkMessages():
-                        pass
-                except (SystemExit, SystemError, KeyboardInterrupt):
-                    break
-                except:
-                    try:
-                        self._wrapper.pyError(*sys.exc_info())
-                    except:
-                        print_exc()
-            else:
+            try:
+                evts = select.select(pollin, pollout, pollerr)
+            except select.error:
                 break
+            else:
+                if fd in evts[0]:
+                    try:
+                        while self._tws.checkMessages():
+                            pass
+                    except (SystemExit, SystemError, KeyboardInterrupt):
+                        break
+                    except:
+                        try:
+                            self._wrapper.pyError(*sys.exc_info())
+                        except:
+                            print_exc()
+                else:
+                    break
 
 class EPosixClientSocket(EClientSocketBase):
     """Proxy of C++ EPosixClientSocket class"""
