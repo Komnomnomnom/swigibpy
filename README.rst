@@ -1,83 +1,88 @@
-Overview
+swigibpy
 ========
 
-`Interactive Brokers`_ Python API, auto generated from C++ API using `SWIG`_.
+:version: 0.5.0
 
-Latest version: 0.5.0 (TWS API v9.71)
+An `Interactive Brokers`_ Python API, auto-generated from the official C++ API
+using `SWIG`_.
 
-Install
-=======
+Installation
+============
 
-Use pip (recommended)::
+Use pip (recommended)
 
-    $ pip install swigibpy
+.. code:: sh
 
-Alternatively download your archive of choice and run::
+    pip install swigibpy
 
-    $ python setup.py install
+Alternatively download `a release`_, extract it and run
 
-Notes for Windows Users
-=======================
+.. code:: sh
 
-swigibpy just provides a wrapper around the TWS C++ API so this needs to be
-compiled for your target platform during installation. While this should
-'just work' for Linux and OSX, Windows users might need to do some extra work.
-
-Compile with MinGW
-------------------
-
-Download and install `MinGW`_ and follow the steps to `add MinGW
-to your path`_.  Note there is a `compatability problem`_ between the latest
-version of MinGW and disutils so it is recommended to install an older version
-until this is resolved (mingw-get-inst-20110802.exe has been known to work).
-
-To get pip to use MinGW as the compiler edit or create a
-file named ``distutils.cfg`` in ``[PYTHON LOCATION]\Lib\distutils`` where
-``[PYTHON LOCATION]`` is the path to your Python install, e.g. ``C:\Python27``.
-Add the following to ``distutils.cfg``::
-
-	[build]
-	compiler=mingw32
-
-then use the pip command above and with a bit of luck, you're done!
-
-Alternatively you can download and build the package directly. To build and
-install use::
-
-	$ python setup.py build -c mingw32
-	$ python setup.py install
-
-This has been verified to work using MinGW and Python 2.7 on Windows 7, Vista,
-and XP.
-
-Compile with Visual Studio
---------------------------
-
-Several users have reported success building swigibpy with Visual Studio, with 
-a few caveats:
-
-- Distutils has issues building with anything later than Visual Studio 2008
-  (version 9).
-- Visual Studio 11 doesn't like the ``/MD`` compile flag, which distutils adds.
-  For a workaround see `here`_.
+    python setup.py install
 
 Getting Started
 ===============
 
-To use simply import the ``swigibpy`` module. The minimum you will need to do is 
-define an ``EWrapper`` sub-class whose methods will be invoked when a message
-is received from TWS.
+TWS or IB Gateway must be running. To use **swigibpy** simply import the
+``swigibpy`` module into your code, define an ``EWrapper`` sub-class and create
+a ``swigibpy.EPosixClientSocket`` instance.
 
-By default swigibpy will automatically poll TWS for messages, see `Notes`_ for
-more about this.
+Use the methods of your ``swigibpy.EPosixClientSocket`` instance to send
+requests to Interactive Brokers. All requests are asynchronous and any
+responses, notifications and warnings are handled by the methods of your
+``EWrapper`` subclass.
 
-For API reference refer to the `C++ API documentation`_.
+In the following simple example a request is made to Interactive Brokers for
+some historical data for the GOOG ticker, and the response is printed to the
+console.
 
-See the `examples`_ for some simple demos of using swigibpy.
+.. code:: python
 
-For a more detailed introduction Rob Carver has written a nice series of blog
-posts about `getting started with swigibpy and the Interative Brokers API`_.
+  from datetime import datetime
 
+  import swigibpy
+
+
+  class MyEWrapper(swigibpy.EWrapperVerbose):
+
+      def historicalData(self, reqId, date, open, high, low, close, volume,
+			 barCount, WAP, hasGaps):
+
+        if date[:8] == 'finished':
+            print("History request complete")
+        else:
+            date = datetime.strptime(date, "%Y%m%d").strftime("%d %b %Y")
+            print(("History %s - Open: %s, High: %s, Low: %s, Close: "
+                   "%s, Volume: %d") % (date, open, high, low, close, volume))
+
+  myWrapper = MyEWrapper()
+
+  tws = swigibpy.EPosixClientSocket(myWrapper, reconnect_auto=True)
+
+  tws.eConnect("", 7496, 42)
+
+  contract = swigibpy.Contract()
+  contract.exchange = "SMART"
+  contract.symbol = "GOOG"
+  contract.secType = "STK"
+  contract.currency = "USD"
+  today = datetime.today()
+
+  tws.reqHistoricalData(2, contract, today.strftime("%Y%m%d %H:%M:%S %Z"),
+                        "1 W", "1 day", "TRADES", 0, 1, None)
+
+
+
+See the `examples`_ for some more simple demos of using **swigibpy**. For a
+more in-depth introduction Rob Carver has written a nice series of blog posts
+on `getting started with swigibpy and the Interative Brokers API`_.
+
+For documentation on the methods of ``EPosixClientSocket``, ``EWrapper`` and
+other API reference refer to the `C++ API documentation`_.
+
+Note that unlike the C++ API **swigibpy** will automatically poll
+TWS for messages, see `Message Polling`_ for more about this.
 
 Error Handling
 --------------
@@ -85,26 +90,47 @@ Error Handling
 If TWS reports an error then the ``EWrapper`` methods ``error`` and
 ``winError`` will be called as described in the TWS `C++ API documentation`_.
 
-Additionally swigibpy augments ``EWrapper`` with an extra error handling method::
+Additionally **swigibpy** augments ``EWrapper`` with an extra error handling
+method.
+
+.. code:: python
 
   def pyError(self, type, value, traceback)
 
 which will be called if an exception is raised during execution of one of your
 ``EWrapper`` Python methods. The default behaviour is to print the exception to
-standard error, override the ``pyError`` method to implement your own handling.
-See the `python docs for sys.exc_info()`_ for details on the method's arguments.
+standard error, but you can override the ``pyError`` method to implement your own
+handling.  See the `python docs for sys.exc_info()`_ for details on the
+method's arguments.
 
 EWrapper Utility Classes
 ------------------------
 
-swigibpy has defined two ``EWrapper`` subclasses which are useful for debugging
-and development.
+Normally subclassing ``EWrapper`` means having to tiresomely provide an
+implementation for every method defined by ``EWrapper``. Happily **swigibpy**
+adds two ``EWrapper`` subclasses which can help.
 
-``EWrapperVerbose`` prints to standard out every time one of its methods is
-invoked. The message printed includes the arguments passed.
+``EWrapperVerbose`` implements every ``EWrapper`` method and by default just
+prints a message to standard out every time one of its methods is invoked. The
+message printed includes the arguments that were passed. Useful for development
+and debugging.
 
-``EWrapperQuiet`` silently ignores any calls that have not been implemented
-(useful if you are not interested in defining every ``EWrapper`` method).
+``EWrapperQuiet`` implements every ``EWrapper`` method and silently ignores
+any calls that have not been implemented by you. Useful if you are not
+interested in defining every ``EWrapper`` method.
+
+Auto-reconnect
+--------------
+
+**swigibpy** can automatically reconnect to TWS / IB Gateway in case of
+connection loss or restart. To enable this behaviour use the ``reconnect_auto``
+argument added to ``EPosixClientSocket``.
+
+.. code:: python
+
+    tws = EPosixClientSocket(mywrapper, reconnect_auto=True)
+
+Auto-reconnect is disabled by default.
 
 Notes
 -----
@@ -112,58 +138,147 @@ Notes
 The ``yield`` parameter in ``CommissionReport`` clashes with a Python reserved
 keyword so it is renamed to ``_yield``.
 
-By default swigibpy will create a background thread to automatically poll TWS 
-for messages.  If you wish to disable this behaviour and handle polling 
-yourself use the ``poll_auto`` argument when calling ``eConnect``::
-    
-    tws.eConnect("", 7496, 42, poll_auto=False)
+Advanced Usage
+--------------
+
+Message Polling
++++++++++++++++
+
+By default **swigibpy** will create a background thread (``swigibpy.TWSPoller``)
+to automatically poll TWS for messages.  If you wish to disable this behaviour
+and handle polling yourself use the ``poll_auto`` argument added to
+``EPosixClientSocket``
+
+.. code:: python
+
+    tws = EPosixClientSocket(mywrapper, poll_auto=False)
+
+or
+
+.. code:: python
+
+    tws = EPosixClientSocket(mywrapper)
+    ...
+    tws.poll_auto = False
 
 The TWS C++ API performs non-blocking socket I/O to communicate with TWS,
-swigibpy's background thread uses socket select to poll for incoming messages.
+**swigibpy**'s background thread uses socket select to poll for incoming messages.
 
-Apart from a few trivial `patches`_ to aid compilation and interoperability 
-with Python swigibpy does not alter the TWS C++ API code in any way.
 
-Develop
-=======
+Patches
++++++++
 
-Contributions are welcome! For development you can build the extension in the
-current dir::
+Apart from a few trivial `patches`_ to aid compilation and interoperability
+with Python **swigibpy** does not alter the TWS C++ API code in any way.
 
-    $ python setup.py build_ext --build-lib .
+Contribute
+==========
 
-The majority of the swigibpy code is auto-generated by SWIG and swigibpy also
-includes a number of trivial patches for TWS's C++ code. The TWS API included 
-in the repository has already been patched and the SWIG code has already been 
-generated, but if you need to rerun these steps the commands are::
+**swigibpy** is open source so feel free to get involved. If something doesn't
+work, or you'd like to add a feature, example or some documentation please
+`create a pull request`_, if you need help `open an issue`_.
 
-    $ python setup.py swigify
+For development switch to the swigibpy code directory and build the extension
+in the current dir.
 
-to regenerate the SWIG wrappers (SWIG 3.0+ required), and::
+.. code:: sh
 
-    $ python setup.py patchify
+     python setup.py build_ext --inplace
+
+Apart from the `patches`_ all of **swigibpy**'s code is defined in a SWIG
+`interface file`_. The C++ and Python wrapper is then generated using SWIG.
+
+The TWS API included in the repository has already been patched and the
+repository already includes the SWIG generated code but if you modify the
+interface file or need to rerun these steps the commands are
+
+.. code:: sh
+
+    python setup.py swigify
+
+to regenerate the SWIG wrappers (SWIG 3.0+ required), and
+
+.. code:: sh
+
+    python setup.py patchify
 
 to reapply the patches to the TWS API (specify the option ``-r`` if you want to 
 un-apply the patches and get back to unaltered TWS code).
 
+Windows Users
+=============
+
+**swigibpy** provides a wrapper around the TWS C++ API so it must be
+compiled for your target platform during installation. While this should
+'just work' for Linux and OSX, Windows users might need to do some extra work.
+
+Only some basic tips are given here, for more see `Installing Python Modules`_
+in the official documentation.
+
+MinGW Compilation
+-----------------
+
+Download and install `MinGW`_ and follow the steps to `add MinGW
+to your path`_.
+
+To get pip to use MinGW as the compiler edit or create a
+file named ``distutils.cfg`` in ``[PYTHON LOCATION]\Lib\distutils`` where
+``[PYTHON LOCATION]`` is the path to your Python install, e.g. ``C:\Python27``.
+Add the following to ``distutils.cfg``.
+
+.. code:: cfg
+
+	[build]
+	compiler=mingw32
+
+then use the pip command given above in `Installation`_ and with a bit of luck,
+you're done!
+
+Alternatively you can download `a release`_ and build the package directly. To
+build and install manually use
+
+.. code:: sh
+
+	python setup.py build -c mingw32
+	python setup.py install
+
+This has been verified to work using MinGW and Python 2.7 on Windows 7, Vista,
+and XP.
+
+Visual Studio Compilation
+-------------------------
+
+Several users have reported success building **swigibpy** with Visual Studio,
+with a few caveats:
+
+* Distutils has issues building with anything later than Visual Studio 2008
+  (version 9).
+* Visual Studio 11 doesn't like the ``/MD`` compile flag, which distutils adds.
+  For a workaround see `here`_.
+
 License
 =======
 
-swigibpy original code is free software under the New BSD license.
+**swigibpy** original code is free software under the `New BSD license`_.
 
 Interactive Brokers propriety C++ API is copyright Interactive Brokers LLC.
-swigibpy is in no way supported or endorsed by Interactive Brokers LLC.
+**swigibpy** is in no way supported or endorsed by Interactive Brokers LLC.
 
 --------------
 
 .. _Interactive Brokers: http://www.interactivebrokers.com/
 .. _SWIG: http://www.swig.org/
+.. _a release: https://github.com/Komnomnomnom/swigibpy/releases
 .. _C++ API documentation: http://www.interactivebrokers.com/en/software/api/api.htm
 .. _MinGW: http://www.mingw.org/
 .. _add MinGW to your path: http://www.mingw.org/wiki/Getting_Started#toc5
-.. _compatability problem: http://bugs.python.org/issue12641
 .. _here: https://github.com/Komnomnomnom/swigibpy/issues/2
 .. _patches: https://github.com/Komnomnomnom/swigibpy/tree/master/patches
 .. _examples: https://github.com/Komnomnomnom/swigibpy/tree/master/examples
 .. _getting started with swigibpy and the Interative Brokers API: http://qoppac.blogspot.co.uk/2014/03/using-swigibpy-so-that-python-will-play.html
 .. _python docs for sys.exc_info(): https://docs.python.org/2/library/sys.html#sys.exc_info
+.. _open an issue: https://github.com/Komnomnomnom/swigibpy/issues
+.. _create a pull request: https://github.com/Komnomnomnom/swigibpy/pulls
+.. _Installing Python Modules: https://docs.python.org/2/install/
+.. _New BSD License: https://github.com/Komnomnomnom/swigibpy/blob/master/LICENSE
+.. _interface file: https://github.com/Komnomnomnom/swigibpy/blob/master/swigify_ib.i
