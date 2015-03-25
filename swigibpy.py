@@ -2017,8 +2017,9 @@ TagValue_swigregister(TagValue)
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
 
-    Loops indefinitely until killed or a fatal error is encountered. Uses
-    socket select to poll for input and calls TWS's
+    Loops indefinitely until killed or a system error occurs.
+
+    Uses socket select to poll for input and calls TWS's
     `EClientSocketBase::checkMessages` function.
     '''
 
@@ -2097,6 +2098,16 @@ class EPosixClientSocket(EClientSocketBase):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
     def __init__(self, ewrapper, poll_auto=True, reconnect_auto=False):
+        '''Create an EPosixClientSocket to comunicate with Interactive Brokers.
+
+        Parameters
+        ----------
+        ewrapper : EWrapper subclass to which responses will be dispatched.
+        poll_auto : boolean, if True automatically poll for messages with a
+            background thread. Default True
+        reconnect_auto : boolean, if True automatically reconnect to TWS if
+            the connection is lost. Default False
+        '''
         _swigibpy.EPosixClientSocket_swiginit(self, _swigibpy.new_EPosixClientSocket(ewrapper))
 
         # store a reference to EWrapper on the Python side (C++ member is protected so inaccessible from Python).
@@ -2436,7 +2447,7 @@ class EWrapper(object):
 
     def winError(self, str, lastError):
         '''Error in TWS API library'''
-        sys.stderr.write("TWS Error - %s: %s\n" % (lastError, str))
+        sys.stderr.write("TWS ERROR - %s: %s\n" % (lastError, str))
 
 
 
@@ -2497,17 +2508,19 @@ class EWrapper(object):
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
         if errorCode == 165: # Historical data sevice message
-            sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))
+            sys.stderr.write("TWS WARNING - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 501 and errorCode < 600: # Socket read failed
-            sys.stderr.write("TWS Client Error - %s: %s\n" % (errorCode, errorString))
+            sys.stderr.write("TWS CLIENT-ERROR - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:
-            sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
+            sys.stderr.write("TWS ERROR - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 1100 and errorCode < 2100:
-            sys.stderr.write("TWS System Error - %s: %s\n" % (errorCode, errorString))
+            sys.stderr.write("TWS SYSTEM-ERROR - %s: %s\n" % (errorCode, errorString))
+        elif errorCode in (2104, 2106):
+            sys.stderr.write("TWS INFO - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 2100 and errorCode <= 2110:
-            sys.stderr.write("TWS Warning - %s: %s\n" % (errorCode, errorString))
+            sys.stderr.write("TWS WARNING - %s: %s\n" % (errorCode, errorString))
         else:
-            sys.stderr.write("TWS Error - %s: %s\n" % (errorCode, errorString))
+            sys.stderr.write("TWS ERROR - %s: %s\n" % (errorCode, errorString))
 
 
 
@@ -2631,6 +2644,10 @@ class EWrapper(object):
         return _swigibpy.EWrapper_displayGroupUpdated(self, reqId, contractInfo)
 
     def pyError(self, type, value, traceback):
+        '''Handles an error thrown during invocation of an EWrapper method.
+
+        Arguments are those provided by sys.exc_info()
+        '''
         sys.stderr.write("Exception thrown during EWrapper method dispatch:\n")
         print_exception(type, value, traceback)
 
@@ -2694,6 +2711,10 @@ EWrapper_swigregister = _swigibpy.EWrapper_swigregister
 EWrapper_swigregister(EWrapper)
 
 class EWrapperVerbose(EWrapper):
+    '''Implements all EWrapper methods and prints to standard out when a method
+    is invoked.
+    '''
+
     def _print_call(self, name, *args, **kwargs):
         argspec = []
         if args:
@@ -2703,6 +2724,8 @@ class EWrapperVerbose(EWrapper):
         print('TWS call ignored - %s(%s)' % (name, ', '.join(argspec)))
 
 class EWrapperQuiet(EWrapper):
+    '''Implements all EWrapper methods and ignores method calls.'''
+
     def _ignore_call(self, *args, **kwargs):
         pass
 
