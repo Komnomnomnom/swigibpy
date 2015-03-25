@@ -136,13 +136,16 @@ typedef std::string IBString;
 %include "shared/ScannerSubscription.h"
 %include "shared/TagValue.h"
 
-/* Customise EPosixClientSocket so that TWS is automatically polled for messages when we are connected to it */
-%pythoncode %{
+%pythonbegin %{
+import warnings
 import sys
 import threading
 import select
 from traceback import print_exc, print_exception
+%}
 
+/* Customise EPosixClientSocket so that TWS is automatically polled for messages when we are connected to it */
+%pythoncode %{
 
 class TWSPoller(threading.Thread):
     '''Continually polls TWS for any outstanding messages.
@@ -152,52 +155,149 @@ class TWSPoller(threading.Thread):
     `EClientSocketBase::checkMessages` function.
     '''
 
+    MAX_BACKOFF = 5000
+
     def __init__(self, tws, wrapper):
         super(TWSPoller, self).__init__()
         self.daemon = True
         self._tws = tws
         self._wrapper = wrapper
+        self._stop_evt = threading.Event()
+        self._connected_evt = threading.Event()
+
+        self.tws_connected(tws.isConnected())
+
+    def stop_poller(self):
+        self._stop_evt.set()
+
+    def tws_connected(self, flag):
+        if flag:
+            self._connected_evt.set()
+        else:
+            self._connected_evt.clear()
 
     def run(self):
         '''Continually poll TWS'''
-        fd = self._tws.fd()
-        pollin = [fd]
-        pollout = []
-        pollerr = [fd]
+        stop = self._stop_evt
+        connected = self._connected_evt
+        tws = self._tws
 
-        while self._tws and self._tws.isConnected():
-            try:
-                evts = select.select(pollin, pollout, pollerr)
-            except select.error:
-                break
-            else:
-                if fd in evts[0]:
-                    try:
-                        while self._tws.checkMessages():
-                            pass
-                    except (SystemExit, SystemError, KeyboardInterrupt):
-                        break
-                    except:
-                        try:
-                            self._wrapper.pyError(*sys.exc_info())
-                        except:
-                            print_exc()
+        fd = tws.fd()
+        pollfd = [fd]
+
+        while not stop.is_set():
+            while (not connected.is_set() or not tws.isConnected()) and not stop.is_set():
+                connected.clear()
+                backoff = 0
+                retries = 0
+
+                while not connected.is_set() and not stop.is_set():
+                    if tws.reconnect_auto and not tws.reconnect():
+                        if backoff < self.MAX_BACKOFF:
+                            retries += 1
+                            backoff = min(2**(retries + 1), self.MAX_BACKOFF)
+                        connected.wait(backoff / 1000.)
+                    else:
+                        connected.wait(1)
+                fd = tws.fd()
+                pollfd = [fd]
+
+            if fd > 0:
+                try:
+                    evtin, evtout, evterr = select.select(pollfd, pollfd, pollfd, 1)
+                except select.error:
+                    connected.clear()
+                    continue
                 else:
-                    break
+                    if fd in evtin:
+                        try:
+                            if not tws.checkMessages():
+                                tws.eDisconnect(stop_polling=False)
+                                continue
+                        except (SystemExit, SystemError, KeyboardInterrupt):
+                            break
+                        except:
+                            try:
+                                self._wrapper.pyError(*sys.exc_info())
+                            except:
+                                print_exc()
+                    elif fd in evterr:
+                        connected.clear()
+                        continue
 %}
 
-%feature("pythonappend") EPosixClientSocket::EPosixClientSocket(EWrapper *ptr) %{
+%feature("shadow") EPosixClientSocket::EPosixClientSocket(EWrapper *ptr) %{
+    def __init__(self, ewrapper, poll_auto=True, reconnect_auto=False):
+        _swigibpy.EPosixClientSocket_swiginit(self, $action(ewrapper))
+
         # store a reference to EWrapper on the Python side (C++ member is protected so inaccessible from Python).
-        self._ewrapper = ptr
+        self._ewrapper = ewrapper
+
+        self._connect_lock = threading.Lock()
+        self.poller = None
+        self._poll_auto = poll_auto
+        self.reconnect_auto = reconnect_auto
+        self._connect_args = None
 %}
 %feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0, bool extraAuth=false) %{
-    def eConnect(self, host, port, clientId=0, extraAuth=False, poll_auto=True):
-        val = _swigibpy.EPosixClientSocket_eConnect(self, host, port, clientId, extraAuth)
-        if poll_auto and val:
-            self.poller = TWSPoller(self, self._ewrapper)
-            self.poller.start()
+    def eConnect(self, host, port, clientId=0, extraAuth=False, **kwargs):
+        if "poll_auto" in kwargs:
+            warnings.warn("eConnect argument 'poll_auto' is deprecated, use 'poll_auto' arg in constructor instead", warnings.DeprecationWarning)
+            self.poll_auto = kwargs.pop('poll_auto')
+
+        with self._connect_lock:
+            success = $action(self, host, port, clientId, extraAuth)
+
+        if success:
+            self._connect_args = ((host, port, clientId, extraAuth), kwargs)
+        if self.isConnected():
+            self._startPolling()
+            if self.poller is not None:
+                self.poller.tws_connected(True)
+        return success
+%}
+%feature("shadow") EClientSocketBase::eDisconnect() %{
+    def eDisconnect(self, stop_polling=True):
+        if stop_polling:
+            self._stopPolling()
+        val = $action(self)
+        if self.poller is not None:
+            self.poller.tws_connected(False)
         return val
 %}
+%extend EPosixClientSocket {
+%pythoncode {
+
+    def reconnect(self):
+        if self._connect_args is None:
+            return
+        return self.eConnect(*self._connect_args[0], **self._connect_args[1])
+
+    def _startPolling(self):
+        if not self.poll_auto:
+            return
+        if  self.poller is None or not self.poller.is_alive():
+            self.poller = TWSPoller(self, self._ewrapper)
+            self.poller.start()
+
+    def _stopPolling(self):
+        if self.poller is not None:
+            self.poller.stop_poller()
+
+    @property
+    def poll_auto(self):
+        return self._poll_auto
+
+    @poll_auto.setter
+    def poll_auto(self, val):
+        self._poll_auto = val
+        if val:
+            self._startPolling()
+        else:
+            self._stopPolling()
+}
+}
+
 %include "src/EPosixClientSocket.h"
 
 %feature("shadow") EWrapper::winError(const IBString &, int) %{

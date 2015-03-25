@@ -69,7 +69,7 @@ callback = HistoricalDataExample()
 
 # Instantiate a socket object, allowing us to call TWS directly. Pass our
 # callback object so TWS can respond.
-tws = EPosixClientSocket(callback)
+tws = EPosixClientSocket(callback, reconnect_auto=True)
 
 # Connect to tws running on localhost
 if not tws.eConnect("", 7496, 42):
