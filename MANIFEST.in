@@ -8,6 +8,6 @@ include IB/*.h
 include IB/*.txt
 include patches/*
 include README.rst
-include CHANGES
+include CHANGELOG.md
 include LICENSE
 include MANIFEST.in
