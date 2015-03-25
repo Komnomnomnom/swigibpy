@@ -271,7 +271,7 @@ Interactive Brokers propriety C++ API is copyright Interactive Brokers LLC.
 .. _a release: https://github.com/Komnomnomnom/swigibpy/releases
 .. _C++ API documentation: http://www.interactivebrokers.com/en/software/api/api.htm
 .. _MinGW: http://www.mingw.org/
-.. _add MinGW to your path: http://www.mingw.org/wiki/Getting_Started#toc5
+.. _add MinGW to your path: http://www.mingw.org/wiki/Getting_Started#toc7
 .. _here: https://github.com/Komnomnomnom/swigibpy/issues/2
 .. _patches: https://github.com/Komnomnomnom/swigibpy/tree/master/patches
 .. _examples: https://github.com/Komnomnomnom/swigibpy/tree/master/examples
