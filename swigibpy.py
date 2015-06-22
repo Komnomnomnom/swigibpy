@@ -2045,6 +2045,15 @@ class TWSPoller(threading.Thread):
             self._connected_evt.clear()
 
     def run(self):
+        modules = sys.modules
+        try:
+            self._run()
+        except:
+            # ignore errors raised during interpreter shutdown.
+            if modules:
+                raise
+
+    def _run(self):
         '''Continually poll TWS'''
         stop = self._stop_evt
         connected = self._connected_evt
