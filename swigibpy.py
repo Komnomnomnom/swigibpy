@@ -2081,7 +2081,7 @@ class TWSPoller(threading.Thread):
 
             if fd > 0:
                 try:
-                    evtin, evtout, evterr = select.select(pollfd, pollfd, pollfd, 1)
+                    evtin, _evtout, evterr = select.select(pollfd, [], pollfd, 1)
                 except select.error:
                     connected.clear()
                     continue
