@@ -262,7 +262,7 @@ class TWSPoller(threading.Thread):
 %feature("shadow") EClientSocketBase::eConnect(const char *host, unsigned int port, int clientId=0, bool extraAuth=false) %{
     def eConnect(self, host, port, clientId=0, extraAuth=False, **kwargs):
         if "poll_auto" in kwargs:
-            warnings.warn("eConnect argument 'poll_auto' is deprecated, use 'poll_auto' arg in constructor instead", warnings.DeprecationWarning)
+            warnings.warn("eConnect argument 'poll_auto' is deprecated, use 'poll_auto' arg in constructor instead", DeprecationWarning)
             self.poll_auto = kwargs.pop('poll_auto')
 
         with self._connect_lock:
