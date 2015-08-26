@@ -78,6 +78,12 @@ typedef std::string IBString;
             PyErr_NormalizeException(&$error, &value, &traceback);
 
             {
+                if (value == NULL) {
+                    value = Py_None;
+                }
+                if (traceback == NULL) {
+                    traceback = Py_None;
+                }
                 swig::SwigVar_PyObject swig_method_name = SWIG_Python_str_FromChar((char *) "pyError");
                 swig::SwigVar_PyObject result = PyObject_CallMethodObjArgs(swig_get_self(), (PyObject *) swig_method_name, $error, value, traceback, NULL);
             }
@@ -329,14 +335,14 @@ class TWSPoller(threading.Thread):
     def error(self, id, errorCode, errorString):
         '''Error during communication with TWS'''
         if errorCode == 165: # Historical data sevice message
-            sys.stderr.write("TWS WARNING - %s: %s\n" % (errorCode, errorString))
+            sys.stderr.write("TWS INFO - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 501 and errorCode < 600: # Socket read failed
             sys.stderr.write("TWS CLIENT-ERROR - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 100 and errorCode < 1100:
             sys.stderr.write("TWS ERROR - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 1100 and errorCode < 2100:
             sys.stderr.write("TWS SYSTEM-ERROR - %s: %s\n" % (errorCode, errorString))
-        elif errorCode in (2104, 2106):
+        elif errorCode in (2104, 2106, 2108):
             sys.stderr.write("TWS INFO - %s: %s\n" % (errorCode, errorString))
         elif errorCode >= 2100 and errorCode <= 2110:
             sys.stderr.write("TWS WARNING - %s: %s\n" % (errorCode, errorString))
