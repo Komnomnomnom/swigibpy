@@ -1,0 +1,15 @@
+diff --git a/IB/src/EPosixClientSocket.cpp b/IB/src/EPosixClientSocket.cpp
+index 324e972..70a1904 100644
+--- a/IB/src/EPosixClientSocket.cpp
++++ b/IB/src/EPosixClientSocket.cpp
+@@ -7,6 +7,10 @@
+ #include "TwsSocketClientErrors.h"
+ #include "EWrapper.h"
+ 
++#ifdef __CYGWIN__
++#include "sys/socket.h"
++#endif
++
+ #include <string.h>
+ 
+ ///////////////////////////////////////////////////////////
