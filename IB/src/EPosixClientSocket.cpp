@@ -7,6 +7,10 @@
 #include "TwsSocketClientErrors.h"
 #include "EWrapper.h"
 
+#ifdef __CYGWIN__
+#include "sys/socket.h"
+#endif
+
 #include <string.h>
 
 ///////////////////////////////////////////////////////////
